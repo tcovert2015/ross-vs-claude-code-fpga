@@ -1,0 +1,2650 @@
+
+                         Lattice Mapping Report File
+
+Design:  pcie_dma_top
+Family:  LFD2NX
+Device:  LFD2NX-40
+Package: CABGA256
+Performance Grade:  8_High-Performance_1.0V
+
+Mapper:    version Radiant Software (64-bit) 2026.1.1.229.0
+Mapped on: Fri Oct  9 17:10:27 2026
+
+Design Information
+------------------
+
+Command line:   map -i pcie_dma_impl_1_syn.udb -o pcie_dma_impl_1_map.udb -mp
+     pcie_dma_impl_1.mrp -hierrpt -vio -gui -msgset D:/AMD Ross
+     Test/wt/plain-lattice-dma/designs/dma/lattice/build_iodelay/promote.xml
+
+Design Summary
+--------------
+
+   Number of registers:         816 out of 32811 (2%)
+      Number of SLICE         registers:  816 out of 32256 (3%)
+      Number of PIO Input     registers:    0 out of   185 (0%)
+      Number of PIO Output    registers:    0 out of   185 (0%)
+      Number of PIO Tri-State registers:    0 out of   185 (0%)
+   Number of LUT4s:            4884 out of 32256 (15%)
+      Number used as logic LUT4s:                       2101
+      Number used as distributed RAM:                   1536 (6 per 16X4 RAM)
+      Number used as ripple logic:                       484 (2 per CCU2)
+      Number of inserted feedthru LUT4s:                 763
+                  Number for virtual IO:                 763
+   Number of Virtual IOs:         763
+   Number of PIOs used/reserved:    8 out of   185 (4%)
+      Number of PIOs reserved:      7 (per sysConfig and/or prohibit constraint)
+      Number of PIOs used:          1
+        Number of PIOs used for single ended IO:         1
+        Number of PIO pairs used for differential IO:    0
+        Number allocated to regular speed PIOs:     1 out of  111 (1%)
+        Number allocated to high speed PIOs:        0 out of   74 (0%)
+   Number of Dedicated IO used for ADC/PCIE:    0 out of   12 (0%)
+   Number of IDDR/ODDR/TDDR functions used:      0 out of   444 (0%)
+   Number of IOs using at least one DDR function: 0 (0 differential)
+   Number of Block RAMs:          0 out of 84 (0%)
+   Number of Large RAMs:          0 out of 2 (0%)
+   Number of Logical DSP Functions:
+      Number of Pre-Adders (9+9):    0 out of 112 (0%)
+      Number of Multipliers (18x18): 0 out of 56 (0%)
+         Number of 9X9:        0 (1 18x18 = 2   9x9)
+         Number of 18x18:      0 (1 18x18 = 1 18x18)
+         Number of 18x36:      0 (2 18x18 = 1 18x36)
+         Number of 36x36:      0 (4 18x18 = 1 36x36)
+      Number of 54-bit Accumulators: 0 out of 28 (0%)
+      Number of 18-bit Registers:    0 out of 112 (0%)
+   Number of Physical DSP Components:
+      Number of PREADD9:             0 out of 112 (0%)
+      Number of MULT9:               0 out of 112 (0%)
+      Number of MULT18:              0 out of 56 (0%)
+      Number of MULT18X36:           0 out of 28 (0%)
+      Number of MULT36:              0 out of 14 (0%)
+      Number of ACC54:               0 out of 28 (0%)
+
+                                    Page 1
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Number of REG18:               0 out of 112 (0%)
+   Number of ALUREGs:             0 out of 1 (0%)
+   Number of PLLs:                0 out of 3 (0%)
+   Number of DDRDLLs:             0 out of 2 (0%)
+   Number of DLLDELs:             0 out of 10 (0%)
+   Number of DQSs:                0 out of 4 (0%)
+   Number of DCSs:                0 out of 1 (0%)
+   Number of DCCs:                0 out of 62 (0%)
+   Number of PCLKDIVs:            0 out of 1 (0%)
+   Number of ECLKDIVs:            0 out of 12 (0%)
+   Number of ECLKSYNCs:           0 out of 12 (0%)
+   Number of ADC Blocks:          0 out of 1 (0%)
+   Number of SGMIICDRs:           0 out of 2 (0%)
+   Number of PMUs:                0 out of 1 (0%)
+   Number of BNKREF18s:           0 out of 3 (0%)
+   Number of BNKREF33s:           0 out of 5 (0%)
+   Number of I2CFIFOs:            0 out of 1 (0%)
+   Number of Oscillator:          0 out of 1 (0%)
+   Number of GSR:                 0 out of 1 (0%)
+   Number of Cryptographic Block: 0 out of 1 (0%)
+   Number of Config IP:           0 out of 1 (0%)
+                 TSALL:           0 out of 1 (0%)
+   Number of JTAG:                0 out of 1 (0%)
+   Number of Config LMMI:         0 out of 1 (0%)
+   Number of Config MULTIBOOT:    0 out of 1 (0%)
+   Number of SED:                 0 out of 1 (0%)
+   Number of Config WDT:          0 out of 1 (0%)
+   Number of PCIEs:               0 out of 1 (0%)
+   Number of Clocks:  1
+      Net clk_c: 1072 loads, 1072 rising, 0 falling (Driver: Port clk)
+   Number of Clock Enables:  40
+      Net u_core.un1_estate59_i: 1 loads, 1 SLICEs
+      Net u_core.idx_0_sqmuxa: 96 loads, 96 SLICEs
+      Net u_core.go_RNIF191L: 1 loads, 1 SLICEs
+      Net u_core.go_RNIE091L: 1 loads, 1 SLICEs
+      Net u_core.done_sticky_1_sqmuxa_i_o2_RNILQ42B: 32 loads, 32 SLICEs
+      Net u_core.u_csr.scratch_q5: 32 loads, 32 SLICEs
+      Net u_core.u_csr.desc_count_q6: 32 loads, 32 SLICEs
+      Net u_core.u_csr.desc_base_hi_q5: 32 loads, 32 SLICEs
+      Net u_core.u_csr.desc_base_lo_q4: 32 loads, 32 SLICEs
+      Net u_core.u_csr.is_ctrl: 1 loads, 1 SLICEs
+      Net u_core.u_csr.irq_enable_q5: 2 loads, 2 SLICEs
+      Net u_core.un1_sys_clr_2_i: 3 loads, 3 SLICEs
+      Net u_core.N_382: 2 loads, 2 SLICEs
+      Net u_core.stop_pending_1_sqmuxa_1_i_0_0: 1 loads, 1 SLICEs
+      Pin csr_read: 32 loads, 32 SLICEs (Net: csr_read_c)
+      Net u_core.u_fetch.state_RNI80BNL[0]: 64 loads, 64 SLICEs
+      Net u_core.u_fetch.un1_m_read_1_sqmuxa_0_0: 1 loads, 1 SLICEs
+      Net u_core.u_fetch.un1_rst_n_2: 32 loads, 32 SLICEs
+      Net u_core.u_fetch.un1_rst_n_3: 36 loads, 36 SLICEs
+      Net u_core.u_fetch.un1_rst_n_1: 64 loads, 64 SLICEs
+      Net u_core.un1_estate59_4_i: 1 loads, 1 SLICEs
+      Net u_core.u_mover.r_addr_0_sqmuxa_2_i: 32 loads, 32 SLICEs
+      Net u_core.u_mover.un1_clr_5_i: 64 loads, 64 SLICEs
+      Net u_core.u_mover.w_addr_0_sqmuxa_i: 32 loads, 32 SLICEs
+      Net u_core.u_mover.un1_clr_7_i: 64 loads, 64 SLICEs
+      Net u_core.u_mover.w_write_q_0_sqmuxa_1: 5 loads, 5 SLICEs
+
+                                    Page 2
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net u_core.u_mover.r_read_q_1_sqmuxa_i: 1 loads, 1 SLICEs
+      Net u_core.u_mover.un1_clr_2_i: 5 loads, 5 SLICEs
+      Net u_core.u_mover.un1_clr_9: 1 loads, 1 SLICEs
+      Net u_core.u_mover.running8: 1 loads, 1 SLICEs
+      Net u_core.u_mover.w_write_q_1_sqmuxa_1_i: 1 loads, 1 SLICEs
+      Net u_core.u_mover.un1_clr_10_i: 5 loads, 5 SLICEs
+      Net u_core.u_mover.rstate_0_sqmuxa: 5 loads, 5 SLICEs
+      Net u_core.u_arb.is_read_0_sqmuxa: 3 loads, 3 SLICEs
+      Net u_core.u_arb.un1_active_2_sqmuxa_i: 1 loads, 1 SLICEs
+      Net g_axi.u_adapt.aw_done_RNO_0: 1 loads, 1 SLICEs
+      Net g_axi.u_adapt.w_done_RNO_0: 1 loads, 1 SLICEs
+      Net g_axi.u_adapt.wbeate: 5 loads, 5 SLICEs
+      Net g_axi.u_adapt.un1_clr_1: 1 loads, 1 SLICEs
+      Net g_axi.u_adapt.aw_addr_q_0_sqmuxa: 37 loads, 37 SLICEs
+   Number of LSRs:  18
+      Pin rst_n: 2 loads, 2 SLICEs (Net: rst_n_c)
+      Net rst_n_int: 645 loads, 645 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_0: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_2: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_128: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_194: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_260: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_326: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_392: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_458: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_524: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_590: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_656: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_722: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_788: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_854: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_920: 16 loads, 16 SLICEs
+      Net u_core.u_mover.u_fifo.mem_and_986: 16 loads, 16 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net u_core.u_mover.rptr[0]: 1036 loads
+      Net u_core.u_mover.u_fifo.rptr[1]: 1026 loads
+      Net u_core.u_mover.u_fifo.rptr[2]: 1026 loads
+      Net u_core.u_mover.u_fifo.rptr[3]: 1026 loads
+      Net rst_n_int: 647 loads
+      Net u_core.u_mover.u_fifo.rptr[7]: 514 loads
+      Net u_core.m_start: 347 loads
+      Net u_core.u_mover.dir_q: 313 loads
+      Net u_core.u_mover.level: 268 loads
+      Net u_core.u_mover.u_fifo.rptr[6]: 258 loads
+
+
+
+
+
+   Number of warnings:  273
+   Number of criticals: 0
+   Number of errors:    0
+
+Design Errors/Criticals/Warnings
+--------------------------------
+
+WARNING <71003020> - map: Top module port 'avm_waitrequest' does not connect to
+     anything.
+
+                                    Page 3
+
+
+
+
+
+Design Errors/Criticals/Warnings (cont)
+---------------------------------------
+WARNING <71003020> - map: Top module port 'avm_readdata[63]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[62]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[61]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[60]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[59]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[58]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[57]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[56]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[55]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[54]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[53]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[52]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[51]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[50]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[49]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[48]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[47]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[46]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[45]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[44]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[43]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[42]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[41]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[40]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[39]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[38]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[37]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[36]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[35]' does not connect to
+
+                                    Page 4
+
+
+
+
+
+Design Errors/Criticals/Warnings (cont)
+---------------------------------------
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[34]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[33]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[32]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[31]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[30]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[29]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[28]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[27]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[26]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[25]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[24]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[23]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[22]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[21]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[20]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[19]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[18]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[17]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[16]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[15]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[14]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[13]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[12]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[11]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[10]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[9]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[8]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[7]' does not connect to
+     anything.
+
+                                    Page 5
+
+
+
+
+
+Design Errors/Criticals/Warnings (cont)
+---------------------------------------
+WARNING <71003020> - map: Top module port 'avm_readdata[6]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[5]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[4]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[3]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[2]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdatavalid' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'axi_bid[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'axi_bresp[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'axi_rid[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'axi_rresp[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[63]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[62]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[61]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[60]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[59]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[58]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[57]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[56]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[55]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[54]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[53]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[52]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[51]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[50]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[49]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[48]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[47]' does not connect to
+
+                                    Page 6
+
+
+
+
+
+Design Errors/Criticals/Warnings (cont)
+---------------------------------------
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[46]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[45]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[44]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[43]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[42]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[41]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[40]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[39]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[38]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[37]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[36]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[35]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[34]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[33]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[32]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[31]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[30]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[29]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[28]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[27]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[26]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[25]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[24]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[23]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[22]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[21]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[20]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[19]' does not connect to
+     anything.
+
+                                    Page 7
+
+
+
+
+
+Design Errors/Criticals/Warnings (cont)
+---------------------------------------
+WARNING <71003020> - map: Top module port 'hrdata[18]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[17]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[16]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[15]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[14]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[13]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[12]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[11]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[10]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[9]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[8]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[7]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[6]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[5]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[4]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[3]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[2]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hready' does not connect to anything.
+WARNING <71003020> - map: Top module port 'hresp' does not connect to anything.
+WARNING <52281049> - map: Port 'clk' drives a clock signal, its VIRTUAL_IO
+     constraint is ignored.
+WARNING <71003020> - map: Top module port 'avm_waitrequest' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[63]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[62]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[61]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[60]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[59]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[58]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[57]' does not connect to
+
+                                    Page 8
+
+
+
+
+
+Design Errors/Criticals/Warnings (cont)
+---------------------------------------
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[56]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[55]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[54]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[53]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[52]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[51]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[50]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[49]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[48]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[47]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[46]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[45]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[44]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[43]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[42]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[41]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[40]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[39]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[38]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[37]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[36]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[35]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[34]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[33]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[32]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[31]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[30]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[29]' does not connect to
+     anything.
+
+                                    Page 9
+
+
+
+
+
+Design Errors/Criticals/Warnings (cont)
+---------------------------------------
+WARNING <71003020> - map: Top module port 'avm_readdata[28]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[27]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[26]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[25]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[24]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[23]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[22]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[21]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[20]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[19]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[18]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[17]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[16]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[15]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[14]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[13]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[12]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[11]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[10]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[9]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[8]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[7]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[6]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[5]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[4]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[3]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[2]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdata[0]' does not connect to
+
+                                   Page 10
+
+
+
+
+
+Design Errors/Criticals/Warnings (cont)
+---------------------------------------
+     anything.
+WARNING <71003020> - map: Top module port 'avm_readdatavalid' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'axi_bid[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'axi_bresp[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'axi_rid[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'axi_rresp[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[63]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[62]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[61]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[60]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[59]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[58]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[57]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[56]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[55]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[54]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[53]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[52]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[51]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[50]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[49]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[48]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[47]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[46]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[45]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[44]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[43]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[42]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[41]' does not connect to
+     anything.
+
+                                   Page 11
+
+
+
+
+
+Design Errors/Criticals/Warnings (cont)
+---------------------------------------
+WARNING <71003020> - map: Top module port 'hrdata[40]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[39]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[38]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[37]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[36]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[35]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[34]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[33]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[32]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[31]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[30]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[29]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[28]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[27]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[26]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[25]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[24]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[23]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[22]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[21]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[20]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[19]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[18]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[17]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[16]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[15]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[14]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[13]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[12]' does not connect to
+
+                                   Page 12
+
+
+
+
+
+Design Errors/Criticals/Warnings (cont)
+---------------------------------------
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[11]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[10]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[9]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[8]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[7]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[6]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[5]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[4]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[3]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[2]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hrdata[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'hready' does not connect to anything.
+WARNING <71003020> - map: Top module port 'hresp' does not connect to anything.
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+-------+-------+-----------+
+| IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
+|                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_bus_error      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| sys_bus_error       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| irq                 | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[63]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[62]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[61]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[60]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[59]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[58]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[57]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[56]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 13
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| hwdata[55]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[54]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[53]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[52]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[51]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[50]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[49]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[48]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[47]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[46]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[45]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[44]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[43]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[42]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[41]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[40]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[39]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[38]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[37]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[36]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[35]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[34]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[33]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[32]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[31]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[30]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[29]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[28]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[27]          | OUTPUT    | VIRTUAL   |       |       |           |
+
+                                   Page 14
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[26]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[25]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[24]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[23]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[22]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[21]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[20]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[19]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[18]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[17]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[16]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[15]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[14]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[13]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[12]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[11]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[10]          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[9]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[8]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[7]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[6]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[5]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[4]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[3]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[2]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[1]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwdata[0]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hwrite              | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 15
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| htrans[1]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| htrans[0]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hsize[2]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hsize[1]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hsize[0]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hburst[2]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hburst[1]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| hburst[0]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[31]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[30]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[29]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[28]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[27]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[26]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[25]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[24]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[23]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[22]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[21]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[20]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[19]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[18]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[17]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[16]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[15]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[14]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[13]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[12]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[11]           | OUTPUT    | VIRTUAL   |       |       |           |
+
+                                   Page 16
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[10]           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[9]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[8]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[7]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[6]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[5]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[4]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[3]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[2]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[1]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| haddr[0]            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rready          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rvalid          | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rlast           | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rresp[1]        | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[63]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[62]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[61]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[60]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[59]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[58]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[57]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[56]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[55]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[54]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[53]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[52]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[51]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 17
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| axi_rdata[50]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[49]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[48]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[47]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[46]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[45]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[44]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[43]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[42]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[41]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[40]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[39]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[38]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[37]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[36]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[35]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[34]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[33]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[32]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[31]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[30]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[29]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[28]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[27]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[26]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[25]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[24]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[23]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[22]       | INPUT     | VIRTUAL   |       |       |           |
+
+                                   Page 18
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[21]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[20]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[19]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[18]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[17]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[16]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[15]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[14]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[13]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[12]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[11]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[10]       | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[9]        | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[8]        | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[7]        | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[6]        | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[5]        | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[4]        | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[3]        | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[2]        | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[1]        | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_rdata[0]        | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arready         | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arvalid         | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arprot[2]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arprot[1]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arprot[0]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arcache[3]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 19
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| axi_arcache[2]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arcache[1]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arcache[0]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arburst[1]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arburst[0]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arsize[2]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arsize[1]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arsize[0]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arlen[7]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arlen[6]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arlen[5]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arlen[4]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arlen[3]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arlen[2]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arlen[1]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arlen[0]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[31]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[30]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[29]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[28]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[27]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[26]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[25]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[24]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[23]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[22]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[21]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[20]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[19]      | OUTPUT    | VIRTUAL   |       |       |           |
+
+                                   Page 20
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[18]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[17]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[16]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[15]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[14]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[13]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[12]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[11]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[10]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[9]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[8]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[7]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[6]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[5]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[4]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[3]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[2]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[1]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_araddr[0]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_arid[0]         | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_bready          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_bvalid          | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_bresp[1]        | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wready          | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wvalid          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wlast           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wstrb[7]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wstrb[6]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 21
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| axi_wstrb[5]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wstrb[4]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wstrb[3]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wstrb[2]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wstrb[1]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wstrb[0]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[63]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[62]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[61]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[60]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[59]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[58]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[57]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[56]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[55]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[54]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[53]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[52]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[51]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[50]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[49]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[48]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[47]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[46]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[45]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[44]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[43]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[42]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[41]       | OUTPUT    | VIRTUAL   |       |       |           |
+
+                                   Page 22
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[40]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[39]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[38]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[37]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[36]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[35]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[34]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[33]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[32]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[31]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[30]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[29]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[28]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[27]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[26]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[25]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[24]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[23]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[22]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[21]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[20]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[19]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[18]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[17]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[16]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[15]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[14]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[13]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 23
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| axi_wdata[12]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[11]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[10]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[9]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[8]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[7]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[6]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[5]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[4]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[3]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[2]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[1]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_wdata[0]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awready         | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awvalid         | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awprot[2]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awprot[1]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awprot[0]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awcache[3]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awcache[2]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awcache[1]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awcache[0]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awburst[1]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awburst[0]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awsize[2]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awsize[1]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awsize[0]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awlen[7]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awlen[6]        | OUTPUT    | VIRTUAL   |       |       |           |
+
+                                   Page 24
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awlen[5]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awlen[4]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awlen[3]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awlen[2]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awlen[1]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awlen[0]        | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[31]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[30]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[29]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[28]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[27]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[26]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[25]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[24]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[23]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[22]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[21]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[20]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[19]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[18]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[17]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[16]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[15]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[14]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[13]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[12]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[11]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[10]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 25
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| axi_awaddr[9]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[8]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[7]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[6]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[5]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[4]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[3]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[2]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[1]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awaddr[0]       | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| axi_awid[0]         | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_burstcount[4]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_burstcount[3]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_burstcount[2]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_burstcount[1]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_burstcount[0]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_byteenable[7]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_byteenable[6]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_byteenable[5]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_byteenable[4]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_byteenable[3]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_byteenable[2]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_byteenable[1]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_byteenable[0]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[63]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[62]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[61]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[60]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[59]   | OUTPUT    | VIRTUAL   |       |       |           |
+
+                                   Page 26
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[58]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[57]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[56]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[55]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[54]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[53]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[52]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[51]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[50]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[49]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[48]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[47]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[46]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[45]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[44]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[43]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[42]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[41]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[40]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[39]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[38]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[37]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[36]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[35]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[34]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[33]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[32]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[31]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 27
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| avm_writedata[30]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[29]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[28]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[27]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[26]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[25]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[24]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[23]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[22]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[21]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[20]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[19]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[18]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[17]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[16]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[15]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[14]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[13]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[12]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[11]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[10]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[9]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[8]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[7]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[6]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[5]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[4]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[3]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[2]    | OUTPUT    | VIRTUAL   |       |       |           |
+
+                                   Page 28
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[1]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_writedata[0]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_write           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_read            | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[31]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[30]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[29]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[28]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[27]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[26]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[25]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[24]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[23]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[22]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[21]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[20]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[19]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[18]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[17]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[16]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[15]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[14]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[13]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[12]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[11]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[10]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[9]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[8]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 29
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| avm_address[7]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[6]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[5]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[4]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[3]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[2]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[1]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avm_address[0]      | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_response[1]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_response[0]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdatavalid  | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[63]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[62]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[61]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[60]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[59]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[58]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[57]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[56]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[55]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[54]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[53]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[52]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[51]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[50]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[49]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[48]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[47]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[46]   | INPUT     | VIRTUAL   |       |       |           |
+
+                                   Page 30
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[45]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[44]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[43]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[42]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[41]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[40]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[39]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[38]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[37]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[36]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[35]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[34]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[33]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[32]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[31]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[30]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[29]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[28]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[27]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[26]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[25]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[24]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[23]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[22]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[21]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[20]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[19]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[18]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 31
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| host_readdata[17]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[16]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[15]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[14]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[13]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[12]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[11]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[10]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[9]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[8]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[7]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[6]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[5]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[4]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[3]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[2]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[1]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_readdata[0]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_waitrequest    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_burstcount[4]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_burstcount[3]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_burstcount[2]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_burstcount[1]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_burstcount[0]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_byteenable[7]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_byteenable[6]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_byteenable[5]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_byteenable[4]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_byteenable[3]  | OUTPUT    | VIRTUAL   |       |       |           |
+
+                                   Page 32
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_byteenable[2]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_byteenable[1]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_byteenable[0]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[63]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[62]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[61]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[60]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[59]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[58]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[57]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[56]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[55]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[54]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[53]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[52]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[51]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[50]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[49]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[48]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[47]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[46]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[45]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[44]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[43]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[42]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[41]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[40]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[39]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 33
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| host_writedata[38]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[37]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[36]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[35]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[34]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[33]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[32]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[31]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[30]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[29]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[28]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[27]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[26]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[25]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[24]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[23]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[22]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[21]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[20]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[19]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[18]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[17]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[16]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[15]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[14]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[13]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[12]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[11]  | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[10]  | OUTPUT    | VIRTUAL   |       |       |           |
+
+                                   Page 34
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[9]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[8]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[7]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[6]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[5]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[4]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[3]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[2]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[1]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_writedata[0]   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_write          | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_read           | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[63]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[62]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[61]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[60]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[59]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[58]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[57]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[56]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[55]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[54]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[53]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[52]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[51]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[50]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[49]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[48]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 35
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| host_address[47]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[46]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[45]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[44]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[43]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[42]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[41]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[40]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[39]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[38]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[37]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[36]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[35]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[34]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[33]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[32]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[31]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[30]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[29]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[28]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[27]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[26]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[25]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[24]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[23]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[22]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[21]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[20]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[19]    | OUTPUT    | VIRTUAL   |       |       |           |
+
+                                   Page 36
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[18]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[17]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[16]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[15]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[14]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[13]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[12]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[11]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[10]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[9]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[8]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[7]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[6]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[5]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[4]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[3]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[2]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[1]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| host_address[0]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_waitrequest     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdatavalid   | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[31]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[30]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[29]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[28]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[27]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[26]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[25]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 37
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| csr_readdata[24]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[23]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[22]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[21]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[20]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[19]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[18]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[17]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[16]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[15]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[14]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[13]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[12]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[11]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[10]    | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[9]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[8]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[7]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[6]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[5]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[4]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[3]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[2]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[1]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_readdata[0]     | OUTPUT    | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[31]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[30]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[29]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[28]   | INPUT     | VIRTUAL   |       |       |           |
+
+                                   Page 38
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[27]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[26]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[25]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[24]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[23]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[22]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[21]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[20]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[19]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[18]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[17]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[16]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[15]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[14]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[13]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[12]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[11]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[10]   | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[9]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[8]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[7]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[6]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[5]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[4]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[3]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[2]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[1]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_writedata[0]    | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                   Page 39
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| csr_write           | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_read            | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_address[7]      | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_address[6]      | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_address[5]      | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_address[4]      | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_address[3]      | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_address[2]      | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_address[1]      | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| csr_address[0]      | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rst_n               | INPUT     | VIRTUAL   |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| clk                 | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+Removed logic
+-------------
+
+Block GSR_INST undriven or does not drive anything - clipped.
+Block VCC_0 was optimized away.
+Block g_rst_sync.u_rst_sync/sync_q_RNIM3F37[1] was optimized away.
+Block rst_n_pad_RNIQR5E7 was optimized away.
+
+Constraint Summary
+------------------
+
+   Total number of constraints: 54
+   Total number of constraints dropped: 0
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 15 secs
+   Total REAL Time: 15 secs
+   Peak Memory Usage: 412 MB
+Checksum -- map: 48d03df472fe001ac9250bee6f67e4294d88d98
+
+
+
+
+
+
+
+
+
+
+
+
+                                   Page 40
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2026 Lattice Semiconductor
+     Corporation,  All rights reserved.

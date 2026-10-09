@@ -63,3 +63,7 @@ quartus/example/pcie_dma_example/
 Thumbs.db
 .vscode/
 .idea/
+
+# ── Lattice Radiant build outputs (reports are kept in lattice/reports/) ─────
+lattice/build/
+lattice/build_*/

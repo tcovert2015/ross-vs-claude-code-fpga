@@ -1,0 +1,27 @@
+Questa Lattice OEM Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+Start time: 17:07:40 on Oct 09,2026
+vlog -sv -work sim/build/questa_work_AXI4 "+incdir+rtl/pkg" "+define+USE_AXI" rtl/pkg/dma_pkg.sv rtl/core/dma_fifo.sv rtl/core/dma_arbiter.sv rtl/core/dma_csr.sv rtl/core/dma_descriptor_fetch.sv rtl/core/dma_data_mover.sv rtl/core/dma_engine_core.sv rtl/core/reset_sync.sv rtl/adapters/gmm_to_avalon.sv rtl/adapters/gmm_to_axi4.sv rtl/adapters/gmm_to_ahb.sv rtl/top/pcie_dma_top.sv sim/models/avalon_mem_model.sv sim/models/axi_mem_model.sv sim/models/ahb_mem_model.sv sim/tb_pcie_dma.sv 
+** Note: (vlog-220) 'D:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+-- Compiling package dma_pkg
+-- Compiling module dma_fifo
+-- Compiling module dma_arbiter
+-- Importing package dma_pkg
+-- Compiling module dma_csr
+-- Compiling module dma_descriptor_fetch
+-- Compiling module dma_data_mover
+-- Compiling module dma_engine_core
+-- Compiling module reset_sync
+-- Compiling module gmm_to_avalon
+-- Compiling module gmm_to_axi4
+-- Compiling module gmm_to_ahb
+-- Compiling module pcie_dma_top
+-- Compiling module avalon_mem_model
+-- Compiling module axi_mem_model
+-- Compiling module ahb_mem_model
+-- Compiling module tb_pcie_dma
+
+Top level modules:
+	ahb_mem_model
+	tb_pcie_dma
+End time: 17:07:40 on Oct 09,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
