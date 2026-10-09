@@ -1,0 +1,26 @@
+# scope_util.qsf — standalone scope_top utilization build (issue #12 sweep).
+# PROBE_W / DEPTH_LOG2 are injected per-config by quartus_sweep.sh (search-and-replace of the two
+# set_parameter lines below), so a single project file drives the whole 3x3 sweep.
+set_global_assignment -name FAMILY "Agilex 3"
+set_global_assignment -name DEVICE A3CY100BM16AE7S
+set_global_assignment -name TOP_LEVEL_ENTITY scope_top
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_pkg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/prim/prim_ff_sync.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/prim/prim_ram_1r1w.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/prim/prim_fifo_sync.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/prim/prim_fifo_async.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_core.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_csr.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_trigger.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_rle.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_drain.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/xport/scope_uart.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_top.sv
+
+# per-config knobs (rewritten by the sweep script)
+set_parameter -name PROBE_W 32
+set_parameter -name DEPTH_LOG2 12
+set_parameter -name RLE_EN 1
+set_parameter -name XPORT "UART"

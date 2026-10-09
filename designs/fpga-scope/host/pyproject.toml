@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fpgapa-scope"
+version = "1.0.0"
+description = "Host tool for the fpga-scope vendor-neutral embedded logic analyzer"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "FPGA Professional Association" }]
+dependencies = []                       # stdlib only; pyserial is an optional extra
+
+[project.optional-dependencies]
+serial = ["pyserial>=3.5"]
+test = ["pytest>=7"]
+
+[project.scripts]
+fpgapa-scope = "fpgapa_scope.cli:main"
+
+[tool.setuptools]
+packages = ["fpgapa_scope"]

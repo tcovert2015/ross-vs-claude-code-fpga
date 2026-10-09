@@ -1,0 +1,34 @@
+[*] fpga-scope AXC3000 HyperRAM capture — GTKWave view
+[dumpfile] "axc3000_hyperram_cs_focus.vcd"
+[timestart] 0
+[size] 1600 900
+[pos] -1 -1
+@28
+scope.trigger
+@200
+-HyperBus pins
+@28
+scope.cs_n
+scope.ck_en
+scope.dq_oe
+scope.rwds_oe
+scope.rwds_o
+scope.rwds_i
+scope.rd_arm
+@200
+-controller / front-end
+@22
+scope.ctrl_state[3:0]
+scope.fe_state[1:0]
+scope.ctrl_seg[5:0]
+scope.dq_o_A[7:0]
+@200
+-Avalon handshake
+@28
+scope.av_read
+scope.av_write
+scope.av_wait
+scope.av_rvalid
+scope.rst_n
+[pattern_trace] 1
+[pattern_trace] 0

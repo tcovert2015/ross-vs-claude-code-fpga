@@ -1,0 +1,32 @@
+# =============================================================================
+# i3c_target.qsf  -  Quartus Prime Pro project for the I3C SDR+IBI Target
+# Device-agnostic RTL; the only vendor-specific file is i3c_io_altera.sv.
+# =============================================================================
+set_global_assignment -name FAMILY "Cyclone 10 GX"
+set_global_assignment -name DEVICE 10CX220YF780E5G
+set_global_assignment -name TOP_LEVEL_ENTITY i3c_target_top
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+
+# ---- source files (package first) ----
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_pkg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_sda_mux.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_bus_frontend.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_bit_engine.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_framer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_hdr_exit_detector.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_fifo.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_protocol_fsm.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_daa.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_ccc.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_ibi.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_error_recovery.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_regfile.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_avalon_mm.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_io_altera.sv
+set_global_assignment -name SYSTEMVERILOG_FILE i3c_target_top.sv
+
+# ---- timing ----
+set_global_assignment -name SDC_FILE i3c_target.sdc
+
+# SystemVerilog 2012
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005

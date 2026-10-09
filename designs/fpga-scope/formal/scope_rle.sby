@@ -1,0 +1,27 @@
+# scope_rle.sby — SymbiYosys proof of RLE expansion bound, property (c), issue #9.
+#
+#   (c) the RLE encoder never expands: word count <= sample count + 1 (the single in-flight
+#       skid word). A free counter pair (f_samples on enable&in_valid, f_words on word_valid)
+#       inside scope_rle under `ifdef FORMAL asserts f_words <= f_samples + 1 every cycle.
+#
+# Reduced parameterization (PROBE_W=4, CNT_W=3) keeps the bit-vector state small; the encoder
+# logic is parametric and the bound is width-independent. All inputs (enable, in_data,
+# in_valid, flush) are unconstrained. BMC to depth 40 (btor btormc, ~seconds) — the same
+# bounded-proof form as scope_top's property (d); the exhaustive tb_rle run (400+ samples per
+# class, RTL word stream == golden model) is the complementary unbounded evidence.
+
+[options]
+mode bmc
+depth 40
+multiclock off
+
+[engines]
+btor btormc
+
+[script]
+read_verilog -sv -formal -DFORMAL scope_rle.sv
+chparam -set PROBE_W 4 -set CNT_W 3 scope_rle
+prep -top scope_rle
+
+[files]
+../rtl/scope_rle.sv

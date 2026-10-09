@@ -1,0 +1,31 @@
+fpga-scope — Vendor-Neutral Embedded Logic Analyzer
+Copyright 2026 FPGA Professional Association
+
+Licensed under the Apache License, Version 2.0 (the "License"). See the LICENSE
+file in this repository for the full terms.
+
+-------------------------------------------------------------------------------
+Origin and clean-room statement
+-------------------------------------------------------------------------------
+
+This is an ORIGINAL implementation of an embedded logic analyzer (ILA) core:
+capture, trigger, run-length encoding, CSR, drain, and transport RTL plus the
+Python host tooling and documentation in this repository were written from the
+design document in docs/PLAN.md. No source code from any vendor ILA
+(SignalTap, ChipScope/ILA, Reveal) or from LiteScope was copied, translated,
+or adapted into this repository.
+
+The repository layout, simulation harness conventions, and CI structure follow
+the sibling "hyperram" project of the same organization (Apache-2.0).
+
+The clock-domain-crossing FIFO follows the well-known publicly published
+design technique described in Clifford E. Cummings' SNUG papers on
+asynchronous FIFO design (gray-coded pointer comparison). The technique is
+used as published engineering knowledge; no code was copied.
+
+"SignalTap" is a trademark of Intel/Altera; "ChipScope" and "ILA" of
+AMD/Xilinx; "Reveal" of Lattice Semiconductor. These names are used only to
+describe the class of tool this project replaces; this project is independent
+and unaffiliated.
+
+No warranty is provided. See the LICENSE file, Sections 7 and 8.

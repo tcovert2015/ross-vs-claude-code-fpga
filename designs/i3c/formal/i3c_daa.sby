@@ -1,0 +1,23 @@
+[tasks]
+bmc
+prove
+cover
+
+[options]
+bmc:   mode bmc
+bmc:   depth 72
+prove: mode prove
+prove: depth 20
+cover: mode cover
+cover: depth 84
+
+[engines]
+smtbmc boolector
+
+[script]
+read_verilog -sv -formal -I. i3c_daa.sv
+prep -top i3c_daa
+
+[files]
+../rtl/i3c_pkg.sv
+../rtl/i3c_daa.sv

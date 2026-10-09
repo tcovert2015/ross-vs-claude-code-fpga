@@ -1,0 +1,18 @@
+# STA result by path class (Quartus Prime Pro 25.3, Cyclone 10 GX, 8.0 ns / 125 MHz)
+# After issue #1 (avs_readdata registered -> 2-cycle Avalon read latency).
+# Reproduce: ./syn/altera/build.sh all ; then report_timing -to [all_registers] vs -to [all_outputs]
+#
+# Register-to-register + input paths (the actual logic):   worst setup +2.154 ns -> MET (0 violated)
+# Hold (all):                                               worst       +0.021 ns -> MET
+# Combinational Avalon OUTPUT pins:                         worst       -1.811 ns -> avs_waitrequest only
+#
+# Unconstrained ports (report_ucp): 1 input + 1 output (tied-off avl_clk + SDA inout),
+#   down from 35 in / 28 out before the SDC was completed.
+#
+# Registering avs_readdata closed the old worst path (RX-FIFO RAM read -> readback mux ->
+# output pin, previously -2.858 ns). The only remaining negative-slack output is
+# avs_waitrequest, which Avalon REQUIRES to be combinational (cannot be registered): its
+# port -> decode/compare -> port path runs through the FPGA pad buffers (~3.65 ns each),
+# ~8.7 ns, above the 8 ns period regardless of I/O budget. This is an out-of-context
+# artifact -- in-system (Avalon = on-chip IP boundary) there are no pad buffers and it
+# closes. See syn/altera/README.md. Internal logic meets 125 MHz (reg-to-reg Fmax ~244 MHz).

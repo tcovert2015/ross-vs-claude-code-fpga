@@ -1,0 +1,24 @@
+[tasks]
+bmc
+prove
+cover
+
+[options]
+bmc:   mode bmc
+bmc:   depth 20
+prove: mode prove
+prove: depth 12
+cover: mode cover
+cover: depth 24
+
+[engines]
+smtbmc boolector
+
+[script]
+read_verilog -sv -formal -I. i3c_fifo.sv
+chparam -set DW 4 -set DEPTH 4 i3c_fifo
+prep -top i3c_fifo
+
+[files]
+../rtl/i3c_pkg.sv
+../rtl/i3c_fifo.sv

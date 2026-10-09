@@ -1,0 +1,95 @@
+Timing Analyzer report for i3c_target
+Mon Jun 29 14:12:12 2026
+Quartus Prime Version 25.3.0 Build 109 09/24/2025 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Delays: Final Snapshot
+  4. Parallel Compilation
+  5. SDC File List
+  6. Clocks
+  7. Design Closure Summary
+  8. Fmax Summary
+  9. Setup Summary
+ 10. Hold Summary
+ 11. Recovery Summary
+ 12. Removal Summary
+ 13. Minimum Pulse Width Summary
+ 14. Metastability Summary Slow 900mV 100C Model
+ 15. Metastability Summary Slow 900mV 0C Model
+ 16. Metastability Summary Fast 900mV 100C Model
+ 17. Metastability Summary Fast 900mV 0C Model
+ 18. Board Trace Model Assignments
+ 19. Input Transition Times
+ 20. Signal Integrity Metrics (Slow 900mv 100c Model)
+ 21. Setup Transfers
+ 22. Hold Transfers
+---- Setup Reports ----
+     ---- clk Reports ----
+           23. Command Info
+           24. Summary of Paths
+           25. Path #1: Setup slack is 3.516 
+           26. Path #2: Setup slack is 3.516 
+           27. Path #3: Setup slack is 3.516 
+           28. Path #4: Setup slack is 3.516 
+           29. Path #5: Setup slack is 3.516 
+           30. Path #6: Setup slack is 3.516 
+           31. Path #7: Setup slack is 3.516 
+           32. Path #8: Setup slack is 3.516 
+           33. Path #9: Setup slack is 3.562 
+           34. Path #10: Setup slack is 3.562 
+---- Hold Reports ----
+     ---- clk Reports ----
+           35. Command Info
+           36. Summary of Paths
+           37. Path #1: Hold slack is 0.020 
+           38. Path #2: Hold slack is 0.020 
+           39. Path #3: Hold slack is 0.020 
+           40. Path #4: Hold slack is 0.021 
+           41. Path #5: Hold slack is 0.021 
+           42. Path #6: Hold slack is 0.021 
+           43. Path #7: Hold slack is 0.021 
+           44. Path #8: Hold slack is 0.022 
+           45. Path #9: Hold slack is 0.022 
+           46. Path #10: Hold slack is 0.022 
+ 47. Timing Analyzer Messages
+---- Unconstrained Paths Reports ----
+      48. Unconstrained Paths Summary
+      49. Clock Status Summary
+     ---- Setup Analysis Reports ----
+           50. Unconstrained Input Ports
+           51. Unconstrained Output Ports
+     ---- Hold Analysis Reports ----
+           52. Unconstrained Input Ports
+           53. Unconstrained Output Ports
+ 54. INI Usage
+ 55. Multicorner Timing Analysis Summary
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                    ;

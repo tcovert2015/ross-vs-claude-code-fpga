@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "vivado-mcp": {
+      "type": "stdio",
+      "command": "C:/Users/tcove/tools/vivado-mcp-server.exe",
+      "args": ["--stdio-bridge"],
+      "env": { "VIVADO_PATH": "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat" }
+    },
+    "amd-doc-search": {
+      "type": "http",
+      "url": "https://ross.amd.com/mcp/doc-search"
+    }
+  }
+}

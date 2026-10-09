@@ -1,0 +1,94 @@
+name: CI
+
+# Build and run the self-checking Verilator testbenches for the fpga-scope embedded logic
+# analyzer. sim/run.sh uses `verilator --binary --timing`, which requires Verilator >= 5.0.
+# ubuntu-24.04 ships Verilator 5.020 in apt, matching the version used in development.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *'   # nightly random-config soak (the soak job is gated to this + dispatch)
+
+jobs:
+  verilator-sim:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Verilator + toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y verilator build-essential
+          verilator --version
+
+      - name: Run testbenches
+        run: bash sim/run.sh
+
+  # SymbiYosys formal proofs (issue #6+): BMC + k-induction with the OSS CAD Suite
+  # (ubuntu's apt has yosys but no sby package). sby resolves [files] relative to the
+  # invocation directory, so run from formal/.
+  formal:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install OSS CAD Suite (yosys + sby + solvers)
+        uses: YosysHQ/setup-oss-cad-suite@v3
+
+      - name: Prove scope_core properties (a) and (b)
+        run: cd formal && sby -f scope_core.sby
+
+      - name: Check scope_top property (d) — drain/FIFO discipline
+        run: cd formal && sby -f scope_top.sby
+
+      - name: Check scope_rle property (c) — RLE expansion bound
+        run: cd formal && sby -f scope_rle.sby
+
+  # Python host package (issue #10): unit tests + codec cross-check against the SV golden model,
+  # and a Verilator co-simulation driving the REAL scope_top over a byte pipe (test_cosim.py).
+  # Verilator here matches the sim job's toolchain so the co-sim build succeeds in-job.
+  host:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Verilator + toolchain (for the co-sim)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y verilator build-essential
+          verilator --version
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install + test
+        run: |
+          python -m pip install -e host
+          python -m pip install pytest
+          python -m pytest host/tests -q
+
+  # Random-config soak (issue #13, gate 1): nightly + on demand only — it's minutes-long, so it
+  # is kept off per-PR CI. Runs seeded random configs through the co-sim vs the golden model.
+  soak:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Verilator + toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y verilator build-essential
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Soak
+        run: |
+          python -m pip install -e host
+          CONFIGS=30 bash sim/soak.sh

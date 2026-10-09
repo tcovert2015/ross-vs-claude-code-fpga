@@ -1,0 +1,9 @@
+Synthesis Status : Successful - Mon Jun 29 14:24:37 2026
+Revision Name : i3c_target
+Top-level Entity Name : i3c_target_top
+Family : Cyclone 10 GX
+Quartus Prime Version : 25.3.0 Build 109 09/24/2025 SC Pro Edition
+Device : 10CX220YF780E5G
+Logic utilization estimate (in ALMs) : 492 / 80,330 ( < 1 % )
+Total registers : 319
+Estimated DSP Blocks Post-Merging : 0

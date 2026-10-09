@@ -1,0 +1,22 @@
+# Vivado / xsim scratch
+*.jou
+*.log.bak
+.Xil/
+xsim.dir/
+webtalk*
+*.wdb
+*.pb
+.vivado-ai/
+vivado_*.backup.*
+*.str
+hs_err_pid*
+# keep committed reports/logs; drop everything else Vivado generates under build dirs
+**/build/
+**/.runs/
+**/.cache/
+**/.hw/
+**/.ip_user_files/
+**/.sim/
+**/*.xpr
+__pycache__/
+results/**/transcript-*.jsonl.tmp

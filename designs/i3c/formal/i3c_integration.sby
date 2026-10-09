@@ -1,0 +1,53 @@
+[tasks]
+bmc
+cover
+
+[options]
+bmc:   mode bmc
+bmc:   depth 40
+cover: mode cover
+cover: depth 120
+# NOTE: a 'prove' (k-induction) task on the flattened 13-module top is NOT included.
+# basecase + BMC(depth 40) pass, but the induction step needs auxiliary reachable-
+# state invariants (esp. a_f3_top, the registered ADAPT-1 F-3 gate) - the F-7 risk
+# from docs/critique.md. Per-module properties ARE k-induction proven (unbounded);
+# the cross-cutting F-1/F-2/F-3 top properties are BMC-bounded here. Strengthening
+# them to unbounded induction is the tracked hardening item (docs/verification_status.md).
+
+[engines]
+smtbmc boolector
+
+[script]
+# Read the whole Target with -formal (defines FORMAL -> abstract-bus model in the
+# top, and the per-module unit properties). The integration safety properties live
+# in i3c_target_top; the per-module unit assumes/asserts are STRIPPED so they can
+# neither over-constrain (vacuity) nor duplicate work - at integration every
+# internal signal is driven by real RTL, not free, so the unit-level environment
+# assumes are unnecessary.  Only clk/rst_n, the Avalon agent bus and the abstract
+# controller (f_ctl_oe/f_ctl_o/f_scl_drive) remain free; they are constrained by
+# the documented controller env inside the top (am_scl_dwell, am_ca1..am_ca3).
+read_verilog -sv -formal -I. i3c_pkg.sv i3c_sda_mux.sv i3c_bus_frontend.sv i3c_bit_engine.sv i3c_framer.sv i3c_protocol_fsm.sv i3c_daa.sv i3c_ccc.sv i3c_ibi.sv i3c_error_recovery.sv i3c_hdr_exit_detector.sv i3c_fifo.sv i3c_regfile.sv i3c_avalon_mm.sv i3c_target_top.sv
+# Small FIFOs keep the BMC state tractable (behaviour is depth-independent).
+chparam -set RX_DEPTH 2 -set TX_DEPTH 2 i3c_target_top
+hierarchy -top i3c_target_top
+proc
+# Keep ONLY the top-level integration properties; drop every per-module $check.
+chformal -remove t:$check i3c_target_top/t:$check %d
+prep -top i3c_target_top -flatten
+
+[files]
+../rtl/i3c_pkg.sv
+../rtl/i3c_sda_mux.sv
+../rtl/i3c_bus_frontend.sv
+../rtl/i3c_bit_engine.sv
+../rtl/i3c_framer.sv
+../rtl/i3c_protocol_fsm.sv
+../rtl/i3c_daa.sv
+../rtl/i3c_ccc.sv
+../rtl/i3c_ibi.sv
+../rtl/i3c_error_recovery.sv
+../rtl/i3c_hdr_exit_detector.sv
+../rtl/i3c_fifo.sv
+../rtl/i3c_regfile.sv
+../rtl/i3c_avalon_mm.sv
+../rtl/i3c_target_top.sv

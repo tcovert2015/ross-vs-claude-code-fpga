@@ -1,0 +1,65 @@
+# ── Simulation (Icarus / general) ──────────────────────────────────────────
+sim/build/
+*.vvp
+*.vcd
+*.fst
+*.lxt
+*.lxt2
+*.ghw
+*.wlf
+transcript
+work/
+
+# ── Verilator ───────────────────────────────────────────────────────────────
+obj_dir/
+
+# ── Formal (SymbiYosys workdirs, named after the .sby basename) ──────────────
+formal/fifo/
+formal/fifo_prove/
+formal/arbiter/
+formal/axi4/
+formal/ahb/
+formal/avalon/
+formal/data_mover/
+formal/descriptor_fetch/
+
+# ── Quartus / Intel-Altera build outputs ─────────────────────────────────────
+quartus/db/
+quartus/incremental_db/
+quartus/output_files/
+quartus/hc_output/
+quartus/simulation/
+quartus/timing/
+quartus/.qsys_edit/
+quartus/*.qws
+quartus/*.rpt
+quartus/*.summary
+quartus/*.smsg
+quartus/*.pin
+quartus/*.pof
+quartus/*.sof
+quartus/*.jdi
+quartus/*.done
+quartus/*.qarlog
+quartus/*.bak
+quartus/*.sld
+PLLJ_PLLSPE_INFO.txt
+
+# ── Platform Designer (Qsys) example generation outputs ──────────────────────
+quartus/example/*.qsys
+quartus/example/*.sopcinfo
+quartus/example/*.ip
+quartus/example/pcie_dma_example/
+
+# ── Logs & temp ──────────────────────────────────────────────────────────────
+*.log
+*.jou
+
+# ── Editor / OS cruft ────────────────────────────────────────────────────────
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

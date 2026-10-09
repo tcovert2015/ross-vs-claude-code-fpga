@@ -1,0 +1,83 @@
+=== Quartus Analysis & Synthesis ===
+        Info (286033): Parameter RDADDRESS_ACLR set to OFF
+        Info (286033): Parameter RDCONTROL_REG set to UNREGISTERED
+        Info (286033): Parameter RDCONTROL_ACLR set to OFF
+        Info (286033): Parameter INDATA_REG set to INCLOCK
+        Info (286033): Parameter INDATA_ACLR set to OFF
+        Info (286033): Parameter OUTDATA_REG set to UNREGISTERED
+        Info (286033): Parameter OUTDATA_ACLR set to OFF
+        Info (286033): Parameter LPM_FILE set to UNUSED
+        Info (286033): Parameter RAM_BLOCK_TYPE set to LUTRAM
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "avs_readdata[24..31]" is stuck at GND File: C:/i3c_quartus/i3c_target_top.sv Line: 60
+Info (17049): 14 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 969 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 48 input pins
+    Info (21059): Implemented 35 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 866 logic cells
+    Info (21064): Implemented 19 RAM segments
+Info: Successfully synthesized partition
+Info: Saving post-synthesis snapshots for 1 partition(s)
+Info: Quartus Prime Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 809 megabytes
+    Info: Processing ended: Mon Jun 29 15:28:38 2026
+    Info: Elapsed time: 00:00:06
+    Info: System process ID: 18284
+=== Quartus Fitter (place & route) ===
+Info (25133): Total time spent on timing analysis during Placement is 0.00 seconds.
+Info (22300): Design uses Placement Effort Multiplier = 1.0.
+Info (170193): Fitter routing operations beginning
+Info (170202): The Fitter performed an Auto Fit compilation.  No optimizations were skipped because the design's timing and routability requirements required full optimization.
+Info (25133): Total time spent on timing analysis during Routing is 0.15 seconds.
+Info (16607): Fitter routing operations ending: elapsed time is 00:00:10
+Info (22300): Design uses Placement Effort Multiplier = 1.0.
+Info (25133): Total time spent on timing analysis during Post-Routing is 0.00 seconds.
+Info (16557): Fitter post-fit operations ending: elapsed time is 00:00:06
+Info (20274): Successfully committed final database.
+Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 3503 megabytes
+    Info: Processing ended: Mon Jun 29 15:29:27 2026
+    Info: Elapsed time: 00:00:48
+    Info: System process ID: 27944
+=== Quartus STA ===
+    Info: on the Quartus Prime software download page.
+    Info: Processing started: Mon Jun 29 15:29:27 2026
+    Info: System process ID: 11912
+Info: Command: quartus_sta i3c_target
+Info: qsta_default_script.tcl version: #1
+Info (16677): Loading final database.
+Info (16734): Loading "final" snapshot for partition "root_partition".
+Info (16678): Successfully loaded final database: elapsed time is 00:00:01.
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '100'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (19539): Reading the HDL-embedded SDC files elapsed 00:00:00.
+Info (332104): Reading SDC File: 'i3c_target.sdc'
+Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
+Info (19449): Reading SDC files elapsed 00:00:00.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.811
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):    -1.811             -27.641        27        clk   Slow 900mV 0C Model 
+Info (332146): Worst-case hold slack is 0.021
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):     0.021               0.000         0        clk   Fast 900mV 0C Model 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332140): No Setup paths to report
+Info (332140): No Recovery paths to report
+Info (332146): Worst-case minimum pulse width slack is 3.816
+    Info (332119):     Slack       End Point TNS Failing End Points      Clock Worst-Case Operating Conditions 
+    Info (332119): ========= =================== ========= ========== ===================== 
+    Info (332119):     3.816               0.000         0        clk   Slow 900mV 0C Model 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 2042 megabytes
+    Info: Processing ended: Mon Jun 29 15:29:32 2026
+    Info: Elapsed time: 00:00:05
+    Info: System process ID: 11912

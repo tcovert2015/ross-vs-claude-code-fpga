@@ -1,0 +1,22 @@
+[tasks]
+bmc
+prove
+cover
+
+[options]
+bmc:   mode bmc
+bmc:   depth 24
+prove: mode prove
+prove: depth 16
+cover: mode cover
+cover: depth 24
+
+[engines]
+smtbmc boolector
+
+[script]
+read_verilog -sv -formal -I. i3c_bus_frontend.sv
+prep -top i3c_bus_frontend
+
+[files]
+../rtl/i3c_bus_frontend.sv

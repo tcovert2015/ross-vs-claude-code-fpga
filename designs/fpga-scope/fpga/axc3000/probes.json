@@ -1,0 +1,18 @@
+{
+  "cs_n":       [0, 0],
+  "ck_en":      [1, 1],
+  "dq_oe":      [2, 2],
+  "rwds_oe":    [3, 3],
+  "rwds_o":     [4, 4],
+  "rwds_i":     [5, 5],
+  "rd_arm":     [6, 6],
+  "rst_n":      [7, 7],
+  "fe_state":   [9, 8],
+  "ctrl_state": [13, 10],
+  "av_read":    [14, 14],
+  "av_write":   [15, 15],
+  "av_wait":    [16, 16],
+  "av_rvalid":  [17, 17],
+  "ctrl_seg":   [23, 18],
+  "dq_o_A":     [31, 24]
+}

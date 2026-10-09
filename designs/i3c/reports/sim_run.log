@@ -1,0 +1,40 @@
+# Simulation — Icarus Verilog version 14.0 (devel) (s20260301-220-g78750c51d-dirty)
+# toolchain: OSS CAD Suite (source tools/env.sh); command: ./sim/run.sh
+
+
+=== A. Avalon register sanity ===
+  [PASS] PID_LOW == 0x12345678 (got 0x12345678)
+  [PASS] IDENT[7:0]==BCR 0x07 (got 0x07)
+  [PASS] IDENT[15:8]==DCR 0x00 (got 0x00)
+  [PASS] GETCAPS b1=0x00 b2=0x02 (got 0x00000200)
+  [PASS] CTRL core_en+accept_en (got 0x03)
+  [PASS] da_valid==0 before DAA
+  [PASS] tx_level==0 initially
+  [PASS] tx_level==1 after push (got 1)
+  [PASS] tx_level==0 after flush_tx
+
+=== B. I3C bus: broadcast 0x7E ACK (proof-of-life) ===
+  [PASS] Target ACKs broadcast 0x7E+W
+
+=== C. ENTDAA dynamic address assignment ===
+  [PASS] ENTDAA: 7E+W ACK
+  [PASS] ENTDAA: 7E+R ACK (unassigned target)
+  [PASS] ENTDAA: target ACKs assigned DA
+  [PASS] DA latched = 0x08 valid=1
+
+=== D. Private write / read (requires DA from C) ===
+  [PASS] PrivWr: DA+W ACK
+  [PASS] PrivWr byte in RX FIFO = 0x5c
+  [PASS] PrivRd: DA+R ACK
+  [PASS] PrivRd byte from target = 0xc3
+
+=== E. GETSTATUS CCC ===
+  [PASS] GETSTATUS: 7E+W ACK
+  [PASS] GETSTATUS: DA+R ACK
+  [PASS] GETSTATUS responds, status high byte=0x00 (got hi=0x00 lo=0xff)
+
+========================================
+ RESULT: 21 passed, 0 failed
+========================================
+ALL TESTS PASSED
+sim/tb_i3c_target.sv:215: $finish called at 35775000 (1ps)

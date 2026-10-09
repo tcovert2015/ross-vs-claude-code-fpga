@@ -1,0 +1,58 @@
+# scope_top.sby — SymbiYosys check of formal property (d): drain/servicer FIFO discipline.
+#
+#   (d) the drain never pops an empty/unrequested FIFO entry; the cmd/rsp FIFOs can never
+#       overflow (one-outstanding-request discipline, asserted from both domains).
+#
+# Checker: formal/scope_top_fchk.sv, instantiated inside scope_top under `ifdef FORMAL.
+# Top: formal/fml_scope_top.sv (XPORT="STREAM", xclk==clk — see that file's header).
+# scope_core's (a)/(b) checker is compiled in too (same -DFORMAL), so this run re-checks
+# those properties in full-system context at BMC depth. Host bytes / probe unconstrained.
+# BMC only: a full-system induction would need invariants over the whole drain/FIFO state
+# space (documented in DESIGN.md); the standalone scope_core.sby carries the k-induction
+# proofs for (a)/(b).
+#
+# Run:  cd formal && sby -f scope_top.sby
+# CI:   .github/workflows/ci.yml "formal" job.
+
+[options]
+mode bmc
+depth 30
+multiclock off
+
+[engines]
+# btormc (btor2 model checker, OSS CAD Suite) proves this to depth 30 in ~4 s; the
+# equivalent smtbmc z3 run does not finish in a practical CI budget on the full scope_top.
+btor btormc
+
+[script]
+read_verilog -sv -formal -DFORMAL scope_pkg.sv
+read_verilog -sv -formal -DFORMAL prim_ff_sync.sv
+read_verilog -sv -formal -DFORMAL prim_ram_1r1w.sv
+read_verilog -sv -formal -DFORMAL prim_fifo_sync.sv
+read_verilog -sv -formal -DFORMAL prim_fifo_async.sv
+read_verilog -sv -formal -DFORMAL scope_core.sv
+read_verilog -sv -formal -DFORMAL scope_csr.sv
+read_verilog -sv -formal -DFORMAL scope_trigger.sv
+read_verilog -sv -formal -DFORMAL scope_drain.sv
+read_verilog -sv -formal -DFORMAL scope_uart.sv
+read_verilog -sv -formal -DFORMAL scope_top.sv
+read_verilog -sv -formal -DFORMAL scope_core_fchk.sv
+read_verilog -sv -formal -DFORMAL scope_top_fchk.sv
+read_verilog -sv -formal -DFORMAL fml_scope_top.sv
+prep -top fml_scope_top
+
+[files]
+../rtl/scope_pkg.sv
+../rtl/prim/prim_ff_sync.sv
+../rtl/prim/prim_ram_1r1w.sv
+../rtl/prim/prim_fifo_sync.sv
+../rtl/prim/prim_fifo_async.sv
+../rtl/scope_core.sv
+../rtl/scope_csr.sv
+../rtl/scope_trigger.sv
+../rtl/scope_drain.sv
+../rtl/xport/scope_uart.sv
+../rtl/scope_top.sv
+scope_core_fchk.sv
+scope_top_fchk.sv
+fml_scope_top.sv

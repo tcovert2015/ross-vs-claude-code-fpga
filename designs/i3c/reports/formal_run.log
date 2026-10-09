@@ -1,0 +1,50 @@
+# Formal — Yosys 0.66+179 (git sha1 e74db6dea, Release, Clang /usr/bin/clang++ 18.1.8) / SBY v0.66-4-gd3e72d2
+# command: cd formal \&\& ./run.sh
+
+
+PROOF                    TASK     RESULT
+------------------------------------------------
+i3c_avalon_mm            bmc      PASS
+i3c_avalon_mm            cover    PASS
+i3c_avalon_mm            prove    PASS
+i3c_bit_engine           bmc      PASS
+i3c_bit_engine           cover    PASS
+i3c_bit_engine           prove    PASS
+i3c_bus_frontend         bmc      PASS
+i3c_bus_frontend         cover    PASS
+i3c_bus_frontend         prove    PASS
+i3c_ccc                  bmc      PASS
+i3c_ccc                  cover    PASS
+i3c_ccc                  prove    PASS
+i3c_daa                  bmc      PASS
+i3c_daa                  cover    PASS
+i3c_daa                  prove    PASS
+i3c_error_recovery       bmc      PASS
+i3c_error_recovery       cover    PASS
+i3c_error_recovery       prove    PASS
+i3c_fifo                 bmc      PASS
+i3c_fifo                 cover    PASS
+i3c_fifo                 prove    PASS
+i3c_framer               bmc      PASS
+i3c_framer               cover    PASS
+i3c_framer               prove    PASS
+i3c_hdr_exit_detector    bmc      PASS
+i3c_hdr_exit_detector    cover    PASS
+i3c_hdr_exit_detector    prove    PASS
+i3c_ibi                  bmc      PASS
+i3c_ibi                  cover    PASS
+i3c_ibi                  prove    PASS
+i3c_integration          bmc      PASS
+i3c_integration          cover    PASS
+i3c_protocol_fsm         bmc      PASS
+i3c_protocol_fsm         cover    PASS
+i3c_protocol_fsm         prove    PASS
+i3c_regfile              bmc      PASS
+i3c_regfile              cover    PASS
+i3c_regfile              prove    PASS
+i3c_sda_mux              bmc      PASS
+i3c_sda_mux              cover    PASS
+i3c_sda_mux              prove    PASS
+------------------------------------------------
+ALL GREEN
+DONE_FORMAL

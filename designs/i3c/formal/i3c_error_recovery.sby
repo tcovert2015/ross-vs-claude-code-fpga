@@ -1,0 +1,23 @@
+[tasks]
+bmc
+prove
+cover
+
+[options]
+bmc:   mode bmc
+bmc:   depth 20
+prove: mode prove
+prove: depth 15
+cover: mode cover
+cover: depth 30
+
+[engines]
+smtbmc boolector
+
+[script]
+read_verilog -sv -formal -I. i3c_error_recovery.sv
+prep -top i3c_error_recovery
+
+[files]
+../rtl/i3c_pkg.sv
+../rtl/i3c_error_recovery.sv

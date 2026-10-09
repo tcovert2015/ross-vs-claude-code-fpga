@@ -1,0 +1,78 @@
+# scope_bw.qsf — AXC3000 build: HyperRAM bandwidth engine + an fpga-scope instance (#12).
+#
+# PROVENANCE: this is ../../../hyperram/fpga/axc3000/bw.qsf with the fpga-scope RTL added and the
+# top swapped to top_scope (bw.qsf's `top` + a JTAG-Avalon scope slave). The HyperRAM base
+# (qsys system, hyperbus RTL, board I/O, pins, SDC) is referenced IN PLACE from the hyperram repo
+# — the qsys .qip use $::quartus(qip_path)-relative paths so they resolve from that tree.
+# NOTE: set_global_assignment paths are literal (the .qsf settings reader does NOT expand tcl vars).
+# Build with ~/projects mounted as /workspace, workdir /workspace/fpga-scope/fpga/axc3000:
+#   quartus_sh --flow compile scope_bw -c scope_bw
+# See fpga/axc3000/README.md.
+
+set_global_assignment -name FAMILY "Agilex 3"
+set_global_assignment -name DEVICE A3CY100BM16AE7S
+set_global_assignment -name TOP_LEVEL_ENTITY top_scope
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+
+# ---- HyperRAM Qsys system (IOPLL + reset + JTAG-to-Avalon master), referenced in place ----
+set_global_assignment -name QIP_FILE ../../../hyperram/fpga/axc3000/qsys/bw_sys/bw_sys.qip
+set_global_assignment -name IP_FILE  ../../../hyperram/fpga/axc3000/qsys/ip/bw_sys/bw_sys_clk_in.ip
+set_global_assignment -name IP_FILE  ../../../hyperram/fpga/axc3000/qsys/ip/bw_sys/bw_sys_iopll.ip
+set_global_assignment -name IP_FILE  ../../../hyperram/fpga/axc3000/qsys/ip/bw_sys/bw_sys_clkbr0.ip
+set_global_assignment -name IP_FILE  ../../../hyperram/fpga/axc3000/qsys/ip/bw_sys/bw_sys_clkbr1.ip
+set_global_assignment -name IP_FILE  ../../../hyperram/fpga/axc3000/qsys/ip/bw_sys/bw_sys_reset_in.ip
+set_global_assignment -name IP_FILE  ../../../hyperram/fpga/axc3000/qsys/ip/bw_sys/bw_sys_rst_ctrl.ip
+set_global_assignment -name IP_FILE  ../../../hyperram/fpga/axc3000/qsys/ip/bw_sys/bw_sys_rst_out.ip
+set_global_assignment -name IP_FILE  ../../../hyperram/fpga/axc3000/qsys/ip/bw_sys/bw_sys_jtag_master.ip
+
+# ---- vendor GPIO I/O cells (qsys/hbgpio.qsys) ----
+set_global_assignment -name QIP_FILE ../../../hyperram/fpga/axc3000/qsys/hbgpio/hbgpio.qip
+set_global_assignment -name IP_FILE  ../../../hyperram/fpga/axc3000/qsys/ip/hbgpio/hbgpio_ck_cell.ip
+set_global_assignment -name IP_FILE  ../../../hyperram/fpga/axc3000/qsys/ip/hbgpio/hbgpio_dq_cell.ip
+
+set_global_assignment -name OPTIMIZATION_MODE "SUPERIOR PERFORMANCE WITH MAXIMUM PLACEMENT EFFORT"
+
+# ---- HyperBus master IP + bandwidth harness (package FIRST) ----
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/rtl/hyperbus_pkg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/rtl/hyperbus_ctrl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/rtl/if/hyperbus_avalon.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/rtl/phy/hyperbus_phy_generic.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/rtl/phy/hyperbus_phy_sdr.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/rtl/phy/hyperbus_phy_altera.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/rtl/phy/hyperbus_phy_xilinx.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/rtl/phy/hyperbus_phy.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/rtl/hyperram_avalon.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/rtl/bench/hyperram_bw_test.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/rtl/bench/hyperram_bw_top.sv
+
+# ---- HyperRAM board I/O files (referenced in place) ----
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/fpga/axc3000/hyperbus_pads_altera.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/fpga/axc3000/hyperbus_gpio_io.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../hyperram/fpga/axc3000/hyperbus_capture.sv
+
+# ---- fpga-scope RTL (package FIRST, then prims, then core .. top) ----
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_pkg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/prim/prim_ff_sync.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/prim/prim_ram_1r1w.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/prim/prim_fifo_sync.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/prim/prim_fifo_async.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_core.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_csr.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_trigger.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_rle.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_drain.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/xport/scope_uart.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/scope_top.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../../rtl/if/scope_jtag.sv
+
+# ---- scope-integrated top ----
+set_global_assignment -name SYSTEMVERILOG_FILE top_scope.sv
+
+# ---- timing + pins (HyperRAM base, entity-agnostic) ----
+set_global_assignment -name SDC_FILE ../../../hyperram/fpga/axc3000/bw.sdc
+source ../../../hyperram/fpga/axc3000/pins.tcl
+set_global_assignment -name LAST_QUARTUS_VERSION "26.1.0 Pro Edition"
+
+# hb_ck output-delay centring (see bw.qsf); entity is now top_scope.
+set_instance_assignment -name D5_DELAY 15 -to hb_ck -entity top_scope
+set_global_assignment -name SEED 4

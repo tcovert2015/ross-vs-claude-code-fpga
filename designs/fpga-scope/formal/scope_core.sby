@@ -1,0 +1,40 @@
+# scope_core.sby — SymbiYosys proof of scope_core formal properties (a) and (b), issue #6.
+#
+#   (a) the capture FSM never loses the trigger sample (1-sample shadow, no RAM mirroring)
+#   (b) the write pointer never advances in DONE
+#
+# Checker: formal/scope_core_fchk.sv, instantiated inside scope_core under `ifdef FORMAL.
+# Reduced parameterization (PROBE_W=4, DEPTH_LOG2=3): the FSM/pointer logic is parametric
+# and the small depth makes full-capture and wrap scenarios reachable within BMC depth.
+# All control/data inputs are unconstrained.
+#
+# Run:  sby -f formal/scope_core.sby            (both tasks: bmc + prove)
+# CI:   .github/workflows/ci.yml "formal" job (OSS CAD Suite).
+
+[tasks]
+bmc
+prove
+
+[options]
+bmc: mode bmc
+bmc: depth 40
+prove: mode prove
+prove: depth 25
+multiclock off
+
+[engines]
+smtbmc z3
+
+[script]
+read_verilog -sv -formal -DFORMAL scope_pkg.sv
+read_verilog -sv -formal -DFORMAL prim_ram_1r1w.sv
+read_verilog -sv -formal -DFORMAL scope_core.sv
+read_verilog -sv -formal -DFORMAL scope_core_fchk.sv
+chparam -set PROBE_W 4 -set DEPTH_LOG2 3 scope_core
+prep -top scope_core
+
+[files]
+../rtl/scope_pkg.sv
+../rtl/prim/prim_ram_1r1w.sv
+../rtl/scope_core.sv
+scope_core_fchk.sv

@@ -1,0 +1,19 @@
+# mcy mutation coverage -- equivalence-filtered (issue #18)
+# Per mutant: test_fm (formal property suite) + test_eq (sequential equivalence vs original: equiv_make+equiv_simple+equiv_induct).
+# NOCHANGE = mutant proven equivalent to the original -> EXCLUDED from the denominator.
+# Filtered coverage = COVERED / (COVERED + UNCOVERED).  Run: formal/mcy/campaign.sh [size]
+#
+# module               filtered      raw   covered uncovered nochange   eqgap
+i3c_sda_mux               38.5%    25.0%         5         8        7       0
+i3c_bit_engine            72.2%    65.0%        13         5        2       0
+i3c_framer                58.8%    50.0%        10         7        2       1
+i3c_bus_frontend          22.2%    20.0%         4        14        2       0
+i3c_fifo                  42.1%    40.0%         8        11        1       0
+i3c_protocol_fsm          55.6%    50.0%        10         8        2       0
+i3c_daa                      NA       NA         0         0        0       0
+i3c_ccc                   26.3%    25.0%         5        14        1       0
+i3c_ibi                      NA       NA         0         0        0       0
+i3c_error_recovery        61.1%    55.0%        11         7        2       0
+i3c_regfile               64.7%    55.0%        11         6        3       0
+i3c_avalon_mm             31.2%    25.0%         5        11        4       0
+# CAMPAIGN DONE

@@ -1,0 +1,118 @@
+Flow report for i3c_target
+Mon Jun 29 14:25:33 2026
+Quartus Prime Version 25.3.0 Build 109 09/24/2025 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Flow Summary
+  2. Flow Settings
+  3. Flow Non-Default Global Settings
+  4. Flow Elapsed Time
+  5. Flow OS Summary
+  6. Flow Log
+  7. Legal Notice
+
+
+
++--------------------------------------------------------------------------+
+; Flow Summary                                                             ;
++-----------------------------+--------------------------------------------+
+; Flow Status                 ; Successful - Mon Jun 29 14:25:27 2026      ;
+; Quartus Prime Version       ; 25.3.0 Build 109 09/24/2025 SC Pro Edition ;
+; Revision Name               ; i3c_target                                 ;
+; Top-level Entity Name       ; i3c_target_top                             ;
+; Family                      ; Cyclone 10 GX                              ;
+; Device                      ; 10CX220YF780E5G                            ;
+; Timing Models               ; Final                                      ;
+; Power Models                ; Final                                      ;
+; Device Status               ; Final                                      ;
+; Logic utilization (in ALMs) ; 539 / 80,330 ( < 1 % )                     ;
+; Total registers             ; 319                                        ;
+; Total pins                  ; 84 / 340 ( 25 % )                          ;
+; Total virtual pins          ; 0                                          ;
+; Total block memory bits     ; 0 / 12,021,760 ( 0 % )                     ;
+; Total RAM Blocks            ; 0 / 587 ( 0 % )                            ;
+; Total DSP Blocks            ; 0 / 192 ( 0 % )                            ;
+; Total HSSI RX channels      ; 0 / 12 ( 0 % )                             ;
+; Total HSSI TX channels      ; 0 / 12 ( 0 % )                             ;
+; Total PLLs                  ; 0 / 30 ( 0 % )                             ;
++-----------------------------+--------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 06/29/2026 14:24:32 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; i3c_target          ;
++-------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                      ;
++--------------------------+---------------------------------+---------------+-------------+------------+
+; Assignment Name          ; Value                           ; Default Value ; Entity Name ; Section Id ;
++--------------------------+---------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID    ; 193621989228127.178276107227156 ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY ; C:/i3c_quartus/output_files     ; --            ; --          ; --         ;
+; TOP_LEVEL_ENTITY         ; i3c_target_top                  ; i3c_target    ; --          ; --         ;
+; VERILOG_INPUT_VERSION    ; SystemVerilog_2005              ; Verilog_2001  ; --          ; --         ;
++--------------------------+---------------------------------+---------------+-------------+------------+
+
+
++------------------------------------------------------+
+; Flow Elapsed Time                                    ;
++-----------------+--------------+---------------------+
+; Module Name     ; Elapsed Time ; Peak Virtual Memory ;
++-----------------+--------------+---------------------+
+; Synthesis       ; 00:00:07     ; 809 MB              ;
+; Fitter          ; 00:00:49     ; 3501 MB             ;
+; Timing Analyzer ; 00:00:04     ; 2027 MB             ;
+; Total           ; 00:01:00     ; --                  ;
++-----------------+--------------+---------------------+
+
+
++-------------------------------------------------------------------------------+
+; Flow OS Summary                                                               ;
++-----------------+------------------+------------+------------+----------------+
+; Module Name     ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++-----------------+------------------+------------+------------+----------------+
+; Synthesis       ; tcovert          ; Windows 11 ; 10.0.26200 ; x86_64         ;
+; Fitter          ; tcovert          ; Windows 11 ; 10.0.26200 ; x86_64         ;
+; Timing Analyzer ; tcovert          ; Windows 11 ; 10.0.26200 ; x86_64         ;
++-----------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_syn i3c_target
+quartus_fit i3c_target
+quartus_sta i3c_target
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
