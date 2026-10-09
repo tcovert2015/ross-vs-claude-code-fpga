@@ -56,6 +56,7 @@ module tb_drain_leg
   logic tx_ready = 1'b0;
   logic armed, triggered;
   logic unused_trig_ext_o, unused_uart_tx;
+  logic [31:0] unused_ext_rdata;
 
   scope_top #(
       .PROBE_W   (PROBE_W),
@@ -87,7 +88,6 @@ module tb_drain_leg
       .ext_csr_rdata(unused_ext_rdata)
   );
 
-  logic [31:0] unused_ext_rdata;
 
   logic [PROBE_W-1:0] stim[N_STIM];
   logic [63:0] exp_meta[3];

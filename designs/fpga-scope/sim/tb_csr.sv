@@ -64,6 +64,8 @@ module tb_csr_leg
   logic [TS_W-1:0] ts, ts_at_trig;
   logic [DEPTH_LOG2-1:0] buf_rd_addr;
   logic [PROBE_W-1:0] buf_rd_data;
+  logic [7:0] win_rd_addr;
+  logic [DEPTH_LOG2:0] win_rd_data;
   logic [NUM_CMP*PROBE_W-1:0] cmp_mask, cmp_value, cmp_edge_mask, cmp_edge_pol;
   logic [31:0] trig_combine;
   logic [SEQ_STAGES*32-1:0] seq_cnt;
@@ -150,9 +152,6 @@ module tb_csr_leg
       .ts          (ts),
       .ts_at_trig  (ts_at_trig)
   );
-
-  logic [7:0] win_rd_addr;
-  logic [DEPTH_LOG2:0] win_rd_data;
 
   // ---- golden vectors ----------------------------------------------------------------------
   logic [PROBE_W-1:0] stim[N_STIM];

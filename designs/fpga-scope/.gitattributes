@@ -1,0 +1,3 @@
+# run_questa.sh is run by Git Bash on Windows hosts (Radiant/Questa): keep LF even under
+# core.autocrlf=true, or bash chokes on the CRs.
+sim/run_questa.sh text eol=lf

@@ -1,0 +1,65 @@
+Questa Lattice OEM Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+Start time: 16:59:09 on Oct 09,2026
+vlog -sv -work sim/build/questa/tb_uart -timescale 1ns/1ps rtl/scope_pkg.sv rtl/prim/prim_ff_sync.sv rtl/prim/prim_ram_1r1w.sv rtl/prim/prim_fifo_sync.sv rtl/prim/prim_fifo_async.sv rtl/scope_core.sv rtl/scope_csr.sv rtl/scope_trigger.sv rtl/scope_rle.sv rtl/scope_drain.sv rtl/xport/scope_uart.sv rtl/scope_top.sv rtl/if/scope_avalon.sv rtl/if/scope_axil.sv rtl/if/scope_jtag.sv fpga/lattice/scope_axil_top.sv sim/tb_uart.sv 
+** Note: (vlog-220) 'D:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+-- Compiling package scope_pkg
+-- Compiling module prim_ff_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_fifo_async
+-- Compiling module scope_core
+-- Importing package scope_pkg
+-- Compiling module scope_csr
+-- Compiling module scope_trigger
+-- Compiling module scope_rle
+-- Compiling module scope_drain
+-- Compiling module scope_uart
+-- Compiling module scope_top
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_jtag
+-- Compiling module scope_axil_top
+-- Compiling module tb_uart_leg
+-- Compiling module tb_uart
+
+Top level modules:
+	scope_avalon
+	scope_jtag
+	scope_axil_top
+	tb_uart
+End time: 16:59:09 on Oct 09,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'D:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib sim/build/questa/tb_uart -do "run -all; quit -f" tb_uart 
+# Start time: 16:59:10 on Oct 09,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-220) 'D:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# //  Questa Lattice OEM Edition-64
+# //  Version 2025.2 win64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.scope_pkg(fast)
+# Loading work.tb_uart(fast)
+# run -all
+# -- [div4] DIV=4: LSB-first + BE CRC asserted, NAK + resync clean
+# -- [div16] DIV=16: LSB-first + BE CRC asserted, NAK + resync clean
+# TB_RESULT: PASS
+# ** Note: $finish    : sim/tb_uart.sv(279)
+#    Time: 133640 ns  Iteration: 2  Instance: /tb_uart
+# End time: 16:59:11 on Oct 09,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
