@@ -1,3 +1,3 @@
 # plain/dma: G1 committed flow (125 MHz default run); G5 committed xsim sweep
-vivadouild.bat
-scriptsun_xsim.bat
+vivado\build.bat
+scripts\run_xsim.bat
