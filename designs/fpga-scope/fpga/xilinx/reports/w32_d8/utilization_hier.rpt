@@ -1,0 +1,37 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Fri Oct  9 16:26:37 2026
+| Host         : tcovert running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file {D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/fpga/xilinx/reports/w32_d8/utilization_hier.rpt}
+| Design       : scope_axil_top
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++--------------------+---------------+------------+------------+---------+------+------+--------+--------+------------+
+|      Instance      |     Module    | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++--------------------+---------------+------------+------------+---------+------+------+--------+--------+------------+
+| scope_axil_top     |         (top) |       1186 |       1186 |       0 |    0 | 1181 |      0 |      2 |          0 |
+|   (scope_axil_top) |         (top) |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|   u_axil           |    scope_axil |        209 |        209 |       0 |    0 |   35 |      0 |      0 |          0 |
+|   u_scope          |     scope_top |        977 |        977 |       0 |    0 | 1146 |      0 |      2 |          0 |
+|     u_trigger      | scope_trigger |         44 |         44 |       0 |    0 |  106 |      0 |      0 |          0 |
+|     g_rle.u_rle    |     scope_rle |         67 |         67 |       0 |    0 |   76 |      0 |      0 |          0 |
+|     u_core         |    scope_core |        148 |        148 |       0 |    0 |  175 |      0 |      2 |          0 |
+|       (u_core)     |    scope_core |        124 |        124 |       0 |    0 |  175 |      0 |      0 |          0 |
+|     u_csr          |     scope_csr |        710 |        710 |       0 |    0 |  760 |      0 |      0 |          0 |
++--------------------+---------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

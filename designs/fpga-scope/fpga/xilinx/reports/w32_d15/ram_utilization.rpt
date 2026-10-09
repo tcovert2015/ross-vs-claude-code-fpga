@@ -1,0 +1,217 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Fri Oct  9 16:30:09 2026
+| Host         : tcovert running 64-bit major release  (build 9200)
+| Command      : report_ram_utilization -file {D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/fpga/xilinx/reports/w32_d15/ram_utilization.rpt}
+| Design       : scope_axil_top
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+RAM Usage Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Memory Description
+3. Memory Utilization - Inferred
+4. Memory Performance - Inferred
+5. Block Ram / URAM Memory Power - Inferred
+
+1. Summary
+----------
+
++--------------------------+------------+-----------+-------+-----------+
+| Memory Type              | Total Used | Available | Util% | Inferred% |
++--------------------------+------------+-----------+-------+-----------+
+| BlockRAM                 |       33.5 |       135 | 24.81 |    100.00 |
+|  RAMB36E1                |         33 |           |       |    100.00 |
+|  RAMB18E1                |          1 |           |       |    100.00 |
+| LUTMs as Distributed RAM |          0 |     19000 |  0.00 |      0.00 |
++--------------------------+------------+-----------+-------+-----------+
+*  Each RAMB18 is calculated as 0.5 BlockRAM
+**  Tables 2, 3, 4 and 5 cover RAMs inferred by Vivado Synthesis using XPMs or RTL inference
+***  XRAMs are not reported for detailed tables
+
+
+2. Memory Description
+---------------------
+
++------------------------------------+------------+-----------+-------------+------------------------+------------------------+
+| Memory Name                        | Array Size | RAM_STYLE | Memory Type | Port 1 Dimension / Map | Port 2 Dimension / Map |
++------------------------------------+------------+-----------+-------------+------------------------+------------------------+
+| u_scope/u_core/u_buf/mem           |    1081344 |           | RAM_SDP     | 32768x33               | 32768x33               |
+|  u_scope/u_core/u_buf/mem_reg_0_0  |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_1  |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_2  |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_3  |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_4  |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_5  |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_6  |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_7  |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_8  |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_9  |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_10 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_11 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_12 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_13 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_14 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_15 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_16 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_17 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_18 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_19 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_20 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_21 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_22 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_23 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_24 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_25 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_26 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_27 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_28 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_29 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_30 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_31 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+|  u_scope/u_core/u_buf/mem_reg_0_32 |      32768 |      AUTO |             |  A:A:32768x1           |  B:B:32768x1           |
+| u_scope/u_core/u_win_meta/mem      |       4096 |           | RAM_SDP     | 1024x16                | 1024x16                |
+|  u_scope/u_core/u_win_meta/mem_reg |      16384 |      AUTO |             |  A:A:256x16            |  B:B:256x16            |
++------------------------------------+------------+-----------+-------------+------------------------+------------------------+
+
+
+3. Memory Utilization - Inferred
+--------------------------------
+
++------------------------------------+-----------+-----------+----------------+-----------+-----------+---------+---------------+---------------+---------+---------------+---------------+---------+---------------+---------------+---------+---------------+---------------+
+| Memory Name                        | Primitive | RAM STYLE | Available Bits | Used Bits | Bit Util% | A Depth | A Depth Avail | A Depth Util% | A Width | A Width Avail | A Width Util% | B Depth | B Depth Avail | B Depth Util% | B Width | B Width Avail | B Width Util% |
++------------------------------------+-----------+-----------+----------------+-----------+-----------+---------+---------------+---------------+---------+---------------+---------------+---------+---------------+---------------+---------+---------------+---------------+
+| u_scope/u_core/u_buf/mem           |           |           |                |           |           |         |               |               |         |               |               |         |               |               |         |               |               |
+|  u_scope/u_core/u_buf/mem_reg_0_0  | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_1  | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_2  | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_3  | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_4  | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_5  | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_6  | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_7  | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_8  | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_9  | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_10 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_11 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_12 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_13 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_14 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_15 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_16 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_17 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_18 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_19 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_20 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_21 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_22 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_23 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_24 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_25 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_26 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_27 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_28 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_29 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_30 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_31 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+|  u_scope/u_core/u_buf/mem_reg_0_32 | RAMB36E1  |      AUTO |          36864 |     32768 |     88.89 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |   32768 |         32768 |        100.00 |       1 |             1 |        100.00 |
+| u_scope/u_core/u_win_meta/mem      |           |           |                |           |           |         |               |               |         |               |               |         |               |               |         |               |               |
+|  u_scope/u_core/u_win_meta/mem_reg | RAMB18E1  |      AUTO |          18432 |      4096 |     22.22 |     256 |          1024 |         25.00 |      16 |            18 |         88.89 |     256 |          1024 |         25.00 |      16 |            18 |         88.89 |
++------------------------------------+-----------+-----------+----------------+-----------+-----------+---------+---------------+---------------+---------+---------------+---------------+---------+---------------+---------------+---------+---------------+---------------+
+
+
+4. Memory Performance - Inferred
+--------------------------------
+
++------------------------------------+-----------+------------------------+------------------------+-------------+-------------------------+-------------+-------------------------+-----------+--------+--------+---------+-----------+--------+--------+---------+
+| Memory Name                        | Primitive | Port 1 Dimension / Map | Port 2 Dimension / Map | Port A Type | Port A Requirement (ns) | Port B Type | Port B Requirement (ns) | A Cascade | IREG_A | OREG_A | DOA_REG | B Cascade | IREG_B | OREG_B | DOB_REG |
++------------------------------------+-----------+------------------------+------------------------+-------------+-------------------------+-------------+-------------------------+-----------+--------+--------+---------+-----------+--------+--------+---------+
+| u_scope/u_core/u_buf/mem           |           | 32768x33               | 32768x33               |             |                         |             |                         |           |        |        |         |           |        |        |         |
+|  u_scope/u_core/u_buf/mem_reg_0_0  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_1  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_2  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_3  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_4  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_5  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_6  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_7  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_8  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_9  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_10 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_11 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_12 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_13 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_14 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_15 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_16 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_17 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_18 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_19 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_20 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_21 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_22 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_23 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_24 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_25 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_26 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_27 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_28 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_29 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_30 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_31 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+|  u_scope/u_core/u_buf/mem_reg_0_32 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
+| u_scope/u_core/u_win_meta/mem      |           | 1024x16                | 1024x16                |             |                         |             |                         |           |        |        |         |           |        |        |         |
+|  u_scope/u_core/u_win_meta/mem_reg | RAMB18E1  |  A:A:256x16            |  B:B:256x16            |       Write |                    10.0 |        Read |                    10.0 |           |        |        |       0 |           |        |        |       0 |
++------------------------------------+-----------+------------------------+------------------------+-------------+-------------------------+-------------+-------------------------+-----------+--------+--------+---------+-----------+--------+--------+---------+
+
+
+5. Block Ram / URAM Memory Power - Inferred
+-------------------------------------------
+
++------------------------------------+-----------+------------------------+------------------------+--------------------+---------------+-------------------+-----------+--------------------+---------------+-------------------+-----------+
+| Memory Name                        | Primitive | Port 1 Dimension / Map | Port 2 Dimension / Map | Port A Power Gated | Port A Enable | Port A WRITE_MODE | A Cascade | Port B Power Gated | Port B Enable | Port B WRITE_MODE | B Cascade |
++------------------------------------+-----------+------------------------+------------------------+--------------------+---------------+-------------------+-----------+--------------------+---------------+-------------------+-----------+
+| u_scope/u_core/u_buf/mem           |           | 32768x33               | 32768x33               |                    |               |                   |           |                    |               |                   |           |
+|  u_scope/u_core/u_buf/mem_reg_0_0  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_1  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_2  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_3  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_4  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_5  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_6  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_7  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_8  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_9  | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_10 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_11 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_12 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_13 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_14 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_15 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_16 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_17 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_18 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_19 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_20 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_21 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_22 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_23 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_24 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_25 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_26 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_27 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_28 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_29 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_30 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_31 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+|  u_scope/u_core/u_buf/mem_reg_0_32 | RAMB36E1  |  A:A:32768x1           |  B:B:32768x1           |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
+| u_scope/u_core/u_win_meta/mem      |           | 1024x16                | 1024x16                |                    |               |                   |           |                    |               |                   |           |
+|  u_scope/u_core/u_win_meta/mem_reg | RAMB18E1  |  A:A:256x16            |  B:B:256x16            |                    |        SIGNAL |        READ_FIRST |           |                    |         POWER |       WRITE_FIRST |           |
++------------------------------------+-----------+------------------------+------------------------+--------------------+---------------+-------------------+-----------+--------------------+---------------+-------------------+-----------+
+
+
