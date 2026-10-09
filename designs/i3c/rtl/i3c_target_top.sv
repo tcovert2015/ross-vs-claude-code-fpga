@@ -23,6 +23,14 @@
 `define I3C_TARGET_TOP_SV
 `include "i3c_pkg.sv"
 
+// Pad-IO wrapper cell (the only vendor-specific RTL). Defaults to the Altera
+// wrapper so existing flows are unchanged; another vendor selects its own cell
+// with the same port list by defining I3C_IO_CELL on the tool command line,
+// e.g. +define+I3C_IO_CELL=i3c_io_xilinx (see syn/xilinx/, sim/run_xsim.tcl).
+`ifndef I3C_IO_CELL
+  `define I3C_IO_CELL i3c_io_altera
+`endif
+
 module i3c_target_top #(
   // ---- identity straps (forwarded to i3c_regfile / i3c_daa / i3c_ccc) ----
   parameter logic [7:0]  BCR            = i3c_pkg::BCR_DEFAULT,
@@ -268,7 +276,7 @@ module i3c_target_top #(
   assign io_sda_i = 1'b1;                    // unused under FORMAL
   assign io_scl_i = 1'b1;
 `else
-  i3c_io_altera u_io (
+  `I3C_IO_CELL u_io (
     .sda_oe (sda_oe),
     .sda_o  (sda_o),
     .sda_i  (io_sda_i),
