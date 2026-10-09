@@ -1,0 +1,74 @@
+Worst slack by path class, clk = 8.000 ns (ns; negative = violated)
+path class                              setup       hold
+all paths                               0.969     -0.984
+register -> register                    0.969      0.069
+input port -> register                  1.886     -0.984
+register -> output port                 1.298      1.452
+input port -> output port               3.054      1.720
+
+Failing hold endpoints by class (slack < 0):
+  input port -> register : 115
+  register -> register   : 0
+
+Worst hold path (detail):
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Fri Oct  9 16:11:18 2026
+| Host         : tcovert running 64-bit major release  (build 9200)
+| Command      : report_timing -hold -max_paths 1 -return_string
+| Design       : i3c_target_top
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -0.984ns  (arrival time - required time)
+  Source:                 avs_address[2]
+                            (input port clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            u_av/rd_idx_q_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.924ns  (logic 0.000ns (0.000%)  route 0.924ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            0.300ns
+  Clock Path Skew:        1.816ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.816ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                         input delay                  0.300     0.300    
+                                                      0.000     0.300 r  avs_address[2] (IN)
+                         net (fo=10, unset)           0.924     1.224    u_av/avs_address[2]
+    SLICE_X9Y37          FDRE                                         r  u_av/rd_idx_q_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=372, unset)          1.816     1.816    u_av/clk
+    SLICE_X9Y37          FDRE                                         r  u_av/rd_idx_q_reg[2]/C
+                         clock pessimism              0.000     1.816    
+                         clock uncertainty            0.035     1.851    
+    SLICE_X9Y37          FDRE (Hold_fdre_C_D)         0.357     2.208    u_av/rd_idx_q_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -2.208    
+                         arrival time                           1.224    
+  -------------------------------------------------------------------
+                         slack                                 -0.984    
+
+
+
+
+
