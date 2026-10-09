@@ -1,0 +1,35 @@
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'D:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib sim/build/questa_work_AXI4_RSTSYNC -suppress 7061 tb_pcie_dma "+SEED=1" -do "run -all; quit -f" 
+# Start time: 17:07:50 on Oct 09,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-220) 'D:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# //  Questa Lattice OEM Edition-64
+# //  Version 2025.2 win64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.dma_pkg(fast)
+# Loading work.tb_pcie_dma(fast)
+# run -all
+# === tb_pcie_dma : SYS_IF=AXI4 STALLS=0 ===
+# === tb seed = 1 ===
+# === coverage: rings=3 descs=113 H2C=50 C2H=63 single=14 maxburst=45 cross=24 irq=57 count_term=1 last_early=1 last_final=1 idx_partial=1 ===
+# === PASS : all checks ok ===
+# ** Note: $finish    : sim/tb_pcie_dma.sv(729)
+#    Time: 68065 ns  Iteration: 1  Instance: /tb_pcie_dma
+# End time: 17:07:52 on Oct 09,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0, Suppressed Errors: 5
