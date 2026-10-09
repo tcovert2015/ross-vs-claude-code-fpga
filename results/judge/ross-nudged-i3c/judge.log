@@ -1,0 +1,9 @@
+2026-10-09 16:27:59 Preparing worktree (detached HEAD ee0edd0)
+2026-10-09 16:27:59 HEAD is now at ee0edd0 i3c: Vivado OOC flow for xc7a100tcsg324-1, reports and README
+2026-10-09 16:27:59 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-ross-nudged-i3c @ ee0edd0
+2026-10-09 16:27:59 step 1 START: "C:\AMDDesignTools\2025.2\Vivado\bin\vivado.bat" -mode batch -source sim/run_xsim.tcl -log sim/judge_xsim_vivado.log -journal sim/judge_xsim.jou
+2026-10-09 16:28:11 step 1 END exit=0 after 12s (log: step1.log)
+2026-10-09 16:28:11 git status after re-run:
+2026-10-09 16:28:11    M sim/xsim.log
+2026-10-09 16:28:11   ?? dfx_runtime.txt
+2026-10-09 16:28:11 JUDGE DONE

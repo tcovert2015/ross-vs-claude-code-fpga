@@ -1,0 +1,2 @@
+# ross-nudged/i3c: committed xsim runner is a Vivado Tcl script (build already verified in the first judge pass)
+vivado.bat -mode batch -source sim/run_xsim.tcl -log sim/judge_xsim_vivado.log -journal sim/judge_xsim.jou

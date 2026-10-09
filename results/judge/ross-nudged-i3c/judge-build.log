@@ -1,0 +1,19 @@
+2026-10-09 16:23:58 Preparing worktree (detached HEAD ee0edd0)
+2026-10-09 16:23:59 HEAD is now at ee0edd0 i3c: Vivado OOC flow for xc7a100tcsg324-1, reports and README
+2026-10-09 16:23:59 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-ross-nudged-i3c @ ee0edd0
+2026-10-09 16:23:59 step 1 START: "C:\AMDDesignTools\2025.2\Vivado\bin\vivado.bat" -mode batch -source syn/xilinx/build.tcl -log syn/xilinx/build/judge_vivado.log -journal syn/xilinx/build/judge.jou
+2026-10-09 16:25:55 step 1 END exit=0 after 116s (log: step1.log)
+2026-10-09 16:25:55 step 2 START: powershell -ExecutionPolicy Bypass -File sim/run_xsim.ps1
+2026-10-09 16:25:55 step 2 END exit=-196608 after 0s (log: step2.log)
+2026-10-09 16:25:55 git status after re-run:
+2026-10-09 16:25:55    M syn/xilinx/reports/drc.rpt
+2026-10-09 16:25:55    M syn/xilinx/reports/lint.rpt
+2026-10-09 16:25:55    M syn/xilinx/reports/methodology.rpt
+2026-10-09 16:25:55    M syn/xilinx/reports/route_status.rpt
+2026-10-09 16:25:55    M syn/xilinx/reports/timing_split.rpt
+2026-10-09 16:25:55    M syn/xilinx/reports/timing_summary.rpt
+2026-10-09 16:25:55    M syn/xilinx/reports/utilization.rpt
+2026-10-09 16:25:55    M syn/xilinx/reports/utilization_hier.rpt
+2026-10-09 16:25:55    M syn/xilinx/reports/utilization_synth.rpt
+2026-10-09 16:25:55   ?? dfx_runtime.txt
+2026-10-09 16:25:55 JUDGE DONE
