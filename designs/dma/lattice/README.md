@@ -133,7 +133,7 @@ No errors or critical warnings in any stage.
 
 | ID | Count | Message | Assessment |
 |---|---|---|---|
-| CL190 / CL279 | 5 / 1 | `err_code[7:3]` optimized to constant 0 and pruned (`dma_engine_core.sv:228`) | Benign. The defined error codes are 0x00�0x06 (`dma_pkg.sv`), so only 3 bits are ever non-zero. |
+| CL190 / CL279 | 5 / 1 | `err_code[7:3]` optimized to constant 0 and pruned (`dma_engine_core.sv:228`) | Benign. The defined error codes are 0x00 to 0x06 (`dma_pkg.sv`), so only 3 bits are ever non-zero. |
 | BN132 | 4 | Equivalent registers merged: `wstate[0]`≡`w_write_q`, `w_burstcount_q`≡`w_blen`, `r_burstcount_q`≡`r_blen`, `f_start`≡`estate[1]` | Benign area optimization. |
 | CL169 / CL271 | 1 / 2 | Unused descriptor bits pruned in `dma_descriptor_fetch.sv:128` (`beats[3]`, upper bits of `beats[2]`, `beats[1]`) | Benign. Reserved descriptor bytes 24–31 and the unused upper sys-address/control bits. |
 | CL247 | 2 | `axi_bresp[0]`, `axi_rresp[0]` unused (`gmm_to_axi4.sv`) | Benign and intended: the adapter tests bit 1 only (SLVERR/DECERR). |
