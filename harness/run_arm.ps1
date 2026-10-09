@@ -57,6 +57,9 @@ $common = @(
   '--max-budget-usd', $BudgetUsd,
   '--no-chrome',
   '--strict-mcp-config',
+  # Headless runs end when the turn ends: a "wake me later" tool silently kills the cell
+  # (lattice/dma did exactly that on 2026-10-09). Applies to every arm.
+  '--disallowedTools', 'ScheduleWakeup',
   '--setting-sources', 'project'    # ignore user-level plugins/hooks so the plain arm is really plain
 )
 if ($Arm -eq 'ross' -or $Arm -eq 'ross-nudged') {
