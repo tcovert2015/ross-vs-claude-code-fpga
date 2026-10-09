@@ -1,0 +1,12 @@
+#============================================================================
+# pcie_dma.pdc -- post-synthesis constraints for the PCIe DMA engine
+#
+# No pin locations: every bus port is a virtual I/O (see build.tcl); clk and
+# rst_n are left for PAR to place.
+#
+# Synplify Pro does not forward set_false_path -from [get_ports rst_n] from
+# pcie_dma.sdc (rst_n has no arrival time in its timer, so it reports the
+# constraint as unused, MT447). Repeat it here so map/PAR timing analysis sees
+# the asynchronous reset input into reset_sync as an intentional false path.
+#============================================================================
+set_false_path -from [get_ports rst_n]
