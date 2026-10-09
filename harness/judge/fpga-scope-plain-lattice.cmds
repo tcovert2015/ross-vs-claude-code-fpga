@@ -1,0 +1,5 @@
+# plain-lattice/fpga-scope: committed Radiant flow per config + full Questa regression (bash)
+"D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" fpga/lattice/build.tcl 32 8
+"D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" fpga/lattice/build.tcl 32 12
+"D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" fpga/lattice/build.tcl 32 15
+"C:\Program Files\Git\bin\bash.exe" sim/run_questa.sh

@@ -1,0 +1,5 @@
+# lattice/fpga-scope: committed Radiant flow per config + Questa regression (pwsh)
+"D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" fpga/lattice/build.tcl 32 8
+"D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" fpga/lattice/build.tcl 32 12
+"D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" fpga/lattice/build.tcl 32 15
+pwsh -NoProfile -File sim/run_questa.ps1

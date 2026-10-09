@@ -1,0 +1,8 @@
+{
+  "arm": "lattice",
+  "design": "fpga-scope",
+  "model": "opus",
+  "branch": "lattice/fpga-scope",
+  "worktree": "D:\\AMD Ross Test\\ross-vs-claude-code-fpga\\..\\wt\\lattice-fpga-scope",
+  "started": "2026-10-09T16:50:47.9443420-05:00"
+}
