@@ -149,6 +149,19 @@ module scope_csr #(
   endfunction
 
   wire [3:0] lane_idx = csr_addr[3:0];  // valid when is_lane_addr
+
+  // Per-lane write masks and the "lane is implemented" test as elaboration-time constants.
+  // lane_wmask() is called with a CONSTANT lane per table entry, and `32*lane < PROBE_W` is
+  // the same predicate as `lane < LANES` (LANES = ceil(PROBE_W/32)), so behaviour is identical
+  // to evaluating both on the runtime lane_idx — but synthesis no longer builds a 32-bit
+  // subtract/shift/compare chain on csr_addr in front of every comparator config flop (it was
+  // the worst path of the AXI4-Lite build on Artix-7: 8 CARRY4 levels, see fpga/xilinx/README.md).
+  wire [scope_pkg::CSR_CMP_LANE_WORDS*32-1:0] lane_wmask_tbl;
+  for (genvar j = 0; j < 32'(scope_pkg::CSR_CMP_LANE_WORDS); j++) begin : g_lane_wmask
+    assign lane_wmask_tbl[32*j+:32] = lane_wmask(4'(j));
+  end
+  wire [31:0] lane_wm   = lane_wmask_tbl[32*lane_idx+:32];
+  wire        lane_impl = ({1'b0, lane_idx} < 5'(LANES));  // LANES is 1..16
   wire [1:0] seq_idx = 2'(csr_addr - 8'(scope_pkg::CSR_SEQ_CNT_BASE));  // valid when is_seq_addr
 
   always_ff @(posedge clk) begin
@@ -168,9 +181,8 @@ module scope_csr #(
       if (csr_addr == 8'(scope_pkg::CSR_RLE_CTRL)) rle_enable_q <= csr_wdata[0];
       if (csr_addr == 8'(scope_pkg::CSR_SMPL_CTRL)) smpl_ctrl_q <= csr_wdata;
       if (csr_addr == 8'(scope_pkg::CSR_CMP_SEL)) cmp_sel_q <= csr_wdata[3:0];
-      if (is_lane_addr && (32 * 32'(lane_idx) < PROBE_W))
-        cmp_q[cmp_sel_q[3:2]][cmp_sel_q[1:0]][32*lane_idx+:32] <= csr_wdata & lane_wmask(
-            lane_idx);
+      if (is_lane_addr && lane_impl)
+        cmp_q[cmp_sel_q[3:2]][cmp_sel_q[1:0]][32*lane_idx+:32] <= csr_wdata & lane_wm;
       if (csr_addr == 8'(scope_pkg::CSR_TRIG_COMBINE)) trig_combine_q <= csr_wdata;
       if (is_seq_addr) seq_cnt_q[seq_idx] <= csr_wdata;
     end
@@ -277,7 +289,7 @@ module scope_csr #(
     else if (csr_addr == 8'(scope_pkg::CSR_WIN_META)) csr_rdata = 32'(win_rd_data);
     else if (csr_addr == 8'(scope_pkg::CSR_CMP_SEL)) csr_rdata = 32'(cmp_sel_q);
     else if (is_lane_addr) begin
-      if (32 * 32'(lane_idx) < PROBE_W)
+      if (lane_impl)
         csr_rdata = cmp_q[cmp_sel_q[3:2]][cmp_sel_q[1:0]][32*lane_idx+:32];
     end else if (csr_addr == 8'(scope_pkg::CSR_TRIG_COMBINE)) csr_rdata = trig_combine_q;
     else if (is_seq_addr) csr_rdata = seq_cnt_q[seq_idx];
