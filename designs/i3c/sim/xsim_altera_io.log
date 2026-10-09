@@ -1,0 +1,76 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Fri Oct  9 16:12:24 2026
+# Process ID         : 28376
+# Current directory  : D:/AMD Ross Test/wt/ross-nudged-i3c/designs/i3c
+# Command line       : xsim.exe -log sim/xsim_altera_io.log -mode tcl -source {xsim.dir/tb_i3c_xsim_altera_io/xsim_script.tcl}
+# Log file           : D:/AMD Ross Test/wt/ross-nudged-i3c/designs/i3c/sim/xsim_altera_io.log
+# Journal file       : D:/AMD Ross Test/wt/ross-nudged-i3c/designs/i3c\xsim.jou
+# Running On         : tcovert
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 7 8700F 8-Core Processor             
+# CPU Frequency      : 4100 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33919 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36066 MB
+# Available Virtual  : 10510 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_i3c_xsim_altera_io/xsim_script.tcl
+# xsim {tb_i3c_xsim_altera_io} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+
+=== A. Avalon register sanity ===
+  [PASS] PID_LOW == 0x12345678 (got 0x12345678)
+  [PASS] IDENT[7:0]==BCR 0x07 (got 0x07)
+  [PASS] IDENT[15:8]==DCR 0x00 (got 0x00)
+  [PASS] GETCAPS b1=0x00 b2=0x02 (got 0x00000200)
+  [PASS] CTRL core_en+accept_en (got 0x03)
+  [PASS] da_valid==0 before DAA
+  [PASS] tx_level==0 initially
+  [PASS] tx_level==1 after push (got 1)
+  [PASS] tx_level==0 after flush_tx
+
+=== B. I3C bus: broadcast 0x7E ACK (proof-of-life) ===
+  [PASS] Target ACKs broadcast 0x7E+W
+
+=== C. ENTDAA dynamic address assignment ===
+  [PASS] ENTDAA: 7E+W ACK
+  [PASS] ENTDAA: 7E+R ACK (unassigned target)
+  [PASS] ENTDAA: target ACKs assigned DA
+  [PASS] DA latched = 0x08 valid=1
+
+=== D. Private write / read (requires DA from C) ===
+  [PASS] PrivWr: DA+W ACK
+  [PASS] PrivWr byte in RX FIFO = 0x5c
+  [PASS] PrivRd: DA+R ACK
+  [PASS] PrivRd byte from target = 0xc3
+
+=== E. GETSTATUS CCC ===
+  [PASS] GETSTATUS: 7E+W ACK
+  [PASS] GETSTATUS: DA+R ACK
+  [PASS] GETSTATUS responds, status high byte=0x00 (got hi=0x00 lo=0x20)
+
+=== F. GETPID CCC (multi-byte response, FINDING-SIM-7) ===
+  [PASS] GETPID: 7E+W ACK
+  [PASS] GETPID: DA+R ACK
+  [PASS] GETPID byte0=0x05 exp 0x05
+  [PASS] GETPID byte1=0x4a exp 0x4a
+  [PASS] GETPID byte2=0x12 exp 0x12
+  [PASS] GETPID byte3=0x34 exp 0x34
+  [PASS] GETPID byte4=0x56 exp 0x56
+  [PASS] GETPID byte5=0x78 exp 0x78
+
+========================================
+ RESULT: 29 passed, 0 failed
+========================================
+ALL TESTS PASSED
+$finish called at time : 49995 ns : File "D:/AMD Ross Test/wt/ross-nudged-i3c/designs/i3c/sim/tb_i3c_target.sv" Line 220
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Oct  9 16:12:26 2026...
