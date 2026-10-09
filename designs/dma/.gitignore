@@ -63,3 +63,18 @@ quartus/example/pcie_dma_example/
 Thumbs.db
 .vscode/
 .idea/
+
+# ── Vivado / xsim (vivado/build.tcl, scripts/run_xsim.tcl) ───────────────────
+# Reports under vivado/reports/ and the xsim transcripts
+# sim/build/xsim_*.log + xsim_summary.txt are committed (force-added).
+vivado/reports/**/*.dcp
+.Xil/
+.vivado-ai/
+hs_err_pid*
+clockInfo.txt
+tight_setup_hold_pins.txt
+vivado*.jou
+vivado*.str
+xsim.dir/
+*.pb
+*.wdb

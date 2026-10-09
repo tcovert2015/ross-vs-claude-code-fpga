@@ -1,0 +1,48 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Fri Oct  9 17:07:48 2026
+| Host         : tcovert running 64-bit major release  (build 9200)
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+RTL Linter Report
+
+Table of Contents
+-----------------
+1. Summary
+2. Expanded
+
+1. Summary
+----------
+
++-----------+----------+--------------+----------+--------------------------------------------------------------------------------+
+| Rule ID   | Severity | # Violations | # Waived | Message Template                                                               |
++-----------+----------+--------------+----------+--------------------------------------------------------------------------------+
+| ASSIGN-6  | WARNING  | 2            | 0        | Some bits in '(rtl_name)' are not read. First unread bit index is '(info)'.    |
+| ASSIGN-10 | WARNING  | 10           | 0        | Some bits in IO '(rtl_name)' are not read. First unread bit index is '(info)'. |
++-----------+----------+--------------+----------+--------------------------------------------------------------------------------+
+
+
+2. Expanded
+-----------
+
++-----------+--------------------+-------------------+------+----------------------+-------------------------+-------------+
+| Rule ID   | description        | rtl_name          | info | rtl_hierarchy        | rtl_file                | Line number |
++-----------+--------------------+-------------------+------+----------------------+-------------------------+-------------+
+| ASSIGN-6  | Bit(s) not used    | ctrl_field        | 4    | dma_descriptor_fetch | dma_descriptor_fetch.sv | 120         |
+| ASSIGN-6  | Bit(s) not used    | d                 | 96   | dma_descriptor_fetch | dma_descriptor_fetch.sv | 112         |
+| ASSIGN-10 | IO bit(s) not read | axi_bid           | 0    | gmm_to_axi4          | gmm_to_axi4.sv          | 53          |
+| ASSIGN-10 | IO bit(s) not read | axi_bresp         | 0    | gmm_to_axi4          | gmm_to_axi4.sv          | 54          |
+| ASSIGN-10 | IO bit(s) not read | axi_rid           | 0    | gmm_to_axi4          | gmm_to_axi4.sv          | 70          |
+| ASSIGN-10 | IO bit(s) not read | axi_rresp         | 0    | gmm_to_axi4          | gmm_to_axi4.sv          | 72          |
+| ASSIGN-10 | IO bit(s) not read | avm_readdata      | 0    | pcie_dma_top         | pcie_dma_top.sv         | 61          |
+| ASSIGN-10 | IO bit(s) not read | avm_readdatavalid | 0    | pcie_dma_top         | pcie_dma_top.sv         | 62          |
+| ASSIGN-10 | IO bit(s) not read | avm_waitrequest   | 0    | pcie_dma_top         | pcie_dma_top.sv         | 60          |
+| ASSIGN-10 | IO bit(s) not read | hrdata            | 0    | pcie_dma_top         | pcie_dma_top.sv         | 110         |
+| ASSIGN-10 | IO bit(s) not read | hready            | 0    | pcie_dma_top         | pcie_dma_top.sv         | 111         |
+| ASSIGN-10 | IO bit(s) not read | hresp             | 0    | pcie_dma_top         | pcie_dma_top.sv         | 112         |
++-----------+--------------------+-------------------+------+----------------------+-------------------------+-------------+
+* create_waiver can be used to apply waiver to linter violations.
+** For example, create_waiver -type LINT -id RULE_ID {-rtl_name RTL_NAME} {-rtl_hierarchy RTL_MODULE_NAME} {-rtl_file RTL_FILE_NAME}.
+
+

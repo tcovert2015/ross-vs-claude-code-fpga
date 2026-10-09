@@ -1,0 +1,31 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/rtl/pkg/dma_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/rtl/core/dma_fifo.sv" into library work
+INFO: [VRFC 10-311] analyzing module dma_fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/rtl/core/dma_arbiter.sv" into library work
+INFO: [VRFC 10-311] analyzing module dma_arbiter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/rtl/core/dma_csr.sv" into library work
+INFO: [VRFC 10-311] analyzing module dma_csr
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/rtl/core/dma_descriptor_fetch.sv" into library work
+INFO: [VRFC 10-311] analyzing module dma_descriptor_fetch
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/rtl/core/dma_data_mover.sv" into library work
+INFO: [VRFC 10-311] analyzing module dma_data_mover
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/rtl/core/dma_engine_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module dma_engine_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/rtl/core/reset_sync.sv" into library work
+INFO: [VRFC 10-311] analyzing module reset_sync
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/rtl/adapters/gmm_to_avalon.sv" into library work
+INFO: [VRFC 10-311] analyzing module gmm_to_avalon
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/rtl/adapters/gmm_to_axi4.sv" into library work
+INFO: [VRFC 10-311] analyzing module gmm_to_axi4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/rtl/adapters/gmm_to_ahb.sv" into library work
+INFO: [VRFC 10-311] analyzing module gmm_to_ahb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/rtl/top/pcie_dma_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module pcie_dma_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/sim/models/avalon_mem_model.sv" into library work
+INFO: [VRFC 10-311] analyzing module avalon_mem_model
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/sim/models/axi_mem_model.sv" into library work
+INFO: [VRFC 10-311] analyzing module axi_mem_model
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/sim/models/ahb_mem_model.sv" into library work
+INFO: [VRFC 10-311] analyzing module ahb_mem_model
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-dma/designs/dma/sim/tb_pcie_dma.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_pcie_dma
