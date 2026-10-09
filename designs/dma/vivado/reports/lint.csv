@@ -1,0 +1,12 @@
+ASSIGN-6,Bit(s) not used,ctrl_field,4,dma_descriptor_fetch,dma_descriptor_fetch.sv,120
+ASSIGN-6,Bit(s) not used,d,96,dma_descriptor_fetch,dma_descriptor_fetch.sv,112
+ASSIGN-10,IO bit(s) not read,axi_bid,0,gmm_to_axi4,gmm_to_axi4.sv,53
+ASSIGN-10,IO bit(s) not read,axi_bresp,0,gmm_to_axi4,gmm_to_axi4.sv,54
+ASSIGN-10,IO bit(s) not read,axi_rid,0,gmm_to_axi4,gmm_to_axi4.sv,70
+ASSIGN-10,IO bit(s) not read,axi_rresp,0,gmm_to_axi4,gmm_to_axi4.sv,72
+ASSIGN-10,IO bit(s) not read,avm_readdata,0,pcie_dma_top,pcie_dma_top.sv,61
+ASSIGN-10,IO bit(s) not read,avm_readdatavalid,0,pcie_dma_top,pcie_dma_top.sv,62
+ASSIGN-10,IO bit(s) not read,avm_waitrequest,0,pcie_dma_top,pcie_dma_top.sv,60
+ASSIGN-10,IO bit(s) not read,hrdata,0,pcie_dma_top,pcie_dma_top.sv,110
+ASSIGN-10,IO bit(s) not read,hready,0,pcie_dma_top,pcie_dma_top.sv,111
+ASSIGN-10,IO bit(s) not read,hresp,0,pcie_dma_top,pcie_dma_top.sv,112

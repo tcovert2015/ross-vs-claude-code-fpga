@@ -1,0 +1,10 @@
+part            : xc7a100tcsg324-1
+top             : pcie_dma_top (SYS_IF=AXI4, RESET_SYNC=1, out-of-context)
+vivado          : 2025.2
+clk period (ns) : 9.000 (111.11 MHz)
+WNS (ns)        : 0.024
+TNS (ns)        : 0.000   (sum over failing endpoints' worst paths)
+WHS (ns)        : 0.107
+THS (ns)        : 0.000
+period - WNS    : 8.976 ns -> 111.41 MHz (estimate from this run's slack)
+worst setup path: u_core/u_mover/w_addr_reg[0]/C -> u_core/u_mover/w_dcnt_reg[0]/CE (12 logic levels)
