@@ -16,7 +16,7 @@
   .\harness\run_arm.ps1 -Arm plain -Design i3c -Model opus -BudgetUsd 30
 #>
 param(
-  [Parameter(Mandatory)][ValidateSet('ross','plain','ross-nudged')] [string]$Arm,
+  [Parameter(Mandatory)][ValidateSet('ross','plain','ross-nudged','lattice','plain-lattice')] [string]$Arm,
   [Parameter(Mandatory)][ValidateSet('i3c','fpga-scope','dma')] [string]$Design,
   [string]$Model = 'opus',
   [double]$BudgetUsd = 40,
@@ -37,7 +37,8 @@ if (-not (Test-Path $wt)) {
 }
 $work = Join-Path $wt "designs\$Design"
 
-$prompt = Get-Content (Join-Path $repo "harness\prompts\$Design.md") -Raw
+$promptFile = if ($Arm -like '*lattice*') { "harness\prompts\lattice\$Design.md" } else { "harness\prompts\$Design.md" }
+$prompt = Get-Content (Join-Path $repo $promptFile) -Raw
 if ($Arm -eq 'ross-nudged') {
   # Third arm: identical prompt + an explicit requirement to use the Ross tooling, so the
   # benchmark measures the tools in use rather than whether the agent discovers them.
@@ -67,7 +68,17 @@ if ($Arm -eq 'ross' -or $Arm -eq 'ross-nudged') {
     '--plugin-dir', $RossPluginDir,
     '--append-system-prompt', $sys
   )
+} elseif ($Arm -eq 'lattice') {
+  # Lattice Prompt arm: the two Lattice skills (as a plugin) + the lattice-radiant-mcp server.
+  # The automation skill itself tells the agent to load the MCP tools at session start, so
+  # tool discovery is part of what this arm measures (no extra nudge).
+  $args_ = $common + @(
+    '--mcp-config', (Join-Path $repo 'harness\mcp-lattice.json'),
+    '--plugin-dir', $LatticeSkillsDir,
+    '--append-system-prompt', 'The Lattice Prompt skills (lattice-radiant-automation, lattice-radiant-webdocs) and the lattice-radiant-mcp MCP server are available in this session. Use them for Radiant work where they apply.'
+  )
 } else {
+  # plain / plain-lattice: no plugin, no MCP; the agent drives the tools itself.
   $args_ = $common + @('--mcp-config', (Join-Path $repo 'harness\mcp-none.json'), '--disable-slash-commands')
 }
 

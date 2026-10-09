@@ -5,7 +5,7 @@
   results\judge\<arm>-<design>\. Launch detached; prints "JUDGE DONE" at the end.
 #>
 param(
-  [Parameter(Mandatory)][ValidateSet('ross','plain')] [string]$Arm,
+  [Parameter(Mandatory)][ValidateSet('ross','plain','ross-nudged','lattice','plain-lattice')] [string]$Arm,
   [Parameter(Mandatory)][ValidateSet('i3c','fpga-scope','dma')] [string]$Design,
   [Parameter(Mandatory)][string]$CmdFile,   # one shell command per line, run from designs\<design>
   [string]$VivadoBin = 'C:\AMDDesignTools\2025.2\Vivado\bin'

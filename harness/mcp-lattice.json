@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "lattice-radiant-mcp": {
+      "type": "stdio",
+      "command": "C:/Users/tcove/miniforge3/python.exe",
+      "args": ["-m", "radiant_mcp"]
+    }
+  }
+}
