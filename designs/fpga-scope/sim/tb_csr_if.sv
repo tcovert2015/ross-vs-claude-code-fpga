@@ -125,6 +125,7 @@ module tb_csr_if_leg
   // trigger config outputs are unused here (matrix only reads them back via CSR)
   // one bus is active per leg; sink the other bus's TB-driven / adapter signals so an unused
   // generate branch does not trip UNUSEDSIGNAL (both sets referenced ⇒ -Wall clean either way).
+  logic [31:0] rd;   // declared before first use (portable: Questa rejects use-before-declaration)
   wire _unused = &{1'b0, cmp_mask, cmp_value, cmp_edge_mask, cmp_edge_pol, trig_combine,
                    seq_cnt, armed, triggered, wrapped, trig_index, ts, ts_at_trig,
                    windows_done, rle_enable, disarm, arm,
@@ -183,7 +184,7 @@ module tb_csr_if_leg
     if (got !== want) fail($sformatf("%s @%0d: got %h want %h", what, word, got, want));
   endtask
 
-  logic [31:0] rd, id_val, hwcfg_val;
+  logic [31:0] id_val, hwcfg_val;
   task automatic run_matrix;
     // --- RO registers reject writes and read stable ---
     bread(8'(CSR_ID), id_val);
