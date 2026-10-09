@@ -64,3 +64,4 @@ syn/xilinx/clockInfo.txt
 syn/xilinx/dfx_runtime.txt
 sim/xsim_work/
 !sim/xsim.log
+!syn/xilinx/reports/*.log

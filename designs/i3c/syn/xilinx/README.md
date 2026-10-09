@@ -12,8 +12,8 @@ powershell -ExecutionPolicy Bypass -File sim\run_xsim.ps1   # xsim regression ->
 ```
 Files: `build.tcl` (flow), `i3c_target.xdc` (timing, port of `syn/altera/i3c_target.sdc`).
 Part **`xc7a100tcsg324-1`**, top `i3c_target_top`, `clk` = 8.000 ns (125 MHz).
-Toolchain: `C:\AMDDesignTools\2025.2\Vivado`. Reports land in `reports/` (committed);
-checkpoints and logs in `build/` (ignored).
+Toolchain: `C:\AMDDesignTools\2025.2\Vivado`. Reports land in `reports/` (committed, with a
+copy of the Vivado log as `reports/vivado.log`); checkpoints in `build/` (ignored).
 
 `build.tcl` uses relative paths on purpose: in Vivado 2025.2, `synth_design -lint -file`
 with a path containing a space writes no report and leaves lint mode switched on for the
@@ -80,8 +80,8 @@ out-of-context modeling artifact rather than a design flaw:
 In a real system the Avalon master's launch flop sits on the same clock tree, so launch
 and capture latency cancel and the path is an ordinary reg-to-reg path (hold +0.070 ns
 class). **This has not been demonstrated here** — it needs an in-context build with the
-real interconnect. Without `HD.CLK_SRC` the same build reported WHS −0.141 ns on the same
-path class (clock delay only estimated); I kept `HD.CLK_SRC` because it makes the
+real interconnect. An earlier run without `HD.CLK_SRC` (clock delay only estimated, reports not kept)
+failed hold on the same path class by a smaller margin; I kept `HD.CLK_SRC` because it makes the
 reg-to-reg numbers trustworthy, at the price of a larger port-hold number. I did not tune
 the I/O budgets to make the summary go green.
 
@@ -141,8 +141,7 @@ My assessment (none of these changes synthesized behavior; nothing was "fixed" i
   `ccc_is_direct`, `ibi_active`, `rxf_wr_level`, `txf_rd_level` — debug/observation taps.
 
 Synthesis agrees with the lint picture: 55 "port unconnected or has no load" and 10
-"unused sequential element removed" warnings in the build log (not committed), no others
-of note.
+"unused sequential element removed" warnings in `reports/vivado.log`, no others of note.
 
 ### DRC (`reports/drc.rpt`)
 | Rule | Severity | Assessment |
