@@ -48,6 +48,9 @@ module tb_csr_leg
   logic rst = 1'b1;
 
   // ---- DUTs: scope_csr + scope_core wired together --------------------------------------
+  // declared before the instances that connect them (portable: Questa rejects use-before-declaration)
+  logic [7:0] win_rd_addr;
+  logic [DEPTH_LOG2:0] win_rd_data;
   logic [7:0] csr_addr = '0;
   logic [31:0] csr_wdata = '0;
   logic csr_write = 1'b0, csr_read = 1'b0;
@@ -150,9 +153,6 @@ module tb_csr_leg
       .ts          (ts),
       .ts_at_trig  (ts_at_trig)
   );
-
-  logic [7:0] win_rd_addr;
-  logic [DEPTH_LOG2:0] win_rd_data;
 
   // ---- golden vectors ----------------------------------------------------------------------
   logic [PROBE_W-1:0] stim[N_STIM];

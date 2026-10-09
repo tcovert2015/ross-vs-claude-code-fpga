@@ -150,6 +150,11 @@ module scope_top #(
   logic [NUM_CMP-1:0] cmp_hit_d1;
   logic [23:0] dec_cnt;
   logic trig_pend;
+  // declared before first use (IEEE 1800-2017 6.21; Questa/VCS reject use-before-declaration)
+  wire dec_tick  = (dec_cnt == 24'd0);
+  wire qual_hit  = qual_en ? cmp_hit_d1[qual_sel] : 1'b1;
+  wire sample_en = dec_tick & qual_hit;
+  wire trig_fire = (trig | trig_pend) & sample_en;
   always_ff @(posedge clk) begin
     if (rst) begin
       cmp_hit_d1 <= '0;
@@ -162,10 +167,6 @@ module scope_top #(
       else if (trig)  trig_pend <= 1'b1;   // held between ticks
     end
   end
-  wire dec_tick  = (dec_cnt == 24'd0);
-  wire qual_hit  = qual_en ? cmp_hit_d1[qual_sel] : 1'b1;
-  wire sample_en = dec_tick & qual_hit;
-  wire trig_fire = (trig | trig_pend) & sample_en;
 
   // ---- optional RLE stage (issue #9) --------------------------------------------------
   // RLE_EN=1: scope_rle run-length-encodes the aligned sample stream into STORE_W

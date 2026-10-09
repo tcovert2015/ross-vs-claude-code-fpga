@@ -68,3 +68,7 @@ fpga/axc3000/scope_dump.txt
 # checked-in hardware capture deliverables (#12) — exempt from *.vcd above
 !docs/captures/
 !docs/captures/*.vcd
+
+# Lattice Radiant port (fpga/lattice, sim/run_questa.ps1): the Questa transcripts are committed
+# deliverables — exempt from *.log above. Radiant build trees are ignored by fpga/lattice/.gitignore.
+!sim/questa_*.log
