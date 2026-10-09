@@ -32,7 +32,7 @@ pwsh sim/run_xsim.ps1
 
 # IP Integrator interface inference check
 mkdir fpga/xilinx/build/ipi; cd fpga/xilinx/build/ipi
-C:\AMDDesignTools5.2\Vivadoinivado.bat -mode batch -source ../../check_ipi.tcl
+C:\AMDDesignTools\2025.2\Vivado\bin\vivado.bat -mode batch -source ../../check_ipi.tcl
 ```
 
 `RLE_EN` is left at the wrapper default of 1 so the stored word is `PROBE_W+1` = 33 bits and the
