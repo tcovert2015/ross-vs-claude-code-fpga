@@ -1,0 +1,139 @@
+# sim/run_xsim.ps1 - xsim regression of tb_i3c_target
+
+=== xvlog ===
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_pkg.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_sda_mux.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_sda_mux
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_bus_frontend.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_bus_frontend
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_bit_engine.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_bit_engine
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_framer.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_framer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_hdr_exit_detector.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_hdr_exit_detector
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_fifo.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_protocol_fsm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_daa.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_daa
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_ccc.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_ccc
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_ibi.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_ibi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_error_recovery.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_error_recovery
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_regfile.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_regfile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_avalon_mm.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_avalon_mm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/xilinx/i3c_io_xilinx.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_io_xilinx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/rtl/i3c_target_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module i3c_target_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/sim/tb_i3c_target.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_i3c_target
+
+=== xvlog glbl ===
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/AMDDesignTools/2025.2/data/verilog/src/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+
+=== xelab ===
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_i3c_target work.glbl -L unisims_ver --timescale 1ns/1ps --snapshot tb_i3c_target_sim --log sim/xsim_work/xelab.log 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package work.i3c_pkg
+Compiling module work.i3c_sda_mux(N=32'b0110)
+Compiling module unisims_ver.IOBUF
+Compiling module unisims_ver.IBUF
+Compiling module work.i3c_io_xilinx
+Compiling module work.i3c_bus_frontend_default
+Compiling module work.i3c_bit_engine
+Compiling module work.i3c_framer
+Compiling module work.i3c_protocol_fsm
+Compiling module work.i3c_daa
+Compiling module work.i3c_ccc(STATIC_ADDR_EN=1'b1)
+Compiling module work.i3c_ibi
+Compiling module work.i3c_error_recovery
+Compiling module work.i3c_hdr_exit_detector
+Compiling module work.i3c_regfile(BCR=8'b0111,DCR=8'b0...
+Compiling module work.i3c_fifo(DW=32'b01011)
+Compiling module work.i3c_fifo(DW=32'b01001)
+Compiling module work.i3c_avalon_mm
+Compiling module work.i3c_target_top(BCR=8'b0111,DCR=8...
+Compiling module work.tb_i3c_target
+Compiling module work.glbl
+Built simulation snapshot tb_i3c_target_sim
+
+=== xsim ===
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Oct  8 21:13:17 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_i3c_target_sim/xsim_script.tcl
+# xsim {tb_i3c_target_sim} -wdb {sim/xsim_work/tb_i3c_target.wdb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+
+=== A. Avalon register sanity ===
+  [PASS] PID_LOW == 0x12345678 (got 0x12345678)
+  [PASS] IDENT[7:0]==BCR 0x07 (got 0x07)
+  [PASS] IDENT[15:8]==DCR 0x00 (got 0x00)
+  [PASS] GETCAPS b1=0x00 b2=0x02 (got 0x00000200)
+  [PASS] CTRL core_en+accept_en (got 0x03)
+  [PASS] da_valid==0 before DAA
+  [PASS] tx_level==0 initially
+  [PASS] tx_level==1 after push (got 1)
+  [PASS] tx_level==0 after flush_tx
+
+=== B. I3C bus: broadcast 0x7E ACK (proof-of-life) ===
+  [PASS] Target ACKs broadcast 0x7E+W
+
+=== C. ENTDAA dynamic address assignment ===
+  [PASS] ENTDAA: 7E+W ACK
+  [PASS] ENTDAA: 7E+R ACK (unassigned target)
+  [PASS] ENTDAA: target ACKs assigned DA
+  [PASS] DA latched = 0x08 valid=1
+
+=== D. Private write / read (requires DA from C) ===
+  [PASS] PrivWr: DA+W ACK
+  [PASS] PrivWr byte in RX FIFO = 0x5c
+  [PASS] PrivRd: DA+R ACK
+  [PASS] PrivRd byte from target = 0xc3
+
+=== E. GETSTATUS CCC ===
+  [PASS] GETSTATUS: 7E+W ACK
+  [PASS] GETSTATUS: DA+R ACK
+  [PASS] GETSTATUS responds, status high byte=0x00 (got hi=0x00 lo=0x20)
+
+=== F. GETPID CCC (multi-byte response, FINDING-SIM-7) ===
+  [PASS] GETPID: 7E+W ACK
+  [PASS] GETPID: DA+R ACK
+  [PASS] GETPID byte0=0x05 exp 0x05
+  [PASS] GETPID byte1=0x4a exp 0x4a
+  [PASS] GETPID byte2=0x12 exp 0x12
+  [PASS] GETPID byte3=0x34 exp 0x34
+  [PASS] GETPID byte4=0x56 exp 0x56
+  [PASS] GETPID byte5=0x78 exp 0x78
+
+========================================
+ RESULT: 29 passed, 0 failed
+========================================
+ALL TESTS PASSED
+$finish called at time : 49995 ns : File "D:/AMD Ross Test/wt/plain-i3c/designs/i3c/sim/tb_i3c_target.sv" Line 220
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Oct  8 21:13:19 2026...

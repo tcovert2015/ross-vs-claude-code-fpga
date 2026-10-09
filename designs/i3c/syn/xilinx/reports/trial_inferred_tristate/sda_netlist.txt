@@ -1,0 +1,9 @@
+# Post-synthesis (OOC) netlist around the SDA port when i3c_io_xilinx used an
+# inferred tri-state (assign SDA = sda_oe ? sda_o : 1'bz).  See Synth 8-5799 in vivado.log.
+SDA port net: SDA
+  pin u_fe/sda_sr_reg[0]/D  dir=IN  cell_ref=FDSE
+  pin u_pfsm/SDA_INST_0/O  dir=OUT  cell_ref=LUT2
+    INIT=4'h8
+    u_pfsm/SDA_INST_0/I0 <- u_pfsm/sda_o
+    u_pfsm/SDA_INST_0/I1 <- u_pfsm/SDA_3
+Tri-state cells (OBUFT/IOBUF/BUFT) in netlist: 0

@@ -268,7 +268,13 @@ module i3c_target_top #(
   assign io_sda_i = 1'b1;                    // unused under FORMAL
   assign io_scl_i = 1'b1;
 `else
-  i3c_io_altera u_io (
+  // Vendor pad cell. Every shim (rtl/<vendor>/i3c_io_<vendor>.sv) has the same port
+  // list and drive semantics; a flow selects one with +define+I3C_IO_CELL=<module>.
+  // Default is the Altera shim, so existing flows build unchanged.
+`ifndef I3C_IO_CELL
+  `define I3C_IO_CELL i3c_io_altera
+`endif
+  `I3C_IO_CELL u_io (
     .sda_oe (sda_oe),
     .sda_o  (sda_o),
     .sda_i  (io_sda_i),
