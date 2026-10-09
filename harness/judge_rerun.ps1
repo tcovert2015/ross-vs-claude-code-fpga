@@ -7,7 +7,7 @@
 param(
   [Parameter(Mandatory)][ValidateSet('ross','plain')] [string]$Arm,
   [Parameter(Mandatory)][ValidateSet('i3c','fpga-scope','dma')] [string]$Design,
-  [string[]]$FlowCmd,    # override: commands to run (relative to designs\<design>)
+  [Parameter(Mandatory)][string]$CmdFile,   # one shell command per line, run from designs\<design>
   [string]$VivadoBin = 'C:\AMDDesignTools\2025.2\Vivado\bin'
 )
 $ErrorActionPreference = 'Continue'
@@ -29,7 +29,7 @@ $env:PATH = "$VivadoBin;$env:PATH"
 Push-Location $work
 try {
   $i = 0
-  foreach ($cmd in $FlowCmd) {
+  foreach ($cmd in (Get-Content $CmdFile | Where-Object { $_.Trim() -ne '' -and -not $_.StartsWith('#') })) {
     $i++
     $clog = Join-Path $out "step$i.log"
     $cmd = $cmd -replace '^(vivado|xvlog|xelab|xsim)\.bat', ("`"$VivadoBin\" + '$1.bat"')   # absolute tool path
