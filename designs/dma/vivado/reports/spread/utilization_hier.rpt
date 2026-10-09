@@ -1,0 +1,38 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Oct  8 21:42:41 2026
+| Host         : tcovert running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file {D:/AMD Ross Test/wt/plain-dma/designs/dma/vivado/reports/spread/utilization_hier.rpt}
+| Design       : pcie_dma_top
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++------------------+----------------------+------------+------------+---------+------+-----+--------+--------+------------+
+|     Instance     |        Module        | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP Blocks |
++------------------+----------------------+------------+------------+---------+------+-----+--------+--------+------------+
+| pcie_dma_top     |                (top) |       1330 |        986 |     344 |    0 | 825 |      0 |      0 |          0 |
+|   (pcie_dma_top) |                (top) |          0 |          0 |       0 |    0 |   0 |      0 |      0 |          0 |
+|   g_axi.u_adapt  |          gmm_to_axi4 |         18 |         18 |       0 |    0 |  50 |      0 |      0 |          0 |
+|   u_core         |      dma_engine_core |       1311 |        967 |     344 |    0 | 773 |      0 |      0 |          0 |
+|     (u_core)     |      dma_engine_core |         34 |         34 |       0 |    0 | 149 |      0 |      0 |          0 |
+|     u_csr        |              dma_csr |        135 |        135 |       0 |    0 | 169 |      0 |      0 |          0 |
+|     u_fetch      | dma_descriptor_fetch |        222 |        222 |       0 |    0 | 202 |      0 |      0 |          0 |
+|     u_mover      |       dma_data_mover |        899 |        555 |     344 |    0 | 244 |      0 |      0 |          0 |
+|       (u_mover)  |       dma_data_mover |        322 |        322 |       0 |    0 | 220 |      0 |      0 |          0 |
+|       u_fifo     |             dma_fifo |        578 |        234 |     344 |    0 |  24 |      0 |      0 |          0 |
++------------------+----------------------+------------+------------+---------+------+-----+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

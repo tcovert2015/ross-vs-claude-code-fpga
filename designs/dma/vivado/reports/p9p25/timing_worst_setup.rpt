@@ -1,0 +1,377 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Oct  8 21:48:52 2026
+| Host         : tcovert running 64-bit major release  (build 9200)
+| Command      : report_timing -delay_type max -max_paths 5 -sort_by slack -file {D:/AMD Ross Test/wt/plain-dma/designs/dma/vivado/reports/p9p25/timing_worst_setup.rpt}
+| Design       : pcie_dma_top
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.060ns  (required time - arrival time)
+  Source:                 u_core/u_mover/w_rem_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.625ns period=9.250ns})
+  Destination:            u_core/u_mover/w_dcnt_reg[0]/CE
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.625ns period=9.250ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.250ns  (clk rise@9.250ns - clk rise@0.000ns)
+  Data Path Delay:        8.937ns  (logic 3.132ns (35.044%)  route 5.805ns (64.956%))
+  Logic Levels:           12  (CARRY4=3 LUT4=2 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.174 - 9.250 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1167, unset)         0.973     0.973    u_core/u_mover/clk
+    SLICE_X7Y141         FDCE                                         r  u_core/u_mover/w_rem_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y141         FDCE (Prop_fdce_C_Q)         0.456     1.429 r  u_core/u_mover/w_rem_reg[0]/Q
+                         net (fo=8, routed)           0.680     2.109    u_core/u_mover/w_rem_reg_n_0_[0]
+    SLICE_X7Y141         LUT5 (Prop_lut5_I0_O)        0.124     2.233 r  u_core/u_mover/w_burstcount_q[4]_i_10/O
+                         net (fo=1, routed)           0.789     3.023    u_core/u_mover/w_burstcount_q[4]_i_10_n_0
+    SLICE_X7Y139         LUT6 (Prop_lut6_I0_O)        0.124     3.147 r  u_core/u_mover/w_burstcount_q[4]_i_5/O
+                         net (fo=4, routed)           0.185     3.332    u_core/u_mover/w_burstcount_q[4]_i_5_n_0
+    SLICE_X7Y139         LUT5 (Prop_lut5_I4_O)        0.124     3.456 r  u_core/u_mover/w_burstcount_q[1]_i_2/O
+                         net (fo=8, routed)           0.593     4.049    u_core/u_mover/w_burstcount_q[1]_i_2_n_0
+    SLICE_X7Y140         LUT5 (Prop_lut5_I1_O)        0.124     4.173 r  u_core/u_mover/min3_return1_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.173    u_core/u_mover/min3_return1_carry_i_7_n_0
+    SLICE_X7Y140         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     4.723 r  u_core/u_mover/min3_return1_carry/CO[3]
+                         net (fo=14, routed)          1.047     5.770    u_core/u_mover/min3_return1_carry_n_0
+    SLICE_X8Y140         LUT4 (Prop_lut4_I2_O)        0.124     5.894 r  u_core/u_mover/w_dcnt[1]_i_2/O
+                         net (fo=3, routed)           0.575     6.469    u_core/u_mover/u_fifo/w_dcnt_reg[1]
+    SLICE_X10Y140        LUT4 (Prop_lut4_I3_O)        0.124     6.593 r  u_core/u_mover/u_fifo/wstate5_carry_i_8/O
+                         net (fo=1, routed)           0.000     6.593    u_core/u_mover/u_fifo_n_420
+    SLICE_X10Y140        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.106 r  u_core/u_mover/wstate5_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.106    u_core/u_mover/wstate5_carry_n_0
+    SLICE_X10Y141        CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.254     7.360 r  u_core/u_mover/wstate5_carry__0/CO[0]
+                         net (fo=11, routed)          0.394     7.753    u_core/u_mover/u_fifo/w_dcnt_reg[0]_1[0]
+    SLICE_X11Y140        LUT6 (Prop_lut6_I1_O)        0.367     8.120 r  u_core/u_mover/u_fifo/w_burstcount_q[0]_i_1/O
+                         net (fo=2, routed)           0.854     8.974    u_core/u_mover/u_fifo/wptr_reg[7]_7[0]
+    SLICE_X11Y140        LUT6 (Prop_lut6_I1_O)        0.124     9.098 r  u_core/u_mover/u_fifo/w_dcnt[4]_i_5/O
+                         net (fo=3, routed)           0.328     9.426    u_core/u_mover/u_fifo/w_dcnt[4]_i_5_n_0
+    SLICE_X10Y138        LUT6 (Prop_lut6_I2_O)        0.124     9.550 r  u_core/u_mover/u_fifo/w_dcnt[4]_i_1/O
+                         net (fo=5, routed)           0.360     9.910    u_core/u_mover/w_dcnt[0]
+    SLICE_X12Y138        FDCE                                         r  u_core/u_mover/w_dcnt_reg[0]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        9.250     9.250 r  
+                                                      0.000     9.250 r  clk (IN)
+                         net (fo=1167, unset)         0.924    10.174    u_core/u_mover/clk
+    SLICE_X12Y138        FDCE                                         r  u_core/u_mover/w_dcnt_reg[0]/C
+                         clock pessimism              0.000    10.174    
+                         clock uncertainty           -0.035    10.139    
+    SLICE_X12Y138        FDCE (Setup_fdce_C_CE)      -0.169     9.970    u_core/u_mover/w_dcnt_reg[0]
+  -------------------------------------------------------------------
+                         required time                          9.970    
+                         arrival time                          -9.910    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.060ns  (required time - arrival time)
+  Source:                 u_core/u_mover/w_rem_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.625ns period=9.250ns})
+  Destination:            u_core/u_mover/w_dcnt_reg[1]/CE
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.625ns period=9.250ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.250ns  (clk rise@9.250ns - clk rise@0.000ns)
+  Data Path Delay:        8.937ns  (logic 3.132ns (35.044%)  route 5.805ns (64.956%))
+  Logic Levels:           12  (CARRY4=3 LUT4=2 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.174 - 9.250 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1167, unset)         0.973     0.973    u_core/u_mover/clk
+    SLICE_X7Y141         FDCE                                         r  u_core/u_mover/w_rem_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y141         FDCE (Prop_fdce_C_Q)         0.456     1.429 r  u_core/u_mover/w_rem_reg[0]/Q
+                         net (fo=8, routed)           0.680     2.109    u_core/u_mover/w_rem_reg_n_0_[0]
+    SLICE_X7Y141         LUT5 (Prop_lut5_I0_O)        0.124     2.233 r  u_core/u_mover/w_burstcount_q[4]_i_10/O
+                         net (fo=1, routed)           0.789     3.023    u_core/u_mover/w_burstcount_q[4]_i_10_n_0
+    SLICE_X7Y139         LUT6 (Prop_lut6_I0_O)        0.124     3.147 r  u_core/u_mover/w_burstcount_q[4]_i_5/O
+                         net (fo=4, routed)           0.185     3.332    u_core/u_mover/w_burstcount_q[4]_i_5_n_0
+    SLICE_X7Y139         LUT5 (Prop_lut5_I4_O)        0.124     3.456 r  u_core/u_mover/w_burstcount_q[1]_i_2/O
+                         net (fo=8, routed)           0.593     4.049    u_core/u_mover/w_burstcount_q[1]_i_2_n_0
+    SLICE_X7Y140         LUT5 (Prop_lut5_I1_O)        0.124     4.173 r  u_core/u_mover/min3_return1_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.173    u_core/u_mover/min3_return1_carry_i_7_n_0
+    SLICE_X7Y140         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     4.723 r  u_core/u_mover/min3_return1_carry/CO[3]
+                         net (fo=14, routed)          1.047     5.770    u_core/u_mover/min3_return1_carry_n_0
+    SLICE_X8Y140         LUT4 (Prop_lut4_I2_O)        0.124     5.894 r  u_core/u_mover/w_dcnt[1]_i_2/O
+                         net (fo=3, routed)           0.575     6.469    u_core/u_mover/u_fifo/w_dcnt_reg[1]
+    SLICE_X10Y140        LUT4 (Prop_lut4_I3_O)        0.124     6.593 r  u_core/u_mover/u_fifo/wstate5_carry_i_8/O
+                         net (fo=1, routed)           0.000     6.593    u_core/u_mover/u_fifo_n_420
+    SLICE_X10Y140        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.106 r  u_core/u_mover/wstate5_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.106    u_core/u_mover/wstate5_carry_n_0
+    SLICE_X10Y141        CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.254     7.360 r  u_core/u_mover/wstate5_carry__0/CO[0]
+                         net (fo=11, routed)          0.394     7.753    u_core/u_mover/u_fifo/w_dcnt_reg[0]_1[0]
+    SLICE_X11Y140        LUT6 (Prop_lut6_I1_O)        0.367     8.120 r  u_core/u_mover/u_fifo/w_burstcount_q[0]_i_1/O
+                         net (fo=2, routed)           0.854     8.974    u_core/u_mover/u_fifo/wptr_reg[7]_7[0]
+    SLICE_X11Y140        LUT6 (Prop_lut6_I1_O)        0.124     9.098 r  u_core/u_mover/u_fifo/w_dcnt[4]_i_5/O
+                         net (fo=3, routed)           0.328     9.426    u_core/u_mover/u_fifo/w_dcnt[4]_i_5_n_0
+    SLICE_X10Y138        LUT6 (Prop_lut6_I2_O)        0.124     9.550 r  u_core/u_mover/u_fifo/w_dcnt[4]_i_1/O
+                         net (fo=5, routed)           0.360     9.910    u_core/u_mover/w_dcnt[0]
+    SLICE_X12Y138        FDCE                                         r  u_core/u_mover/w_dcnt_reg[1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        9.250     9.250 r  
+                                                      0.000     9.250 r  clk (IN)
+                         net (fo=1167, unset)         0.924    10.174    u_core/u_mover/clk
+    SLICE_X12Y138        FDCE                                         r  u_core/u_mover/w_dcnt_reg[1]/C
+                         clock pessimism              0.000    10.174    
+                         clock uncertainty           -0.035    10.139    
+    SLICE_X12Y138        FDCE (Setup_fdce_C_CE)      -0.169     9.970    u_core/u_mover/w_dcnt_reg[1]
+  -------------------------------------------------------------------
+                         required time                          9.970    
+                         arrival time                          -9.910    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.060ns  (required time - arrival time)
+  Source:                 u_core/u_mover/w_rem_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.625ns period=9.250ns})
+  Destination:            u_core/u_mover/w_dcnt_reg[4]/CE
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.625ns period=9.250ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.250ns  (clk rise@9.250ns - clk rise@0.000ns)
+  Data Path Delay:        8.937ns  (logic 3.132ns (35.044%)  route 5.805ns (64.956%))
+  Logic Levels:           12  (CARRY4=3 LUT4=2 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.174 - 9.250 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1167, unset)         0.973     0.973    u_core/u_mover/clk
+    SLICE_X7Y141         FDCE                                         r  u_core/u_mover/w_rem_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y141         FDCE (Prop_fdce_C_Q)         0.456     1.429 r  u_core/u_mover/w_rem_reg[0]/Q
+                         net (fo=8, routed)           0.680     2.109    u_core/u_mover/w_rem_reg_n_0_[0]
+    SLICE_X7Y141         LUT5 (Prop_lut5_I0_O)        0.124     2.233 r  u_core/u_mover/w_burstcount_q[4]_i_10/O
+                         net (fo=1, routed)           0.789     3.023    u_core/u_mover/w_burstcount_q[4]_i_10_n_0
+    SLICE_X7Y139         LUT6 (Prop_lut6_I0_O)        0.124     3.147 r  u_core/u_mover/w_burstcount_q[4]_i_5/O
+                         net (fo=4, routed)           0.185     3.332    u_core/u_mover/w_burstcount_q[4]_i_5_n_0
+    SLICE_X7Y139         LUT5 (Prop_lut5_I4_O)        0.124     3.456 r  u_core/u_mover/w_burstcount_q[1]_i_2/O
+                         net (fo=8, routed)           0.593     4.049    u_core/u_mover/w_burstcount_q[1]_i_2_n_0
+    SLICE_X7Y140         LUT5 (Prop_lut5_I1_O)        0.124     4.173 r  u_core/u_mover/min3_return1_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.173    u_core/u_mover/min3_return1_carry_i_7_n_0
+    SLICE_X7Y140         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     4.723 r  u_core/u_mover/min3_return1_carry/CO[3]
+                         net (fo=14, routed)          1.047     5.770    u_core/u_mover/min3_return1_carry_n_0
+    SLICE_X8Y140         LUT4 (Prop_lut4_I2_O)        0.124     5.894 r  u_core/u_mover/w_dcnt[1]_i_2/O
+                         net (fo=3, routed)           0.575     6.469    u_core/u_mover/u_fifo/w_dcnt_reg[1]
+    SLICE_X10Y140        LUT4 (Prop_lut4_I3_O)        0.124     6.593 r  u_core/u_mover/u_fifo/wstate5_carry_i_8/O
+                         net (fo=1, routed)           0.000     6.593    u_core/u_mover/u_fifo_n_420
+    SLICE_X10Y140        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.106 r  u_core/u_mover/wstate5_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.106    u_core/u_mover/wstate5_carry_n_0
+    SLICE_X10Y141        CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.254     7.360 r  u_core/u_mover/wstate5_carry__0/CO[0]
+                         net (fo=11, routed)          0.394     7.753    u_core/u_mover/u_fifo/w_dcnt_reg[0]_1[0]
+    SLICE_X11Y140        LUT6 (Prop_lut6_I1_O)        0.367     8.120 r  u_core/u_mover/u_fifo/w_burstcount_q[0]_i_1/O
+                         net (fo=2, routed)           0.854     8.974    u_core/u_mover/u_fifo/wptr_reg[7]_7[0]
+    SLICE_X11Y140        LUT6 (Prop_lut6_I1_O)        0.124     9.098 r  u_core/u_mover/u_fifo/w_dcnt[4]_i_5/O
+                         net (fo=3, routed)           0.328     9.426    u_core/u_mover/u_fifo/w_dcnt[4]_i_5_n_0
+    SLICE_X10Y138        LUT6 (Prop_lut6_I2_O)        0.124     9.550 r  u_core/u_mover/u_fifo/w_dcnt[4]_i_1/O
+                         net (fo=5, routed)           0.360     9.910    u_core/u_mover/w_dcnt[0]
+    SLICE_X12Y138        FDCE                                         r  u_core/u_mover/w_dcnt_reg[4]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        9.250     9.250 r  
+                                                      0.000     9.250 r  clk (IN)
+                         net (fo=1167, unset)         0.924    10.174    u_core/u_mover/clk
+    SLICE_X12Y138        FDCE                                         r  u_core/u_mover/w_dcnt_reg[4]/C
+                         clock pessimism              0.000    10.174    
+                         clock uncertainty           -0.035    10.139    
+    SLICE_X12Y138        FDCE (Setup_fdce_C_CE)      -0.169     9.970    u_core/u_mover/w_dcnt_reg[4]
+  -------------------------------------------------------------------
+                         required time                          9.970    
+                         arrival time                          -9.910    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.068ns  (required time - arrival time)
+  Source:                 u_core/u_mover/w_rem_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.625ns period=9.250ns})
+  Destination:            u_core/u_mover/w_burstcount_q_reg[0]/CE
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.625ns period=9.250ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.250ns  (clk rise@9.250ns - clk rise@0.000ns)
+  Data Path Delay:        8.893ns  (logic 3.132ns (35.218%)  route 5.761ns (64.782%))
+  Logic Levels:           12  (CARRY4=3 LUT4=3 LUT5=3 LUT6=3)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.174 - 9.250 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1167, unset)         0.973     0.973    u_core/u_mover/clk
+    SLICE_X7Y141         FDCE                                         r  u_core/u_mover/w_rem_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y141         FDCE (Prop_fdce_C_Q)         0.456     1.429 r  u_core/u_mover/w_rem_reg[0]/Q
+                         net (fo=8, routed)           0.680     2.109    u_core/u_mover/w_rem_reg_n_0_[0]
+    SLICE_X7Y141         LUT5 (Prop_lut5_I0_O)        0.124     2.233 r  u_core/u_mover/w_burstcount_q[4]_i_10/O
+                         net (fo=1, routed)           0.789     3.023    u_core/u_mover/w_burstcount_q[4]_i_10_n_0
+    SLICE_X7Y139         LUT6 (Prop_lut6_I0_O)        0.124     3.147 r  u_core/u_mover/w_burstcount_q[4]_i_5/O
+                         net (fo=4, routed)           0.185     3.332    u_core/u_mover/w_burstcount_q[4]_i_5_n_0
+    SLICE_X7Y139         LUT5 (Prop_lut5_I4_O)        0.124     3.456 r  u_core/u_mover/w_burstcount_q[1]_i_2/O
+                         net (fo=8, routed)           0.593     4.049    u_core/u_mover/w_burstcount_q[1]_i_2_n_0
+    SLICE_X7Y140         LUT5 (Prop_lut5_I1_O)        0.124     4.173 r  u_core/u_mover/min3_return1_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.173    u_core/u_mover/min3_return1_carry_i_7_n_0
+    SLICE_X7Y140         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     4.723 r  u_core/u_mover/min3_return1_carry/CO[3]
+                         net (fo=14, routed)          1.047     5.770    u_core/u_mover/min3_return1_carry_n_0
+    SLICE_X8Y140         LUT4 (Prop_lut4_I2_O)        0.124     5.894 r  u_core/u_mover/w_dcnt[1]_i_2/O
+                         net (fo=3, routed)           0.575     6.469    u_core/u_mover/u_fifo/w_dcnt_reg[1]
+    SLICE_X10Y140        LUT4 (Prop_lut4_I3_O)        0.124     6.593 r  u_core/u_mover/u_fifo/wstate5_carry_i_8/O
+                         net (fo=1, routed)           0.000     6.593    u_core/u_mover/u_fifo_n_420
+    SLICE_X10Y140        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.106 r  u_core/u_mover/wstate5_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.106    u_core/u_mover/wstate5_carry_n_0
+    SLICE_X10Y141        CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.254     7.360 r  u_core/u_mover/wstate5_carry__0/CO[0]
+                         net (fo=11, routed)          0.394     7.753    u_core/u_mover/u_fifo/w_dcnt_reg[0]_1[0]
+    SLICE_X11Y140        LUT6 (Prop_lut6_I1_O)        0.367     8.120 r  u_core/u_mover/u_fifo/w_burstcount_q[0]_i_1/O
+                         net (fo=2, routed)           0.854     8.974    u_core/u_mover/u_fifo/wptr_reg[7]_7[0]
+    SLICE_X11Y140        LUT6 (Prop_lut6_I1_O)        0.124     9.098 r  u_core/u_mover/u_fifo/w_dcnt[4]_i_5/O
+                         net (fo=3, routed)           0.173     9.271    u_core/u_mover/u_fifo/w_dcnt[4]_i_5_n_0
+    SLICE_X11Y140        LUT4 (Prop_lut4_I3_O)        0.124     9.395 r  u_core/u_mover/u_fifo/w_burstcount_q[4]_i_1/O
+                         net (fo=5, routed)           0.471     9.866    u_core/u_mover/wstate[0]
+    SLICE_X11Y139        FDCE                                         r  u_core/u_mover/w_burstcount_q_reg[0]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        9.250     9.250 r  
+                                                      0.000     9.250 r  clk (IN)
+                         net (fo=1167, unset)         0.924    10.174    u_core/u_mover/clk
+    SLICE_X11Y139        FDCE                                         r  u_core/u_mover/w_burstcount_q_reg[0]/C
+                         clock pessimism              0.000    10.174    
+                         clock uncertainty           -0.035    10.139    
+    SLICE_X11Y139        FDCE (Setup_fdce_C_CE)      -0.205     9.934    u_core/u_mover/w_burstcount_q_reg[0]
+  -------------------------------------------------------------------
+                         required time                          9.934    
+                         arrival time                          -9.866    
+  -------------------------------------------------------------------
+                         slack                                  0.068    
+
+Slack (MET) :             0.068ns  (required time - arrival time)
+  Source:                 u_core/u_mover/w_rem_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.625ns period=9.250ns})
+  Destination:            u_core/u_mover/w_burstcount_q_reg[1]/CE
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.625ns period=9.250ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            9.250ns  (clk rise@9.250ns - clk rise@0.000ns)
+  Data Path Delay:        8.893ns  (logic 3.132ns (35.218%)  route 5.761ns (64.782%))
+  Logic Levels:           12  (CARRY4=3 LUT4=3 LUT5=3 LUT6=3)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 10.174 - 9.250 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1167, unset)         0.973     0.973    u_core/u_mover/clk
+    SLICE_X7Y141         FDCE                                         r  u_core/u_mover/w_rem_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y141         FDCE (Prop_fdce_C_Q)         0.456     1.429 r  u_core/u_mover/w_rem_reg[0]/Q
+                         net (fo=8, routed)           0.680     2.109    u_core/u_mover/w_rem_reg_n_0_[0]
+    SLICE_X7Y141         LUT5 (Prop_lut5_I0_O)        0.124     2.233 r  u_core/u_mover/w_burstcount_q[4]_i_10/O
+                         net (fo=1, routed)           0.789     3.023    u_core/u_mover/w_burstcount_q[4]_i_10_n_0
+    SLICE_X7Y139         LUT6 (Prop_lut6_I0_O)        0.124     3.147 r  u_core/u_mover/w_burstcount_q[4]_i_5/O
+                         net (fo=4, routed)           0.185     3.332    u_core/u_mover/w_burstcount_q[4]_i_5_n_0
+    SLICE_X7Y139         LUT5 (Prop_lut5_I4_O)        0.124     3.456 r  u_core/u_mover/w_burstcount_q[1]_i_2/O
+                         net (fo=8, routed)           0.593     4.049    u_core/u_mover/w_burstcount_q[1]_i_2_n_0
+    SLICE_X7Y140         LUT5 (Prop_lut5_I1_O)        0.124     4.173 r  u_core/u_mover/min3_return1_carry_i_7/O
+                         net (fo=1, routed)           0.000     4.173    u_core/u_mover/min3_return1_carry_i_7_n_0
+    SLICE_X7Y140         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     4.723 r  u_core/u_mover/min3_return1_carry/CO[3]
+                         net (fo=14, routed)          1.047     5.770    u_core/u_mover/min3_return1_carry_n_0
+    SLICE_X8Y140         LUT4 (Prop_lut4_I2_O)        0.124     5.894 r  u_core/u_mover/w_dcnt[1]_i_2/O
+                         net (fo=3, routed)           0.575     6.469    u_core/u_mover/u_fifo/w_dcnt_reg[1]
+    SLICE_X10Y140        LUT4 (Prop_lut4_I3_O)        0.124     6.593 r  u_core/u_mover/u_fifo/wstate5_carry_i_8/O
+                         net (fo=1, routed)           0.000     6.593    u_core/u_mover/u_fifo_n_420
+    SLICE_X10Y140        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     7.106 r  u_core/u_mover/wstate5_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.106    u_core/u_mover/wstate5_carry_n_0
+    SLICE_X10Y141        CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.254     7.360 r  u_core/u_mover/wstate5_carry__0/CO[0]
+                         net (fo=11, routed)          0.394     7.753    u_core/u_mover/u_fifo/w_dcnt_reg[0]_1[0]
+    SLICE_X11Y140        LUT6 (Prop_lut6_I1_O)        0.367     8.120 r  u_core/u_mover/u_fifo/w_burstcount_q[0]_i_1/O
+                         net (fo=2, routed)           0.854     8.974    u_core/u_mover/u_fifo/wptr_reg[7]_7[0]
+    SLICE_X11Y140        LUT6 (Prop_lut6_I1_O)        0.124     9.098 r  u_core/u_mover/u_fifo/w_dcnt[4]_i_5/O
+                         net (fo=3, routed)           0.173     9.271    u_core/u_mover/u_fifo/w_dcnt[4]_i_5_n_0
+    SLICE_X11Y140        LUT4 (Prop_lut4_I3_O)        0.124     9.395 r  u_core/u_mover/u_fifo/w_burstcount_q[4]_i_1/O
+                         net (fo=5, routed)           0.471     9.866    u_core/u_mover/wstate[0]
+    SLICE_X11Y139        FDCE                                         r  u_core/u_mover/w_burstcount_q_reg[1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        9.250     9.250 r  
+                                                      0.000     9.250 r  clk (IN)
+                         net (fo=1167, unset)         0.924    10.174    u_core/u_mover/clk
+    SLICE_X11Y139        FDCE                                         r  u_core/u_mover/w_burstcount_q_reg[1]/C
+                         clock pessimism              0.000    10.174    
+                         clock uncertainty           -0.035    10.139    
+    SLICE_X11Y139        FDCE (Setup_fdce_C_CE)      -0.205     9.934    u_core/u_mover/w_burstcount_q_reg[1]
+  -------------------------------------------------------------------
+                         required time                          9.934    
+                         arrival time                          -9.866    
+  -------------------------------------------------------------------
+                         slack                                  0.068    
+
+
+
+

@@ -63,3 +63,12 @@ quartus/example/pcie_dma_example/
 Thumbs.db
 .vscode/
 .idea/
+
+# AMD Vivado / xsim
+vivado/build/
+.Xil/
+xsim.dir/
+*.pb
+*.wdb
+# committed Vivado logs (must stay after the *.log rule)
+!vivado/reports/**/*.log
