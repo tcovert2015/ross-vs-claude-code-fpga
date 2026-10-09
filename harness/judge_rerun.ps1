@@ -24,6 +24,7 @@ git -C $repo worktree add --detach $wt $branch 2>&1 | ForEach-Object { Log $_ }
 $work = Join-Path $wt "designs\$Design"
 Log "judge worktree $wt @ $(git -C $wt rev-parse --short HEAD)"
 
+[Environment]::SetEnvironmentVariable('PATH', "$VivadoBin;" + [Environment]::GetEnvironmentVariable('PATH'), 'Process')
 $env:PATH = "$VivadoBin;$env:PATH"
 Push-Location $work
 try {
@@ -31,6 +32,7 @@ try {
   foreach ($cmd in $FlowCmd) {
     $i++
     $clog = Join-Path $out "step$i.log"
+    $cmd = $cmd -replace '^(vivado|xvlog|xelab|xsim)\.bat', ("`"$VivadoBin\" + '$1.bat"')   # absolute tool path
     Log "step $i START: $cmd"
     $sw = [Diagnostics.Stopwatch]::StartNew()
     cmd /c "$cmd" > $clog 2>&1
