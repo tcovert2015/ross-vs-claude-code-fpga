@@ -1,0 +1,7 @@
+# Worst slack (ns) by path class, post-route, clk = 8.000 ns (125 MHz)
+path class                        setup       hold
+register -> register              1.147      0.079
+input port -> register            1.251     -0.202
+register -> output port           2.448      1.226
+input port -> output port         2.711      1.907
+hold-violating endpoints: 42 (of which launched from an input port: 42)

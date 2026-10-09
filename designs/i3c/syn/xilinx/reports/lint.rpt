@@ -1,0 +1,88 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Oct  8 21:17:16 2026
+| Host         : tcovert running 64-bit major release  (build 9200)
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+RTL Linter Report
+
+Table of Contents
+-----------------
+1. Summary
+2. Expanded
+
+1. Summary
+----------
+
++-----------+----------+--------------+----------+--------------------------------------------------------------------------------+
+| Rule ID   | Severity | # Violations | # Waived | Message Template                                                               |
++-----------+----------+--------------+----------+--------------------------------------------------------------------------------+
+| ASSIGN-6  | WARNING  | 20           | 0        | Some bits in '(rtl_name)' are not read. First unread bit index is '(info)'.    |
+| ASSIGN-10 | WARNING  | 32           | 0        | Some bits in IO '(rtl_name)' are not read. First unread bit index is '(info)'. |
++-----------+----------+--------------+----------+--------------------------------------------------------------------------------+
+
+
+2. Expanded
+-----------
+
++-----------+--------------------+-------------------------+------+--------------------+-----------------------+-------------+
+| Rule ID   | description        | rtl_name                | info | rtl_hierarchy      | rtl_file              | Line number |
++-----------+--------------------+-------------------------+------+--------------------+-----------------------+-------------+
+| ASSIGN-10 | IO bit(s) not read | bus_idle                | 0    | i3c_avalon_mm      | i3c_avalon_mm.sv      | 90          |
+| ASSIGN-6  | Bit(s) not used    | hdr_open                | 0    | i3c_ccc            | i3c_ccc.sv            | 114         |
+| ASSIGN-10 | IO bit(s) not read | ack_slot                | 0    | i3c_ccc            | i3c_ccc.sv            | 46          |
+| ASSIGN-10 | IO bit(s) not read | bit_cnt                 | 0    | i3c_ccc            | i3c_ccc.sv            | 42          |
+| ASSIGN-10 | IO bit(s) not read | is_broadcast            | 0    | i3c_ccc            | i3c_ccc.sv            | 50          |
+| ASSIGN-10 | IO bit(s) not read | scl_falling             | 0    | i3c_ccc            | i3c_ccc.sv            | 38          |
+| ASSIGN-10 | IO bit(s) not read | scl_rising              | 0    | i3c_ccc            | i3c_ccc.sv            | 37          |
+| ASSIGN-6  | Bit(s) not used    | pl_sel                  | 6    | i3c_daa            | i3c_daa.sv            | 89          |
+| ASSIGN-10 | IO bit(s) not read | bit_cnt                 | 0    | i3c_daa            | i3c_daa.sv            | 42          |
+| ASSIGN-10 | IO bit(s) not read | scl_falling             | 0    | i3c_daa            | i3c_daa.sv            | 37          |
+| ASSIGN-10 | IO bit(s) not read | start_stb               | 0    | i3c_daa            | i3c_daa.sv            | 39          |
+| ASSIGN-10 | IO bit(s) not read | ccc_supported           | 0    | i3c_error_recovery | i3c_error_recovery.sv | 56          |
+| ASSIGN-10 | IO bit(s) not read | is_read                 | 0    | i3c_error_recovery | i3c_error_recovery.sv | 47          |
+| ASSIGN-10 | IO bit(s) not read | match_7e                | 0    | i3c_error_recovery | i3c_error_recovery.sv | 45          |
+| ASSIGN-10 | IO bit(s) not read | match_da                | 0    | i3c_error_recovery | i3c_error_recovery.sv | 46          |
+| ASSIGN-10 | IO bit(s) not read | scl_falling             | 0    | i3c_error_recovery | i3c_error_recovery.sv | 40          |
+| ASSIGN-10 | IO bit(s) not read | scl_rising              | 0    | i3c_error_recovery | i3c_error_recovery.sv | 39          |
+| ASSIGN-10 | IO bit(s) not read | start_stb               | 0    | i3c_error_recovery | i3c_error_recovery.sv | 36          |
+| ASSIGN-10 | IO bit(s) not read | rd_clk                  | 0    | i3c_fifo           | i3c_fifo.sv           | 41          |
+| ASSIGN-10 | IO bit(s) not read | rd_rst_n                | 0    | i3c_fifo           | i3c_fifo.sv           | 42          |
+| ASSIGN-10 | IO bit(s) not read | bcr                     | 0    | i3c_ibi            | i3c_ibi.sv            | 61          |
+| ASSIGN-10 | IO bit(s) not read | mdb_is_prn              | 0    | i3c_ibi            | i3c_ibi.sv            | 67          |
+| ASSIGN-10 | IO bit(s) not read | bit_cnt                 | 0    | i3c_protocol_fsm   | i3c_protocol_fsm.sv   | 44          |
+| ASSIGN-10 | IO bit(s) not read | bus_available           | 0    | i3c_protocol_fsm   | i3c_protocol_fsm.sv   | 40          |
+| ASSIGN-10 | IO bit(s) not read | scl_falling             | 0    | i3c_protocol_fsm   | i3c_protocol_fsm.sv   | 39          |
+| ASSIGN-10 | IO bit(s) not read | scl_rising              | 0    | i3c_protocol_fsm   | i3c_protocol_fsm.sv   | 38          |
+| ASSIGN-10 | IO bit(s) not read | tbit_slot               | 0    | i3c_protocol_fsm   | i3c_protocol_fsm.sv   | 47          |
+| ASSIGN-10 | IO bit(s) not read | app_wr_be               | 3    | i3c_regfile        | i3c_regfile.sv        | 84          |
+| ASSIGN-10 | IO bit(s) not read | app_wr_data             | 24   | i3c_regfile        | i3c_regfile.sv        | 83          |
+| ASSIGN-10 | IO bit(s) not read | trp_trigger             | 0    | i3c_regfile        | i3c_regfile.sv        | 76          |
+| ASSIGN-10 | IO bit(s) not read | clk                     | 0    | i3c_sda_mux        | i3c_sda_mux.sv        | 17          |
+| ASSIGN-10 | IO bit(s) not read | rst_n                   | 0    | i3c_sda_mux        | i3c_sda_mux.sv        | 18          |
+| ASSIGN-6  | Bit(s) not used    | av_prn_send_en          | 0    | i3c_target_top     | i3c_target_top.sv     | 187         |
+| ASSIGN-6  | Bit(s) not used    | av_static_addr_en       | 0    | i3c_target_top     | i3c_target_top.sv     | 187         |
+| ASSIGN-6  | Bit(s) not used    | ccc_code                | 0    | i3c_target_top     | i3c_target_top.sv     | 135         |
+| ASSIGN-6  | Bit(s) not used    | ccc_is_direct           | 0    | i3c_target_top     | i3c_target_top.sv     | 136         |
+| ASSIGN-6  | Bit(s) not used    | daa_arb_lost            | 0    | i3c_target_top     | i3c_target_top.sv     | 131         |
+| ASSIGN-6  | Bit(s) not used    | fr_parity_ok            | 0    | i3c_target_top     | i3c_target_top.sv     | 115         |
+| ASSIGN-6  | Bit(s) not used    | fr_t_drive_val          | 0    | i3c_target_top     | i3c_target_top.sv     | 115         |
+| ASSIGN-6  | Bit(s) not used    | hdr_trp_body_valid      | 0    | i3c_target_top     | i3c_target_top.sv     | 161         |
+| ASSIGN-6  | Bit(s) not used    | ibi_active              | 0    | i3c_target_top     | i3c_target_top.sv     | 151         |
+| ASSIGN-6  | Bit(s) not used    | ibi_addr                | 0    | i3c_target_top     | i3c_target_top.sv     | 153         |
+| ASSIGN-6  | Bit(s) not used    | pf_addr_capture_armed   | 0    | i3c_target_top     | i3c_target_top.sv     | 121         |
+| ASSIGN-6  | Bit(s) not used    | pf_state_idle           | 0    | i3c_target_top     | i3c_target_top.sv     | 120         |
+| ASSIGN-6  | Bit(s) not used    | pf_state_ignore         | 0    | i3c_target_top     | i3c_target_top.sv     | 120         |
+| ASSIGN-6  | Bit(s) not used    | pf_to_ccc               | 0    | i3c_target_top     | i3c_target_top.sv     | 126         |
+| ASSIGN-6  | Bit(s) not used    | rf_last_reset_was_whole | 0    | i3c_target_top     | i3c_target_top.sv     | 172         |
+| ASSIGN-6  | Bit(s) not used    | rxf_wr_level            | 0    | i3c_target_top     | i3c_target_top.sv     | 191         |
+| ASSIGN-6  | Bit(s) not used    | txf_overflow            | 0    | i3c_target_top     | i3c_target_top.sv     | 193         |
+| ASSIGN-6  | Bit(s) not used    | txf_rd_level            | 0    | i3c_target_top     | i3c_target_top.sv     | 194         |
+| ASSIGN-10 | IO bit(s) not read | avl_clk                 | 0    | i3c_target_top     | i3c_target_top.sv     | 52          |
+| ASSIGN-10 | IO bit(s) not read | avl_rst_n               | 0    | i3c_target_top     | i3c_target_top.sv     | 53          |
++-----------+--------------------+-------------------------+------+--------------------+-----------------------+-------------+
+* create_waiver can be used to apply waiver to linter violations.
+** For example, create_waiver -type LINT -id RULE_ID {-rtl_name RTL_NAME} {-rtl_hierarchy RTL_MODULE_NAME} {-rtl_file RTL_FILE_NAME}.
+
+
