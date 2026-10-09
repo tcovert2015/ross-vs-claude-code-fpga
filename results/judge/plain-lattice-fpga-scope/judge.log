@@ -1,0 +1,45 @@
+2026-10-09 17:06:49 Preparing worktree (detached HEAD 18ad0c6)
+2026-10-09 17:06:49 HEAD is now at 18ad0c6 fpga/lattice: Radiant Certus-NX port (AXI4-Lite top, build flow, reports, README)
+2026-10-09 17:06:49 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-plain-lattice-fpga-scope @ 18ad0c6
+2026-10-09 17:06:49 step 1 START: "D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" fpga/lattice/build.tcl 32 8
+2026-10-09 17:08:02 step 1 END exit=0 after 73s (log: step1.log)
+2026-10-09 17:08:02 step 2 START: "D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" fpga/lattice/build.tcl 32 12
+2026-10-09 17:09:19 step 2 END exit=0 after 77s (log: step2.log)
+2026-10-09 17:09:19 step 3 START: "D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" fpga/lattice/build.tcl 32 15
+2026-10-09 17:11:02 step 3 END exit=0 after 103s (log: step3.log)
+2026-10-09 17:11:02 step 4 START: "C:\Program Files\Git\bin\bash.exe" sim/run_questa.sh
+2026-10-09 17:11:57 step 4 END exit=1 after 55s (log: step4.log)
+2026-10-09 17:11:57 git status after re-run:
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d12/map.mrp
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d12/pad.pad
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d12/par.par
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d12/synthesis.srr
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d12/timing_par.twr
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d15/map.mrp
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d15/pad.pad
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d15/par.par
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d15/synthesis.srr
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d15/timing_par.twr
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d8/map.mrp
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d8/pad.pad
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d8/par.par
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d8/synthesis.srr
+2026-10-09 17:11:58    M fpga/lattice/reports/w32_d8/timing_par.twr
+2026-10-09 17:11:58    M sim/questa_tb_axil_top.log
+2026-10-09 17:11:58    M sim/questa_tb_capture_basic.log
+2026-10-09 17:11:58    M sim/questa_tb_csr.log
+2026-10-09 17:11:58    M sim/questa_tb_csr_if.log
+2026-10-09 17:11:58    M sim/questa_tb_drain_cdc.log
+2026-10-09 17:11:58    M sim/questa_tb_ext_trig.log
+2026-10-09 17:11:58    M sim/questa_tb_jtag.log
+2026-10-09 17:11:58    M sim/questa_tb_pretrig.log
+2026-10-09 17:11:58    M sim/questa_tb_prim_fifo_async.log
+2026-10-09 17:11:58    M sim/questa_tb_prim_fifo_sync.log
+2026-10-09 17:11:58    M sim/questa_tb_prim_ram.log
+2026-10-09 17:11:58    M sim/questa_tb_rle.log
+2026-10-09 17:11:58    M sim/questa_tb_smoke.log
+2026-10-09 17:11:58    M sim/questa_tb_trigger_cmp.log
+2026-10-09 17:11:58    M sim/questa_tb_trigger_seq.log
+2026-10-09 17:11:58    M sim/questa_tb_uart.log
+2026-10-09 17:11:58    M sim/questa_tb_windows.log
+2026-10-09 17:11:58 JUDGE DONE
