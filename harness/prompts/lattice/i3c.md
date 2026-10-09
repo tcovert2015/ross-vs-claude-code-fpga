@@ -6,9 +6,9 @@ MIPI I3C Basic v1.2 Target in vendor-neutral SystemVerilog, currently built with
 Quartus for Cyclone 10 GX (see `syn/altera/`) and simulated with Icarus
 (`sim/run.sh`, 29/29 PASS).
 
-Lattice Radiant is installed on this machine (find the install under `C:\lscc\radiant\<version>`;
-the Tcl console is `bin\nt64\radiantc.exe` / `pnmainc.exe`). Synplify Pro and the bundled
-QuestaSim are licensed (`LM_LICENSE_FILE` is set). Work only inside `designs/i3c/`.
+Lattice Radiant 2026.1 is installed at `D:\lscc\radiant\2026.1` (Tcl console:
+`bin\nt64\radiantc.exe` / `pnmainc.exe`; QuestaSim Lattice Edition under `questasim\win64`).
+Synplify Pro and QuestaSim are licensed (`LM_LICENSE_FILE` is set). Work only inside `designs/i3c/`.
 
 ## Deliverables
 

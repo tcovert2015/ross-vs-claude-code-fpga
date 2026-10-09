@@ -3,7 +3,11 @@
     "lattice-radiant-mcp": {
       "type": "stdio",
       "command": "C:/Users/tcove/miniforge3/python.exe",
-      "args": ["-m", "radiant_mcp"]
+      "args": ["-m", "radiant_mcp"],
+      "env": {
+        "RADIANT_EXE": "D:/lscc/radiant/2026.1/bin/nt64/radiantc.exe",
+        "LM_LICENSE_FILE": "C:/Users/tcove/license.dat"
+      }
     }
   }
 }

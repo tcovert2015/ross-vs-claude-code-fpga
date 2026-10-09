@@ -7,9 +7,9 @@ with an AXI4-Lite CSR front-end (`rtl/if/scope_axil.sv`, used when
 `XPORT="CSR"`). It has been built on Agilex 3 with Quartus (`fpga/`) and verified
 with Verilator testbenches (`sim/run.sh`).
 
-Lattice Radiant is installed on this machine (find the install under `C:\lscc\radiant\<version>`;
-the Tcl console is `bin\nt64\radiantc.exe` / `pnmainc.exe`). Synplify Pro and the bundled
-QuestaSim are licensed (`LM_LICENSE_FILE` is set). Work only inside `designs/fpga-scope/`.
+Lattice Radiant 2026.1 is installed at `D:\lscc\radiant\2026.1` (Tcl console:
+`bin\nt64\radiantc.exe` / `pnmainc.exe`; QuestaSim Lattice Edition under `questasim\win64`).
+Synplify Pro and QuestaSim are licensed (`LM_LICENSE_FILE` is set). Work only inside `designs/fpga-scope/`.
 
 ## Deliverables
 

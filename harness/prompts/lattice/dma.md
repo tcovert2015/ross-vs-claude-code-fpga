@@ -7,9 +7,9 @@ selectable system bus (`SYS_IF = "AVALON" | "AXI4" | "AHB"`), currently built
 with Quartus (`quartus/`) and simulated with Icarus (`scripts/run_sim.sh`, 6
 configurations x 3 seeds).
 
-Lattice Radiant is installed on this machine (find the install under `C:\lscc\radiant\<version>`;
-the Tcl console is `bin\nt64\radiantc.exe` / `pnmainc.exe`). Synplify Pro and the bundled
-QuestaSim are licensed (`LM_LICENSE_FILE` is set). Work only inside `designs/dma/`.
+Lattice Radiant 2026.1 is installed at `D:\lscc\radiant\2026.1` (Tcl console:
+`bin\nt64\radiantc.exe` / `pnmainc.exe`; QuestaSim Lattice Edition under `questasim\win64`).
+Synplify Pro and QuestaSim are licensed (`LM_LICENSE_FILE` is set). Work only inside `designs/dma/`.
 
 ## Deliverables
 
