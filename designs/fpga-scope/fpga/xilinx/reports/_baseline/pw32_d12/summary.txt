@@ -1,0 +1,3 @@
+cfg=pw32_d12 part=xc7a100tcsg324-1 top=scope_axil_top
+ramb36=4 ramb18=1 lutram=0
+wns_ns=0.231 whs_ns=0.083

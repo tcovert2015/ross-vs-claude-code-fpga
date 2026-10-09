@@ -57,6 +57,10 @@ The capture buffer maps to exactly its raw BRAM cost (`DEPTH × STORE_W` bits) �
 #12 board build (`XPORT="CSR"`, no transport FIFOs) the whole scope is **9 M20K at 4096×33**. Full
 PROBE_W×DEPTH sweep + reproducible scripts (Quartus / Vivado / nextpnr): [fpga/util_sweep/](fpga/util_sweep/).
 
+On AMD Artix-7 (`xc7a100t`, Vivado 2025.2, `XPORT="CSR"` + AXI4-Lite, post-route at 100 MHz) the same
+three configs take 1,194–1,282 LUTs, with the capture buffer in 1 RAMB18 / 4 RAMB36 / 33 RAMB36 — flow, reports, and
+xsim regression: [fpga/xilinx/](fpga/xilinx/README.md).
+
 ## Hardware bring-up (M9) — done
 
 An fpga-scope instance runs on the **Arrow AXC3000** (Agilex 3 `A3CY100BM16AE7S`), instrumenting a

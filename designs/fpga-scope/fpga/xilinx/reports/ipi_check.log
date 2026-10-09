@@ -1,0 +1,225 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Oct  8 22:01:05 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source ../../check_ipi.tcl
+# set here [file dirname [file normalize [info script]]]
+# set rtl  [file normalize [file join $here .. .. rtl]]
+# create_project -force ipi_check ./ipi_prj -part xc7a100tcsg324-1
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/fpga/xilinx/build/ipi/ipi_prj'
+# add_files -norecurse [list \
+#   $rtl/scope_pkg.sv $rtl/prim/prim_ff_sync.sv $rtl/prim/prim_ram_1r1w.sv \
+#   $rtl/prim/prim_fifo_sync.sv $rtl/prim/prim_fifo_async.sv $rtl/scope_core.sv \
+#   $rtl/scope_csr.sv $rtl/scope_trigger.sv $rtl/scope_rle.sv $rtl/scope_drain.sv \
+#   $rtl/xport/scope_uart.sv $rtl/scope_top.sv $rtl/if/scope_axil.sv $here/scope_axil_top.sv $here/scope_axil_bd.v]
+# update_compile_order -fileset sources_1
+# create_bd_design ipi_check
+Wrote  : <D:\AMD Ross Test\wt\plain-fpga-scope\designs\fpga-scope\fpga\xilinx\build\ipi\ipi_prj\ipi_check.srcs\sources_1\bd\ipi_check\ipi_check.bd> 
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aresetn' of definition 'xilinx.com:signal:reset:1.0' (from X_INTERFACE_INFO parameter from HDL file).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'aresetn' of definition 'xilinx.com:signal:reset:1.0' (from 'X_INTERFACE_INFO' attribute).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's_axi'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'aresetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 'aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+WARNING: [IP_Flow 19-11770] Clock interface 'clk' has no FREQ_HZ parameter.
+# set c [create_bd_cell -type module -reference scope_axil_bd scope_0]
+# set ok 1
+# foreach i [get_bd_intf_pins -of_objects $c] {
+#   puts "IPI_INTF [get_property NAME $i] vlnv=[get_property VLNV $i] mode=[get_property MODE $i]\
+#  protocol=[get_property CONFIG.PROTOCOL $i] addr_w=[get_property CONFIG.ADDR_WIDTH $i]\
+#  data_w=[get_property CONFIG.DATA_WIDTH $i]"
+# }
+IPI_INTF s_axi vlnv=xilinx.com:interface:aximm_rtl:1.0 mode=Slave protocol=AXI4LITE addr_w=10 data_w=32
+# foreach p [get_bd_pins -of_objects $c] {
+#   puts "IPI_PIN  [get_property NAME $p] dir=[get_property DIR $p] type=[get_property TYPE $p]"
+# }
+IPI_PIN  aresetn dir=I type=rst
+IPI_PIN  armed dir=O type=undef
+IPI_PIN  clk dir=I type=clk
+IPI_PIN  probe dir=I type=undef
+IPI_PIN  s_axi_araddr dir=I type=undef
+IPI_PIN  s_axi_arprot dir=I type=undef
+IPI_PIN  s_axi_arready dir=O type=undef
+IPI_PIN  s_axi_arvalid dir=I type=undef
+IPI_PIN  s_axi_awaddr dir=I type=undef
+IPI_PIN  s_axi_awprot dir=I type=undef
+IPI_PIN  s_axi_awready dir=O type=undef
+IPI_PIN  s_axi_awvalid dir=I type=undef
+IPI_PIN  s_axi_bready dir=I type=undef
+IPI_PIN  s_axi_bresp dir=O type=undef
+IPI_PIN  s_axi_bvalid dir=O type=undef
+IPI_PIN  s_axi_rdata dir=O type=undef
+IPI_PIN  s_axi_rready dir=I type=undef
+IPI_PIN  s_axi_rresp dir=O type=undef
+IPI_PIN  s_axi_rvalid dir=O type=undef
+IPI_PIN  s_axi_wdata dir=I type=undef
+IPI_PIN  s_axi_wready dir=O type=undef
+IPI_PIN  s_axi_wstrb dir=I type=undef
+IPI_PIN  s_axi_wvalid dir=I type=undef
+IPI_PIN  trig_ext_i dir=I type=undef
+IPI_PIN  trig_ext_o dir=O type=undef
+IPI_PIN  triggered dir=O type=undef
+# set s [get_bd_intf_pins -quiet scope_0/s_axi]
+# if {[llength $s] != 1} { set ok 0 } else {
+#   if {[get_property MODE $s] ne "Slave"} { set ok 0 }
+#   if {[get_property CONFIG.PROTOCOL $s] ne "AXI4LITE"} { set ok 0 }
+# }
+# puts "IPI_CLK  ASSOCIATED_BUSIF=[get_property CONFIG.ASSOCIATED_BUSIF [get_bd_pins scope_0/clk]]\
+#  ASSOCIATED_RESET=[get_property CONFIG.ASSOCIATED_RESET [get_bd_pins scope_0/clk]]"
+IPI_CLK  ASSOCIATED_BUSIF=s_axi ASSOCIATED_RESET=aresetn
+# puts "IPI_RST  POLARITY=[get_property CONFIG.POLARITY [get_bd_pins scope_0/aresetn]]"
+IPI_RST  POLARITY=ACTIVE_LOW
+# if {[get_property CONFIG.ASSOCIATED_BUSIF [get_bd_pins scope_0/clk]] ne "s_axi"} { set ok 0 }
+# if {[get_property CONFIG.POLARITY [get_bd_pins scope_0/aresetn]] ne "ACTIVE_LOW"} { set ok 0 }
+# puts "IPI_PARAMS PROBE_W=[get_property CONFIG.PROBE_W $c] DEPTH_LOG2=[get_property CONFIG.DEPTH_LOG2 $c]"
+IPI_PARAMS PROBE_W=32 DEPTH_LOG2=12
+# synth_design -rtl -top scope_axil_bd -part xc7a100tcsg324-1 -generic {PROBE_W=64 DEPTH_LOG2=10 RLE_EN=0}
+Command: synth_design -rtl -top scope_axil_bd -part xc7a100tcsg324-1 -generic {PROBE_W=64 DEPTH_LOG2=10 RLE_EN=0}
+Starting synth_design
+WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
+D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/fpga/xilinx/build/ipi/ipi_prj/ipi_check.srcs/sources_1/bd/ipi_check/ipi_check.bd
+
+WARNING: [Vivado_Tcl 4-393] The 'Implementation' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
+D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/fpga/xilinx/build/ipi/ipi_prj/ipi_check.srcs/sources_1/bd/ipi_check/ipi_check.bd
+
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 15040
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1320.777 ; gain = 541.566
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'scope_axil_bd' [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/fpga/xilinx/scope_axil_bd.v:10]
+	Parameter PROBE_W bound to: 64 - type: integer 
+	Parameter DEPTH_LOG2 bound to: 10 - type: integer 
+	Parameter RLE_EN bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'scope_axil_top' [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/fpga/xilinx/scope_axil_top.sv:22]
+	Parameter PROBE_W bound to: 64 - type: integer 
+	Parameter DEPTH_LOG2 bound to: 10 - type: integer 
+	Parameter RLE_EN bound to: 1'b0 
+	Parameter ID_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'scope_axil' [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/if/scope_axil.sv:22]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/if/scope_axil.sv:84]
+INFO: [Synth 8-6155] done synthesizing module 'scope_axil' (0#1) [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/if/scope_axil.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'scope_top' [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/scope_top.sv:36]
+	Parameter PROBE_W bound to: 64 - type: integer 
+	Parameter DEPTH_LOG2 bound to: 10 - type: integer 
+	Parameter NUM_CMP bound to: 32'b00000000000000000000000000000100 
+	Parameter SEQ_STAGES bound to: 32'b00000000000000000000000000000100 
+	Parameter RLE_EN bound to: 1'b0 
+	Parameter TS_W bound to: 32'b00000000000000000000000000110000 
+	Parameter XPORT bound to: CSR - type: string 
+	Parameter ID_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'scope_trigger' [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/scope_trigger.sv:40]
+	Parameter PROBE_W bound to: 64 - type: integer 
+	Parameter NUM_CMP bound to: 32'b00000000000000000000000000000100 
+	Parameter SEQ_STAGES bound to: 32'b00000000000000000000000000000100 
+INFO: [Synth 8-6155] done synthesizing module 'scope_trigger' (0#1) [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/scope_trigger.sv:40]
+INFO: [Synth 8-6157] synthesizing module 'scope_core' [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/scope_core.sv:41]
+	Parameter PROBE_W bound to: 64 - type: integer 
+	Parameter DEPTH_LOG2 bound to: 10 - type: integer 
+	Parameter TS_W bound to: 32'b00000000000000000000000000110000 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/scope_core.sv:164]
+INFO: [Synth 8-6157] synthesizing module 'prim_ram_1r1w' [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/prim/prim_ram_1r1w.sv:17]
+	Parameter WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH_LOG2 bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'prim_ram_1r1w' (0#1) [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/prim/prim_ram_1r1w.sv:17]
+INFO: [Synth 8-6157] synthesizing module 'prim_ram_1r1w__parameterized0' [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/prim/prim_ram_1r1w.sv:17]
+	Parameter WIDTH bound to: 32'b00000000000000000000000000001011 
+	Parameter DEPTH_LOG2 bound to: 32'b00000000000000000000000000001000 
+INFO: [Synth 8-6155] done synthesizing module 'prim_ram_1r1w__parameterized0' (0#1) [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/prim/prim_ram_1r1w.sv:17]
+INFO: [Synth 8-6155] done synthesizing module 'scope_core' (0#1) [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/scope_core.sv:41]
+INFO: [Synth 8-6157] synthesizing module 'scope_csr' [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/scope_csr.sv:40]
+	Parameter PROBE_W bound to: 64 - type: integer 
+	Parameter STORE_W bound to: 64 - type: integer 
+	Parameter DEPTH_LOG2 bound to: 10 - type: integer 
+	Parameter NUM_CMP bound to: 32'b00000000000000000000000000000100 
+	Parameter SEQ_STAGES bound to: 32'b00000000000000000000000000000100 
+	Parameter RLE_EN bound to: 1'b0 
+	Parameter TS_W bound to: 32'b00000000000000000000000000110000 
+INFO: [Synth 8-6155] done synthesizing module 'scope_csr' (0#1) [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/scope_csr.sv:40]
+INFO: [Synth 8-6155] done synthesizing module 'scope_top' (0#1) [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/rtl/scope_top.sv:36]
+INFO: [Synth 8-6155] done synthesizing module 'scope_axil_top' (0#1) [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/fpga/xilinx/scope_axil_top.sv:22]
+INFO: [Synth 8-6155] done synthesizing module 'scope_axil_bd' (0#1) [D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/fpga/xilinx/scope_axil_bd.v:10]
+WARNING: [Synth 8-7129] Port trig_combine[31] in module scope_trigger is either unconnected or has no load
+WARNING: [Synth 8-7129] Port trig_combine[30] in module scope_trigger is either unconnected or has no load
+WARNING: [Synth 8-7129] Port trig_combine[29] in module scope_trigger is either unconnected or has no load
+WARNING: [Synth 8-7129] Port trig_combine[23] in module scope_trigger is either unconnected or has no load
+WARNING: [Synth 8-7129] Port trig_combine[22] in module scope_trigger is either unconnected or has no load
+WARNING: [Synth 8-7129] Port trig_combine[21] in module scope_trigger is either unconnected or has no load
+WARNING: [Synth 8-7129] Port trig_combine[15] in module scope_trigger is either unconnected or has no load
+WARNING: [Synth 8-7129] Port trig_combine[14] in module scope_trigger is either unconnected or has no load
+WARNING: [Synth 8-7129] Port trig_combine[13] in module scope_trigger is either unconnected or has no load
+WARNING: [Synth 8-7129] Port trig_combine[7] in module scope_trigger is either unconnected or has no load
+WARNING: [Synth 8-7129] Port trig_combine[6] in module scope_trigger is either unconnected or has no load
+WARNING: [Synth 8-7129] Port trig_combine[5] in module scope_trigger is either unconnected or has no load
+WARNING: [Synth 8-7129] Port xclk in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port xrst in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rx_data[7] in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rx_data[6] in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rx_data[5] in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rx_data[4] in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rx_data[3] in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rx_data[2] in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rx_data[1] in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rx_data[0] in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rx_valid in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tx_ready in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port uart_rx in module scope_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[1] in module scope_axil is either unconnected or has no load
+WARNING: [Synth 8-7129] Port awaddr[0] in module scope_axil is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wstrb[3] in module scope_axil is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wstrb[2] in module scope_axil is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wstrb[1] in module scope_axil is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wstrb[0] in module scope_axil is either unconnected or has no load
+WARNING: [Synth 8-7129] Port araddr[1] in module scope_axil is either unconnected or has no load
+WARNING: [Synth 8-7129] Port araddr[0] in module scope_axil is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awprot[2] in module scope_axil_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awprot[1] in module scope_axil_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awprot[0] in module scope_axil_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arprot[2] in module scope_axil_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arprot[1] in module scope_axil_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arprot[0] in module scope_axil_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1453.992 ; gain = 674.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1453.992 ; gain = 674.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1453.992 ; gain = 674.781
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 1453.992 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-141] Inserted 4 OBUFs to IO ports without IO buffers.
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1525.820 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1525.820 ; gain = 746.609
+28 Infos, 41 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1525.820 ; gain = 955.156
+# puts "IPI_ELAB probe_w=[llength [get_ports probe*]] cells=[llength [get_cells -hierarchical]]"
+IPI_ELAB probe_w=64 cells=2254
+# if {[llength [get_ports probe*]] != 64} { set ok 0 }
+# if {$ok} { puts "IPI_CHECK: PASS" } else { puts "IPI_CHECK: FAIL"; exit 1 }
+IPI_CHECK: PASS
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 22:01:23 2026...
