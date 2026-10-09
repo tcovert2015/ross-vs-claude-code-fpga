@@ -1,0 +1,670 @@
+
+                         Lattice Mapping Report File
+
+Design:  scope_axil_top
+Family:  LFD2NX
+Device:  LFD2NX-40
+Package: CABGA256
+Performance Grade:  8_High-Performance_1.0V
+
+Mapper:    version Radiant Software (64-bit) 2026.1.1.229.0
+Mapped on: Fri Oct  9 16:58:15 2026
+
+Design Information
+------------------
+
+Command line:   map -i scope_impl_1_syn.udb -o scope_impl_1_map.udb -mp
+     scope_impl_1.mrp -hierrpt -gui -msgset D:/AMD Ross Test/wt/lattice-fpga-sco
+     pe/designs/fpga-scope/fpga/lattice/build/w32_d8/promote.xml
+
+Design Summary
+--------------
+
+   Number of registers:        1198 out of 32811 (4%)
+      Number of SLICE         registers: 1198 out of 32256 (4%)
+      Number of PIO Input     registers:    0 out of   185 (0%)
+      Number of PIO Output    registers:    0 out of   185 (0%)
+      Number of PIO Tri-State registers:    0 out of   185 (0%)
+   Number of LUT4s:            1907 out of 32256 (6%)
+      Number used as logic LUT4s:                       1355
+      Number used as distributed RAM:                    192 (6 per 16X4 RAM)
+      Number used as ripple logic:                       360 (2 per CCU2)
+   Number of PIOs used/reserved:  139 out of   185 (75%)
+      Number of PIOs reserved:      7 (per sysConfig and/or prohibit constraint)
+      Number of PIOs used:        132
+        Number of PIOs used for single ended IO:       132
+        Number of PIO pairs used for differential IO:    0
+        Number allocated to regular speed PIOs:   104 out of  111 (94%)
+        Number allocated to high speed PIOs:       28 out of   74 (38%)
+   Number of Dedicated IO used for ADC/PCIE:    0 out of   12 (0%)
+   Number of IDDR/ODDR/TDDR functions used:      0 out of   444 (0%)
+   Number of IOs using at least one DDR function: 0 (0 differential)
+   Number of Block RAMs:          2 out of 84 (2%)
+   Number of Large RAMs:          0 out of 2 (0%)
+   Number of Logical DSP Functions:
+      Number of Pre-Adders (9+9):    0 out of 112 (0%)
+      Number of Multipliers (18x18): 0 out of 56 (0%)
+         Number of 9X9:        0 (1 18x18 = 2   9x9)
+         Number of 18x18:      0 (1 18x18 = 1 18x18)
+         Number of 18x36:      0 (2 18x18 = 1 18x36)
+         Number of 36x36:      0 (4 18x18 = 1 36x36)
+      Number of 54-bit Accumulators: 0 out of 28 (0%)
+      Number of 18-bit Registers:    0 out of 112 (0%)
+   Number of Physical DSP Components:
+      Number of PREADD9:             0 out of 112 (0%)
+      Number of MULT9:               0 out of 112 (0%)
+      Number of MULT18:              0 out of 56 (0%)
+      Number of MULT18X36:           0 out of 28 (0%)
+      Number of MULT36:              0 out of 14 (0%)
+      Number of ACC54:               0 out of 28 (0%)
+      Number of REG18:               0 out of 112 (0%)
+   Number of ALUREGs:             0 out of 1 (0%)
+   Number of PLLs:                0 out of 3 (0%)
+
+                                    Page 1
+
+
+
+
+
+Design Summary (cont)
+---------------------
+   Number of DDRDLLs:             0 out of 2 (0%)
+   Number of DLLDELs:             0 out of 10 (0%)
+   Number of DQSs:                0 out of 4 (0%)
+   Number of DCSs:                0 out of 1 (0%)
+   Number of DCCs:                0 out of 62 (0%)
+   Number of PCLKDIVs:            0 out of 1 (0%)
+   Number of ECLKDIVs:            0 out of 12 (0%)
+   Number of ECLKSYNCs:           0 out of 12 (0%)
+   Number of ADC Blocks:          0 out of 1 (0%)
+   Number of SGMIICDRs:           0 out of 2 (0%)
+   Number of PMUs:                0 out of 1 (0%)
+   Number of BNKREF18s:           0 out of 3 (0%)
+   Number of BNKREF33s:           0 out of 5 (0%)
+   Number of I2CFIFOs:            0 out of 1 (0%)
+   Number of Oscillator:          0 out of 1 (0%)
+   Number of GSR:                 0 out of 1 (0%)
+   Number of Cryptographic Block: 0 out of 1 (0%)
+   Number of Config IP:           0 out of 1 (0%)
+                 TSALL:           0 out of 1 (0%)
+   Number of JTAG:                0 out of 1 (0%)
+   Number of Config LMMI:         0 out of 1 (0%)
+   Number of Config MULTIBOOT:    0 out of 1 (0%)
+   Number of SED:                 0 out of 1 (0%)
+   Number of Config WDT:          0 out of 1 (0%)
+   Number of PCIEs:               0 out of 1 (0%)
+   Number of Clocks:  1
+      Net clk_c: 1234 loads, 1234 rising, 0 falling (Driver: Port clk)
+   Number of Clock Enables:  47
+      Net VCC: 2 loads, 0 SLICEs
+      Net s_axi_arready_c: 32 loads, 32 SLICEs
+      Net u_scope.u_trigger.fired_1_sqmuxa_i: 1 loads, 1 SLICEs
+      Net u_scope.u_trigger.occ_0_sqmuxa_i: 31 loads, 31 SLICEs
+      Net u_scope.u_trigger.cur_0_sqmuxa_i: 3 loads, 3 SLICEs
+      Net u_scope.g_rle.u_rle.un1_acc_1_RNIB3C8P: 34 loads, 34 SLICEs
+      Net u_scope.g_rle.u_rle.un1_prod033_i: 32 loads, 32 SLICEs
+      Net u_scope.un1_sample_en_1: 1 loads, 1 SLICEs
+      Net u_scope.u_core.windows_done_0_sqmuxa: 18 loads, 18 SLICEs
+      Net u_scope.u_core.triggered_0_sqmuxa: 7 loads, 7 SLICEs
+      Net u_scope.u_core.trig_accept: 56 loads, 56 SLICEs
+      Net u_scope.u_core.triggered_RNO: 1 loads, 1 SLICEs
+      Net u_scope.u_core.windows_done_2_sqmuxa: 1 loads, 0 SLICEs
+      Net u_scope.u_core.offset_1_sqmuxa_i: 7 loads, 7 SLICEs
+      Net u_scope.u_core.fill_wr: 7 loads, 7 SLICEs
+      Net u_scope.u_core.capture_wr: 1 loads, 0 SLICEs
+      Net u_scope.u_core.post_remaining_1_sqmuxa_i: 9 loads, 9 SLICEs
+      Net u_scope.u_csr.N_928: 1 loads, 1 SLICEs
+      Net u_scope.u_csr.N_926: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.N_921: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.N_923: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.N_924: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.N_925: 4 loads, 4 SLICEs
+      Net u_scope.u_csr.N_927: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.N_929: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.N_922: 8 loads, 8 SLICEs
+      Net u_scope.u_csr.cmp_q[3]wre_0: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[3]wre_1: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[3]wre_2: 32 loads, 32 SLICEs
+
+                                    Page 2
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net u_scope.u_csr.cmp_q[3]wre_3: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[2]wre_0: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[2]wre_1: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[2]wre_2: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[2]wre_3: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[1]wre_0: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[1]wre_1: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[1]wre_2: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[1]wre_3: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[0]wre_0: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[0]wre_1: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[0]wre_2: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.cmp_q[0]wre_3: 32 loads, 32 SLICEs
+      Net u_scope.u_csr.N_72_i: 1 loads, 1 SLICEs
+      Net u_scope.u_csr.un2_disarm_1_0_0: 1 loads, 1 SLICEs
+      Net u_scope.u_csr.un1_csr_write_0_a2_0_a2: 8 loads, 8 SLICEs
+      Net u_scope.u_csr.un1_csr_read_0_a2_0_a2: 16 loads, 16 SLICEs
+      Net u_scope.u_csr.N_23: 8 loads, 8 SLICEs
+   Number of LSRs:  15
+      Pin rst: 1075 loads, 1075 SLICEs (Net: rst_c)
+      Net u_scope.u_trigger.occ_0dup: 1 loads, 1 SLICEs
+      Net u_scope.u_trigger.un1_occ_cry_31_0_RNIASK2E3: 32 loads, 32 SLICEs
+      Net u_scope.g_rle.u_rle.un1_acc_n_1_sqmuxa_1_RNI9JJ79: 8 loads, 8 SLICEs
+      Net u_scope.u_core.windows_done_0_sqmuxa: 8 loads, 8 SLICEs
+      Net u_scope.u_core.fill_cnt_147: 9 loads, 9 SLICEs
+      Net u_scope.u_core.triggered_0_sqmuxa_0_a2_1_RNI19629: 7 loads, 7 SLICEs
+      Net u_scope.u_core.triggered_0_sqmuxa_0_a2_1_RNI4GE8L: 8 loads, 8 SLICEs
+      Net u_scope.u_core.st_9_i_a2_0_a2_RNI9HL4A[1]: 9 loads, 9 SLICEs
+      Net u_scope.u_csr.win_sel_q5: 24 loads, 24 SLICEs
+      Net u_scope.u_csr.un1_csr_addr_11_0_a2_3_a2_0_RNIKOPET_0[0]: 8 loads, 8
+     SLICEs
+      Net u_scope.u_csr.un1_csr_addr_12_0_a2_2_a2_0_RNIKV60P[0]: 8 loads, 8
+     SLICEs
+      Net u_scope.u_csr.un1_csr_addr_12_0_a2_2_a2_0_RNIKV60P_0[0]: 8 loads, 8
+     SLICEs
+      Net u_scope.u_csr.un1_csr_addr_11_0_a2_3_a2_0_RNIKOPET[0]: 8 loads, 8
+     SLICEs
+      Net u_scope.u_csr.drain_addr9: 10 loads, 10 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net rst_c: 1095 loads
+      Net u_scope.u_csr.cmp_sel_q[0]: 201 loads
+      Net u_scope.u_csr.cmp_sel_q[1]: 201 loads
+      Net u_scope.pend_valid: 87 loads
+      Net u_scope.u_trigger.ANB1: 75 loads
+      Net u_scope.u_core.trig_accept: 61 loads
+      Net csr_addr[2]: 50 loads
+      Net u_scope.g_rle.u_rle.un1_t0_0_sqmuxa: 46 loads
+      Net u_scope.u_csr.N_101: 45 loads
+      Net csr_addr[3]: 43 loads
+
+
+
+
+
+   Number of warnings:  28
+   Number of criticals: 0
+   Number of errors:    0
+
+
+                                    Page 3
+
+
+
+
+
+Design Errors/Criticals/Warnings
+--------------------------------
+
+WARNING <71003020> - map: Top module port 's_axi_awaddr[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_awaddr[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_awprot[2]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_awprot[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_awprot[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_wstrb[3]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_wstrb[2]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_wstrb[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_wstrb[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_araddr[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_araddr[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_arprot[2]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_arprot[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_arprot[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_awaddr[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_awaddr[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_awprot[2]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_awprot[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_awprot[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_wstrb[3]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_wstrb[2]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_wstrb[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_wstrb[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_araddr[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_araddr[0]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_arprot[2]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_arprot[1]' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 's_axi_arprot[0]' does not connect to
+     anything.
+
+                                    Page 4
+
+
+
+
+
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+-------+-------+-----------+
+| IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
+|                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rready        | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rvalid        | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rresp[1]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rresp[0]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[31]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[30]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[29]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[28]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[27]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[26]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[25]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[24]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[23]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[22]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[21]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[20]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[19]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[18]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[17]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[16]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[15]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[14]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[13]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[12]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[11]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[10]     | OUTPUT    |           |       |       |           |
+
+                                    Page 5
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[9]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[8]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[7]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[6]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[5]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[4]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[3]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[2]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[1]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_rdata[0]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_arready       | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_arvalid       | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_araddr[9]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_araddr[8]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_araddr[7]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_araddr[6]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_araddr[5]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_araddr[4]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_araddr[3]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_araddr[2]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_bready        | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_bvalid        | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_bresp[1]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_bresp[0]      | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wready        | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wvalid        | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[31]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[30]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                    Page 6
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| s_axi_wdata[29]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[28]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[27]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[26]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[25]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[24]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[23]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[22]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[21]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[20]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[19]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[18]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[17]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[16]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[15]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[14]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[13]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[12]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[11]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[10]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[9]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[8]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[7]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[6]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[5]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[4]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[3]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[2]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[1]      | INPUT     |           |       |       |           |
+
+                                    Page 7
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_wdata[0]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_awready       | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_awvalid       | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_awaddr[9]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_awaddr[8]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_awaddr[7]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_awaddr[6]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_awaddr[5]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_awaddr[4]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_awaddr[3]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| s_axi_awaddr[2]     | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| triggered           | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| armed               | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| trig_ext_o          | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| trig_ext_i          | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[31]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[30]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[29]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[28]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[27]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[26]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[25]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[24]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[23]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[22]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[21]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[20]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[19]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                    Page 8
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| probe[18]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[17]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[16]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[15]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[14]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[13]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[12]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[11]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[10]           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[9]            | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[8]            | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[7]            | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[6]            | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[5]            | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[4]            | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[3]            | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[2]            | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[1]            | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| probe[0]            | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rst                 | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| clk                 | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+Removed logic
+-------------
+
+Block GSR_INST undriven or does not drive anything - clipped.
+Block VCC_cZ was optimized away.
+
+ASIC Components
+---------------
+
+Instance Name: u_scope/u_core/u_buf/mem_mem_0_0.PDPSC16K_MODE_inst
+         Type: EBR_CORE
+Instance Name: u_scope/u_core/u_win_meta/mem_mem_0_0.PDPSC16K_MODE_inst
+         Type: EBR_CORE
+
+
+                                    Page 9
+
+
+
+
+
+Constraint Summary
+------------------
+
+   Total number of constraints: 1
+   Total number of constraints dropped: 0
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 4 secs
+   Total REAL Time: 5 secs
+   Peak Memory Usage: 377 MB
+Checksum -- map: 10bbe37323fa11216ee6f70413529bef5dad3b82
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   Page 10
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2026 Lattice Semiconductor
+     Corporation,  All rights reserved.
