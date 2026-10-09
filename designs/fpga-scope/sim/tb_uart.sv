@@ -38,6 +38,7 @@ module tb_uart_leg
   logic armed, triggered;
   logic [7:0] unused_tx_data;
   logic unused_tx_valid, unused_rx_ready, unused_trig_ext_o;
+  logic [31:0] unused_ext_rdata;
 
   scope_top #(
       .PROBE_W   (PROBE_W),
@@ -70,7 +71,6 @@ module tb_uart_leg
       .ext_csr_rdata(unused_ext_rdata)
   );
 
-  logic [31:0] unused_ext_rdata;
 
   wire unused_status = &{1'b0, armed, triggered};
 

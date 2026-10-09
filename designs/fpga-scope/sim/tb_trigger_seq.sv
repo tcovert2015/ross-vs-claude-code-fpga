@@ -72,6 +72,7 @@ module tb_trigger_seq
   logic [DEPTH_LOG2-1:0] rd_addr = '0;
   logic [PROBE_W-1:0] rd_data;
   logic [47:0] ts, ts_at_trig;
+  logic [DEPTH_LOG2:0] unused_win_meta;
 
   scope_core #(
       .PROBE_W   (PROBE_W),
@@ -100,7 +101,6 @@ module tb_trigger_seq
       .ts_at_trig  (ts_at_trig)
   );
 
-  logic [DEPTH_LOG2:0] unused_win_meta;
 
   logic [PROBE_W-1:0] stim[MAXC*MAXS];
   logic [3:0] hits[MAXC*MAXS];
