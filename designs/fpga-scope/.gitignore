@@ -68,3 +68,16 @@ fpga/axc3000/scope_dump.txt
 # checked-in hardware capture deliverables (#12) â€” exempt from *.vcd above
 !docs/captures/
 !docs/captures/*.vcd
+
+# AMD Vivado flow (fpga/xilinx): scratch is ignored; the reports + logs the README cites are
+# committed deliverables — exempt from *.rpt / *.log above
+fpga/xilinx/build/
+!fpga/xilinx/reports/
+!fpga/xilinx/reports/**
+# xsim regression (sim/run_xsim.ps1): scratch ignored, per-TB logs committed
+xsim.dir/
+*.pb
+*.jou
+*.wdb
+!sim/xsim_*.log
+!sim/verilator_run.log

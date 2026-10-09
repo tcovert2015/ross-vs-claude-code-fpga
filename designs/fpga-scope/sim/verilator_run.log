@@ -1,0 +1,198 @@
+Verilator 5.020 2024-01-01 rev (Debian 5.020-1)
+==================================================================
+== Generating golden vectors (sim/model/scope_ref.py)
+==================================================================
+scope_ref: /tmp/fs/sim/build/vectors/cap_w32_d8: 640 stimulus samples, trig_index=128, wrapped=1, consumed=384
+scope_ref: /tmp/fs/sim/build/vectors/cap_w512_d10: 2560 stimulus samples, trig_index=512, wrapped=1, consumed=1536
+scope_ref: /tmp/fs/sim/build/vectors/trig_cmp: 6 cmp cases x 400 samples
+scope_ref: /tmp/fs/sim/build/vectors/trig_seq: 7 seq cases x 3000 samples
+scope_ref: /tmp/fs/sim/build/vectors/pt_d8_p0: 267 stimulus samples, trig_index=3, wrapped=1, consumed=259
+scope_ref: /tmp/fs/sim/build/vectors/pt_d8_p1: 1117 stimulus samples, trig_index=85, wrapped=1, consumed=1108
+scope_ref: /tmp/fs/sim/build/vectors/pt_d8_p64: 328 stimulus samples, trig_index=64, wrapped=1, consumed=256
+scope_ref: /tmp/fs/sim/build/vectors/pt_d8_p128: 899 stimulus samples, trig_index=123, wrapped=1, consumed=763
+scope_ref: /tmp/fs/sim/build/vectors/pt_d8_p255: 831 stimulus samples, trig_index=55, wrapped=1, consumed=569
+scope_ref: /tmp/fs/sim/build/vectors/pt_d10_p0: 1035 stimulus samples, trig_index=3, wrapped=1, consumed=1027
+scope_ref: /tmp/fs/sim/build/vectors/pt_d10_p1: 3421 stimulus samples, trig_index=341, wrapped=1, consumed=3412
+scope_ref: /tmp/fs/sim/build/vectors/pt_d10_p256: 1288 stimulus samples, trig_index=256, wrapped=1, consumed=1024
+scope_ref: /tmp/fs/sim/build/vectors/pt_d10_p512: 3203 stimulus samples, trig_index=123, wrapped=1, consumed=2683
+scope_ref: /tmp/fs/sim/build/vectors/pt_d10_p1023: 3135 stimulus samples, trig_index=55, wrapped=1, consumed=2105
+scope_ref: /tmp/fs/sim/build/vectors/win_w1: 1 windows in 557 cycles, trig_cycles=[364]
+scope_ref: /tmp/fs/sim/build/vectors/win_w2: 2 windows in 463 cycles, trig_cycles=[37, 366]
+scope_ref: /tmp/fs/sim/build/vectors/win_w3: 3 windows in 318 cycles, trig_cycles=[16, 171, 269]
+scope_ref: /tmp/fs/sim/build/vectors/win_w5: 5 windows in 435 cycles, trig_cycles=[48, 81, 191, 374, 410]
+scope_ref: /tmp/fs/sim/build/vectors/win_w8: 8 windows in 601 cycles, trig_cycles=[17, 110, 145, 308, 341, 419, 472, 576]
+scope_ref: /tmp/fs/sim/build/vectors/drn: 564 stimulus samples, trig_index=44, wrapped=1, consumed=556
+scope_ref: /tmp/fs/sim/build/vectors/drn: 1 DRAIN_DATA frames, 1033 bytes
+scope_ref: /tmp/fs/sim/build/vectors/rle_c8: 400 samples -> 74 words (cnt_w=8)
+scope_ref: /tmp/fs/sim/build/vectors/rle_t8: 400 samples -> 400 words (cnt_w=8)
+scope_ref: /tmp/fs/sim/build/vectors/rle_w32: 300 samples -> 162 words (cnt_w=10)
+==================================================================
+== Building tb_smoke
+==================================================================
+-- build ok
+== Running tb_smoke
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_smoke.sv:28: Verilog $finish
+==================================================================
+== Building tb_prim_ram
+==================================================================
+-- build ok
+== Running tb_prim_ram
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_prim_ram.sv:122: Verilog $finish
+==================================================================
+== Building tb_prim_fifo_sync
+==================================================================
+-- build ok
+== Running tb_prim_fifo_sync
+-- 20266 transfers, final occupancy 0
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_prim_fifo_sync.sv:178: Verilog $finish
+==================================================================
+== Building tb_prim_fifo_async
+==================================================================
+-- build ok
+== Running tb_prim_fifo_async
+-- [3to1] 110020 transfers scoreboarded clean (capacity 17)
+-- [1to3] 110006 transfers scoreboarded clean (capacity 5)
+-- [1to1_drift] 110034 transfers scoreboarded clean (capacity 33)
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_prim_fifo_async.sv:258: Verilog $finish
+==================================================================
+== Building tb_capture_basic
+==================================================================
+-- build ok
+== Running tb_capture_basic
+-- [w32_d8_gaps] capture bit-exact vs model: 256 words, trig_index=128, wrapped=1
+-- [w512_d10] capture bit-exact vs model: 1024 words, trig_index=512, wrapped=1
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_capture_basic.sv:196: Verilog $finish
+==================================================================
+== Building tb_csr
+==================================================================
+-- build ok
+== Running tb_csr
+-- [w32_d8] CSR matrix + lockout + 256-word lane-sequenced drain clean
+-- [w512_d10] CSR matrix + lockout + 16384-word lane-sequenced drain clean
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_csr.sv:443: Verilog $finish
+==================================================================
+== Building tb_trigger_cmp
+==================================================================
+-- build ok
+== Running tb_trigger_cmp
+-- 6 comparator cases x 400 samples, cycle-exact
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_trigger_cmp.sv:141: Verilog $finish
+==================================================================
+== Building tb_trigger_seq
+==================================================================
+-- build ok
+== Running tb_trigger_seq
+-- 7 sequencer cases: latency=2 asserted, trigger-sample alignment exact
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_trigger_seq.sv:258: Verilog $finish
+==================================================================
+== Building tb_pretrig
+==================================================================
+-- build ok
+== Running tb_pretrig
+-- [d8] PRETRIG=0 K=3: buffer, metadata, and host reconstruction exact
+-- [d8] PRETRIG=1 K=853: buffer, metadata, and host reconstruction exact
+-- [d10] PRETRIG=0 K=3: buffer, metadata, and host reconstruction exact
+-- [d8] PRETRIG=64 K=64: buffer, metadata, and host reconstruction exact
+-- [d8] PRETRIG=128 K=635: buffer, metadata, and host reconstruction exact
+-- [d8] PRETRIG=255 K=567: buffer, metadata, and host reconstruction exact
+-- [d10] PRETRIG=1 K=2389: buffer, metadata, and host reconstruction exact
+-- [d10] PRETRIG=256 K=256: buffer, metadata, and host reconstruction exact
+-- [d10] PRETRIG=512 K=2171: buffer, metadata, and host reconstruction exact
+-- [d10] PRETRIG=1023 K=2103: buffer, metadata, and host reconstruction exact
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_pretrig.sv:200: Verilog $finish
+==================================================================
+== Building tb_windows
+==================================================================
+-- build ok
+== Running tb_windows
+-- cfg_err bound: WINDOWS>DEPTH/2 rejected, in-range accepted
+-- W=1 (slice=256): buffer + per-window metadata exact
+-- W=2 (slice=128): buffer + per-window metadata exact
+-- W=3 (slice=64): buffer + per-window metadata exact
+-- W=5 (slice=32): buffer + per-window metadata exact
+-- W=8 (slice=32): buffer + per-window metadata exact
+-- mid-sequence disarm: IDLE with windows_done=2
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_windows.sv:183: Verilog $finish
+==================================================================
+== Building tb_drain_cdc
+==================================================================
+-- build ok
+== Running tb_drain_cdc
+-- [xclk3to1] PING/CSR/NAK/resync + byte-exact DRAIN under back-pressure
+-- [xclk1to3] PING/CSR/NAK/resync + byte-exact DRAIN under back-pressure
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_drain_cdc.sv:375: Verilog $finish
+==================================================================
+== Building tb_uart
+==================================================================
+-- build ok
+== Running tb_uart
+-- [div4] DIV=4: LSB-first + BE CRC asserted, NAK + resync clean
+-- [div16] DIV=16: LSB-first + BE CRC asserted, NAK + resync clean
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_uart.sv:279: Verilog $finish
+==================================================================
+== Building tb_csr_if
+==================================================================
+-- build ok
+== Running tb_csr_if
+-- [avalon] BUS=1 matrix + BUF_DATA pop + cfg_err: PASS
+-- [axil] BUS=2 matrix + BUF_DATA pop + cfg_err: PASS
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_csr_if.sv:304: Verilog $finish
+==================================================================
+== Building tb_rle
+==================================================================
+-- build ok
+== Running tb_rle
+-- [wide32] PROBE_W=32 CNT_W=10: 300 samples -> 162 words, encode+bypass PASS
+-- [const8] PROBE_W=8 CNT_W=8: 400 samples -> 74 words, encode+bypass PASS
+-- [toggle8] PROBE_W=8 CNT_W=8: 400 samples -> 400 words, encode+bypass PASS
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_rle.sv:133: Verilog $finish
+==================================================================
+== Building tb_ext_trig
+==================================================================
+-- build ok
+== Running tb_ext_trig
+-- A cmp-fired @00000400, B ext-triggered contemporaneously @00010400 (latency 0 capture cycles)
+-- two scope_top instances captured independently; no singleton state
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_ext_trig.sv:143: Verilog $finish
+==================================================================
+== Building tb_jtag
+==================================================================
+-- build ok
+== Running tb_jtag
+-- PING/CSR/DRAIN byte-exact over the scope_jtag byte bridge (== STREAM path)
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_jtag.sv:199: Verilog $finish
+==================================================================
+== Building tb_axil_top
+==================================================================
+-- build ok
+== Running tb_axil_top
+-- [rle1_d8] PROBE_W=32 DEPTH_LOG2=8 RLE_EN=1: ID/HWCFG, status pins, 256-word drain, cmp trigger clean
+-- [rle0_d10] PROBE_W=32 DEPTH_LOG2=10 RLE_EN=0: ID/HWCFG, status pins, 1024-word drain, cmp trigger clean
+TB_RESULT: PASS
+- /tmp/fs/sim/tb_axil_top.sv:215: Verilog $finish
+== Lint matrix: scope_top PROBE_W=8 XPORT=UART RLE_EN=0
+== Lint matrix: scope_top PROBE_W=8 XPORT=UART RLE_EN=1
+== Lint matrix: scope_top PROBE_W=8 XPORT=STREAM RLE_EN=0
+== Lint matrix: scope_top PROBE_W=8 XPORT=STREAM RLE_EN=1
+== Lint matrix: scope_top PROBE_W=512 XPORT=UART RLE_EN=0
+== Lint matrix: scope_top PROBE_W=512 XPORT=UART RLE_EN=1
+== Lint matrix: scope_top PROBE_W=512 XPORT=STREAM RLE_EN=0
+== Lint matrix: scope_top PROBE_W=512 XPORT=STREAM RLE_EN=1
+==================================================================
+ALL TESTBENCHES PASSED

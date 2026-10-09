@@ -167,6 +167,7 @@ run_one tb_csr_if.sv          tb_csr_if           # issue #11: CSR matrix + BUF_
 run_one tb_rle.sv             tb_rle              # issue #9: RLE encoder word stream vs model, bypass, expansion bound
 run_one tb_ext_trig.sv        tb_ext_trig         # issue #13: dual-instance cross-trigger (A cmp -> B trig_ext) + independence
 run_one tb_jtag.sv           tb_jtag             # issue #15: framed protocol over scope_jtag byte bridge, byte-exact == STREAM
+run_one tb_axil_top.sv       tb_axil_top "$ROOT/fpga/xilinx/scope_axil_top.sv"  # Vivado AXI4-Lite wrapper end-to-end (fpga/xilinx)
 
 # scope_top elaboration matrix (issue #8/#9): PROBE_W {8, 512} x XPORT {UART, STREAM} x
 # RLE_EN {0, 1} beyond the fully-tested TB configs — lint-only builds, same -Wall flags.

@@ -1,0 +1,23 @@
+Built simulation snapshot repro
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Oct  8 22:10:26 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/repro/xsim_script.tcl
+# xsim {repro} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+1a if      (v[2:0] != 3'(S4)) : taken      (expect taken)
+1b while   (v[2:0] != 3'(S4)) : 0 iterations (expect 3)
+1c do-while(v[2:0] != 3'(S4)) : 1 iterations (expect 3)
+1d do-while(v[2:0] != S4)     : 3 iterations (expect 3)
+2a do rd(8'(0), v); while(..)           : v=x (expect a number with bits[3:1]==4)
+2b do begin rd(8'(0), v); end while(..) : v=8 (expect a number with bits[3:1]==4)
+$finish called at time : 80 ns : File "D:/AMD Ross Test/wt/plain-fpga-scope/designs/fpga-scope/sim/xsim_repro_loop_cast.sv" Line 48
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Oct  8 22:10:27 2026...

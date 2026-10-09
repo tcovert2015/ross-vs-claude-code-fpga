@@ -1,0 +1,42 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Oct  8 22:05:56 2026
+| Host         : tcovert running 64-bit major release  (build 9200)
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+RTL Linter Report
+
+Table of Contents
+-----------------
+1. Summary
+2. Expanded
+
+1. Summary
+----------
+
++----------+----------+--------------+----------+-----------------------------------------------------------------------------+
+| Rule ID  | Severity | # Violations | # Waived | Message Template                                                            |
++----------+----------+--------------+----------+-----------------------------------------------------------------------------+
+| ASSIGN-1 | WARNING  | 1            | 0        | Arithmetic result not used with full precision, used bits: '(info)'         |
+| ASSIGN-6 | WARNING  | 5            | 0        | Some bits in '(rtl_name)' are not read. First unread bit index is '(info)'. |
++----------+----------+--------------+----------+-----------------------------------------------------------------------------+
+
+
+2. Expanded
+-----------
+
++----------+---------------------+----------------------------+------+----------------+-------------------+-------------+
+| Rule ID  | description         | rtl_name                   | info | rtl_hierarchy  | rtl_file          | Line number |
++----------+---------------------+----------------------------+------+----------------+-------------------+-------------+
+| ASSIGN-6 | Bit(s) not used     | _unused                    | 0    | scope_axil     | scope_axil.sv     | 99          |
+| ASSIGN-6 | Bit(s) not used     | unused_top                 | 0    | scope_axil_top | scope_axil_top.sv | 142         |
+| ASSIGN-1 | Arithmetic overflow | -                          | 2    | scope_csr      | scope_csr.sv      | 165         |
+| ASSIGN-6 | Bit(s) not used     | g_csr_mode.unused_csr_mode | 0    | scope_top      | scope_top.sv      | 297         |
+| ASSIGN-6 | Bit(s) not used     | unused_status              | 0    | scope_top      | scope_top.sv      | 282         |
+| ASSIGN-6 | Bit(s) not used     | unused_combine_reserved    | 0    | scope_trigger  | scope_trigger.sv  | 131         |
++----------+---------------------+----------------------------+------+----------------+-------------------+-------------+
+* create_waiver can be used to apply waiver to linter violations.
+** For example, create_waiver -type LINT -id RULE_ID {-rtl_name RTL_NAME} {-rtl_hierarchy RTL_MODULE_NAME} {-rtl_file RTL_FILE_NAME}.
+
+
