@@ -1,0 +1,16 @@
+# =============================================================================
+# i3c_target.pdc  -  Physical constraints for the I3C Target on Certus-NX
+#
+# No pin locations: the block is built as an IP core and Radiant PAR places the
+# ports automatically (see reports/pad.pad for what it chose). Add
+# `ldc_set_location -site {<ball>} [get_ports <port>]` lines here for a real board.
+#
+# The only physical constraint is electrical and I3C-specific: Radiant's default
+# for an unconstrained pad is PULLMODE=DOWN, and an internal pull-down on SDA/SCL
+# would fight the bus pull-up / high-keeper whenever the line is released. Turn it
+# off. OPENDRAIN stays OFF (default): the pad must also drive push-pull High.
+# IO_TYPE is left at the tool default (LVCMOS33); set it to the bus voltage
+# (LVCMOS18 / LVCMOS12) together with the bank VCCIO on a real board.
+# =============================================================================
+ldc_set_port -iobuf {PULLMODE=NONE} [get_ports SDA]
+ldc_set_port -iobuf {PULLMODE=NONE} [get_ports SCL]

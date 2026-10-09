@@ -1,0 +1,108 @@
+# sim/run_questa.ps1 - QuestaSim (Lattice Radiant) regression log
+Questa Lattice OEM Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+Start time: 16:48:57 on Oct 09,2026
+vlog -sv -mfcu -work sim/questa_work "+incdir+rtl" "+define+I3C_IO_MODULE=i3c_io_lattice" rtl/i3c_pkg.sv rtl/i3c_sda_mux.sv rtl/i3c_bus_frontend.sv rtl/i3c_bit_engine.sv rtl/i3c_framer.sv rtl/i3c_hdr_exit_detector.sv rtl/i3c_fifo.sv rtl/i3c_protocol_fsm.sv rtl/i3c_daa.sv rtl/i3c_ccc.sv rtl/i3c_ibi.sv rtl/i3c_error_recovery.sv rtl/i3c_regfile.sv rtl/i3c_avalon_mm.sv rtl/lattice/i3c_io_lattice.sv rtl/i3c_target_top.sv sim/tb_i3c_target.sv 
+** Note: (vlog-220) 'D:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+-- Compiling package i3c_pkg
+-- Compiling module i3c_sda_mux
+-- Importing package i3c_pkg
+-- Compiling module i3c_bus_frontend
+-- Compiling module i3c_bit_engine
+-- Compiling module i3c_framer
+-- Compiling module i3c_hdr_exit_detector
+-- Compiling module i3c_fifo
+-- Compiling module i3c_protocol_fsm
+-- Compiling module i3c_daa
+-- Compiling package i3c_pkg_sv_unit
+-- Importing package i3c_pkg
+-- Compiling module i3c_ccc
+-- Compiling module i3c_ibi
+-- Compiling module i3c_error_recovery
+-- Compiling module i3c_regfile
+-- Compiling module i3c_avalon_mm
+-- Compiling module i3c_io_lattice
+-- Compiling module i3c_target_top
+-- Compiling module tb_i3c_target
+
+Top level modules:
+	tb_i3c_target
+End time: 16:48:58 on Oct 09,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'D:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib sim/questa_work -nolog tb_i3c_target -do "run -all; quit -f" 
+# Start time: 16:48:58 on Oct 09,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-220) 'D:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# //  Questa Lattice OEM Edition-64
+# //  Version 2025.2 win64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.i3c_pkg(fast)
+# Loading work.i3c_pkg_sv_unit(fast)
+# Loading work.tb_i3c_target(fast)
+# run -all
+# 
+# === A. Avalon register sanity ===
+#   [PASS] PID_LOW == 0x12345678 (got 0x12345678)
+#   [PASS] IDENT[7:0]==BCR 0x07 (got 0x07)
+#   [PASS] IDENT[15:8]==DCR 0x00 (got 0x00)
+#   [PASS] GETCAPS b1=0x00 b2=0x02 (got 0x00000200)
+#   [PASS] CTRL core_en+accept_en (got 0x03)
+#   [PASS] da_valid==0 before DAA
+#   [PASS] tx_level==0 initially
+#   [PASS] tx_level==1 after push (got 1)
+#   [PASS] tx_level==0 after flush_tx
+# 
+# === B. I3C bus: broadcast 0x7E ACK (proof-of-life) ===
+#   [PASS] Target ACKs broadcast 0x7E+W
+# 
+# === C. ENTDAA dynamic address assignment ===
+#   [PASS] ENTDAA: 7E+W ACK
+#   [PASS] ENTDAA: 7E+R ACK (unassigned target)
+#   [PASS] ENTDAA: target ACKs assigned DA
+#   [PASS] DA latched = 0x08 valid=1
+# 
+# === D. Private write / read (requires DA from C) ===
+#   [PASS] PrivWr: DA+W ACK
+#   [PASS] PrivWr byte in RX FIFO = 0x5c
+#   [PASS] PrivRd: DA+R ACK
+#   [PASS] PrivRd byte from target = 0xc3
+# 
+# === E. GETSTATUS CCC ===
+#   [PASS] GETSTATUS: 7E+W ACK
+#   [PASS] GETSTATUS: DA+R ACK
+#   [PASS] GETSTATUS responds, status high byte=0x00 (got hi=0x00 lo=0x20)
+# 
+# === F. GETPID CCC (multi-byte response, FINDING-SIM-7) ===
+#   [PASS] GETPID: 7E+W ACK
+#   [PASS] GETPID: DA+R ACK
+#   [PASS] GETPID byte0=0x05 exp 0x05
+#   [PASS] GETPID byte1=0x4a exp 0x4a
+#   [PASS] GETPID byte2=0x12 exp 0x12
+#   [PASS] GETPID byte3=0x34 exp 0x34
+#   [PASS] GETPID byte4=0x56 exp 0x56
+#   [PASS] GETPID byte5=0x78 exp 0x78
+# 
+# ========================================
+#  RESULT: 29 passed, 0 failed
+# ========================================
+# ALL TESTS PASSED
+# ** Note: $finish    : sim/tb_i3c_target.sv(220)
+#    Time: 49995 ns  Iteration: 1  Instance: /tb_i3c_target
+# End time: 16:49:00 on Oct 09,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
