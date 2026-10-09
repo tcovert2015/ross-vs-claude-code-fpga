@@ -1,0 +1,8 @@
+{
+  "arm": "plain",
+  "design": "dma",
+  "model": "opus",
+  "branch": "plain/dma",
+  "worktree": "D:\\AMD Ross Test\\ross-vs-claude-code-fpga\\..\\wt\\plain-dma",
+  "started": "2026-10-08T21:05:58.2335883-05:00"
+}

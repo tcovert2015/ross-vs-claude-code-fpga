@@ -1,0 +1,28 @@
+2026-10-08 21:53:54 Preparing worktree (detached HEAD b9e6eef)
+2026-10-08 21:53:54 HEAD is now at b9e6eef dma: document Vivado port results
+2026-10-08 21:53:54 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-plain-dma @ b9e6eef
+2026-10-08 21:53:54 step 1 START: vivado\build.bat
+2026-10-08 21:55:52 step 1 END exit=0 after 118s (log: step1.log)
+2026-10-08 21:55:52 step 2 START: scripts\run_xsim.bat
+2026-10-08 21:56:29 step 2 END exit=0 after 37s (log: step2.log)
+2026-10-08 21:56:29 git status after re-run:
+2026-10-08 21:56:29    M sim/build/xsim_AXI4_RSTSYNC_seed1.log
+2026-10-08 21:56:29    M sim/build/xsim_AXI4_RSTSYNC_seed2.log
+2026-10-08 21:56:29    M sim/build/xsim_AXI4_RSTSYNC_seed3.log
+2026-10-08 21:56:29    M sim/build/xsim_AXI4_STALLS_seed1.log
+2026-10-08 21:56:29    M sim/build/xsim_AXI4_STALLS_seed2.log
+2026-10-08 21:56:29    M sim/build/xsim_AXI4_STALLS_seed3.log
+2026-10-08 21:56:29    M sim/build/xsim_AXI4_seed1.log
+2026-10-08 21:56:29    M sim/build/xsim_AXI4_seed2.log
+2026-10-08 21:56:29    M sim/build/xsim_AXI4_seed3.log
+2026-10-08 21:56:29    M vivado/reports/drc.rpt
+2026-10-08 21:56:29    M vivado/reports/lint.rpt
+2026-10-08 21:56:29    M vivado/reports/route_status.rpt
+2026-10-08 21:56:29    M vivado/reports/timing_summary.rpt
+2026-10-08 21:56:29    M vivado/reports/timing_worst_setup.rpt
+2026-10-08 21:56:29    M vivado/reports/utilization.rpt
+2026-10-08 21:56:29    M vivado/reports/utilization_hier.rpt
+2026-10-08 21:56:29    M vivado/reports/utilization_synth.rpt
+2026-10-08 21:56:29    M vivado/reports/vivado.log
+2026-10-08 21:56:29   ?? vivado/reports/vivado_26968.backup.log
+2026-10-08 21:56:29 JUDGE DONE
