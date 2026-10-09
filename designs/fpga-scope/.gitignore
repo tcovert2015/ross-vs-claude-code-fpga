@@ -68,3 +68,19 @@ fpga/axc3000/scope_dump.txt
 # checked-in hardware capture deliverables (#12) — exempt from *.vcd above
 !docs/captures/
 !docs/captures/*.vcd
+
+# AMD Vivado / xsim (fpga/xilinx, sim/run_xsim.tcl). Reports and xsim transcripts are checked-in
+# deliverables (exempt from *.rpt / *.log above); checkpoints and tool scratch are regenerated.
+!fpga/xilinx/reports/**/*.rpt
+!fpga/xilinx/reports/*.log
+!sim/xsim_tb_*.log
+fpga/xilinx/reports/**/*.dcp
+.vivado-ai/
+.Xil/
+xsim.dir/
+vivado*.jou
+vivado*.log
+vivado*.str
+*.backup.jou
+*.backup.log
+clockInfo.txt

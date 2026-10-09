@@ -149,6 +149,24 @@ module scope_csr #(
   endfunction
 
   wire [3:0] lane_idx = csr_addr[3:0];  // valid when is_lane_addr
+
+  // Per-lane "implemented" flag and write mask, selected by lane_idx from elaboration-time
+  // constants (the loop index is constant, so `32*j < PROBE_W` and lane_wmask(j) fold to
+  // literals and what remains is a 16:1 constant mux). Functionally identical to evaluating
+  // them on the run-time lane_idx, which Vivado builds as 32-bit multiply/compare/shift
+  // carry chains on the CSR write path (14 logic levels; fails 100 MHz on Artix-7 -1).
+  logic        lane_impl;
+  logic [31:0] lane_mask;
+  always_comb begin
+    lane_impl = 1'b0;
+    lane_mask = 32'h0;
+    for (int unsigned j = 0; j < 16; j++) begin
+      if (lane_idx == 4'(j)) begin
+        lane_impl = (32 * j < PROBE_W);
+        lane_mask = lane_wmask(4'(j));
+      end
+    end
+  end
   wire [1:0] seq_idx = 2'(csr_addr - 8'(scope_pkg::CSR_SEQ_CNT_BASE));  // valid when is_seq_addr
 
   always_ff @(posedge clk) begin
@@ -168,9 +186,8 @@ module scope_csr #(
       if (csr_addr == 8'(scope_pkg::CSR_RLE_CTRL)) rle_enable_q <= csr_wdata[0];
       if (csr_addr == 8'(scope_pkg::CSR_SMPL_CTRL)) smpl_ctrl_q <= csr_wdata;
       if (csr_addr == 8'(scope_pkg::CSR_CMP_SEL)) cmp_sel_q <= csr_wdata[3:0];
-      if (is_lane_addr && (32 * 32'(lane_idx) < PROBE_W))
-        cmp_q[cmp_sel_q[3:2]][cmp_sel_q[1:0]][32*lane_idx+:32] <= csr_wdata & lane_wmask(
-            lane_idx);
+      if (is_lane_addr && lane_impl)
+        cmp_q[cmp_sel_q[3:2]][cmp_sel_q[1:0]][32*lane_idx+:32] <= csr_wdata & lane_mask;
       if (csr_addr == 8'(scope_pkg::CSR_TRIG_COMBINE)) trig_combine_q <= csr_wdata;
       if (is_seq_addr) seq_cnt_q[seq_idx] <= csr_wdata;
     end
@@ -277,7 +294,7 @@ module scope_csr #(
     else if (csr_addr == 8'(scope_pkg::CSR_WIN_META)) csr_rdata = 32'(win_rd_data);
     else if (csr_addr == 8'(scope_pkg::CSR_CMP_SEL)) csr_rdata = 32'(cmp_sel_q);
     else if (is_lane_addr) begin
-      if (32 * 32'(lane_idx) < PROBE_W)
+      if (lane_impl)
         csr_rdata = cmp_q[cmp_sel_q[3:2]][cmp_sel_q[1:0]][32*lane_idx+:32];
     end else if (csr_addr == 8'(scope_pkg::CSR_TRIG_COMBINE)) csr_rdata = trig_combine_q;
     else if (is_seq_addr) csr_rdata = seq_cnt_q[seq_idx];

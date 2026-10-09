@@ -1,0 +1,11 @@
+config            PROBE_W=32 DEPTH_LOG2=15 RLE_EN=1 part=xc7a100tcsg324-1
+lut_cells         1413
+lutram_cells      0
+ff_cells          1255
+ramb36_cells      33
+ramb18_cells      1
+buffer_bits       1081344
+u_buf_primitives  GND LUT2 LUT3 LUT6 RAMB36E1 VCC
+u_buf_ramb_cells  33
+wns_ns            0.581
+whs_ns            0.133

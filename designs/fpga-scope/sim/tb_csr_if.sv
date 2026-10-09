@@ -122,6 +122,10 @@ module tb_csr_if_leg
       .trig_index(trig_index), .armed(armed), .rd_addr(buf_rd_addr), .rd_data(buf_rd_data),
       .win_rd_addr(win_rd_addr), .win_rd_data(win_rd_data), .ts(ts), .ts_at_trig(ts_at_trig));
 
+  // (declared ahead of the _unused sink that references rd: IEEE 1800 declare-before-use;
+  //  xsim rejects the old order, VRFC 10-3380)
+  logic [31:0] rd, id_val, hwcfg_val;
+
   // trigger config outputs are unused here (matrix only reads them back via CSR)
   // one bus is active per leg; sink the other bus's TB-driven / adapter signals so an unused
   // generate branch does not trip UNUSEDSIGNAL (both sets referenced ⇒ -Wall clean either way).
@@ -183,7 +187,6 @@ module tb_csr_if_leg
     if (got !== want) fail($sformatf("%s @%0d: got %h want %h", what, word, got, want));
   endtask
 
-  logic [31:0] rd, id_val, hwcfg_val;
   task automatic run_matrix;
     // --- RO registers reject writes and read stable ---
     bread(8'(CSR_ID), id_val);
