@@ -1,0 +1,3 @@
+# plain-lattice/dma: committed Radiant flow (radiantc) + full Questa regression (bash, incl. RESET_SYNC_EN configs)
+"D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" lattice/build.tcl
+"C:\Program Files\Git\bin\bash.exe" scripts/run_questa.sh
