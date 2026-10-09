@@ -1,0 +1,108 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Fri Oct  9 17:24:14 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source scripts/run_xsim.tcl
+# set script_dir [file dirname [file normalize [info script]]]
+# set root_dir   [file dirname $script_dir]
+# set seeds {1 2 3}
+# if {[info exists ::dma_seeds]} {
+#   set seeds $::dma_seeds
+#   unset ::dma_seeds
+# } elseif {[info exists ::env(SIM_SEEDS)] && [llength $::env(SIM_SEEDS)] > 0} {
+#   set seeds $::env(SIM_SEEDS)
+# } elseif {[info exists ::argv] && [llength $::argv] > 0} {
+#   set seeds $::argv
+# }
+# set src_files {
+#   rtl/pkg/dma_pkg.sv
+#   rtl/core/dma_fifo.sv rtl/core/dma_arbiter.sv rtl/core/dma_csr.sv
+#   rtl/core/dma_descriptor_fetch.sv rtl/core/dma_data_mover.sv rtl/core/dma_engine_core.sv
+#   rtl/core/reset_sync.sv
+#   rtl/adapters/gmm_to_avalon.sv rtl/adapters/gmm_to_axi4.sv rtl/adapters/gmm_to_ahb.sv
+#   rtl/top/pcie_dma_top.sv
+#   sim/models/avalon_mem_model.sv sim/models/axi_mem_model.sv sim/models/ahb_mem_model.sv
+#   sim/tb_pcie_dma.sv
+# }
+# set configs {
+#   axi4        {USE_AXI}
+#   axi4_stalls {USE_AXI STALLS}
+# }
+# proc run_tool {log args} {
+#   set failed [catch {exec {*}$args > $log 2>@1} msg]
+#   if {$failed} {
+#     set fh [open $log a]; puts $fh "run_xsim.tcl: [lindex $args 0] failed: $msg"; close $fh
+#   }
+#   return [expr {!$failed}]
+# }
+# proc file_has {path pattern} {
+#   if {![file exists $path]} { return 0 }
+#   set fh [open $path r]; set txt [read $fh]; close $fh
+#   return [expr {[string first $pattern $txt] >= 0}]
+# }
+# set build_dir [file join $root_dir sim build]
+# file mkdir $build_dir
+# set start_dir [pwd]
+# set results {}
+# set rc 0
+# foreach {cfg defs} $configs {
+#   # private work dir per configuration: sim/build/xsim_<cfg>/  (root is ../../..)
+#   set work [file join $build_dir xsim_$cfg]
+#   file delete -force $work
+#   file mkdir $work
+#   cd $work
+# 
+#   set cmd [list xvlog -sv -i ../../../rtl/pkg]
+#   foreach d $defs { lappend cmd -d $d }
+#   foreach f $src_files { lappend cmd ../../../$f }
+#   set ok [run_tool ../xsim_${cfg}_compile.log {*}$cmd]
+#   if {$ok} {
+#     # RTL files carry no `timescale; give them the testbench's 1ns/1ps
+#     set ok [run_tool ../xsim_${cfg}_elab.log \
+#               xelab -timescale 1ns/1ps tb_pcie_dma -s tb_$cfg]
+#   }
+#   if {!$ok} {
+#     puts "$cfg: COMPILE FAIL (see sim/build/xsim_${cfg}_compile.log / _elab.log)"
+#     lappend results "$cfg: COMPILE FAIL"
+#     set rc 1
+#     cd $start_dir
+#     continue
+#   }
+# 
+#   foreach s $seeds {
+#     set log ../xsim_${cfg}_seed$s.log
+#     file delete -force $log
+#     # xsim writes the transcript itself (-log); its stdout copy is discarded
+#     run_tool xsim_seed$s.stdout xsim tb_$cfg -R -testplusarg SEED=$s -log $log
+#     if {[file_has $log "=== PASS"]} {
+#       puts "$cfg seed=$s: PASS"
+#       lappend results "$cfg seed=$s: PASS"
+#     } else {
+#       puts "$cfg seed=$s: FAIL (see sim/build/xsim_${cfg}_seed$s.log)"
+#       lappend results "$cfg seed=$s: FAIL"
+#       set rc 1
+#     }
+#   }
+#   cd $start_dir
+# }
+axi4 seed=1: PASS
+axi4 seed=2: PASS
+axi4 seed=3: PASS
+axi4_stalls seed=1: PASS
+axi4_stalls seed=2: PASS
+axi4_stalls seed=3: PASS
+# cd $start_dir
+# set fh [open [file join $build_dir xsim_summary.txt] w]
+# foreach r $results { puts $fh $r }
+# close $fh
+# if {$rc} {
+#   error "run_xsim.tcl: xsim regression FAILED"
+# }
+# puts "run_xsim.tcl: all [llength $results] xsim runs PASS"
+run_xsim.tcl: all 6 xsim runs PASS
+INFO: [Common 17-206] Exiting Vivado at Fri Oct  9 17:24:34 2026...

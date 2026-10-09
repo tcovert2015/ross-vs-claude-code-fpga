@@ -1,0 +1,231 @@
+--- Lattice Radiant Software (64-bit) 2026.1.1.229.0
+--- Copyright (C) 1992-2025 Lattice Semiconductor Corporation.
+--- All Rights Reserved.
+--- Lattice Radiant Software install path: D:/lscc/radiant/2026.1
+--- Date    : 16:51:33 10/09/26
+--- UserName: tcove
+--- HostName: tcovert
+--- RunDir  : D:\AMD Ross Test\wt\judge-plain-lattice-i3c\designs\i3c
+--- PID     : 15748
+--- TclFile : C:\Users\tcove\AppData\Roaming\LatticeSemi\DiamondNG\tcl\radiantc.tcl.15748
+--- LogFile : C:\Users\tcove\AppData\Roaming\LatticeSemi\DiamondNG\tcl\radiantc.log.15748
+--------------------------------------------------------------------------------
+
+=== Synthesis (Synplify Pro) ===
+
+
+"D:/lscc/radiant/2026.1/tcltk/windows/bin/tclsh" "i3c_target_impl_1_synthesize.tcl"
+
+cpe -syn synpro -f i3c_target_impl_1.cprj -a LFD2NX -o i3c_target_impl_1_cpe.ldc
+CPE: Constraint Propagation Engine: starting
+INFO <35831038> - Setting i3c_target_top as top module.
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\standard.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\standard.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\standard.vhd(9): analyzing package standard. VHDL-1014
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\std_1164.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\std_1164.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\std_1164.vhd(15): analyzing package std_logic_1164. VHDL-1014
+INFO <35921013> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\std_1164.vhd(178): analyzing package body std_logic_1164. VHDL-1013
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\mgc_qsim.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\mgc_qsim.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\mgc_qsim.vhd(18): analyzing package qsim_logic. VHDL-1014
+INFO <35921013> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\mgc_qsim.vhd(753): analyzing package body qsim_logic. VHDL-1013
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\numeric_bit.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\numeric_bit.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\numeric_bit.vhd(54): analyzing package numeric_bit. VHDL-1014
+INFO <35921013> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\numeric_bit.vhd(834): analyzing package body numeric_bit. VHDL-1013
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\numeric_std.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\numeric_std.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\numeric_std.vhd(57): analyzing package numeric_std. VHDL-1014
+INFO <35921013> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\numeric_std.vhd(874): analyzing package body numeric_std. VHDL-1013
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\textio.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\textio.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\textio.vhd(13): analyzing package textio. VHDL-1014
+INFO <35921013> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\textio.vhd(114): analyzing package body textio. VHDL-1013
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\std_logic_textio.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\std_logic_textio.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\std_logic_textio.vhd(26): analyzing package std_logic_textio. VHDL-1014
+INFO <35921013> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\std_logic_textio.vhd(72): analyzing package body std_logic_textio. VHDL-1013
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_misc.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_misc.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_misc.vhd(30): analyzing package std_logic_misc. VHDL-1014
+INFO <35921013> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_misc.vhd(182): analyzing package body std_logic_misc. VHDL-1013
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\math_real.vhd. VHDL-1481
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\math_real.vhd(56): analyzing package math_real. VHDL-1014
+INFO <35921013> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\math_real.vhd(685): analyzing package body math_real. VHDL-1013
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\mixed_lang_vltype.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\mixed_lang_vltype.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\mixed_lang_vltype.vhd(9): analyzing package vl_types. VHDL-1014
+INFO <35921013> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\mixed_lang_vltype.vhd(88): analyzing package body vl_types. VHDL-1013
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_arit.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_arit.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_arit.vhd(25): analyzing package std_logic_arith. VHDL-1014
+INFO <35921013> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_arit.vhd(206): analyzing package body std_logic_arith. VHDL-1013
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_attr.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_attr.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_attr.vhd(39): analyzing package attributes. VHDL-1014
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_sign.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_sign.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_sign.vhd(35): analyzing package std_logic_signed. VHDL-1014
+INFO <35921013> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_sign.vhd(96): analyzing package body std_logic_signed. VHDL-1013
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_unsi.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_unsi.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_unsi.vhd(35): analyzing package std_logic_unsigned. VHDL-1014
+INFO <35921013> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\syn_unsi.vhd(94): analyzing package body std_logic_unsigned. VHDL-1013
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\synattr.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\synattr.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ispfpga\vhdl_packages\synattr.vhd(50): analyzing package attributes. VHDL-1014
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\..\cae_library\synthesis\vhdl\lfd2nx.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ispfpga\..\cae_library\synthesis\vhdl\lfd2nx.vhd
+
+Analyzing Verilog file D:/lscc/radiant/2026.1/ispfpga\..\cae_library\synthesis\verilog\lfd2nx.v. VERI-1482
+Analyzing Verilog file D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v. VERI-1482
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(1): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_addsub.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_addsub.v(40): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(2): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_add.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_add.v(50): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/adder/rtl/lscc_adder.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(3): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_complex_mult.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_complex_mult.v(52): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(4): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_counter.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_counter.v(39): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/counter/rtl/lscc_cntr.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(5): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_distributed_dpram.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_distributed_dpram.v(43): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/distributed_dpram/rtl/lscc_distributed_dpram.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(6): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_distributed_spram.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_distributed_spram.v(42): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/distributed_spram/rtl/lscc_distributed_spram.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(7): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_distributed_rom.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_distributed_rom.v(42): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/distributed_rom/rtl/lscc_distributed_rom.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(8): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_distributed_shift_reg.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_distributed_shift_reg.v(41): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/ram_shift_reg/rtl/lscc_shift_register.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(9): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_fifo.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_fifo.v(44): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/fifo/rtl/lscc_fifo.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(10): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_fifo_dc.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_fifo_dc.v(47): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_fifo_dc.v(48): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(128): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_distributed_ram.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(129): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_ecc.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(130): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(131): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_gray_reg.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(132): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_gray_synchronizer.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(133): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_harden_prim.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(134): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(135): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_harden_rd_output_logic.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(136): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_harden_ring_counter.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(137): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_harden_wr_ctrl_logic.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(138): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_harden.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(139): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_prim_gen.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(140): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_rd_ctrl_logic.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc.v(141): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/fifo_dc/rtl/lscc_lfmxo4_fifo_dc_wr_ctrl_logic.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(11): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_mac.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_mac.v(52): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(12): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_multaddsubsum.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_multaddsubsum.v(53): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(13): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_multaddsub.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_multaddsub.v(52): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(14): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_mult.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_mult.v(51): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(15): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dp.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dp.v(48): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dp.v(49): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp.v(438): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_impl.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_impl.v(64): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_behavioral.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_impl.v(66): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_lut_decode.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_impl.v(478): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_functions.vh. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_impl.v(609): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_functions.vh. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_impl.v(1511): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_functions.vh. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_impl.v(2456): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_functions.vh. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_impl.v(4673): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_functions.vh. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(16): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dp_be.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dp_be.v(49): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dp_be.v(50): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp.v(438): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp/rtl/lscc_lfmxo4_ram_dp_impl.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(17): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dp_true.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dp_true.v(49): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/ram_dp_true/rtl/lscc_ram_dp_true.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dp_true.v(50): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true.v(517): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_impl.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_impl.v(58): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_behavioral.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_impl.v(61): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_lut_decode.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_impl.v(257): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_functions.vh. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_impl.v(620): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_functions.vh. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_impl.v(748): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_functions.vh. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_impl.v(1336): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_functions.vh. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_impl.v(2535): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_functions.vh. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true.v(518): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dp_true/rtl/lscc_lfmxo4_ram_dp_true_ecc_decoder.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(18): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dq.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dq.v(45): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dq.v(46): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v(2839): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/hsiao_ecc_encoder.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v(2840): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/hsiao_ecc_decoder.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v(2841): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq_lut_decode.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(19): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dq_be.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dq_be.v(45): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_ram_dq_be.v(46): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v(2839): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/hsiao_ecc_encoder.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v(2840): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/hsiao_ecc_decoder.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq.v(2841): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../LFMXO4/ram_dq/rtl/lscc_lfmxo4_ram_dq_lut_decode.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(20): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_rom.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_rom.v(45): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/rom/rtl/lscc_rom.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.v(21): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/pmi_sub.v. VERI-1328
+INFO <35901328> - D:/lscc/radiant/2026.1/ip/pmi/pmi_sub.v(50): analyzing included file D:/lscc/radiant/2026.1/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1482
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_sda_mux.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_sda_mux.sv(12): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_bus_frontend.sv. VERI-1482
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_bit_engine.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_bit_engine.sv(33): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_framer.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_framer.sv(30): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_hdr_exit_detector.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_hdr_exit_detector.sv(27): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_fifo.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_fifo.sv(23): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv(29): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_daa.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_daa.sv(28): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_ccc.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_ccc.sv(24): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_ibi.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_ibi.sv(43): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_error_recovery.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_error_recovery.sv(30): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_regfile.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_regfile.sv(26): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_avalon_mm.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_avalon_mm.sv(22): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/lattice/i3c_io_lattice.sv. VERI-1482
+Analyzing Verilog file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_target_top.sv. VERI-1482
+INFO <35901328> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_target_top.sv(24): analyzing included file D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_pkg.sv. VERI-1328
+Analyzing VHDL file D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.vhd. VHDL-1481
+Analyzing VHDL file D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.vhd
+
+INFO <35921014> - D:/lscc/radiant/2026.1/ip/pmi/pmi_lfd2nx.vhd(4): analyzing package components. VHDL-1014
+Top module name (Verilog): i3c_target_top
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_target_top.sv(26): compiling module i3c_target_top. VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_sda_mux.sv(14): compiling module i3c_sda_mux(N=32'b0110). VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_bus_frontend.sv(22): compiling module i3c_bus_frontend(SYNC_STAGES=32'b010,BUS_FREE_CYCLES=32'b010,BUS_AVAIL_CYCLES=32'b0100,BUS_IDLE_CYCLES=32'b01000). VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_bit_engine.sv(35): compiling module i3c_bit_engine. VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_framer.sv(32): compiling module i3c_framer. VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv(31): compiling module i3c_protocol_fsm. VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_daa.sv(30): compiling module i3c_daa. VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_ccc.sv(27): compiling module i3c_ccc(STATIC_ADDR_EN=1'b1). VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_ibi.sv(45): compiling module i3c_ibi. VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_error_recovery.sv(32): compiling module i3c_error_recovery. VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_hdr_exit_detector.sv(29): compiling module i3c_hdr_exit_detector. VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_regfile.sv(28): compiling module i3c_regfile(BCR=8'b0111,DCR=8'b0,GETCAP3=8'b0). VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_fifo.sv(25): compiling module i3c_fifo(DW=32'b01011,DEPTH=32'b01000). VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_fifo.sv(25): compiling module i3c_fifo(DW=32'b01001,DEPTH=32'b01000). VERI-1018
+INFO <35901018> - D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/rtl/i3c_avalon_mm.sv(24): compiling module i3c_avalon_mm. VERI-1018

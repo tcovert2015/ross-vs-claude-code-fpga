@@ -58,7 +58,15 @@ from `main`, runs Claude headlessly with `--permission-mode bypassPermissions` a
 a `$40` budget cap, and writes the transcript and a summary to `results/`.
 The agent commits on its branch; results are compared via PRs against `main`.
 
-## Status — complete (2026-10-08)
+## Status — round 2 complete (2026-10-09)
+
+Round 2 added a **nudged Ross arm** (explicitly told to use the MCP and skills: 41/45, $13.81; MCP used 77 times,
+quality up, cost up) and a **Lattice leg** (Lattice Prompt skills + MCP vs plain, Radiant 2026.1 / Certus-NX:
+41/45 vs 42/45, kit never used, numbers identical). Write-up: [`results/judge/comparison-round2.md`](results/judge/comparison-round2.md)
+(issue #7). Cells: issues #14–#16 (ross-nudged), #19–#24 (lattice, plain-lattice); PRs #17, #18, #31, #25–#30.
+Arms `ross-nudged`, `lattice`, `plain-lattice` in `harness/run_arm.ps1`; Lattice prompts in `harness/prompts/lattice/`.
+
+## Round 1 — complete (2026-10-08)
 
 All six cells ran, were judged from committed artifacts, and were re-run from clean checkouts.
 **Plain Claude Code 43/45, Ross 38/45; all 21 hard gates passed by both arms.** The Ross arm never

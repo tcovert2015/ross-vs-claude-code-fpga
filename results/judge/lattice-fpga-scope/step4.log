@@ -1,0 +1,28 @@
+scope_ref: sim/build/vectors/cap_w32_d8: 640 stimulus samples, trig_index=128, wrapped=1, consumed=384
+scope_ref: sim/build/vectors/cap_w512_d10: 2560 stimulus samples, trig_index=512, wrapped=1, consumed=1536
+==================================================================
+== Questa: tb_smoke
+==================================================================
+Errors: 0, Warnings: 0
+# TB_RESULT: PASS
+# Errors: 0, Warnings: 0
+==================================================================
+== Questa: tb_csr
+==================================================================
+Errors: 0, Warnings: 0
+# TB_RESULT: PASS
+# Errors: 0, Warnings: 0
+==================================================================
+== Questa: tb_csr_if
+==================================================================
+Errors: 0, Warnings: 0
+# TB_RESULT: PASS
+# Errors: 0, Warnings: 0
+==================================================================
+== Questa: tb_axil_top
+==================================================================
+Errors: 0, Warnings: 0
+# TB_RESULT: PASS
+# Errors: 0, Warnings: 0
+==================================================================
+ALL TESTBENCHES PASSED

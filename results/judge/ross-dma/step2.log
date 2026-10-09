@@ -1,0 +1,6 @@
+AXI4           seed=1: PASS
+AXI4           seed=2: PASS
+AXI4           seed=3: PASS
+AXI4   +stalls seed=1: PASS
+AXI4   +stalls seed=2: PASS
+AXI4   +stalls seed=3: PASS

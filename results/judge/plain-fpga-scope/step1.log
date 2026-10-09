@@ -1,0 +1,6 @@
+== launching pw32_d8
+== launching pw32_d12
+== launching pw32_d15
+PASS  pw32_d8  ramb36=0 ramb18=2 lutram=0  wns_ns=0.791 whs_ns=0.143
+PASS  pw32_d12  ramb36=4 ramb18=1 lutram=0  wns_ns=0.603 whs_ns=0.086
+FAIL  pw32_d15  (see D:\AMD Ross Test\wt\judge-plain-fpga-scope\designs\fpga-scope\fpga\xilinx\build\pw32_d15\vivado.log)

@@ -1,0 +1,22 @@
+--- Lattice Radiant Software (64-bit) 2026.1.1.229.0
+--- Copyright (C) 1992-2025 Lattice Semiconductor Corporation.
+--- All Rights Reserved.
+--- Lattice Radiant Software install path: D:/lscc/radiant/2026.1
+--- Date    : 17:00:01 10/09/26
+--- UserName: tcove
+--- HostName: tcovert
+--- RunDir  : D:\AMD Ross Test\wt\judge-plain-lattice-i3c\designs\i3c
+--- PID     : 20316
+--- TclFile : C:\Users\tcove\AppData\Roaming\LatticeSemi\DiamondNG\tcl\radiantc.tcl.20316
+--- LogFile : C:\Users\tcove\AppData\Roaming\LatticeSemi\DiamondNG\tcl\radiantc.log.20316
+--------------------------------------------------------------------------------
+
+error deleting "D:/AMD Ross Test/wt/judge-plain-lattice-i3c/designs/i3c/syn/lattice/build\impl_1": permission denied
+
+    while executing
+
+"file delete -force $BUILD"
+
+    (file "syn/lattice/build.tcl" line 34)
+
+Thank you for using Radiant. Total CPU/Elapsed time: 0 secs /0 secs 

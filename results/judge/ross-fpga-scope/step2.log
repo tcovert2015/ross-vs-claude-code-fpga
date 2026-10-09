@@ -1,0 +1,31 @@
+scope_ref: D:\AMD Ross Test\wt\judge-ross-fpga-scope\designs\fpga-scope\sim\build\vectors\cap_w32_d8: 640 stimulus samples, trig_index=128, wrapped=1, consumed=384
+scope_ref: D:\AMD Ross Test\wt\judge-ross-fpga-scope\designs\fpga-scope\sim\build\vectors\cap_w512_d10: 2560 stimulus samples, trig_index=512, wrapped=1, consumed=1536
+==================================================================
+== xsim: tb_smoke
+==================================================================
+TB_RESULT: PASS
+==================================================================
+== xsim: tb_csr
+==================================================================
+-- [w32_d8] CSR matrix + lockout + 256-word lane-sequenced drain clean
+-- [w512_d10] CSR matrix + lockout + 16384-word lane-sequenced drain clean
+TB_RESULT: PASS
+==================================================================
+== xsim: tb_csr_if
+==================================================================
+-- [avalon] BUS=1 matrix + BUF_DATA pop + cfg_err: PASS
+-- [axil] BUS=2 matrix + BUF_DATA pop + cfg_err: PASS
+TB_RESULT: PASS
+==================================================================
+== xsim: tb_axil_top
+==================================================================
+-- HWCFG = 00052020
+-- capture (force trigger): 256 words drained, 1 wrap point
+-- capture (  ext trigger): 256 words drained, 1 wrap point
+TB_RESULT: PASS
+==================================================================
+PASS  tb_smoke
+PASS  tb_csr
+PASS  tb_csr_if
+PASS  tb_axil_top
+ALL XSIM TESTBENCHES PASSED

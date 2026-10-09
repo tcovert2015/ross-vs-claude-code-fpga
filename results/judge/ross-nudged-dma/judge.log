@@ -1,0 +1,28 @@
+2026-10-09 17:20:00 Preparing worktree (detached HEAD 144d188)
+2026-10-09 17:20:00 HEAD is now at 144d188 dma: Vivado OOC flow for Artix-7 (build.tcl, pcie_dma.xdc), reports, README
+2026-10-09 17:20:00 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-ross-nudged-dma @ 144d188
+2026-10-09 17:20:00 step 1 START: "C:\AMDDesignTools\2025.2\Vivado\bin\vivado.bat" -mode batch -nojournal -log judge_build.log -source vivado/build.tcl
+2026-10-09 17:24:14 step 1 END exit=0 after 253s (log: step1.log)
+2026-10-09 17:24:14 step 2 START: "C:\AMDDesignTools\2025.2\Vivado\bin\vivado.bat" -mode batch -nojournal -log judge_xsim.log -source scripts/run_xsim.tcl
+2026-10-09 17:24:34 step 2 END exit=0 after 20s (log: step2.log)
+2026-10-09 17:24:34 git status after re-run:
+2026-10-09 17:24:34    M sim/build/xsim_axi4_compile.log
+2026-10-09 17:24:34    M sim/build/xsim_axi4_seed1.log
+2026-10-09 17:24:34    M sim/build/xsim_axi4_seed2.log
+2026-10-09 17:24:34    M sim/build/xsim_axi4_seed3.log
+2026-10-09 17:24:34    M sim/build/xsim_axi4_stalls_compile.log
+2026-10-09 17:24:34    M sim/build/xsim_axi4_stalls_seed1.log
+2026-10-09 17:24:34    M sim/build/xsim_axi4_stalls_seed2.log
+2026-10-09 17:24:34    M sim/build/xsim_axi4_stalls_seed3.log
+2026-10-09 17:24:34    M vivado/reports/drc.rpt
+2026-10-09 17:24:34    M vivado/reports/lint.rpt
+2026-10-09 17:24:34    M vivado/reports/methodology.rpt
+2026-10-09 17:24:34    M vivado/reports/route_status.rpt
+2026-10-09 17:24:34    M vivado/reports/timing_summary.rpt
+2026-10-09 17:24:34    M vivado/reports/timing_summary_synth.rpt
+2026-10-09 17:24:34    M vivado/reports/timing_worst_setup.rpt
+2026-10-09 17:24:34    M vivado/reports/utilization.rpt
+2026-10-09 17:24:34    M vivado/reports/utilization_hier.rpt
+2026-10-09 17:24:34    M vivado/reports/utilization_synth.rpt
+2026-10-09 17:24:34   ?? dfx_runtime.txt
+2026-10-09 17:24:34 JUDGE DONE

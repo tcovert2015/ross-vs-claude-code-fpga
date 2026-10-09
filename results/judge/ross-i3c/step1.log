@@ -1,0 +1,1397 @@
+CRITICAL WARNING: [Common 17-183] Failed to open handle syn/xilinx/build/judge.jou. Please check access permission of directory 'syn/xilinx/build'. You should restart the application from a writable working directory.
+CRITICAL WARNING: [Common 17-183] Failed to open handle syn/xilinx/build/judge_vivado.log. Please check access permission of directory 'syn/xilinx/build'. You should restart the application from a writable working directory.
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Oct  8 21:23:28 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source syn/xilinx/build.tcl
+# set script_dir [file dirname [file normalize [info script]]]
+# cd $script_dir
+# set rtl_dir ../../rtl
+# set rpt_dir reports
+# set out_dir build
+# set part   xc7a100tcsg324-1
+# set top    i3c_target_top
+# set defines [list I3C_IO_MODULE=i3c_io_xilinx]
+# file mkdir $rpt_dir
+# file mkdir $out_dir
+# set rtl_files {
+#   i3c_pkg.sv i3c_sda_mux.sv i3c_bus_frontend.sv i3c_bit_engine.sv
+#   i3c_framer.sv i3c_hdr_exit_detector.sv i3c_fifo.sv i3c_protocol_fsm.sv
+#   i3c_daa.sv i3c_ccc.sv i3c_ibi.sv i3c_error_recovery.sv i3c_regfile.sv
+#   i3c_avalon_mm.sv xilinx/i3c_io_xilinx.sv i3c_target_top.sv
+# }
+# foreach f $rtl_files {
+#   read_verilog -sv $rtl_dir/$f
+# }
+# read_xdc -mode out_of_context i3c_target.xdc
+# puts "=== \[1/4\] RTL lint ==="
+=== [1/4] RTL lint ===
+# synth_design -lint -top $top -part $part -include_dirs $rtl_dir \
+#   -verilog_define $defines -file $rpt_dir/lint.rpt
+Command: synth_design -lint -top i3c_target_top -part xc7a100tcsg324-1 -include_dirs ../../rtl -verilog_define I3C_IO_MODULE=i3c_io_xilinx -file reports/lint.rpt
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 16196
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1068.219 ; gain = 539.148
+---------------------------------------------------------------------------------
+Clean up Linter database...
+INFO: [Synth 8-6157] synthesizing module 'i3c_target_top' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'i3c_sda_mux' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_sda_mux.sv:14]
+	Parameter N bound to: 32'b00000000000000000000000000000110 
+INFO: [Synth 8-6155] done synthesizing module 'i3c_sda_mux' (1#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_sda_mux.sv:14]
+INFO: [Synth 8-6157] synthesizing module 'i3c_io_xilinx' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/xilinx/i3c_io_xilinx.sv:35]
+INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:87566]
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (2#1) [C:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:87566]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_io_xilinx' (3#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/xilinx/i3c_io_xilinx.sv:35]
+INFO: [Synth 8-6157] synthesizing module 'i3c_bus_frontend' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_bus_frontend.sv:22]
+	Parameter SYNC_STAGES bound to: 32'b00000000000000000000000000000010 
+	Parameter BUS_FREE_CYCLES bound to: 32'b00000000000000000000000000000010 
+	Parameter BUS_AVAIL_CYCLES bound to: 32'b00000000000000000000000000000100 
+	Parameter BUS_IDLE_CYCLES bound to: 32'b00000000000000000000000000001000 
+INFO: [Synth 8-6155] done synthesizing module 'i3c_bus_frontend' (4#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_bus_frontend.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'i3c_bit_engine' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_bit_engine.sv:35]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_bit_engine' (5#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_bit_engine.sv:35]
+INFO: [Synth 8-6157] synthesizing module 'i3c_framer' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_framer.sv:32]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_framer' (6#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_framer.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'i3c_protocol_fsm' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:31]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:160]
+INFO: [Synth 8-226] default block is never used [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:160]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:248]
+WARNING: [Synth 8-6014] Unused sequential element m7e_q_reg was removed.  [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:190]
+WARNING: [Synth 8-6014] Unused sequential element mda_q_reg was removed.  [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:191]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_protocol_fsm' (7#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:31]
+INFO: [Synth 8-6157] synthesizing module 'i3c_daa' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_daa.sv:30]
+	Parameter STATIC_ADDR_EN bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'i3c_daa' (8#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_daa.sv:30]
+INFO: [Synth 8-6157] synthesizing module 'i3c_ccc' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ccc.sv:27]
+	Parameter STATIC_ADDR_EN bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'i3c_ccc' (9#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ccc.sv:27]
+INFO: [Synth 8-6157] synthesizing module 'i3c_ibi' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ibi.sv:45]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ibi.sv:134]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ibi.sv:175]
+WARNING: [Synth 8-6014] Unused sequential element is_mdb_reg was removed.  [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ibi.sv:160]
+WARNING: [Synth 8-6014] Unused sequential element mdb_en_reg was removed.  [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ibi.sv:161]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_ibi' (10#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ibi.sv:45]
+INFO: [Synth 8-6157] synthesizing module 'i3c_error_recovery' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_error_recovery.sv:32]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_error_recovery' (11#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_error_recovery.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'i3c_hdr_exit_detector' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_hdr_exit_detector.sv:29]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_hdr_exit_detector' (12#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_hdr_exit_detector.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'i3c_regfile' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_regfile.sv:28]
+	Parameter BCR bound to: 8'b00000111 
+	Parameter DCR bound to: 8'b00000000 
+	Parameter MFG_ID bound to: 15'b000000000000000 
+	Parameter PID_TYPE bound to: 1'b0 
+	Parameter PID_VAL bound to: 0 - type: integer 
+	Parameter MWL_DEFAULT bound to: 16'b0000000001000000 
+	Parameter MRL_DEFAULT bound to: 16'b0000000001000000 
+	Parameter MAXIBI_DEFAULT bound to: 8'b00000000 
+	Parameter GETCAP3 bound to: 8'b00000000 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_regfile.sv:234]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_regfile' (13#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_regfile.sv:28]
+INFO: [Synth 8-6157] synthesizing module 'i3c_fifo' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_fifo.sv:25]
+	Parameter DW bound to: 32'b00000000000000000000000000001011 
+	Parameter DEPTH bound to: 32'b00000000000000000000000000001000 
+	Parameter ASYNC bound to: 1'b0 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_fifo.sv:91]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_fifo' (14#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_fifo.sv:25]
+INFO: [Synth 8-6157] synthesizing module 'i3c_fifo__parameterized0' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_fifo.sv:25]
+	Parameter DW bound to: 32'b00000000000000000000000000001001 
+	Parameter DEPTH bound to: 32'b00000000000000000000000000001000 
+	Parameter ASYNC bound to: 1'b0 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_fifo.sv:91]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_fifo__parameterized0' (14#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_fifo.sv:25]
+INFO: [Synth 8-6157] synthesizing module 'i3c_avalon_mm' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_avalon_mm.sv:24]
+	Parameter AW bound to: 32'b00000000000000000000000000000101 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_avalon_mm.sv:284]
+WARNING: [Synth 8-6014] Unused sequential element outstanding_reg was removed.  [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_avalon_mm.sv:322]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_avalon_mm' (15#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_avalon_mm.sv:24]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_target_top' (16#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv:26]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1206.781 ; gain = 677.711
+---------------------------------------------------------------------------------
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Oct  8 21:23:42 2026
+| Host         : tcovert running 64-bit major release  (build 9200)
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+RTL Linter Report
+
+Table of Contents
+-----------------
+1. Summary
+
+1. Summary
+----------
+
++-----------+----------+--------------+----------+
+| Rule ID   | Severity | # Violations | # Waived |
++-----------+----------+--------------+----------+
+| ASSIGN-6  | WARNING  | 20           | 0        |
+| ASSIGN-10 | WARNING  | 32           | 0        |
++-----------+----------+--------------+----------+
+
+
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'bus_idle' are not read. First unread bit index is 0. 
+RTL Name 'bus_idle', Hierarchy 'i3c_avalon_mm', File 'i3c_avalon_mm.sv', Line 90.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'hdr_open' was assigned but not read. 
+RTL Name 'hdr_open', Hierarchy 'i3c_ccc', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ccc.sv', Line 114.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'ack_slot' are not read. First unread bit index is 0. 
+RTL Name 'ack_slot', Hierarchy 'i3c_ccc', File 'i3c_ccc.sv', Line 46.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'bit_cnt' are not read. First unread bit index is 0. 
+RTL Name 'bit_cnt', Hierarchy 'i3c_ccc', File 'i3c_ccc.sv', Line 42.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'is_broadcast' are not read. First unread bit index is 0. 
+RTL Name 'is_broadcast', Hierarchy 'i3c_ccc', File 'i3c_ccc.sv', Line 50.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'scl_falling' are not read. First unread bit index is 0. 
+RTL Name 'scl_falling', Hierarchy 'i3c_ccc', File 'i3c_ccc.sv', Line 38.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'scl_rising' are not read. First unread bit index is 0. 
+RTL Name 'scl_rising', Hierarchy 'i3c_ccc', File 'i3c_ccc.sv', Line 37.
+WARNING: [Synth 37-123] [ASSIGN-6]Some bits in 'pl_sel' are not read. First unread bit index is 6. 
+RTL Name 'pl_sel', Hierarchy 'i3c_daa', File 'i3c_daa.sv', Line 89.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'bit_cnt' are not read. First unread bit index is 0. 
+RTL Name 'bit_cnt', Hierarchy 'i3c_daa', File 'i3c_daa.sv', Line 42.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'scl_falling' are not read. First unread bit index is 0. 
+RTL Name 'scl_falling', Hierarchy 'i3c_daa', File 'i3c_daa.sv', Line 37.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'start_stb' are not read. First unread bit index is 0. 
+RTL Name 'start_stb', Hierarchy 'i3c_daa', File 'i3c_daa.sv', Line 39.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'ccc_supported' are not read. First unread bit index is 0. 
+RTL Name 'ccc_supported', Hierarchy 'i3c_error_recovery', File 'i3c_error_recovery.sv', Line 56.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'is_read' are not read. First unread bit index is 0. 
+RTL Name 'is_read', Hierarchy 'i3c_error_recovery', File 'i3c_error_recovery.sv', Line 47.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'match_7e' are not read. First unread bit index is 0. 
+RTL Name 'match_7e', Hierarchy 'i3c_error_recovery', File 'i3c_error_recovery.sv', Line 45.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'match_da' are not read. First unread bit index is 0. 
+RTL Name 'match_da', Hierarchy 'i3c_error_recovery', File 'i3c_error_recovery.sv', Line 46.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'scl_falling' are not read. First unread bit index is 0. 
+RTL Name 'scl_falling', Hierarchy 'i3c_error_recovery', File 'i3c_error_recovery.sv', Line 40.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'scl_rising' are not read. First unread bit index is 0. 
+RTL Name 'scl_rising', Hierarchy 'i3c_error_recovery', File 'i3c_error_recovery.sv', Line 39.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'start_stb' are not read. First unread bit index is 0. 
+RTL Name 'start_stb', Hierarchy 'i3c_error_recovery', File 'i3c_error_recovery.sv', Line 36.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'rd_clk' are not read. First unread bit index is 0. 
+RTL Name 'rd_clk', Hierarchy 'i3c_fifo', File 'i3c_fifo.sv', Line 41.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'rd_rst_n' are not read. First unread bit index is 0. 
+RTL Name 'rd_rst_n', Hierarchy 'i3c_fifo', File 'i3c_fifo.sv', Line 42.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'bcr' are not read. First unread bit index is 0. 
+RTL Name 'bcr', Hierarchy 'i3c_ibi', File 'i3c_ibi.sv', Line 61.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'mdb_is_prn' are not read. First unread bit index is 0. 
+RTL Name 'mdb_is_prn', Hierarchy 'i3c_ibi', File 'i3c_ibi.sv', Line 67.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'bit_cnt' are not read. First unread bit index is 0. 
+RTL Name 'bit_cnt', Hierarchy 'i3c_protocol_fsm', File 'i3c_protocol_fsm.sv', Line 44.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'bus_available' are not read. First unread bit index is 0. 
+RTL Name 'bus_available', Hierarchy 'i3c_protocol_fsm', File 'i3c_protocol_fsm.sv', Line 40.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'scl_falling' are not read. First unread bit index is 0. 
+RTL Name 'scl_falling', Hierarchy 'i3c_protocol_fsm', File 'i3c_protocol_fsm.sv', Line 39.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'scl_rising' are not read. First unread bit index is 0. 
+RTL Name 'scl_rising', Hierarchy 'i3c_protocol_fsm', File 'i3c_protocol_fsm.sv', Line 38.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'tbit_slot' are not read. First unread bit index is 0. 
+RTL Name 'tbit_slot', Hierarchy 'i3c_protocol_fsm', File 'i3c_protocol_fsm.sv', Line 47.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'app_wr_be' are not read. First unread bit index is 3. 
+RTL Name 'app_wr_be', Hierarchy 'i3c_regfile', File 'i3c_regfile.sv', Line 84.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'app_wr_data' are not read. First unread bit index is 24. 
+RTL Name 'app_wr_data', Hierarchy 'i3c_regfile', File 'i3c_regfile.sv', Line 83.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'trp_trigger' are not read. First unread bit index is 0. 
+RTL Name 'trp_trigger', Hierarchy 'i3c_regfile', File 'i3c_regfile.sv', Line 76.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'clk' are not read. First unread bit index is 0. 
+RTL Name 'clk', Hierarchy 'i3c_sda_mux', File 'i3c_sda_mux.sv', Line 17.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'rst_n' are not read. First unread bit index is 0. 
+RTL Name 'rst_n', Hierarchy 'i3c_sda_mux', File 'i3c_sda_mux.sv', Line 18.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'av_prn_send_en' was assigned but not read. 
+RTL Name 'av_prn_send_en', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 187.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'av_static_addr_en' was assigned but not read. 
+RTL Name 'av_static_addr_en', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 187.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'ccc_code' was assigned but not read. 
+RTL Name 'ccc_code', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 135.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'ccc_is_direct' was assigned but not read. 
+RTL Name 'ccc_is_direct', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 136.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'daa_arb_lost' was assigned but not read. 
+RTL Name 'daa_arb_lost', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 131.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'fr_parity_ok' was assigned but not read. 
+RTL Name 'fr_parity_ok', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 115.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'fr_t_drive_val' was assigned but not read. 
+RTL Name 'fr_t_drive_val', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 115.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'hdr_trp_body_valid' was assigned but not read. 
+RTL Name 'hdr_trp_body_valid', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 161.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'ibi_active' was assigned but not read. 
+RTL Name 'ibi_active', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 151.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'ibi_addr' was assigned but not read. 
+RTL Name 'ibi_addr', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 153.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'pf_addr_capture_armed' was assigned but not read. 
+RTL Name 'pf_addr_capture_armed', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 121.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'pf_state_idle' was assigned but not read. 
+RTL Name 'pf_state_idle', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 120.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'pf_state_ignore' was assigned but not read. 
+RTL Name 'pf_state_ignore', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 120.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'pf_to_ccc' was assigned but not read. 
+RTL Name 'pf_to_ccc', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 126.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'rf_last_reset_was_whole' was assigned but not read. 
+RTL Name 'rf_last_reset_was_whole', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 172.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'rxf_wr_level' was assigned but not read. 
+RTL Name 'rxf_wr_level', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 191.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'txf_overflow' was assigned but not read. 
+RTL Name 'txf_overflow', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 193.
+WARNING: [Synth 37-93] [ASSIGN-6]Signal 'txf_rd_level' was assigned but not read. 
+RTL Name 'txf_rd_level', Hierarchy 'i3c_target_top', File 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv', Line 194.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'avl_clk' are not read. First unread bit index is 0. 
+RTL Name 'avl_clk', Hierarchy 'i3c_target_top', File 'i3c_target_top.sv', Line 52.
+WARNING: [Synth 37-125] [ASSIGN-10]Some bits in IO 'avl_rst_n' are not read. First unread bit index is 0. 
+RTL Name 'avl_rst_n', Hierarchy 'i3c_target_top', File 'i3c_target_top.sv', Line 53.
+INFO: [Synth 37-85] Total of 52 linter message(s) generated.
+INFO: [Synth 37-45] Linter Run Finished!
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1206.781 ; gain = 677.711
+INFO: [Common 17-83] Releasing license: Synthesis
+50 Infos, 57 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1206.781 ; gain = 681.688
+# if {![file exists $rpt_dir/lint.rpt]} { error "lint report was not written" }
+# close_design -quiet
+# puts "=== \[2/4\] Synthesis ==="
+=== [2/4] Synthesis ===
+# synth_design -top $top -part $part -mode out_of_context \
+#   -include_dirs $rtl_dir -verilog_define $defines
+Command: synth_design -top i3c_target_top -part xc7a100tcsg324-1 -mode out_of_context -include_dirs ../../rtl -verilog_define I3C_IO_MODULE=i3c_io_xilinx
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1292.773 ; gain = 76.688
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'i3c_target_top' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'i3c_sda_mux' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_sda_mux.sv:14]
+	Parameter N bound to: 32'b00000000000000000000000000000110 
+INFO: [Synth 8-6155] done synthesizing module 'i3c_sda_mux' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_sda_mux.sv:14]
+INFO: [Synth 8-6157] synthesizing module 'i3c_io_xilinx' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/xilinx/i3c_io_xilinx.sv:35]
+INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:87566]
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (0#1) [C:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:87566]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_io_xilinx' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/xilinx/i3c_io_xilinx.sv:35]
+INFO: [Synth 8-6157] synthesizing module 'i3c_bus_frontend' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_bus_frontend.sv:22]
+	Parameter SYNC_STAGES bound to: 32'b00000000000000000000000000000010 
+	Parameter BUS_FREE_CYCLES bound to: 32'b00000000000000000000000000000010 
+	Parameter BUS_AVAIL_CYCLES bound to: 32'b00000000000000000000000000000100 
+	Parameter BUS_IDLE_CYCLES bound to: 32'b00000000000000000000000000001000 
+INFO: [Synth 8-6155] done synthesizing module 'i3c_bus_frontend' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_bus_frontend.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'i3c_bit_engine' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_bit_engine.sv:35]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_bit_engine' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_bit_engine.sv:35]
+INFO: [Synth 8-6157] synthesizing module 'i3c_framer' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_framer.sv:32]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_framer' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_framer.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'i3c_protocol_fsm' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:31]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:160]
+INFO: [Synth 8-226] default block is never used [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:160]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:248]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_protocol_fsm' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:31]
+INFO: [Synth 8-6157] synthesizing module 'i3c_daa' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_daa.sv:30]
+	Parameter STATIC_ADDR_EN bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'i3c_daa' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_daa.sv:30]
+INFO: [Synth 8-6157] synthesizing module 'i3c_ccc' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ccc.sv:27]
+	Parameter STATIC_ADDR_EN bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'i3c_ccc' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ccc.sv:27]
+INFO: [Synth 8-6157] synthesizing module 'i3c_ibi' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ibi.sv:45]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ibi.sv:134]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ibi.sv:175]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_ibi' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ibi.sv:45]
+INFO: [Synth 8-6157] synthesizing module 'i3c_error_recovery' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_error_recovery.sv:32]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_error_recovery' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_error_recovery.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'i3c_hdr_exit_detector' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_hdr_exit_detector.sv:29]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_hdr_exit_detector' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_hdr_exit_detector.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'i3c_regfile' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_regfile.sv:28]
+	Parameter BCR bound to: 8'b00000111 
+	Parameter DCR bound to: 8'b00000000 
+	Parameter MFG_ID bound to: 15'b000000000000000 
+	Parameter PID_TYPE bound to: 1'b0 
+	Parameter PID_VAL bound to: 0 - type: integer 
+	Parameter MWL_DEFAULT bound to: 16'b0000000001000000 
+	Parameter MRL_DEFAULT bound to: 16'b0000000001000000 
+	Parameter MAXIBI_DEFAULT bound to: 8'b00000000 
+	Parameter GETCAP3 bound to: 8'b00000000 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_regfile.sv:234]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_regfile' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_regfile.sv:28]
+INFO: [Synth 8-6157] synthesizing module 'i3c_fifo' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_fifo.sv:25]
+	Parameter DW bound to: 32'b00000000000000000000000000001011 
+	Parameter DEPTH bound to: 32'b00000000000000000000000000001000 
+	Parameter ASYNC bound to: 1'b0 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_fifo.sv:91]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_fifo' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_fifo.sv:25]
+INFO: [Synth 8-6157] synthesizing module 'i3c_fifo__parameterized0' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_fifo.sv:25]
+	Parameter DW bound to: 32'b00000000000000000000000000001001 
+	Parameter DEPTH bound to: 32'b00000000000000000000000000001000 
+	Parameter ASYNC bound to: 1'b0 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_fifo.sv:91]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_fifo__parameterized0' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_fifo.sv:25]
+INFO: [Synth 8-6157] synthesizing module 'i3c_avalon_mm' [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_avalon_mm.sv:24]
+	Parameter AW bound to: 32'b00000000000000000000000000000101 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_avalon_mm.sv:284]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_avalon_mm' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_avalon_mm.sv:24]
+INFO: [Synth 8-6155] done synthesizing module 'i3c_target_top' (0#1) [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_target_top.sv:26]
+WARNING: [Synth 8-6014] Unused sequential element m7e_q_reg was removed.  [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:190]
+WARNING: [Synth 8-6014] Unused sequential element mda_q_reg was removed.  [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_protocol_fsm.sv:191]
+WARNING: [Synth 8-6014] Unused sequential element is_mdb_reg was removed.  [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ibi.sv:160]
+WARNING: [Synth 8-6014] Unused sequential element mdb_en_reg was removed.  [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_ibi.sv:161]
+WARNING: [Synth 8-6014] Unused sequential element outstanding_reg was removed.  [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/rtl/i3c_avalon_mm.sv:322]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1419.977 ; gain = 203.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1419.977 ; gain = 203.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1419.977 ; gain = 203.891
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1419.977 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/syn/xilinx/i3c_target.xdc]
+Finished Parsing XDC File [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/syn/xilinx/i3c_target.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/syn/xilinx/i3c_target.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/i3c_target_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/i3c_target_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1453.016 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1453.016 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1453.016 ; gain = 236.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1453.016 ; gain = 236.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1453.016 ; gain = 236.930
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'i3c_daa'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'i3c_ibi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                          0000001 |                              000
+                   S_HDR |                          0001000 |                              001
+                 S_ACK7E |                          1000000 |                              010
+                   S_PLD |                          0100000 |                              011
+                  S_RXDA |                          0010000 |                              100
+                 S_ACKDA |                          0000100 |                              101
+                  S_WAIT |                          0000010 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'i3c_daa'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 ST_IDLE |                          0000001 |                              000
+                 ST_WAIT |                          1000000 |                              001
+                  ST_ARB |                          0100000 |                              010
+                  ST_ACK |                          0010000 |                              011
+                  ST_PRE |                          0001000 |                              100
+                 ST_DATA |                          0000100 |                              101
+                 ST_TBIT |                          0000010 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'i3c_ibi'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1453.016 ; gain = 236.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 5     
+	   2 Input    3 Bit       Adders := 9     
++---XORs : 
+	                8 Bit    Wide XORs := 1     
+	                7 Bit    Wide XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 11    
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 5     
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 48    
++---RAMs : 
+	               88 Bit	(8 X 11 bit)          RAMs := 1     
+	               72 Bit	(8 X 9 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 6     
+	   2 Input   11 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 2     
+	   2 Input    9 Bit        Muxes := 2     
+	   7 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 10    
+	   6 Input    8 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   7 Input    8 Bit        Muxes := 1     
+	   7 Input    7 Bit        Muxes := 3     
+	   2 Input    7 Bit        Muxes := 23    
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 3     
+	   7 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 11    
+	   4 Input    3 Bit        Muxes := 2     
+	   5 Input    3 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 7     
+	   3 Input    2 Bit        Muxes := 3     
+	   6 Input    2 Bit        Muxes := 1     
+	   7 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 102   
+	   4 Input    1 Bit        Muxes := 2     
+	   7 Input    1 Bit        Muxes := 22    
+	   6 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7129] Port bus_idle in module i3c_avalon_mm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rd_clk in module i3c_fifo__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rd_rst_n in module i3c_fifo__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rd_clk in module i3c_fifo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rd_rst_n in module i3c_fifo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port trp_trigger in module i3c_regfile is either unconnected or has no load
+WARNING: [Synth 8-7129] Port app_wr_data[31] in module i3c_regfile is either unconnected or has no load
+WARNING: [Synth 8-7129] Port app_wr_data[30] in module i3c_regfile is either unconnected or has no load
+WARNING: [Synth 8-7129] Port app_wr_data[29] in module i3c_regfile is either unconnected or has no load
+WARNING: [Synth 8-7129] Port app_wr_data[28] in module i3c_regfile is either unconnected or has no load
+WARNING: [Synth 8-7129] Port app_wr_data[27] in module i3c_regfile is either unconnected or has no load
+WARNING: [Synth 8-7129] Port app_wr_data[26] in module i3c_regfile is either unconnected or has no load
+WARNING: [Synth 8-7129] Port app_wr_data[25] in module i3c_regfile is either unconnected or has no load
+WARNING: [Synth 8-7129] Port app_wr_data[24] in module i3c_regfile is either unconnected or has no load
+WARNING: [Synth 8-7129] Port app_wr_be[3] in module i3c_regfile is either unconnected or has no load
+WARNING: [Synth 8-7129] Port start_stb in module i3c_error_recovery is either unconnected or has no load
+WARNING: [Synth 8-7129] Port scl_rising in module i3c_error_recovery is either unconnected or has no load
+WARNING: [Synth 8-7129] Port scl_falling in module i3c_error_recovery is either unconnected or has no load
+WARNING: [Synth 8-7129] Port match_7e in module i3c_error_recovery is either unconnected or has no load
+WARNING: [Synth 8-7129] Port match_da in module i3c_error_recovery is either unconnected or has no load
+WARNING: [Synth 8-7129] Port is_read in module i3c_error_recovery is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ccc_supported in module i3c_error_recovery is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bcr[7] in module i3c_ibi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bcr[6] in module i3c_ibi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bcr[5] in module i3c_ibi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bcr[4] in module i3c_ibi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bcr[3] in module i3c_ibi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bcr[0] in module i3c_ibi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mdb_is_prn in module i3c_ibi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port scl_rising in module i3c_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port scl_falling in module i3c_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_cnt[3] in module i3c_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_cnt[2] in module i3c_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_cnt[1] in module i3c_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_cnt[0] in module i3c_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ack_slot in module i3c_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port is_broadcast in module i3c_ccc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port scl_falling in module i3c_daa is either unconnected or has no load
+WARNING: [Synth 8-7129] Port start_stb in module i3c_daa is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_cnt[3] in module i3c_daa is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_cnt[2] in module i3c_daa is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_cnt[1] in module i3c_daa is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_cnt[0] in module i3c_daa is either unconnected or has no load
+WARNING: [Synth 8-7129] Port scl_rising in module i3c_protocol_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port scl_falling in module i3c_protocol_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus_available in module i3c_protocol_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_cnt[3] in module i3c_protocol_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_cnt[2] in module i3c_protocol_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_cnt[1] in module i3c_protocol_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_cnt[0] in module i3c_protocol_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tbit_slot in module i3c_protocol_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module i3c_sda_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst_n in module i3c_sda_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port avl_clk in module i3c_target_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port avl_rst_n in module i3c_target_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1502.199 ; gain = 286.113
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++---------------+------------------+-----------+----------------------+-------------+
+|Module Name    | RTL Object       | Inference | Size (Depth x Width) | Primitives  | 
++---------------+------------------+-----------+----------------------+-------------+
+|i3c_target_top | u_rxfifo/mem_reg | Implied   | 8 x 11               | RAM32M x 2  | 
+|i3c_target_top | u_txfifo/mem_reg | Implied   | 8 x 9                | RAM32M x 2  | 
++---------------+------------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1602.758 ; gain = 386.672
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1710.469 ; gain = 494.383
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++---------------+------------------+-----------+----------------------+-------------+
+|Module Name    | RTL Object       | Inference | Size (Depth x Width) | Primitives  | 
++---------------+------------------+-----------+----------------------+-------------+
+|i3c_target_top | u_rxfifo/mem_reg | Implied   | 8 x 11               | RAM32M x 2  | 
+|i3c_target_top | u_txfifo/mem_reg | Implied   | 8 x 9                | RAM32M x 2  | 
++---------------+------------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1720.535 ; gain = 504.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1903.312 ; gain = 687.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1903.312 ; gain = 687.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1903.312 ; gain = 687.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1903.312 ; gain = 687.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1903.312 ; gain = 687.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1903.312 ; gain = 687.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     8|
+|2     |LUT1   |     6|
+|3     |LUT2   |    40|
+|4     |LUT3   |   101|
+|5     |LUT4   |   102|
+|6     |LUT5   |   133|
+|7     |LUT6   |   221|
+|8     |MUXF7  |     3|
+|9     |RAM32M |     4|
+|10    |FDRE   |   323|
+|11    |FDSE   |    18|
+|12    |IOBUF  |     1|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1903.312 ; gain = 687.227
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 55 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 1903.312 ; gain = 654.188
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1903.312 ; gain = 687.227
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1908.480 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/syn/xilinx/i3c_target.xdc]
+INFO: [Vivado 12-4761] HD.CLK_SRC property is set on port clk. The net connecting to the port drives either clock PIN or hierarchical black box. Use the create_clock constraint to create a clock on this port prior to setting HD.CLK_SRC.  [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/syn/xilinx/i3c_target.xdc:23]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/syn/xilinx/i3c_target.xdc:29]
+Finished Parsing XDC File [D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/syn/xilinx/i3c_target.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2425.465 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 5 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances
+
+Synth Design complete | Checksum: 36ec5298
+INFO: [Common 17-83] Releasing license: Synthesis
+64 Infos, 60 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 2425.465 ; gain = 1218.684
+# write_checkpoint -force $out_dir/post_synth.dcp
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2425.465 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/syn/xilinx/build/post_synth.dcp' has been generated.
+# report_utilization -file $rpt_dir/utilization_synth.rpt
+# puts "=== \[3/4\] Implementation ==="
+=== [3/4] Implementation ===
+# opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC 23-814] Not all possible (connectivity based) DRCs may have been run because this design is seen as Out of Context.
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.465 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 2c0983b29
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 2c0983b29
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 2c0983b29
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 1 Initialization | Checksum: 2c0983b29
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Detect if minReqCache needed
+Phase 2.1 Detect if minReqCache needed | Checksum: 2c0983b29
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 2.2 Timer Update
+Phase 2.2 Timer Update | Checksum: 2c0983b29
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: 2c0983b29
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 2c0983b29
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Retarget | Checksum: 2c0983b29
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Retarget, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 2c0983b29
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Constant propagation | Checksum: 2c0983b29
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 5 Sweep | Checksum: 2932a39b8
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Sweep | Checksum: 2932a39b8
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 2932a39b8
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 2425.465 ; gain = 0.000
+BUFG optimization | Checksum: 2932a39b8
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 2932a39b8
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Shift Register Optimization | Checksum: 2932a39b8
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 2932a39b8
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Post Processing Netlist | Checksum: 2932a39b8
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 2ba6187cc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 2ba6187cc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 9 Finalization | Checksum: 2ba6187cc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.081 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              1  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 2ba6187cc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.083 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 2ba6187cc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 2ba6187cc
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2425.465 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+20 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+# place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC 23-814] Not all possible (connectivity based) DRCs may have been run because this design is seen as Out of Context.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC 23-814] Not all possible (connectivity based) DRCs may have been run because this design is seen as Out of Context.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1c447515f
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1d09242c2
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.188 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1d38f42a5
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.413 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1d38f42a5
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.418 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 1d38f42a5
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.426 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 2ba1ba942
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.504 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 2c21c31ef
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.554 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 2c21c31ef
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.558 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 24b9c7628
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 2.5 Global Place Phase2
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 27a415fe2
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 14 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 6 nets or LUTs. Breaked 0 LUT, combined 6 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register to Pipeline Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |              6  |                     6  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |              6  |                     6  |           0  |           4  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 28e280142
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 2.5 Global Place Phase2 | Checksum: 1c07a6dad
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 1c07a6dad
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 284126856
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 2a6d9e22c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 2abfde832
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 295955ac3
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 1762597ea
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 16c57fd92
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 2218a837e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 2218a837e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1208ef206
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.109 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 152327037
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 2425.465 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 1df52a6c5
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1208ef206
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.501. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1bcbedd31
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 1bcbedd31
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1bcbedd31
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                1x1|
+|___________|___________________|___________________|
+|      South|                1x1|                1x1|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 1bcbedd31
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 4.3 Placer Reporting | Checksum: 1bcbedd31
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 24d7319dd
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Ending Placer Task | Checksum: 1bf2356ea
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 2425.465 ; gain = 0.000
+29 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+# route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 57db028c ConstDB: 0 ShapeSum: b575f4c8 RouteDB: b1d25f96
+WARNING: [Route 35-198] Port "rst_n" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "rst_n". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "SCL" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "SCL". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[8]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[8]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[6]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[6]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[7]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[7]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_byteenable[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_byteenable[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_byteenable[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_byteenable[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_byteenable[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_byteenable[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[5]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[5]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[11]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[11]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_address[3]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_address[3]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_address[2]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_address[2]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_address[4]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_address[4]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_address[0]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_address[0]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_address[1]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_address[1]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_write" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_write". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[12]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[12]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[9]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[9]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[20]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[20]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[19]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[19]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[18]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[18]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_read" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_read". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[23]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[23]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[10]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[10]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[15]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[15]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[17]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[17]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[16]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[16]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[21]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[21]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[22]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[22]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[13]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[13]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Route 35-198] Port "avs_writedata[14]" does not have an associated HD.PARTPIN_LOCS, which will prevent the partial routing of the signal "avs_writedata[14]". Without this partial route, timing analysis to/from this port will not be accurate, and no routing information for this port can be exported.
+WARNING: [Constraints 18-8777] Unable to split tiles. All required files are not available.
+Post Restoration Checksum: NetGraph: 48d698cf | NumContArr: 4c2696ed | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 21a4f24f6
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:22 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 21a4f24f6
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:22 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 21a4f24f6
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:22 . Memory (MB): peak = 2425.465 ; gain = 0.000
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 2c1649649
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:22 . Memory (MB): peak = 2425.465 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.589  | TNS=0.000  | WHS=-0.385 | THS=-42.606|
+
+
+Phase 2.4 Soft Constraint Pins - Fast Budgeting
+Phase 2.4 Soft Constraint Pins - Fast Budgeting | Checksum: 23e471db8
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:22 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 742
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 742
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 2925b4ddf
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:22 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 2925b4ddf
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:22 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 2b6ca38d2
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 4 Initial Routing | Checksum: 2b6ca38d2
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 254
+ Number of Nodes with overlaps = 98
+ Number of Nodes with overlaps = 39
+ Number of Nodes with overlaps = 19
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.662  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Global Iteration 0 | Checksum: 389186c0f
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 5 Rip-up And Reroute | Checksum: 389186c0f
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 Delay CleanUp
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 375fb9103
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.749  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 6.1 Delay CleanUp | Checksum: 375fb9103
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 375fb9103
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 6 Delay and Skew Optimization | Checksum: 375fb9103
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.749  | TNS=0.000  | WHS=-0.984 | THS=-73.813|
+
+Phase 7.1 Hold Fix Iter | Checksum: 33207709c
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 7.2 Non Free Resource Hold Fix Iter
+Phase 7.2 Non Free Resource Hold Fix Iter | Checksum: 36456f863
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Phase 7 Post Hold Fix | Checksum: 36456f863
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.095922 %
+  Global Horizontal Routing Utilization  = 0.167874 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 8 Route finalize | Checksum: 36456f863
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 36456f863
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 2f270b91b
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 11 Post Process Routing
+WARNING: [Route 35-426]  Router was unable to fix hold violation on pins with fixed or dedicated routing. The router cannot add routing detours to improve hold time because the pins fall under one or more of the listed categories: partition pins, fixed routes and intra-site connections.
+Resolution: Run report_timing_summary to analyze the hold violations.
+Phase 11 Post Process Routing | Checksum: 2d71e0e5a
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Phase 12 Post Router Timing
+
+Phase 12.1 Update Timing
+Phase 12.1 Update Timing | Checksum: 2d71e0e5a
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.749  | TNS=0.000  | WHS=-0.984 | THS=-73.813|
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 12 Post Router Timing | Checksum: 2d71e0e5a
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Total Elapsed time in route_design: 115.949 secs
+
+Phase 13 Post-Route Event Processing
+Phase 13 Post-Route Event Processing | Checksum: 177100b00
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 177100b00
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+9 Infos, 39 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:02:11 ; elapsed = 00:01:56 . Memory (MB): peak = 2425.465 ; gain = 0.000
+# write_checkpoint -force $out_dir/post_route.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Wrote PlaceStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2425.465 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 2425.465 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/syn/xilinx/build/post_route.dcp' has been generated.
+# puts "=== \[4/4\] Reports ==="
+=== [4/4] Reports ===
+# report_utilization     -file $rpt_dir/utilization.rpt
+# report_utilization     -hierarchical -file $rpt_dir/utilization_hier.rpt
+# report_timing_summary  -delay_type min_max -max_paths 10 -report_unconstrained \
+#                        -file $rpt_dir/timing_summary.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+# report_drc             -file $rpt_dir/drc.rpt
+Command: report_drc -file reports/drc.rpt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2025.2/Vivado/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC 23-814] Not all possible (connectivity based) DRCs may have been run because this design is seen as Out of Context.
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file D:/AMD Ross Test/wt/judge-ross-i3c/designs/i3c/syn/xilinx/reports/drc.rpt.
+report_drc completed successfully
+# report_route_status    -file $rpt_dir/route_status.rpt
+# proc slack_of {type from to} {
+#   set p [get_timing_paths -quiet -delay_type $type -max_paths 1 -from $from -to $to]
+#   if {[llength $p] == 0} { return "n/a" }
+#   return [get_property SLACK [lindex $p 0]]
+# }
+# set regs_ck [all_registers -clock_pins]
+# set regs_d  [all_registers -data_pins]
+# set ins     [all_inputs]
+# set outs    [all_outputs]
+# set fh [open $rpt_dir/timing_split.rpt w]
+# puts $fh "Post-route worst slack by path class, clk = 8.000 ns (ns; n/a = no constrained path)"
+# puts $fh [format "%-22s %10s %10s" "path class" "setup" "hold"]
+# foreach {name from to} [list reg-to-reg $regs_ck $regs_d  input-to-reg $ins $regs_d                              reg-to-output $regs_ck $outs  input-to-output $ins $outs] {
+#   puts $fh [format "%-22s %10s %10s" $name [slack_of max $from $to] [slack_of min $from $to]]
+# }
+# puts $fh [format "%-22s %10s %10s" "ALL (WNS / WHS)"   [get_property SLACK [get_timing_paths -delay_type max]]   [get_property SLACK [get_timing_paths -delay_type min]]]
+# close $fh
+# set fh [open $rpt_dir/timing_split.rpt r]
+# puts [read $fh]
+Post-route worst slack by path class, clk = 8.000 ns (ns; n/a = no constrained path)
+path class                  setup       hold
+reg-to-reg                  0.786      0.070
+input-to-reg                1.721     -0.984
+reg-to-output               1.742      1.439
+input-to-output             2.834      1.811
+ALL (WNS / WHS)             0.786     -0.984
+
+# close $fh
+# puts "BUILD DONE"
+BUILD DONE
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 21:26:27 2026...

@@ -1,0 +1,452 @@
+Questa Lattice OEM Edition-64 vsim 2025.2 Simulator 2025.05 May 31 2025
+
+== Generating golden vectors (sim/model/scope_ref.py)
+scope_ref: sim/build/vectors/cap_w32_d8: 640 stimulus samples, trig_index=128, wrapped=1, consumed=384
+scope_ref: sim/build/vectors/cap_w512_d10: 2560 stimulus samples, trig_index=512, wrapped=1, consumed=1536
+scope_ref: sim/build/vectors/trig_cmp: 6 cmp cases x 400 samples
+scope_ref: sim/build/vectors/trig_seq: 7 seq cases x 3000 samples
+scope_ref: sim/build/vectors/pt_d8_p0: 267 stimulus samples, trig_index=3, wrapped=1, consumed=259
+scope_ref: sim/build/vectors/pt_d8_p1: 1117 stimulus samples, trig_index=85, wrapped=1, consumed=1108
+scope_ref: sim/build/vectors/pt_d8_p64: 328 stimulus samples, trig_index=64, wrapped=1, consumed=256
+scope_ref: sim/build/vectors/pt_d8_p128: 899 stimulus samples, trig_index=123, wrapped=1, consumed=763
+scope_ref: sim/build/vectors/pt_d8_p255: 831 stimulus samples, trig_index=55, wrapped=1, consumed=569
+scope_ref: sim/build/vectors/pt_d10_p0: 1035 stimulus samples, trig_index=3, wrapped=1, consumed=1027
+scope_ref: sim/build/vectors/pt_d10_p1: 3421 stimulus samples, trig_index=341, wrapped=1, consumed=3412
+scope_ref: sim/build/vectors/pt_d10_p256: 1288 stimulus samples, trig_index=256, wrapped=1, consumed=1024
+scope_ref: sim/build/vectors/pt_d10_p512: 3203 stimulus samples, trig_index=123, wrapped=1, consumed=2683
+scope_ref: sim/build/vectors/pt_d10_p1023: 3135 stimulus samples, trig_index=55, wrapped=1, consumed=2105
+scope_ref: sim/build/vectors/win_w1: 1 windows in 557 cycles, trig_cycles=[364]
+scope_ref: sim/build/vectors/win_w2: 2 windows in 463 cycles, trig_cycles=[37, 366]
+scope_ref: sim/build/vectors/win_w3: 3 windows in 318 cycles, trig_cycles=[16, 171, 269]
+scope_ref: sim/build/vectors/win_w5: 5 windows in 435 cycles, trig_cycles=[48, 81, 191, 374, 410]
+scope_ref: sim/build/vectors/win_w8: 8 windows in 601 cycles, trig_cycles=[17, 110, 145, 308, 341, 419, 472, 576]
+scope_ref: sim/build/vectors/drn: 564 stimulus samples, trig_index=44, wrapped=1, consumed=556
+scope_ref: sim/build/vectors/drn: 1 DRAIN_DATA frames, 1033 bytes
+scope_ref: sim/build/vectors/rle_c8: 400 samples -> 74 words (cnt_w=8)
+scope_ref: sim/build/vectors/rle_t8: 400 samples -> 400 words (cnt_w=8)
+scope_ref: sim/build/vectors/rle_w32: 300 samples -> 162 words (cnt_w=10)
+==================================================================
+== Questa: tb_smoke
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_smoke
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_prim_ram
+==================================================================
+** Error: License checkout has been disallowed because
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_prim_ram
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 1, Warnings: 0
+TB_RESULT: FAIL (tb_prim_ram simulation error, vsim rc=12)
+==================================================================
+== Questa: tb_prim_fifo_sync
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_prim_fifo_sync
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_prim_fifo_async
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_fifo_async_leg
+-- Compiling module tb_prim_fifo_async
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_capture_basic
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_capture_basic
+-- Compiling module tb_capture_leg
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_csr
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_csr
+-- Compiling module tb_csr_leg
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_trigger_cmp
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_trigger_cmp
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_trigger_seq
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_trigger_seq
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_pretrig
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_pretrig
+-- Compiling module tb_pretrig_leg
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_windows
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_windows
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_drain_cdc
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_drain_cdc
+-- Compiling module tb_drain_leg
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_uart
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_uart
+-- Compiling module tb_uart_leg
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_csr_if
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_csr_if
+-- Compiling module tb_csr_if_leg
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+-- [avalon] BUS=1 matrix + BUF_DATA pop + cfg_err: PASS
+-- [axil] BUS=2 matrix + BUF_DATA pop + cfg_err: PASS
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_rle
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_rle
+-- Compiling module tb_rle_leg
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+-- [const8] PROBE_W=8 CNT_W=8: 400 samples -> 74 words, encode+bypass PASS
+-- [toggle8] PROBE_W=8 CNT_W=8: 400 samples -> 400 words, encode+bypass PASS
+-- [wide32] PROBE_W=32 CNT_W=10: 300 samples -> 162 words, encode+bypass PASS
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_ext_trig
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_ext_trig
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_jtag
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_jtag
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+== Questa: tb_axil_top
+==================================================================
+-- Compiling module prim_ff_sync
+-- Compiling module prim_fifo_async
+-- Compiling module prim_fifo_sync
+-- Compiling module prim_ram_1r1w
+-- Compiling module scope_avalon
+-- Compiling module scope_axil
+-- Compiling module scope_axil_top
+-- Compiling module scope_core
+-- Compiling module scope_csr
+-- Compiling module scope_drain
+-- Compiling module scope_jtag
+-- Compiling module scope_rle
+-- Compiling module scope_top
+-- Compiling module scope_trigger
+-- Compiling module scope_uart
+-- Compiling module tb_axil_top
+-- Compiling package scope_pkg
+-- Importing package scope_pkg
+-- scope_axil_top: ID, CSR r/w, arm/trigger pins, 256-word BUF_DATA drain: PASS
+Errors: 0, Warnings: 0
+TB_RESULT: PASS
+==================================================================
+tb_smoke PASS
+tb_prim_ram FAIL
+tb_prim_fifo_sync PASS
+tb_prim_fifo_async PASS
+tb_capture_basic PASS
+tb_csr PASS
+tb_trigger_cmp PASS
+tb_trigger_seq PASS
+tb_pretrig PASS
+tb_windows PASS
+tb_drain_cdc PASS
+tb_uart PASS
+tb_csr_if PASS
+tb_rle PASS
+tb_ext_trig PASS
+tb_jtag PASS
+tb_axil_top PASS
+ONE OR MORE QUESTA TESTBENCHES FAILED
