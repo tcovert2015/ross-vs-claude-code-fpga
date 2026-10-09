@@ -1,0 +1,472 @@
+
+                         Lattice Mapping Report File
+
+Design:  i3c_target_top
+Family:  LFD2NX
+Device:  LFD2NX-40
+Package: CABGA256
+Performance Grade:  8_High-Performance_1.0V
+
+Mapper:    version Radiant Software (64-bit) 2026.1.1.229.0
+Mapped on: Fri Oct  9 16:47:58 2026
+
+Design Information
+------------------
+
+Command line:   map -pdc D:/AMD Ross
+     Test/wt/plain-lattice-i3c/designs/i3c/syn/lattice/i3c_target.pdc -i
+     i3c_target_impl_1_syn.udb -o i3c_target_impl_1_map.udb -mp
+     i3c_target_impl_1.mrp -hierrpt -gui -msgset D:/AMD Ross
+     Test/wt/plain-lattice-i3c/designs/i3c/syn/lattice/build/promote.xml
+
+Design Summary
+--------------
+
+   Number of registers:         331 out of 32811 (1%)
+      Number of SLICE         registers:  330 out of 32256 (1%)
+      Number of PIO Input     registers:    1 out of   185 (1%)
+      Number of PIO Output    registers:    0 out of   185 (0%)
+      Number of PIO Tri-State registers:    0 out of   185 (0%)
+   Number of LUT4s:             914 out of 32256 (3%)
+      Number used as logic LUT4s:                        816
+      Number used as distributed RAM:                     36 (6 per 16X4 RAM)
+      Number used as ripple logic:                        62 (2 per CCU2)
+   Number of PIOs used/reserved:   80 out of   185 (43%)
+      Number of PIOs reserved:      7 (per sysConfig and/or prohibit constraint)
+      Number of PIOs used:         73
+        Number of PIOs used for single ended IO:        73
+        Number of PIO pairs used for differential IO:    0
+        Number allocated to regular speed PIOs:    73 out of  111 (66%)
+        Number allocated to high speed PIOs:        0 out of   74 (0%)
+   Number of Dedicated IO used for ADC/PCIE:    0 out of   12 (0%)
+   Number of IDDR/ODDR/TDDR functions used:      0 out of   444 (0%)
+   Number of IOs using at least one DDR function: 0 (0 differential)
+   Number of Block RAMs:          0 out of 84 (0%)
+   Number of Large RAMs:          0 out of 2 (0%)
+   Number of Logical DSP Functions:
+      Number of Pre-Adders (9+9):    0 out of 112 (0%)
+      Number of Multipliers (18x18): 0 out of 56 (0%)
+         Number of 9X9:        0 (1 18x18 = 2   9x9)
+         Number of 18x18:      0 (1 18x18 = 1 18x18)
+         Number of 18x36:      0 (2 18x18 = 1 18x36)
+         Number of 36x36:      0 (4 18x18 = 1 36x36)
+      Number of 54-bit Accumulators: 0 out of 28 (0%)
+      Number of 18-bit Registers:    0 out of 112 (0%)
+   Number of Physical DSP Components:
+      Number of PREADD9:             0 out of 112 (0%)
+      Number of MULT9:               0 out of 112 (0%)
+      Number of MULT18:              0 out of 56 (0%)
+      Number of MULT18X36:           0 out of 28 (0%)
+      Number of MULT36:              0 out of 14 (0%)
+      Number of ACC54:               0 out of 28 (0%)
+      Number of REG18:               0 out of 112 (0%)
+
+                                    Page 1
+
+
+
+
+
+Design Summary (cont)
+---------------------
+   Number of ALUREGs:             0 out of 1 (0%)
+   Number of PLLs:                0 out of 3 (0%)
+   Number of DDRDLLs:             0 out of 2 (0%)
+   Number of DLLDELs:             0 out of 10 (0%)
+   Number of DQSs:                0 out of 4 (0%)
+   Number of DCSs:                0 out of 1 (0%)
+   Number of DCCs:                0 out of 62 (0%)
+   Number of PCLKDIVs:            0 out of 1 (0%)
+   Number of ECLKDIVs:            0 out of 12 (0%)
+   Number of ECLKSYNCs:           0 out of 12 (0%)
+   Number of ADC Blocks:          0 out of 1 (0%)
+   Number of SGMIICDRs:           0 out of 2 (0%)
+   Number of PMUs:                0 out of 1 (0%)
+   Number of BNKREF18s:           0 out of 3 (0%)
+   Number of BNKREF33s:           0 out of 5 (0%)
+   Number of I2CFIFOs:            0 out of 1 (0%)
+   Number of Oscillator:          0 out of 1 (0%)
+   Number of GSR:                 0 out of 1 (0%)
+   Number of Cryptographic Block: 0 out of 1 (0%)
+   Number of Config IP:           0 out of 1 (0%)
+                 TSALL:           0 out of 1 (0%)
+   Number of JTAG:                0 out of 1 (0%)
+   Number of Config LMMI:         0 out of 1 (0%)
+   Number of Config MULTIBOOT:    0 out of 1 (0%)
+   Number of SED:                 0 out of 1 (0%)
+   Number of Config WDT:          0 out of 1 (0%)
+   Number of PCIEs:               0 out of 1 (0%)
+   Number of Clocks:  1
+      Net clk_c: 337 loads, 337 rising, 0 falling (Driver: Port clk)
+   Number of Clock Enables:  53
+      Net u_pfsm.un1_enabled_1_0: 1 loads, 1 SLICEs
+      Net u_framer.begin_drive: 1 loads, 1 SLICEs
+      Net u_fe.bus_busy_en: 1 loads, 1 SLICEs
+      Net u_be.bit_cnt15: 1 loads, 1 SLICEs
+      Net u_be.bit_cnt14_RNICC8EB: 7 loads, 7 SLICEs
+      Net u_be.un1_tx_shift12_i: 8 loads, 8 SLICEs
+      Net u_be.tx_first_en: 1 loads, 1 SLICEs
+      Net u_be.rx_byte_1_sqmuxa: 8 loads, 8 SLICEs
+      Net u_framer.ninth_q_RNO: 1 loads, 1 SLICEs
+      Net u_framer.un1_scl_rising_4_i: 1 loads, 1 SLICEs
+      Net u_framer.un1_byte_done_2: 1 loads, 1 SLICEs
+      Net u_pfsm.un1_tx_drive_en_i: 1 loads, 1 SLICEs
+      Net u_pfsm.next_state_0_sqmuxa_3: 4 loads, 4 SLICEs
+      Net u_pfsm.un1_start_stb_4_i: 1 loads, 1 SLICEs
+      Net u_daa.un1_stop_stb: 1 loads, 1 SLICEs
+      Net u_daa.un1_da_valid19_i: 1 loads, 1 SLICEs
+      Net u_daa.un1_ev_entdaa_windup_2_RNIPBDHU: 6 loads, 6 SLICEs
+      Net u_daa.arb_lost_1_sqmuxa_i: 1 loads, 1 SLICEs
+      Net u_daa.da_ack_pending_1_sqmuxa_i: 1 loads, 1 SLICEs
+      Net u_daa.un1_da_valid16_i: 1 loads, 1 SLICEs
+      Net u_ccc.un1_code_q10_3_i: 8 loads, 8 SLICEs
+      Net u_ccc.un1_code_q10_5_i: 8 loads, 8 SLICEs
+      Net u_ccc.resp_idx_1_sqmuxa_i: 1 loads, 1 SLICEs
+      Net u_ccc.un1_code_q10_7_i: 8 loads, 8 SLICEs
+      Net u_ccc.un1_code_q11_6_i: 1 loads, 1 SLICEs
+      Net u_ccc.un1_code_q11_2_i: 1 loads, 1 SLICEs
+      Net u_ccc.un1_code_q11_i: 3 loads, 3 SLICEs
+
+                                    Page 2
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net u_ccc.un1_code_q11_3_i: 1 loads, 1 SLICEs
+      Net u_ccc.resp_idx_1_sqmuxa_idup: 2 loads, 2 SLICEs
+      Net u_ibi.busy_RNO: 1 loads, 1 SLICEs
+      Net u_ibi.state_23_sqmuxa: 8 loads, 8 SLICEs
+      Net u_ibi.cur_last_RNO_0: 1 loads, 1 SLICEs
+      Net u_err.un1_in_error10_i: 6 loads, 6 SLICEs
+      Net u_err.un1_in_error12_i: 1 loads, 1 SLICEs
+      Net u_hdr.got_sr_q_1_sqmuxa_i: 1 loads, 1 SLICEs
+      Net u_hdr.trp_body_q_1_sqmuxa_i: 1 loads, 1 SLICEs
+      Net u_rf.last_reset_was_whole_RNO: 1 loads, 1 SLICEs
+      Net u_rf.un1_ccc_set_rstact: 2 loads, 2 SLICEs
+      Net u_rf.ibi_en_RNO_0: 1 loads, 1 SLICEs
+      Net u_rf.proto_err_seen_RNO: 1 loads, 1 SLICEs
+      Net u_rf.un1_mrl27_i: 16 loads, 16 SLICEs
+      Net u_rf.un1_mwl33_i: 16 loads, 16 SLICEs
+      Net u_rf.un1_periph_reset: 1 loads, 1 SLICEs
+      Net u_rf.N_44: 8 loads, 8 SLICEs
+      Net u_rf.N_70: 8 loads, 8 SLICEs
+      Net u_av.ctrl_reg4: 6 loads, 6 SLICEs
+      Net u_rxfifo.overflow_1_sqmuxa_i: 1 loads, 1 SLICEs
+      Net u_av.ibi_plen_q_0_sqmuxa_0_a2_0_RNI2DRTL: 3 loads, 3 SLICEs
+      Net u_av.ibi_prn_q_0_sqmuxa: 6 loads, 6 SLICEs
+      Net u_av.N_40_i: 5 loads, 5 SLICEs
+      Net u_av.int_enablece[8]: 2 loads, 2 SLICEs
+      Net u_av.int_enablece[0]: 8 loads, 8 SLICEs
+      Net u_av.ibi_plen_q_0_sqmuxa: 8 loads, 8 SLICEs
+   Number of LSRs:  14
+      Pin rst_n: 249 loads, 248 SLICEs (Net: rst_n_c)
+      Net u_fe.sda_sr_RNI1IT2U[1]: 24 loads, 24 SLICEs
+      Net fe_start_stb: 2 loads, 2 SLICEs
+      Net u_be.bit_cnt10_RNII0MGD: 5 loads, 5 SLICEs
+      Net u_daa.un1_state71_i: 6 loads, 6 SLICEs
+      Net u_daa.dyn_addr: 6 loads, 6 SLICEs
+      Net u_ibi.busy_0_sqmuxa_2_RNIUS6S01: 8 loads, 8 SLICEs
+      Net u_ibi.un1_rst_n_i: 3 loads, 3 SLICEs
+      Net u_hdr.xn_cnt_67: 4 loads, 4 SLICEs
+      Net u_rf.vendor_msb_69: 8 loads, 8 SLICEs
+      Net u_rxfifo.level_73dup: 4 loads, 4 SLICEs
+      Net u_rxfifo.un1_do_push: 3 loads, 3 SLICEs
+      Net u_txfifo.level_71: 4 loads, 4 SLICEs
+      Net u_txfifo.un1_do_push_0: 3 loads, 3 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net rst_n_c: 278 loads
+      Net rg_whole_reset: 54 loads
+      Net fe_bus_busy: 37 loads
+      Net be_rx_byte[0]: 28 loads
+      Net u_fe.stop_raw: 28 loads
+      Net u_fe.start_raw: 27 loads
+      Net u_fe.sda_sr_RNI1IT2U[1]: 24 loads
+      Net be_byte_done: 23 loads
+      Net u_ccc.code_q[1]: 22 loads
+      Net u_ccc.code_q[3]: 22 loads
+
+
+
+
+
+   Number of warnings:  22
+
+                                    Page 3
+
+
+
+
+
+ (cont)
+-------
+   Number of criticals: 0
+   Number of errors:    0
+
+Design Errors/Criticals/Warnings
+--------------------------------
+
+WARNING <71003020> - map: Top module port 'avl_clk' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avl_rst_n' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[31]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[30]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[29]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[28]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[27]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[26]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[25]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[24]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_byteenable[3]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avl_clk' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avl_rst_n' does not connect to
+     anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[31]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[30]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[29]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[28]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[27]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[26]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[25]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_writedata[24]' does not connect
+     to anything.
+WARNING <71003020> - map: Top module port 'avs_byteenable[3]' does not connect
+     to anything.
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+-------+-------+-----------+
+| IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
+|                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
+
+                                    Page 4
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| SDA                 | BIDIR     |           | I     |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| SCL                 | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| irq                 | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_waitrequest     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdatavalid   | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[31]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[30]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[29]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[28]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[27]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[26]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[25]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[24]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[23]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[22]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[21]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[20]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[19]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[18]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[17]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[16]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[15]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[14]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[13]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[12]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[11]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[10]    | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[9]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+                                    Page 5
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
+| avs_readdata[8]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[7]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[6]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[5]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[4]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[3]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[2]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[1]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_readdata[0]     | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_byteenable[2]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_byteenable[1]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_byteenable[0]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[23]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[22]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[21]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[20]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[19]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[18]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[17]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[16]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[15]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[14]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[13]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[12]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[11]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[10]   | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[9]    | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[8]    | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[7]    | INPUT     |           |       |       |           |
+
+                                    Page 6
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[6]    | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[5]    | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[4]    | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[3]    | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[2]    | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[1]    | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_writedata[0]    | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_write           | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_read            | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_address[4]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_address[3]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_address[2]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_address[1]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| avs_address[0]      | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| rst_n               | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| clk                 | INPUT     |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+Removed logic
+-------------
+
+Block GSR_INST undriven or does not drive anything - clipped.
+Block VCC_0 was optimized away.
+Block VCC_0 was optimized away.
+
+Constraint Summary
+------------------
+
+   Total number of constraints: 24
+   Total number of constraints dropped: 0
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 3 secs
+   Total REAL Time: 4 secs
+   Peak Memory Usage: 353 MB
+Checksum -- map: 856fd4cef5a9b152ccce5ef9c50f1431b61c3571
+
+
+
+
+                                    Page 7
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2026 Lattice Semiconductor
+     Corporation,  All rights reserved.

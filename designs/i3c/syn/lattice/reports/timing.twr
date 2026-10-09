@@ -1,0 +1,1886 @@
+Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2026.1.1.229.0
+
+Fri Oct  9 16:48:26 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2026 Lattice Semiconductor Corporation,  All rights reserved.
+
+Command line:    timing -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp 8_High-Performance_1.0V -hsp m -pwrprd -html -rpt i3c_target_impl_1.twr i3c_target_impl_1.udb -gui -msgset D:/AMD Ross Test/wt/plain-lattice-i3c/designs/i3c/syn/lattice/build/promote.xml
+
+-------------------------------------------
+Design:          i3c_target_top
+Family:          LFD2NX
+Device:          LFD2NX-40
+Package:         CABGA256
+Performance:     8_High-Performance_1.0V
+Package Status:                     Final          Version 2
+Performance Hardware Data Status :   Final Version 107.1
+-------------------------------------------
+
+
+=====================================================================
+                    Table of Contents
+=====================================================================
+    1  Timing Overview
+        1.1  SDC Constraints
+        1.2  Constraint Coverage
+        1.3  Overall Summary
+        1.4  Unconstrained Report
+        1.5  Combinational Loop
+    2  Setup at Speed Grade 8_High-Performance_1.0V Corner at 85 Degrees
+        2.1  Clock Summary
+        2.2  Endpoint slacks
+        2.3  Detailed Report
+    3  Setup at Speed Grade 8_High-Performance_1.0V Corner at 0 Degrees
+        3.1  Clock Summary
+        3.2  Endpoint slacks
+        3.3  Detailed Report
+    4  Hold at Speed Grade m Corner at 0 Degrees
+        4.1  Endpoint slacks
+        4.2  Detailed Report
+
+=====================================================================
+                    End of Table of Contents
+=====================================================================
+
+==============================================
+1  Timing Overview
+==============================================
+
+1.1  SDC Constraints
+=====================
+create_clock -name {clk} -period 8 -waveform {0.000 4.000} [get_ports clk]
+set_false_path -from [get_ports rst_n]
+set_false_path -from [get_ports {SDA SCL}]
+set_false_path -to [get_ports SDA]
+set_input_delay -clock [get_clocks clk] -max 1 [get_ports {avs_address[4] avs_address[3] avs_address[2] avs_address[1] avs_address[0]}]
+set_input_delay -clock [get_clocks clk] -min 0.3 [get_ports {avs_address[4] avs_address[3] avs_address[2] avs_address[1] avs_address[0]}]
+set_input_delay -clock [get_clocks clk] -max 1 [get_ports avs_read]
+set_input_delay -clock [get_clocks clk] -min 0.3 [get_ports avs_read]
+set_input_delay -clock [get_clocks clk] -max 1 [get_ports avs_write]
+set_input_delay -clock [get_clocks clk] -min 0.3 [get_ports avs_write]
+set_input_delay -clock [get_clocks clk] -max 1 [get_ports {avs_writedata[31] avs_writedata[30] avs_writedata[29] avs_writedata[28] avs_writedata[27] avs_writedata[26] avs_writedata[25] avs_writedata[24] avs_writedata[23] avs_writedata[22] avs_writedata[21] avs_writedata[20] avs_writedata[19] avs_writedata[18] avs_writedata[17] avs_writedata[16] avs_writedata[15] avs_writedata[14] avs_writedata[13] avs_writedata[12] avs_writedata[11] avs_writedata[10] avs_writedata[9] avs_writedata[8] avs_writedata[7] avs_writedata[6] avs_writedata[5] avs_writedata[4] avs_writedata[3] avs_writedata[2] avs_writedata[1] avs_writedata[0]}]
+set_input_delay -clock [get_clocks clk] -min 0.3 [get_ports {avs_writedata[31] avs_writedata[30] avs_writedata[29] avs_writedata[28] avs_writedata[27] avs_writedata[26] avs_writedata[25] avs_writedata[24] avs_writedata[23] avs_writedata[22] avs_writedata[21] avs_writedata[20] avs_writedata[19] avs_writedata[18] avs_writedata[17] avs_writedata[16] avs_writedata[15] avs_writedata[14] avs_writedata[13] avs_writedata[12] avs_writedata[11] avs_writedata[10] avs_writedata[9] avs_writedata[8] avs_writedata[7] avs_writedata[6] avs_writedata[5] avs_writedata[4] avs_writedata[3] avs_writedata[2] avs_writedata[1] avs_writedata[0]}]
+set_input_delay -clock [get_clocks clk] -max 1 [get_ports {avs_byteenable[3] avs_byteenable[2] avs_byteenable[1] avs_byteenable[0]}]
+set_input_delay -clock [get_clocks clk] -min 0.3 [get_ports {avs_byteenable[3] avs_byteenable[2] avs_byteenable[1] avs_byteenable[0]}]
+set_output_delay -clock [get_clocks clk] -min 0.3 [get_ports {avs_readdata[31] avs_readdata[30] avs_readdata[29] avs_readdata[28] avs_readdata[27] avs_readdata[26] avs_readdata[25] avs_readdata[24] avs_readdata[23] avs_readdata[22] avs_readdata[21] avs_readdata[20] avs_readdata[19] avs_readdata[18] avs_readdata[17] avs_readdata[16] avs_readdata[15] avs_readdata[14] avs_readdata[13] avs_readdata[12] avs_readdata[11] avs_readdata[10] avs_readdata[9] avs_readdata[8] avs_readdata[7] avs_readdata[6] avs_readdata[5] avs_readdata[4] avs_readdata[3] avs_readdata[2] avs_readdata[1] avs_readdata[0]}]
+set_output_delay -clock [get_clocks clk] -max 1 [get_ports {avs_readdata[31] avs_readdata[30] avs_readdata[29] avs_readdata[28] avs_readdata[27] avs_readdata[26] avs_readdata[25] avs_readdata[24] avs_readdata[23] avs_readdata[22] avs_readdata[21] avs_readdata[20] avs_readdata[19] avs_readdata[18] avs_readdata[17] avs_readdata[16] avs_readdata[15] avs_readdata[14] avs_readdata[13] avs_readdata[12] avs_readdata[11] avs_readdata[10] avs_readdata[9] avs_readdata[8] avs_readdata[7] avs_readdata[6] avs_readdata[5] avs_readdata[4] avs_readdata[3] avs_readdata[2] avs_readdata[1] avs_readdata[0]}]
+set_output_delay -clock [get_clocks clk] -min 0.3 [get_ports avs_readdatavalid]
+set_output_delay -clock [get_clocks clk] -max 1 [get_ports avs_readdatavalid]
+set_output_delay -clock [get_clocks clk] -min 0.3 [get_ports avs_waitrequest]
+set_output_delay -clock [get_clocks clk] -max 1 [get_ports avs_waitrequest]
+set_output_delay -clock [get_clocks clk] -min 0.3 [get_ports irq]
+set_output_delay -clock [get_clocks clk] -max 1 [get_ports irq]
+
+1.2  Constraint Coverage
+---------------------------
+Constraint Coverage: 100%
+
+
+1.3  Overall Summary
+---------------------------
+ Setup at Speed Grade 8_High-Performance_1.0V Corner at 85 Degrees    Timing Errors: 27 endpoints;  Total Negative Slack: 75.647 ns 
+ Setup at Speed Grade 8_High-Performance_1.0V Corner at 0 Degrees     Timing Errors: 27 endpoints;  Total Negative Slack: 74.520 ns 
+ Hold at Speed Grade m Corner at 0 Degrees                            Timing Errors: 130 endpoints;  Total Negative Slack: 27.954 ns 
+
+1.4  Unconstrained Report
+===========================
+
+1.4.1  Unconstrained Start/End Points
+--------------------------------------
+
+Clocked but unconstrained timing start points
+-------------------------------------------------------------------
+         Listing 9 Start Points         |           Type           
+-------------------------------------------------------------------
+avs_writedata[31]                       |    No arrival or required
+avs_writedata[30]                       |    No arrival or required
+avs_writedata[29]                       |    No arrival or required
+avs_writedata[28]                       |    No arrival or required
+avs_writedata[27]                       |    No arrival or required
+avs_writedata[26]                       |    No arrival or required
+avs_writedata[25]                       |    No arrival or required
+avs_writedata[24]                       |    No arrival or required
+avs_byteenable[3]                       |    No arrival or required
+-------------------------------------------------------------------
+                                        |                          
+Number of unconstrained timing start po |                          
+ints                                    |                         9
+                                        |                          
+-------------------------------------------------------------------
+
+Clocked but unconstrained timing end points
+--------------------------------------------------
+There is no end point satisfying reporting criteria
+
+
+1.4.2  Start/End Points Without Timing Constraints
+---------------------------------------------------
+
+I/O ports without constraint
+----------------------------
+Possible constraints to use on I/O ports are:
+set_input_delay,
+set_output_delay,
+set_max_delay,
+create_clock,
+create_generated_clock,
+...
+
+-------------------------------------------------------------------
+     Listing 2 Start or End Points      |           Type           
+-------------------------------------------------------------------
+avl_clk                                 |                     input
+avl_rst_n                               |                     input
+-------------------------------------------------------------------
+                                        |                          
+Number of I/O ports without constraint  |                         2
+                                        |                          
+-------------------------------------------------------------------
+
+Nets without clock definition
+Define a clock on a top level port or a generated clock on a clock divider pin associated with this net(s).
+--------------------------------------------------
+There is no instance satisfying reporting criteria
+
+
+
+1.5  Combinational Loop
+========================
+None
+
+===============================================================
+2  Setup at Speed Grade 8_High-Performance_1.0V Corner at 85 Degrees
+===============================================================
+
+2.1  Clock Summary
+=======================
+
+2.1.1 Clock "clk"
+=======================
+create_clock -name {clk} -period 8 -waveform {0.000 4.000} [get_ports clk]
+
+Single Clock Domain
+-------------------------------------------------------------------------------------------------------
+               Clock clk                |                    |       Period       |     Frequency      
+-------------------------------------------------------------------------------------------------------
+ From clk                               |             Target |           8.000 ns |        125.000 MHz 
+                                        | Actual (all paths) |          13.338 ns |         74.974 MHz 
+clk_pad.bb_inst/B (MPW)                 |   (50% duty cycle) |           5.000 ns |        200.000 MHz 
+-------------------------------------------------------------------------------------------------------
+
+Clock Domain Crossing
+
+2.2  Endpoint slacks
+=======================
+-------------------------------------------------------
+          Listing 10 End Points          |    Slack    
+-------------------------------------------------------
+irq                                      |   -5.338 ns 
+avs_waitrequest                          |   -5.058 ns 
+avs_readdata[6]                          |   -2.798 ns 
+avs_readdata[5]                          |   -2.672 ns 
+avs_readdata[8]                          |   -2.672 ns 
+avs_readdata[10]                         |   -2.672 ns 
+avs_readdata[12]                         |   -2.672 ns 
+avs_readdata[16]                         |   -2.672 ns 
+avs_readdata[18]                         |   -2.672 ns 
+avs_readdatavalid                        |   -2.672 ns 
+-------------------------------------------------------
+                                         |             
+Setup # of endpoints with negative slack:|          27 
+                                         |             
+-------------------------------------------------------
+
+2.3  Detailed Report
+=======================
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Detail report of critical paths
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/int_status_reg[6].ff_inst/Q  (SLICE_R34C30C)
+Path End         : irq  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 5
+Delay Ratio      : 31.8% (route), 68.2% (logic)
+Clock Skew       : -4.098 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -5.338 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_av/int_status_reg[6].ff_inst/CLK                         CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/int_status_reg[6].ff_inst/CLK->u_av/int_status_reg[6].ff_inst/Q
+                                          SLICE_R34C30C    REG_DEL              0.312                  4.410  3       
+u_av/int_status[6]                                         NET DELAY            0.395                  4.805  3       
+u_av/irq_3_cZ/C->u_av/irq_3_cZ/Z          SLICE_R35C28A    CTOF_DEL             0.217                  5.022  1       
+u_av/irq_3                                                 NET DELAY            0.247                  5.269  1       
+u_av/irq_6_cZ/C->u_av/irq_6_cZ/Z          SLICE_R36C28A    CTOF_DEL             0.217                  5.486  1       
+u_av/irq_6                                                 NET DELAY            0.299                  5.785  1       
+u_av/irq/D->u_av/irq/Z                    SLICE_R36C29D    CTOF_DEL             0.210                  5.995  1       
+u_av/irq_c                                                 NET DELAY            1.678                  7.673  1       
+irq_pad.bb_inst/I->irq_pad.bb_inst/B                       DOPAD_DEL            4.665                 12.338  2       
+irq                                                        NET DELAY            0.000                 12.338  2       
+irq                                                        ENDPOINT             0.000                 12.338  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                       -(12.338)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -5.338  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_txfifo/level[0].ff_inst/Q  (SLICE_R40C23D)
+Path End         : avs_waitrequest  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 5
+Delay Ratio      : 29.4% (route), 70.6% (logic)
+Clock Skew       : -4.098 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -5.058 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_txfifo/level[0].ff_inst/CLK                              CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_txfifo/level[0].ff_inst/CLK->u_txfifo/level[0].ff_inst/Q
+                                          SLICE_R40C23D    REG_DEL              0.312                  4.410  8       
+u_sda_mux/txf_wr_level[0]                                  NET DELAY            0.540                  4.950  8       
+u_av/g0_1_cZ/A->u_av/g0_1_cZ/Z            SLICE_R36C22A    CTOF_DEL             0.217                  5.167  1       
+u_av/g0_1                                                  NET DELAY            0.168                  5.335  1       
+u_av/g0_3_cZ/D->u_av/g0_3_cZ/Z            SLICE_R36C22B    CTOF_DEL             0.217                  5.552  2       
+u_av/g0_3                                                  NET DELAY            0.232                  5.784  2       
+u_av/g0/B->u_av/g0/Z                      SLICE_R36C20D    CTOF_DEL             0.210                  5.994  1       
+u_av/avs_waitrequest_c                                     NET DELAY            1.399                  7.393  1       
+avs_waitrequest_pad.bb_inst/I->avs_waitrequest_pad.bb_inst/B
+                                                           DOPAD_DEL            4.665                 12.058  2       
+avs_waitrequest                                            NET DELAY            0.000                 12.058  2       
+avs_waitrequest                                            ENDPOINT             0.000                 12.058  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                       -(12.058)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -5.058  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[6].ff_inst/Q  (SLICE_R27C74D)
+Path End         : avs_readdata[6]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 12.7% (route), 87.3% (logic)
+Clock Skew       : -4.098 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.798 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_av/rd_data_q[6].ff_inst/CLK                              CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[6].ff_inst/CLK->u_av/rd_data_q[6].ff_inst/Q
+                                          SLICE_R27C74D    REG_DEL              0.312                  4.410  1       
+u_av/avs_readdata_c[6]                                     NET DELAY            0.723                  5.133  1       
+avs_readdata_pad[6].bb_inst/I->avs_readdata_pad[6].bb_inst/B
+                                                           DOPAD_DEL            4.665                  9.798  2       
+avs_readdata[6]                                            NET DELAY            0.000                  9.798  2       
+avs_readdata[6]                                            ENDPOINT             0.000                  9.798  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.798)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.798  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[5].ff_inst/Q  (SLICE_R27C73D)
+Path End         : avs_readdata[5]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 10.7% (route), 89.3% (logic)
+Clock Skew       : -4.098 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.672 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_av/rd_data_q[5].ff_inst/CLK                              CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[5].ff_inst/CLK->u_av/rd_data_q[5].ff_inst/Q
+                                          SLICE_R27C73D    REG_DEL              0.312                  4.410  1       
+u_av/avs_readdata_c[5]                                     NET DELAY            0.597                  5.007  1       
+avs_readdata_pad[5].bb_inst/I->avs_readdata_pad[5].bb_inst/B
+                                                           DOPAD_DEL            4.665                  9.672  2       
+avs_readdata[5]                                            NET DELAY            0.000                  9.672  2       
+avs_readdata[5]                                            ENDPOINT             0.000                  9.672  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.672)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.672  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[8].ff_inst/Q  (SLICE_R26C74D)
+Path End         : avs_readdata[8]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 10.7% (route), 89.3% (logic)
+Clock Skew       : -4.098 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.672 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_av/rd_data_q[8].ff_inst/CLK                              CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[8].ff_inst/CLK->u_av/rd_data_q[8].ff_inst/Q
+                                          SLICE_R26C74D    REG_DEL              0.312                  4.410  1       
+u_av/avs_readdata_c[8]                                     NET DELAY            0.597                  5.007  1       
+avs_readdata_pad[8].bb_inst/I->avs_readdata_pad[8].bb_inst/B
+                                                           DOPAD_DEL            4.665                  9.672  2       
+avs_readdata[8]                                            NET DELAY            0.000                  9.672  2       
+avs_readdata[8]                                            ENDPOINT             0.000                  9.672  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.672)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.672  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[10].ff_inst/Q  (SLICE_R32C73C)
+Path End         : avs_readdata[10]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 10.7% (route), 89.3% (logic)
+Clock Skew       : -4.098 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.672 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_av/rd_data_q[10].ff_inst/CLK                             CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[10].ff_inst/CLK->u_av/rd_data_q[10].ff_inst/Q
+                                          SLICE_R32C73C    REG_DEL              0.312                  4.410  1       
+u_av/avs_readdata_c[10]                                    NET DELAY            0.597                  5.007  1       
+avs_readdata_pad[10].bb_inst/I->avs_readdata_pad[10].bb_inst/B
+                                                           DOPAD_DEL            4.665                  9.672  2       
+avs_readdata[10]                                           NET DELAY            0.000                  9.672  2       
+avs_readdata[10]                                           ENDPOINT             0.000                  9.672  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.672)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.672  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[12].ff_inst/Q  (SLICE_R26C74C)
+Path End         : avs_readdata[12]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 10.7% (route), 89.3% (logic)
+Clock Skew       : -4.098 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.672 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_av/rd_data_q[12].ff_inst/CLK                             CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[12].ff_inst/CLK->u_av/rd_data_q[12].ff_inst/Q
+                                          SLICE_R26C74C    REG_DEL              0.312                  4.410  1       
+u_av/avs_readdata_c[12]                                    NET DELAY            0.597                  5.007  1       
+avs_readdata_pad[12].bb_inst/I->avs_readdata_pad[12].bb_inst/B
+                                                           DOPAD_DEL            4.665                  9.672  2       
+avs_readdata[12]                                           NET DELAY            0.000                  9.672  2       
+avs_readdata[12]                                           ENDPOINT             0.000                  9.672  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.672)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.672  
+
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[16].ff_inst/Q  (SLICE_R27C73C)
+Path End         : avs_readdata[16]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 10.7% (route), 89.3% (logic)
+Clock Skew       : -4.098 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.672 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_av/rd_data_q[16].ff_inst/CLK                             CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[16].ff_inst/CLK->u_av/rd_data_q[16].ff_inst/Q
+                                          SLICE_R27C73C    REG_DEL              0.312                  4.410  1       
+u_av/avs_readdata_c[16]                                    NET DELAY            0.597                  5.007  1       
+avs_readdata_pad[16].bb_inst/I->avs_readdata_pad[16].bb_inst/B
+                                                           DOPAD_DEL            4.665                  9.672  2       
+avs_readdata[16]                                           NET DELAY            0.000                  9.672  2       
+avs_readdata[16]                                           ENDPOINT             0.000                  9.672  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.672)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.672  
+
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[18].ff_inst/Q  (SLICE_R26C73D)
+Path End         : avs_readdata[18]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 10.7% (route), 89.3% (logic)
+Clock Skew       : -4.098 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.672 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_av/rd_data_q[18].ff_inst/CLK                             CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[18].ff_inst/CLK->u_av/rd_data_q[18].ff_inst/Q
+                                          SLICE_R26C73D    REG_DEL              0.312                  4.410  1       
+u_av/avs_readdata_c[18]                                    NET DELAY            0.597                  5.007  1       
+avs_readdata_pad[18].bb_inst/I->avs_readdata_pad[18].bb_inst/B
+                                                           DOPAD_DEL            4.665                  9.672  2       
+avs_readdata[18]                                           NET DELAY            0.000                  9.672  2       
+avs_readdata[18]                                           ENDPOINT             0.000                  9.672  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.672)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.672  
+
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rdv_q2.ff_inst/Q  (SLICE_R36C73D)
+Path End         : avs_readdatavalid  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 10.7% (route), 89.3% (logic)
+Clock Skew       : -4.098 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.672 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_av/rdv_q2.ff_inst/CLK                                    CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rdv_q2.ff_inst/CLK->u_av/rdv_q2.ff_inst/Q
+                                          SLICE_R36C73D    REG_DEL              0.312                  4.410  1       
+u_av/avs_readdatavalid_c                                   NET DELAY            0.597                  5.007  1       
+avs_readdatavalid_pad.bb_inst/I->avs_readdatavalid_pad.bb_inst/B
+                                                           DOPAD_DEL            4.665                  9.672  2       
+avs_readdatavalid                                          NET DELAY            0.000                  9.672  2       
+avs_readdatavalid                                          ENDPOINT             0.000                  9.672  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.672)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.672  
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+
+##########################################################
+
+
+
+===============================================================
+3  Setup at Speed Grade 8_High-Performance_1.0V Corner at 0 Degrees
+===============================================================
+
+3.1  Clock Summary
+=======================
+
+3.1.1 Clock "clk"
+=======================
+create_clock -name {clk} -period 8 -waveform {0.000 4.000} [get_ports clk]
+
+Single Clock Domain
+-------------------------------------------------------------------------------------------------------
+               Clock clk                |                    |       Period       |     Frequency      
+-------------------------------------------------------------------------------------------------------
+ From clk                               |             Target |           8.000 ns |        125.000 MHz 
+                                        | Actual (all paths) |          13.268 ns |         75.369 MHz 
+clk_pad.bb_inst/B (MPW)                 |   (50% duty cycle) |           5.000 ns |        200.000 MHz 
+-------------------------------------------------------------------------------------------------------
+
+Clock Domain Crossing
+
+3.2  Endpoint slacks
+=======================
+-------------------------------------------------------
+          Listing 10 End Points          |    Slack    
+-------------------------------------------------------
+irq                                      |   -5.268 ns 
+avs_waitrequest                          |   -5.001 ns 
+avs_readdata[6]                          |   -2.763 ns 
+avs_readdata[8]                          |   -2.638 ns 
+avs_readdata[12]                         |   -2.638 ns 
+avs_readdata[5]                          |   -2.637 ns 
+avs_readdata[10]                         |   -2.637 ns 
+avs_readdata[16]                         |   -2.637 ns 
+avs_readdata[18]                         |   -2.637 ns 
+avs_readdatavalid                        |   -2.637 ns 
+-------------------------------------------------------
+                                         |             
+Setup # of endpoints with negative slack:|          27 
+                                         |             
+-------------------------------------------------------
+
+3.3  Detailed Report
+=======================
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Detail report of critical paths
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/int_status_reg[6].ff_inst/Q  (SLICE_R34C30C)
+Path End         : irq  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 5
+Delay Ratio      : 31.7% (route), 68.3% (logic)
+Clock Skew       : -4.041 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -5.268 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_av/int_status_reg[6].ff_inst/CLK                         CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/int_status_reg[6].ff_inst/CLK->u_av/int_status_reg[6].ff_inst/Q
+                                          SLICE_R34C30C    REG_DEL              0.301                  4.342  3       
+u_av/int_status[6]                                         NET DELAY            0.398                  4.740  3       
+u_av/irq_3_cZ/C->u_av/irq_3_cZ/Z          SLICE_R35C28A    CTOF_DEL             0.213                  4.953  1       
+u_av/irq_3                                                 NET DELAY            0.242                  5.195  1       
+u_av/irq_6_cZ/C->u_av/irq_6_cZ/Z          SLICE_R36C28A    CTOF_DEL             0.213                  5.408  1       
+u_av/irq_6                                                 NET DELAY            0.293                  5.701  1       
+u_av/irq/D->u_av/irq/Z                    SLICE_R36C29D    CTOF_DEL             0.213                  5.914  1       
+u_av/irq_c                                                 NET DELAY            1.675                  7.589  1       
+irq_pad.bb_inst/I->irq_pad.bb_inst/B                       DOPAD_DEL            4.679                 12.268  3       
+irq                                                        NET DELAY            0.000                 12.268  3       
+irq                                                        ENDPOINT             0.000                 12.268  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                       -(12.268)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -5.268  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_txfifo/level[0].ff_inst/Q  (SLICE_R40C23D)
+Path End         : avs_waitrequest  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 5
+Delay Ratio      : 29.3% (route), 70.7% (logic)
+Clock Skew       : -4.041 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -5.001 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_txfifo/level[0].ff_inst/CLK                              CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_txfifo/level[0].ff_inst/CLK->u_txfifo/level[0].ff_inst/Q
+                                          SLICE_R40C23D    REG_DEL              0.301                  4.342  8       
+u_sda_mux/txf_wr_level[0]                                  NET DELAY            0.549                  4.891  8       
+u_av/g0_1_cZ/A->u_av/g0_1_cZ/Z            SLICE_R36C22A    CTOF_DEL             0.220                  5.111  1       
+u_av/g0_1                                                  NET DELAY            0.162                  5.273  1       
+u_av/g0_3_cZ/D->u_av/g0_3_cZ/Z            SLICE_R36C22B    CTOF_DEL             0.213                  5.486  2       
+u_av/g0_3                                                  NET DELAY            0.232                  5.718  2       
+u_av/g0/B->u_av/g0/Z                      SLICE_R36C20D    CTOF_DEL             0.213                  5.931  1       
+u_av/avs_waitrequest_c                                     NET DELAY            1.391                  7.322  1       
+avs_waitrequest_pad.bb_inst/I->avs_waitrequest_pad.bb_inst/B
+                                                           DOPAD_DEL            4.679                 12.001  3       
+avs_waitrequest                                            NET DELAY            0.000                 12.001  3       
+avs_waitrequest                                            ENDPOINT             0.000                 12.001  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                       -(12.001)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -5.001  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[6].ff_inst/Q  (SLICE_R27C74D)
+Path End         : avs_readdata[6]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 13.0% (route), 87.0% (logic)
+Clock Skew       : -4.041 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.763 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_av/rd_data_q[6].ff_inst/CLK                              CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[6].ff_inst/CLK->u_av/rd_data_q[6].ff_inst/Q
+                                          SLICE_R27C74D    REG_DEL              0.301                  4.342  1       
+u_av/avs_readdata_c[6]                                     NET DELAY            0.742                  5.084  1       
+avs_readdata_pad[6].bb_inst/I->avs_readdata_pad[6].bb_inst/B
+                                                           DOPAD_DEL            4.679                  9.763  3       
+avs_readdata[6]                                            NET DELAY            0.000                  9.763  3       
+avs_readdata[6]                                            ENDPOINT             0.000                  9.763  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.763)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.763  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[8].ff_inst/Q  (SLICE_R26C74D)
+Path End         : avs_readdata[8]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 11.0% (route), 89.0% (logic)
+Clock Skew       : -4.041 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.638 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_av/rd_data_q[8].ff_inst/CLK                              CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[8].ff_inst/CLK->u_av/rd_data_q[8].ff_inst/Q
+                                          SLICE_R26C74D    REG_DEL              0.301                  4.342  1       
+u_av/avs_readdata_c[8]                                     NET DELAY            0.617                  4.959  1       
+avs_readdata_pad[8].bb_inst/I->avs_readdata_pad[8].bb_inst/B
+                                                           DOPAD_DEL            4.679                  9.638  3       
+avs_readdata[8]                                            NET DELAY            0.000                  9.638  3       
+avs_readdata[8]                                            ENDPOINT             0.000                  9.638  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.638)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.638  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[12].ff_inst/Q  (SLICE_R26C74C)
+Path End         : avs_readdata[12]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 11.0% (route), 89.0% (logic)
+Clock Skew       : -4.041 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.638 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_av/rd_data_q[12].ff_inst/CLK                             CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[12].ff_inst/CLK->u_av/rd_data_q[12].ff_inst/Q
+                                          SLICE_R26C74C    REG_DEL              0.301                  4.342  1       
+u_av/avs_readdata_c[12]                                    NET DELAY            0.617                  4.959  1       
+avs_readdata_pad[12].bb_inst/I->avs_readdata_pad[12].bb_inst/B
+                                                           DOPAD_DEL            4.679                  9.638  3       
+avs_readdata[12]                                           NET DELAY            0.000                  9.638  3       
+avs_readdata[12]                                           ENDPOINT             0.000                  9.638  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.638)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.638  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[5].ff_inst/Q  (SLICE_R27C73D)
+Path End         : avs_readdata[5]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 11.0% (route), 89.0% (logic)
+Clock Skew       : -4.041 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.637 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_av/rd_data_q[5].ff_inst/CLK                              CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[5].ff_inst/CLK->u_av/rd_data_q[5].ff_inst/Q
+                                          SLICE_R27C73D    REG_DEL              0.301                  4.342  1       
+u_av/avs_readdata_c[5]                                     NET DELAY            0.616                  4.958  1       
+avs_readdata_pad[5].bb_inst/I->avs_readdata_pad[5].bb_inst/B
+                                                           DOPAD_DEL            4.679                  9.637  3       
+avs_readdata[5]                                            NET DELAY            0.000                  9.637  3       
+avs_readdata[5]                                            ENDPOINT             0.000                  9.637  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.637)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.637  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[10].ff_inst/Q  (SLICE_R32C73C)
+Path End         : avs_readdata[10]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 11.0% (route), 89.0% (logic)
+Clock Skew       : -4.041 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.637 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_av/rd_data_q[10].ff_inst/CLK                             CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[10].ff_inst/CLK->u_av/rd_data_q[10].ff_inst/Q
+                                          SLICE_R32C73C    REG_DEL              0.301                  4.342  1       
+u_av/avs_readdata_c[10]                                    NET DELAY            0.616                  4.958  1       
+avs_readdata_pad[10].bb_inst/I->avs_readdata_pad[10].bb_inst/B
+                                                           DOPAD_DEL            4.679                  9.637  3       
+avs_readdata[10]                                           NET DELAY            0.000                  9.637  3       
+avs_readdata[10]                                           ENDPOINT             0.000                  9.637  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.637)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.637  
+
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[16].ff_inst/Q  (SLICE_R27C73C)
+Path End         : avs_readdata[16]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 11.0% (route), 89.0% (logic)
+Clock Skew       : -4.041 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.637 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_av/rd_data_q[16].ff_inst/CLK                             CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[16].ff_inst/CLK->u_av/rd_data_q[16].ff_inst/Q
+                                          SLICE_R27C73C    REG_DEL              0.301                  4.342  1       
+u_av/avs_readdata_c[16]                                    NET DELAY            0.616                  4.958  1       
+avs_readdata_pad[16].bb_inst/I->avs_readdata_pad[16].bb_inst/B
+                                                           DOPAD_DEL            4.679                  9.637  3       
+avs_readdata[16]                                           NET DELAY            0.000                  9.637  3       
+avs_readdata[16]                                           ENDPOINT             0.000                  9.637  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.637)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.637  
+
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rd_data_q[18].ff_inst/Q  (SLICE_R26C73D)
+Path End         : avs_readdata[18]  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 11.0% (route), 89.0% (logic)
+Clock Skew       : -4.041 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.637 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_av/rd_data_q[18].ff_inst/CLK                             CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rd_data_q[18].ff_inst/CLK->u_av/rd_data_q[18].ff_inst/Q
+                                          SLICE_R26C73D    REG_DEL              0.301                  4.342  1       
+u_av/avs_readdata_c[18]                                    NET DELAY            0.616                  4.958  1       
+avs_readdata_pad[18].bb_inst/I->avs_readdata_pad[18].bb_inst/B
+                                                           DOPAD_DEL            4.679                  9.637  3       
+avs_readdata[18]                                           NET DELAY            0.000                  9.637  3       
+avs_readdata[18]                                           ENDPOINT             0.000                  9.637  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.637)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.637  
+
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_av/rdv_q2.ff_inst/Q  (SLICE_R36C73D)
+Path End         : avs_readdatavalid  (i3c_target_top)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 11.0% (route), 89.0% (logic)
+Clock Skew       : -4.041 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -2.637 ns  (Failed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_av/rdv_q2.ff_inst/CLK                                    CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_av/rdv_q2.ff_inst/CLK->u_av/rdv_q2.ff_inst/Q
+                                          SLICE_R36C73D    REG_DEL              0.301                  4.342  1       
+u_av/avs_readdatavalid_c                                   NET DELAY            0.616                  4.958  1       
+avs_readdatavalid_pad.bb_inst/I->avs_readdatavalid_pad.bb_inst/B
+                                                           DOPAD_DEL            4.679                  9.637  3       
+avs_readdatavalid                                          NET DELAY            0.000                  9.637  3       
+avs_readdatavalid                                          ENDPOINT             0.000                  9.637  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT                                  8.000  
+                                                           CLOCK LATENCY        0.000                  8.000  
+                                                           Uncertainty       -(0.000)                  8.000  
+                                                           Common Path Skew     0.000                  8.000  
+                                                           Output delay      -(1.000)                  7.000  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                          7.000  
+Arrival Time                                                                                        -(9.637)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Failed)                                                                                  -2.637  
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+
+##########################################################
+
+
+
+===============================================================
+4  Hold at Speed Grade m Corner at 0 Degrees
+===============================================================
+
+4.1  Endpoint slacks
+=======================
+-------------------------------------------------------
+          Listing 10 End Points          |    Slack    
+-------------------------------------------------------
+u_av/ibi_plen_q_reg[7].ff_inst/DF        |   -0.714 ns 
+u_txfifo/mem_ram.ramw_inst/WD3           |   -0.675 ns 
+u_txfifo/mem_ram.ramw_inst/WD2           |   -0.636 ns 
+u_txfifo/mem_ram.ramw_inst/WD0           |   -0.598 ns 
+u_av/ibi_plen_q_reg[5].ff_inst/DF        |   -0.566 ns 
+u_txfifo/mem_ram_0.ramw_inst/WD3         |   -0.527 ns 
+u_av/ibi_plen_q_reg[4].ff_inst/DF        |   -0.511 ns 
+u_av/int_enable_reg[3].ff_inst/DF        |   -0.464 ns 
+u_rf/vendor_msb[3].ff_inst/DF            |   -0.464 ns 
+u_rf/max_ibi_payload[7].ff_inst/DF       |   -0.454 ns 
+-------------------------------------------------------
+                                         |             
+Hold # of endpoints with negative slack: |         130 
+                                         |             
+-------------------------------------------------------
+
+4.2  Detailed Report
+=======================
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Detail report of critical paths
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : avs_writedata[23]  (i3c_target_top)
+Path End         : u_av/ibi_plen_q_reg[7].ff_inst/DF  (SLICE_R32C6D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 31.6% (route), 68.4% (logic)
+Clock Skew       : 2.104 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -0.714 ns  (Failed)
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+clk                                                        CLOCK LATENCY     0.000                  0.000  1       
+avs_writedata[23]                         i3c_target_top   INPUT DELAY       0.300                  0.300  1       
+avs_writedata[23]                                          NET DELAY         0.000                  0.300  1       
+avs_writedata_pad[23].bb_inst/B->avs_writedata_pad[23].bb_inst/O
+                                          SEIO33_CORE_G3   PADI_DEL          0.798                  1.098  2       
+u_rf/avs_writedata_c[23]                                   NET DELAY         0.369                  1.467  2       
+u_av/ibi_plen_q_reg[7].ff_inst/DF                          ENDPOINT          0.000                  1.467  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+                                                           CONSTRAINT        0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY     0.000                  0.000  1       
+clk                                                        NET DELAY         0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL          0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY         1.238                  2.104  315     
+u_av/ibi_plen_q_reg[7].ff_inst/CLK                         CLOCK PIN         0.000                  2.104  1       
+                                                           Uncertainty       0.000                  2.104  
+                                                           Common Path Skew  0.000                  2.104  
+                                                           Hold time         0.077                  2.181  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Required Time                                                                                      -2.181  
+Arrival Time                                                                                        1.467  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Path Slack  (Failed)                                                                               -0.714  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : avs_writedata[3]  (i3c_target_top)
+Path End         : u_txfifo/mem_ram.ramw_inst/WD3  (SLICE_R40C27C)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 38.1% (route), 61.9% (logic)
+Clock Skew       : 2.104 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -0.675 ns  (Failed)
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+clk                                                        CLOCK LATENCY     0.000                  0.000  1       
+avs_writedata[3]                          i3c_target_top   INPUT DELAY       0.300                  0.300  1       
+avs_writedata[3]                                           NET DELAY         0.000                  0.300  1       
+avs_writedata_pad[3].bb_inst/B->avs_writedata_pad[3].bb_inst/O
+                                          SEIO33_CORE_L4   PADI_DEL          0.798                  1.098  7       
+u_rf/avs_writedata_c[3]                                    NET DELAY         0.491                  1.589  7       
+u_txfifo/mem_ram.ramw_inst/WD3                             ENDPOINT          0.000                  1.589  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+                                                           CONSTRAINT        0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY     0.000                  0.000  1       
+clk                                                        NET DELAY         0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL          0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY         1.238                  2.104  315     
+u_txfifo/mem_ram.ramw_inst/WCK                             CLOCK PIN         0.000                  2.104  1       
+                                                           Uncertainty       0.000                  2.104  
+                                                           Common Path Skew  0.000                  2.104  
+                                                           Hold time         0.160                  2.264  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Required Time                                                                                      -2.264  
+Arrival Time                                                                                        1.589  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Path Slack  (Failed)                                                                               -0.675  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : avs_writedata[2]  (i3c_target_top)
+Path End         : u_txfifo/mem_ram.ramw_inst/WD2  (SLICE_R40C27C)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 39.9% (route), 60.1% (logic)
+Clock Skew       : 2.104 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -0.636 ns  (Failed)
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+clk                                                        CLOCK LATENCY     0.000                  0.000  1       
+avs_writedata[2]                          i3c_target_top   INPUT DELAY       0.300                  0.300  1       
+avs_writedata[2]                                           NET DELAY         0.000                  0.300  1       
+avs_writedata_pad[2].bb_inst/B->avs_writedata_pad[2].bb_inst/O
+                                          SEIO33_CORE_L5   PADI_DEL          0.798                  1.098  7       
+u_rf/avs_writedata_c[2]                                    NET DELAY         0.530                  1.628  7       
+u_txfifo/mem_ram.ramw_inst/WD2                             ENDPOINT          0.000                  1.628  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+                                                           CONSTRAINT        0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY     0.000                  0.000  1       
+clk                                                        NET DELAY         0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL          0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY         1.238                  2.104  315     
+u_txfifo/mem_ram.ramw_inst/WCK                             CLOCK PIN         0.000                  2.104  1       
+                                                           Uncertainty       0.000                  2.104  
+                                                           Common Path Skew  0.000                  2.104  
+                                                           Hold time         0.160                  2.264  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Required Time                                                                                      -2.264  
+Arrival Time                                                                                        1.628  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Path Slack  (Failed)                                                                               -0.636  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : avs_writedata[0]  (i3c_target_top)
+Path End         : u_txfifo/mem_ram.ramw_inst/WD0  (SLICE_R40C27C)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 41.6% (route), 58.4% (logic)
+Clock Skew       : 2.104 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -0.598 ns  (Failed)
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+clk                                                        CLOCK LATENCY     0.000                  0.000  1       
+avs_writedata[0]                          i3c_target_top   INPUT DELAY       0.300                  0.300  1       
+avs_writedata[0]                                           NET DELAY         0.000                  0.300  1       
+avs_writedata_pad[0].bb_inst/B->avs_writedata_pad[0].bb_inst/O
+                                          SEIO33_CORE_L3   PADI_DEL          0.798                  1.098  8       
+u_ibi/avs_writedata_c_0                                    NET DELAY         0.568                  1.666  8       
+u_txfifo/mem_ram.ramw_inst/WD0                             ENDPOINT          0.000                  1.666  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+                                                           CONSTRAINT        0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY     0.000                  0.000  1       
+clk                                                        NET DELAY         0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL          0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY         1.238                  2.104  315     
+u_txfifo/mem_ram.ramw_inst/WCK                             CLOCK PIN         0.000                  2.104  1       
+                                                           Uncertainty       0.000                  2.104  
+                                                           Common Path Skew  0.000                  2.104  
+                                                           Hold time         0.160                  2.264  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Required Time                                                                                      -2.264  
+Arrival Time                                                                                        1.666  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Path Slack  (Failed)                                                                               -0.598  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : avs_writedata[21]  (i3c_target_top)
+Path End         : u_av/ibi_plen_q_reg[5].ff_inst/DF  (SLICE_R30C6D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 39.3% (route), 60.7% (logic)
+Clock Skew       : 2.104 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -0.566 ns  (Failed)
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+clk                                                        CLOCK LATENCY     0.000                  0.000  1       
+avs_writedata[21]                         i3c_target_top   INPUT DELAY       0.300                  0.300  1       
+avs_writedata[21]                                          NET DELAY         0.000                  0.300  1       
+avs_writedata_pad[21].bb_inst/B->avs_writedata_pad[21].bb_inst/O
+                                          SEIO33_CORE_D3   PADI_DEL          0.798                  1.098  2       
+u_rf/avs_writedata_c[21]                                   NET DELAY         0.517                  1.615  2       
+u_av/ibi_plen_q_reg[5].ff_inst/DF                          ENDPOINT          0.000                  1.615  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+                                                           CONSTRAINT        0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY     0.000                  0.000  1       
+clk                                                        NET DELAY         0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL          0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY         1.238                  2.104  315     
+u_av/ibi_plen_q_reg[5].ff_inst/CLK                         CLOCK PIN         0.000                  2.104  1       
+                                                           Uncertainty       0.000                  2.104  
+                                                           Common Path Skew  0.000                  2.104  
+                                                           Hold time         0.077                  2.181  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Required Time                                                                                      -2.181  
+Arrival Time                                                                                        1.615  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Path Slack  (Failed)                                                                               -0.566  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : avs_writedata[7]  (i3c_target_top)
+Path End         : u_txfifo/mem_ram_0.ramw_inst/WD3  (SLICE_R39C27C)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 44.5% (route), 55.5% (logic)
+Clock Skew       : 2.104 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -0.527 ns  (Failed)
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+clk                                                        CLOCK LATENCY     0.000                  0.000  1       
+avs_writedata[7]                          i3c_target_top   INPUT DELAY       0.300                  0.300  1       
+avs_writedata[7]                                           NET DELAY         0.000                  0.300  1       
+avs_writedata_pad[7].bb_inst/B->avs_writedata_pad[7].bb_inst/O
+                                          SEIO33_CORE_M1   PADI_DEL          0.798                  1.098  8       
+u_rf/avs_writedata_c[7]                                    NET DELAY         0.639                  1.737  8       
+u_txfifo/mem_ram_0.ramw_inst/WD3                           ENDPOINT          0.000                  1.737  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+                                                           CONSTRAINT        0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY     0.000                  0.000  1       
+clk                                                        NET DELAY         0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL          0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY         1.238                  2.104  315     
+u_txfifo/mem_ram_0.ramw_inst/WCK                           CLOCK PIN         0.000                  2.104  1       
+                                                           Uncertainty       0.000                  2.104  
+                                                           Common Path Skew  0.000                  2.104  
+                                                           Hold time         0.160                  2.264  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Required Time                                                                                      -2.264  
+Arrival Time                                                                                        1.737  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Path Slack  (Failed)                                                                               -0.527  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : avs_writedata[20]  (i3c_target_top)
+Path End         : u_av/ibi_plen_q_reg[4].ff_inst/DF  (SLICE_R35C7D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 41.8% (route), 58.2% (logic)
+Clock Skew       : 2.104 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -0.511 ns  (Failed)
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+clk                                                        CLOCK LATENCY     0.000                  0.000  1       
+avs_writedata[20]                         i3c_target_top   INPUT DELAY       0.300                  0.300  1       
+avs_writedata[20]                                          NET DELAY         0.000                  0.300  1       
+avs_writedata_pad[20].bb_inst/B->avs_writedata_pad[20].bb_inst/O
+                                          SEIO33_CORE_E1   PADI_DEL          0.798                  1.098  2       
+u_rf/avs_writedata_c[20]                                   NET DELAY         0.572                  1.670  2       
+u_av/ibi_plen_q_reg[4].ff_inst/DF                          ENDPOINT          0.000                  1.670  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+                                                           CONSTRAINT        0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY     0.000                  0.000  1       
+clk                                                        NET DELAY         0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL          0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY         1.238                  2.104  315     
+u_av/ibi_plen_q_reg[4].ff_inst/CLK                         CLOCK PIN         0.000                  2.104  1       
+                                                           Uncertainty       0.000                  2.104  
+                                                           Common Path Skew  0.000                  2.104  
+                                                           Hold time         0.077                  2.181  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Required Time                                                                                      -2.181  
+Arrival Time                                                                                        1.670  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Path Slack  (Failed)                                                                               -0.511  
+
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : avs_writedata[3]  (i3c_target_top)
+Path End         : u_av/int_enable_reg[3].ff_inst/DF  (SLICE_R38C29B)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 43.7% (route), 56.3% (logic)
+Clock Skew       : 2.104 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -0.464 ns  (Failed)
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+clk                                                        CLOCK LATENCY     0.000                  0.000  1       
+avs_writedata[3]                          i3c_target_top   INPUT DELAY       0.300                  0.300  1       
+avs_writedata[3]                                           NET DELAY         0.000                  0.300  1       
+avs_writedata_pad[3].bb_inst/B->avs_writedata_pad[3].bb_inst/O
+                                          SEIO33_CORE_L4   PADI_DEL          0.798                  1.098  7       
+u_rf/avs_writedata_c[3]                                    NET DELAY         0.619                  1.717  7       
+u_av/int_enable_reg[3].ff_inst/DF                          ENDPOINT          0.000                  1.717  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+                                                           CONSTRAINT        0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY     0.000                  0.000  1       
+clk                                                        NET DELAY         0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL          0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY         1.238                  2.104  315     
+u_av/int_enable_reg[3].ff_inst/CLK                         CLOCK PIN         0.000                  2.104  1       
+                                                           Uncertainty       0.000                  2.104  
+                                                           Common Path Skew  0.000                  2.104  
+                                                           Hold time         0.077                  2.181  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Required Time                                                                                      -2.181  
+Arrival Time                                                                                        1.717  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Path Slack  (Failed)                                                                               -0.464  
+
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : avs_writedata[3]  (i3c_target_top)
+Path End         : u_rf/vendor_msb[3].ff_inst/DF  (SLICE_R35C24B)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 43.7% (route), 56.3% (logic)
+Clock Skew       : 2.104 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -0.464 ns  (Failed)
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+clk                                                        CLOCK LATENCY     0.000                  0.000  1       
+avs_writedata[3]                          i3c_target_top   INPUT DELAY       0.300                  0.300  1       
+avs_writedata[3]                                           NET DELAY         0.000                  0.300  1       
+avs_writedata_pad[3].bb_inst/B->avs_writedata_pad[3].bb_inst/O
+                                          SEIO33_CORE_L4   PADI_DEL          0.798                  1.098  7       
+u_rf/avs_writedata_c[3]                                    NET DELAY         0.619                  1.717  7       
+u_rf/vendor_msb[3].ff_inst/DF                              ENDPOINT          0.000                  1.717  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+                                                           CONSTRAINT        0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY     0.000                  0.000  1       
+clk                                                        NET DELAY         0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL          0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY         1.238                  2.104  315     
+u_rf/vendor_msb[3].ff_inst/CLK                             CLOCK PIN         0.000                  2.104  1       
+                                                           Uncertainty       0.000                  2.104  
+                                                           Common Path Skew  0.000                  2.104  
+                                                           Hold time         0.077                  2.181  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Required Time                                                                                      -2.181  
+Arrival Time                                                                                        1.717  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Path Slack  (Failed)                                                                               -0.464  
+
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : avs_writedata[23]  (i3c_target_top)
+Path End         : u_rf/max_ibi_payload[7].ff_inst/DF  (SLICE_R32C22D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 2
+Delay Ratio      : 38.2% (route), 61.8% (logic)
+Clock Skew       : 2.104 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : 0.000 ns 
+Path Slack       : -0.454 ns  (Failed)
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+clk                                                        CLOCK LATENCY     0.000                  0.000  1       
+avs_writedata[23]                         i3c_target_top   INPUT DELAY       0.300                  0.300  1       
+avs_writedata[23]                                          NET DELAY         0.000                  0.300  1       
+avs_writedata_pad[23].bb_inst/B->avs_writedata_pad[23].bb_inst/O
+                                          SEIO33_CORE_G3   PADI_DEL          0.798                  1.098  2       
+u_rf/avs_writedata_c[23]                                   NET DELAY         0.551                  1.649  2       
+u_rf/max_ibi_payload_RNO[7]/A->u_rf/max_ibi_payload_RNO[7]/Z
+                                          SLICE_R32C22D    CTOF_DEL          0.095                  1.744  1       
+u_rf/N_46_i                                                NET DELAY         0.000                  1.744  1       
+u_rf/max_ibi_payload[7].ff_inst/DF                         ENDPOINT          0.000                  1.744  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr   Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+                                                           CONSTRAINT        0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY     0.000                  0.000  1       
+clk                                                        NET DELAY         0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL          0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY         1.238                  2.104  315     
+u_rf/max_ibi_payload[7].ff_inst/CLK                        CLOCK PIN         0.000                  2.104  1       
+                                                           Uncertainty       0.000                  2.104  
+                                                           Common Path Skew  0.000                  2.104  
+                                                           Hold time         0.094                  2.198  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Required Time                                                                                      -2.198  
+Arrival Time                                                                                        1.744  
+----------------------------------------  ---------------  ----------------  -----  ---------------------  ------  
+Path Slack  (Failed)                                                                               -0.454  
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+
+##########################################################
+
+
+
