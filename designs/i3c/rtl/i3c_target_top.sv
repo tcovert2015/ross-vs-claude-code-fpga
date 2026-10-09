@@ -268,7 +268,13 @@ module i3c_target_top #(
   assign io_sda_i = 1'b1;                    // unused under FORMAL
   assign io_scl_i = 1'b1;
 `else
-  i3c_io_altera u_io (
+  // Vendor IO shim. Defaults to the Altera wrapper; another vendor's wrapper with
+  // the same port list is selected with +define+I3C_IO_MODULE=<module> (e.g.
+  // i3c_io_lattice, rtl/lattice/). No effect on builds that leave it undefined.
+`ifndef I3C_IO_MODULE
+  `define I3C_IO_MODULE i3c_io_altera
+`endif
+  `I3C_IO_MODULE u_io (
     .sda_oe (sda_oe),
     .sda_o  (sda_o),
     .sda_i  (io_sda_i),
