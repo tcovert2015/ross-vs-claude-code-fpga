@@ -1,0 +1,30 @@
+2026-10-09 17:14:51 Preparing worktree (detached HEAD a4037d0)
+2026-10-09 17:14:51 HEAD is now at a4037d0 dma: fix a mis-encoded character in lattice/README.md
+2026-10-09 17:14:51 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-plain-lattice-dma @ a4037d0
+2026-10-09 17:14:51 step 1 START: "D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" lattice/build.tcl
+2026-10-09 17:16:34 step 1 END exit=0 after 103s (log: step1.log)
+2026-10-09 17:16:34 step 2 START: "C:\Program Files\Git\bin\bash.exe" scripts/run_questa.sh
+2026-10-09 17:16:53 step 2 END exit=0 after 20s (log: step2.log)
+2026-10-09 17:16:53 git status after re-run:
+2026-10-09 17:16:54    M lattice/reports/map.mrp
+2026-10-09 17:16:54    M lattice/reports/par.par
+2026-10-09 17:16:54    M lattice/reports/synthesis.srr
+2026-10-09 17:16:54    M lattice/reports/timing_map.tw1
+2026-10-09 17:16:54    M lattice/reports/timing_par.twr
+2026-10-09 17:16:54    M sim/build/questa_AXI4_RSTSYNC_compile.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_RSTSYNC_seed1.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_RSTSYNC_seed2.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_RSTSYNC_seed3.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_STALLS_RSTSYNC_compile.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_STALLS_RSTSYNC_seed1.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_STALLS_RSTSYNC_seed2.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_STALLS_RSTSYNC_seed3.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_STALLS_compile.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_STALLS_seed1.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_STALLS_seed2.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_STALLS_seed3.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_compile.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_seed1.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_seed2.log
+2026-10-09 17:16:54    M sim/build/questa_AXI4_seed3.log
+2026-10-09 17:16:54 JUDGE DONE
