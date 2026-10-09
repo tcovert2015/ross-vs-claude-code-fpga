@@ -1,0 +1,78 @@
+==== xvlog (tb_csr_if) ====
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/scope_pkg.sv" into library work_tb_csr_if
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/prim/prim_ff_sync.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module prim_ff_sync
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/prim/prim_ram_1r1w.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module prim_ram_1r1w
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/prim/prim_fifo_sync.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module prim_fifo_sync
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/prim/prim_fifo_async.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module prim_fifo_async
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/scope_core.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module scope_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/scope_csr.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module scope_csr
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/scope_trigger.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module scope_trigger
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/scope_rle.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module scope_rle
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/scope_drain.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module scope_drain
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/xport/scope_uart.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module scope_uart
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/scope_top.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module scope_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/if/scope_avalon.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module scope_avalon
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/if/scope_axil.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module scope_axil
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/rtl/if/scope_jtag.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module scope_jtag
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/fpga/xilinx/scope_axil_top.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module scope_axil_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/sim/tb_csr_if.sv" into library work_tb_csr_if
+INFO: [VRFC 10-311] analyzing module tb_csr_if_leg
+INFO: [VRFC 10-311] analyzing module tb_csr_if
+==== xelab (tb_csr_if) ====
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work_tb_csr_if.tb_csr_if -s snap_tb_csr_if -timescale 1ns/1ps -nolog 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package work_tb_csr_if.scope_pkg
+Compiling module work_tb_csr_if.scope_avalon
+Compiling module work_tb_csr_if.scope_csr(PROBE_W=32'b01000)
+Compiling module work_tb_csr_if.prim_ram_1r1w_default
+Compiling module work_tb_csr_if.prim_ram_1r1w(WIDTH=32'b01001)
+Compiling module work_tb_csr_if.scope_core(PROBE_W=32'b01000)
+Compiling module work_tb_csr_if.tb_csr_if_leg(NAME="avalon")
+Compiling module work_tb_csr_if.scope_axil
+Compiling module work_tb_csr_if.tb_csr_if_leg(BUS=32'b010,NAME="...
+Compiling module work_tb_csr_if.tb_csr_if
+Built simulation snapshot snap_tb_csr_if
+==== xsim (tb_csr_if) ====
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Fri Oct  9 16:21:59 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/snap_tb_csr_if/xsim_script.tcl
+# xsim {snap_tb_csr_if} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+-- [avalon] BUS=1 matrix + BUF_DATA pop + cfg_err: PASS
+-- [axil] BUS=2 matrix + BUF_DATA pop + cfg_err: PASS
+TB_RESULT: PASS
+$finish called at time : 9116 ns : File "D:/AMD Ross Test/wt/ross-nudged-fpga-scope/designs/fpga-scope/sim/tb_csr_if.sv" Line 305
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Oct  9 16:22:01 2026...

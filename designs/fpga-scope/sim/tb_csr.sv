@@ -54,6 +54,10 @@ module tb_csr_leg
   logic [31:0] csr_rdata;
 
   logic arm, disarm, force_trig;
+  // (declared before the DUT port connections that use them: IEEE 1800 declare-before-use;
+  //  xsim rejects the implicit-net-then-redeclare order, VRFC 10-2938)
+  logic [7:0] win_rd_addr;
+  logic [DEPTH_LOG2:0] win_rd_data;
   logic [DEPTH_LOG2-1:0] pretrig;
   logic [7:0] windows;
   logic rle_enable;
@@ -150,9 +154,6 @@ module tb_csr_leg
       .ts          (ts),
       .ts_at_trig  (ts_at_trig)
   );
-
-  logic [7:0] win_rd_addr;
-  logic [DEPTH_LOG2:0] win_rd_data;
 
   // ---- golden vectors ----------------------------------------------------------------------
   logic [PROBE_W-1:0] stim[N_STIM];
@@ -338,7 +339,11 @@ module tb_csr_leg
     csr_wr(8'(CSR_WINDOWS), 32'd1);
     csr_wr(8'(CSR_CMP_SEL), 32'h0);  // point the lane window at MASK/comparator 0 (in IDLE)
     csr_wr(8'(CSR_CTRL), 32'h1);  // arm
-    do csr_rd(8'(CSR_STATUS), v); while (v[2:0] != 3'(SCOPE_ST_ARMED));
+    // xsim 2025.2 portability (both forms are legal SV and run under Verilator): the poll loops
+    // use a begin/end body and compare against the enum without a size cast. With
+    // `3'(SCOPE_ST_x)` in the do-while condition xsim leaves the loop after one pass; with a
+    // bare task-call body it never leaves it.
+    do begin csr_rd(8'(CSR_STATUS), v); end while (v[2:0] != SCOPE_ST_ARMED);
 
     // locked config writes: ignored + sticky cfg_err
     csr_wr(8'(CSR_PRETRIG), 32'd99);
@@ -356,7 +361,7 @@ module tb_csr_leg
 
     // stream samples; the stream block injects the CTRL.force_trig write at K-1
     stream_en = 1'b1;
-    do csr_rd(8'(CSR_STATUS), v); while (v[2:0] != 3'(SCOPE_ST_DONE));
+    do begin csr_rd(8'(CSR_STATUS), v); end while (v[2:0] != SCOPE_ST_DONE);
 
     // status + trigger metadata
     csr_rd(8'(CSR_STATUS), v);
