@@ -1,0 +1,15 @@
+Preparing worktree (new branch 'plain/dma')
+# Run summary
+
+- no result record (run aborted?)
+- tool calls: 4  (Vivado via MCP: 0, Vivado via shell: 2)
+
+| tool | calls |
+|---|---|
+| `Bash` | 4 |
+
+- commits on branch: 0
+- diff vs baseline: none
+
+Files changed:
+

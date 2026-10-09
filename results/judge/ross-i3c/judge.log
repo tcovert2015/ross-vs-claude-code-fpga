@@ -1,0 +1,17 @@
+2026-10-08 21:23:27 Preparing worktree (detached HEAD 48ee4d6)
+2026-10-08 21:23:27 HEAD is now at 48ee4d6 i3c: Vivado Artix-7 OOC flow, xsim regression and results
+2026-10-08 21:23:27 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-ross-i3c @ 48ee4d6
+2026-10-08 21:23:27 step 1 START: "C:\AMDDesignTools\2025.2\Vivado\bin\vivado.bat" -mode batch -source syn/xilinx/build.tcl -log syn/xilinx/build/judge_vivado.log -journal syn/xilinx/build/judge.jou
+2026-10-08 21:26:27 step 1 END exit=0 after 180s (log: step1.log)
+2026-10-08 21:26:27 step 2 START: powershell -ExecutionPolicy Bypass -File sim/run_xsim.ps1
+2026-10-08 21:26:37 step 2 END exit=0 after 10s (log: step2.log)
+2026-10-08 21:26:37 git status after re-run:
+2026-10-08 21:26:37    M sim/xsim.log
+2026-10-08 21:26:37    M syn/xilinx/reports/drc.rpt
+2026-10-08 21:26:37    M syn/xilinx/reports/lint.rpt
+2026-10-08 21:26:37    M syn/xilinx/reports/route_status.rpt
+2026-10-08 21:26:37    M syn/xilinx/reports/timing_summary.rpt
+2026-10-08 21:26:37    M syn/xilinx/reports/utilization.rpt
+2026-10-08 21:26:37    M syn/xilinx/reports/utilization_hier.rpt
+2026-10-08 21:26:37    M syn/xilinx/reports/utilization_synth.rpt
+2026-10-08 21:26:37 JUDGE DONE

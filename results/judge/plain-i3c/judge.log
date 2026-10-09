@@ -1,0 +1,18 @@
+2026-10-08 21:23:27 Preparing worktree (detached HEAD 384a411)
+2026-10-08 21:23:27 HEAD is now at 384a411 i3c/xilinx: keep inferred-tri-state trial log, drop Vivado backup logs
+2026-10-08 21:23:27 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-plain-i3c @ 384a411
+2026-10-08 21:23:27 step 1 START: "C:\AMDDesignTools\2025.2\Vivado\bin\vivado.bat" -mode batch -source syn/xilinx/build.tcl -log syn/xilinx/build/judge_vivado.log -journal syn/xilinx/build/judge.jou
+2026-10-08 21:24:56 step 1 END exit=0 after 89s (log: step1.log)
+2026-10-08 21:24:56 step 2 START: powershell -ExecutionPolicy Bypass -File sim/run_xsim.ps1
+2026-10-08 21:25:07 step 2 END exit=0 after 11s (log: step2.log)
+2026-10-08 21:25:07 git status after re-run:
+2026-10-08 21:25:08    M sim/xsim.log
+2026-10-08 21:25:08    M syn/xilinx/reports/drc.rpt
+2026-10-08 21:25:08    M syn/xilinx/reports/lint.rpt
+2026-10-08 21:25:08    M syn/xilinx/reports/methodology.rpt
+2026-10-08 21:25:08    M syn/xilinx/reports/route_status.rpt
+2026-10-08 21:25:08    M syn/xilinx/reports/timing_summary.rpt
+2026-10-08 21:25:08    M syn/xilinx/reports/utilization.rpt
+2026-10-08 21:25:08    M syn/xilinx/reports/utilization_hier.rpt
+2026-10-08 21:25:08    M syn/xilinx/reports/utilization_synth.rpt
+2026-10-08 21:25:08 JUDGE DONE

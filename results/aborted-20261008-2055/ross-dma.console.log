@@ -1,0 +1,16 @@
+Preparing worktree (new branch 'ross/dma')
+# Run summary
+
+- no result record (run aborted?)
+- tool calls: 3  (Vivado via MCP: 0, Vivado via shell: 0)
+
+| tool | calls |
+|---|---|
+| `Bash` | 2 |
+| `Write` | 1 |
+
+- commits on branch: 0
+- diff vs baseline: none
+
+Files changed:
+
