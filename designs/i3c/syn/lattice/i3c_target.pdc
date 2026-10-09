@@ -1,0 +1,16 @@
+# =============================================================================
+# i3c_target.pdc  -  Physical constraints for the I3C Target on Certus-NX
+#
+# NO PIN LOCATIONS: this is an IP-core build, Radiant does not insist on them
+# and PAR auto-places every pad (result: reports/i3c_target_impl_1.pad). Add
+# ldc_set_location lines here for a real board.
+#
+# The one thing set here is electrical and independent of the pinout: the Nexus
+# default for an unconstrained pad is PULLMODE=DOWN, which is wrong on an I3C
+# bus (SDA/SCL idle High through the Controller's pull-up / high-keeper; a
+# Target-side pull-down fights it). Turn the weak pull off on both bus pads.
+# OPENDRAIN stays OFF on SDA: I3C needs push-pull drive in SDR data phases; the
+# core produces open-drain behaviour by only ever driving Low in those phases.
+# =============================================================================
+ldc_set_port -iobuf {PULLMODE=NONE} [get_ports SDA]
+ldc_set_port -iobuf {PULLMODE=NONE} [get_ports SCL]

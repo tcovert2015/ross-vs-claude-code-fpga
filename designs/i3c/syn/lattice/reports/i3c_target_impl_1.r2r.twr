@@ -1,0 +1,2297 @@
+Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2026.1.1.229.0
+
+Fri Oct  9 16:50:17 2026
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2026 Lattice Semiconductor Corporation,  All rights reserved.
+
+Command line:    D:\lscc\radiant\2026.1\ispfpga\bin\nt64\timing.exe -sethld -v 10 -u 10 -endpoints 10 -nperend 1 -sp 8_High-Performance_1.0V -hsp m -sdc-file D:/AMD Ross Test/wt/lattice-i3c/designs/i3c/syn/lattice/i3c_target_r2r.sdc -rpt-file D:/AMD Ross Test/wt/lattice-i3c/designs/i3c/syn/lattice/reports/i3c_target_impl_1.r2r.twr -db-file D:/AMD Ross Test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1.udb
+
+-------------------------------------------
+Design:          i3c_target_top
+Family:          LFD2NX
+Device:          LFD2NX-40
+Package:         CABGA256
+Performance:     8_High-Performance_1.0V
+Package Status:                     Final          Version 2
+Performance Hardware Data Status :   Final Version 107.1
+-------------------------------------------
+
+
+=====================================================================
+                    Table of Contents
+=====================================================================
+    1  Timing Overview
+        1.1  SDC Constraints
+        1.2  Constraint Coverage
+        1.3  Overall Summary
+        1.4  Unconstrained Report
+        1.5  Combinational Loop
+    2  Setup at Speed Grade 8_High-Performance_1.0V Corner at 85 Degrees
+        2.1  Clock Summary
+        2.2  Endpoint slacks
+        2.3  Detailed Report
+    3  Setup at Speed Grade 8_High-Performance_1.0V Corner at 0 Degrees
+        3.1  Clock Summary
+        3.2  Endpoint slacks
+        3.3  Detailed Report
+    4  Hold at Speed Grade m Corner at 0 Degrees
+        4.1  Endpoint slacks
+        4.2  Detailed Report
+
+=====================================================================
+                    End of Table of Contents
+=====================================================================
+
+==============================================
+1  Timing Overview
+==============================================
+
+1.1  SDC Constraints
+=====================
+create_clock -name {clk} -period 8 -waveform {0.000 4.000} [get_ports clk]
+set_false_path -from [get_ports rst_n]
+set_false_path -from [get_ports {SDA SCL}]
+set_false_path -to [get_ports SDA]
+set_input_delay -clock [get_clocks clk] -max 1 [get_ports {avs_address[4] avs_address[3] avs_address[2] avs_address[1] avs_address[0]}]
+set_input_delay -clock [get_clocks clk] -min 0.3 [get_ports {avs_address[4] avs_address[3] avs_address[2] avs_address[1] avs_address[0]}]
+set_input_delay -clock [get_clocks clk] -max 1 [get_ports avs_read]
+set_input_delay -clock [get_clocks clk] -min 0.3 [get_ports avs_read]
+set_input_delay -clock [get_clocks clk] -max 1 [get_ports avs_write]
+set_input_delay -clock [get_clocks clk] -min 0.3 [get_ports avs_write]
+set_input_delay -clock [get_clocks clk] -max 1 [get_ports {avs_writedata[31] avs_writedata[30] avs_writedata[29] avs_writedata[28] avs_writedata[27] avs_writedata[26] avs_writedata[25] avs_writedata[24] avs_writedata[23] avs_writedata[22] avs_writedata[21] avs_writedata[20] avs_writedata[19] avs_writedata[18] avs_writedata[17] avs_writedata[16] avs_writedata[15] avs_writedata[14] avs_writedata[13] avs_writedata[12] avs_writedata[11] avs_writedata[10] avs_writedata[9] avs_writedata[8] avs_writedata[7] avs_writedata[6] avs_writedata[5] avs_writedata[4] avs_writedata[3] avs_writedata[2] avs_writedata[1] avs_writedata[0]}]
+set_input_delay -clock [get_clocks clk] -min 0.3 [get_ports {avs_writedata[31] avs_writedata[30] avs_writedata[29] avs_writedata[28] avs_writedata[27] avs_writedata[26] avs_writedata[25] avs_writedata[24] avs_writedata[23] avs_writedata[22] avs_writedata[21] avs_writedata[20] avs_writedata[19] avs_writedata[18] avs_writedata[17] avs_writedata[16] avs_writedata[15] avs_writedata[14] avs_writedata[13] avs_writedata[12] avs_writedata[11] avs_writedata[10] avs_writedata[9] avs_writedata[8] avs_writedata[7] avs_writedata[6] avs_writedata[5] avs_writedata[4] avs_writedata[3] avs_writedata[2] avs_writedata[1] avs_writedata[0]}]
+set_input_delay -clock [get_clocks clk] -max 1 [get_ports {avs_byteenable[3] avs_byteenable[2] avs_byteenable[1] avs_byteenable[0]}]
+set_input_delay -clock [get_clocks clk] -min 0.3 [get_ports {avs_byteenable[3] avs_byteenable[2] avs_byteenable[1] avs_byteenable[0]}]
+set_output_delay -clock [get_clocks clk] -min 0.3 [get_ports {avs_readdata[31] avs_readdata[30] avs_readdata[29] avs_readdata[28] avs_readdata[27] avs_readdata[26] avs_readdata[25] avs_readdata[24] avs_readdata[23] avs_readdata[22] avs_readdata[21] avs_readdata[20] avs_readdata[19] avs_readdata[18] avs_readdata[17] avs_readdata[16] avs_readdata[15] avs_readdata[14] avs_readdata[13] avs_readdata[12] avs_readdata[11] avs_readdata[10] avs_readdata[9] avs_readdata[8] avs_readdata[7] avs_readdata[6] avs_readdata[5] avs_readdata[4] avs_readdata[3] avs_readdata[2] avs_readdata[1] avs_readdata[0]}]
+set_output_delay -clock [get_clocks clk] -max 1 [get_ports {avs_readdata[31] avs_readdata[30] avs_readdata[29] avs_readdata[28] avs_readdata[27] avs_readdata[26] avs_readdata[25] avs_readdata[24] avs_readdata[23] avs_readdata[22] avs_readdata[21] avs_readdata[20] avs_readdata[19] avs_readdata[18] avs_readdata[17] avs_readdata[16] avs_readdata[15] avs_readdata[14] avs_readdata[13] avs_readdata[12] avs_readdata[11] avs_readdata[10] avs_readdata[9] avs_readdata[8] avs_readdata[7] avs_readdata[6] avs_readdata[5] avs_readdata[4] avs_readdata[3] avs_readdata[2] avs_readdata[1] avs_readdata[0]}]
+set_output_delay -clock [get_clocks clk] -min 0.3 [get_ports avs_readdatavalid]
+set_output_delay -clock [get_clocks clk] -max 1 [get_ports avs_readdatavalid]
+set_output_delay -clock [get_clocks clk] -min 0.3 [get_ports avs_waitrequest]
+set_output_delay -clock [get_clocks clk] -max 1 [get_ports avs_waitrequest]
+set_output_delay -clock [get_clocks clk] -min 0.3 [get_ports irq]
+set_output_delay -clock [get_clocks clk] -max 1 [get_ports irq]
+set_false_path -from [all_inputs]
+set_false_path -to [all_outputs]
+
+1.2  Constraint Coverage
+---------------------------
+Constraint Coverage: 100%
+
+
+1.3  Overall Summary
+---------------------------
+ Setup at Speed Grade 8_High-Performance_1.0V Corner at 85 Degrees    Timing Errors: 0 endpoints;  Total Negative Slack: 0.000 ns 
+ Setup at Speed Grade 8_High-Performance_1.0V Corner at 0 Degrees     Timing Errors: 0 endpoints;  Total Negative Slack: 0.000 ns 
+ Hold at Speed Grade m Corner at 0 Degrees                            Timing Errors: 0 endpoints;  Total Negative Slack: 0.000 ns 
+
+1.4  Unconstrained Report
+===========================
+
+1.4.1  Unconstrained Start/End Points
+--------------------------------------
+
+Clocked but unconstrained timing start points
+-------------------------------------------------------------------
+         Listing 9 Start Points         |           Type           
+-------------------------------------------------------------------
+avs_writedata[31]                       |    No arrival or required
+avs_writedata[30]                       |    No arrival or required
+avs_writedata[29]                       |    No arrival or required
+avs_writedata[28]                       |    No arrival or required
+avs_writedata[27]                       |    No arrival or required
+avs_writedata[26]                       |    No arrival or required
+avs_writedata[25]                       |    No arrival or required
+avs_writedata[24]                       |    No arrival or required
+avs_byteenable[3]                       |    No arrival or required
+-------------------------------------------------------------------
+                                        |                          
+Number of unconstrained timing start po |                          
+ints                                    |                         9
+                                        |                          
+-------------------------------------------------------------------
+
+Clocked but unconstrained timing end points
+--------------------------------------------------
+There is no end point satisfying reporting criteria
+
+
+1.4.2  Start/End Points Without Timing Constraints
+---------------------------------------------------
+
+I/O ports without constraint
+----------------------------
+Possible constraints to use on I/O ports are:
+set_input_delay,
+set_output_delay,
+set_max_delay,
+create_clock,
+create_generated_clock,
+...
+
+-------------------------------------------------------------------
+     Listing 2 Start or End Points      |           Type           
+-------------------------------------------------------------------
+avl_clk                                 |                     input
+avl_rst_n                               |                     input
+-------------------------------------------------------------------
+                                        |                          
+Number of I/O ports without constraint  |                         2
+                                        |                          
+-------------------------------------------------------------------
+
+Nets without clock definition
+Define a clock on a top level port or a generated clock on a clock divider pin associated with this net(s).
+--------------------------------------------------
+There is no instance satisfying reporting criteria
+
+
+
+1.5  Combinational Loop
+========================
+None
+
+===============================================================
+2  Setup at Speed Grade 8_High-Performance_1.0V Corner at 85 Degrees
+===============================================================
+
+2.1  Clock Summary
+=======================
+
+2.1.1 Clock "clk"
+=======================
+create_clock -name {clk} -period 8 -waveform {0.000 4.000} [get_ports clk]
+
+Single Clock Domain
+-------------------------------------------------------------------------------------------------------
+               Clock clk                |                    |       Period       |     Frequency      
+-------------------------------------------------------------------------------------------------------
+ From clk                               |             Target |           8.000 ns |        125.000 MHz 
+                                        | Actual (all paths) |           6.918 ns |        144.550 MHz 
+clk_pad.bb_inst/B (MPW)                 |   (50% duty cycle) |           5.000 ns |        200.000 MHz 
+-------------------------------------------------------------------------------------------------------
+
+Clock Domain Crossing
+
+2.2  Endpoint slacks
+=======================
+-------------------------------------------------------
+          Listing 10 End Points          |    Slack    
+-------------------------------------------------------
+u_rf/mwl[8].ff_inst/CE                   |    1.082 ns 
+u_rf/mrl[2].ff_inst/DF                   |    1.214 ns 
+u_rf/max_ibi_payload[3].ff_inst/CE       |    1.228 ns 
+u_rf/max_ibi_payload[0].ff_inst/CE       |    1.290 ns 
+u_av/int_status_reg[3].ff_inst/DF        |    1.298 ns 
+u_rf/mwl[1].ff_inst/CE                   |    1.302 ns 
+u_rf/mwl[7].ff_inst/CE                   |    1.308 ns 
+u_rf/mrl[4].ff_inst/DF                   |    1.325 ns 
+u_rf/mrl[0].ff_inst/DF                   |    1.369 ns 
+u_rf/mwl[4].ff_inst/CE                   |    1.382 ns 
+-------------------------------------------------------
+                                         |             
+Setup # of endpoints with negative slack:|           0 
+                                         |             
+-------------------------------------------------------
+
+2.3  Detailed Report
+=======================
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Detail report of critical paths
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mwl[8].ff_inst/CE  (SLICE_R31C28D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 7
+Delay Ratio      : 76.1% (route), 23.9% (logic)
+Clock Skew       : -0.150 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.117 ns 
+Path Slack       : 1.082 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL              0.312                  4.410  23      
+u_be/be_byte_done                                          NET DELAY            1.317                  5.727  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL             0.217                  5.944  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY            0.237                  6.181  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL             0.217                  6.398  9       
+u_sda_mux/pf_is_read                                       NET DELAY            0.795                  7.193  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL             0.217                  7.410  3       
+u_ccc/val_dir_1                                            NET DELAY            0.395                  7.805  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL             0.210                  8.015  6       
+u_ccc/value_stb_1z                                         NET DELAY            0.425                  8.440  6       
+u_ccc/ccc_set_mwl/C->u_ccc/ccc_set_mwl/Z  SLICE_R33C29C    CTOF_DEL             0.210                  8.650  3       
+u_ccc/ccc_set_mwl_1z                                       NET DELAY            0.613                  9.263  3       
+u_rf/un1_app_wr_en_4_0_RNISP0N71/A->u_rf/un1_app_wr_en_4_0_RNISP0N71/Z
+                                          SLICE_R36C26C    CTOF_DEL             0.217                  9.480  16      
+u_rf/un1_mwl33_i                                           NET DELAY            1.305                 10.785  16      
+u_rf/mwl[8].ff_inst/CE                                     ENDPOINT             0.000                 10.785  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT           0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  8.000  1       
+clk                                                        NET DELAY            0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  9.468  315     
+u_fe/clk_c                                                 NET DELAY            2.480                 11.948  315     
+u_rf/mwl[8].ff_inst/CLK                                    CLOCK PIN            0.000                 11.948  1       
+                                                           Uncertainty       -(0.000)                 11.948  
+                                                           Common Path Skew     0.117                 12.065  
+                                                           Setup time        -(0.198)                 11.867  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                         11.867  
+Arrival Time                                                                                       -(10.785)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                   1.082  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mrl[2].ff_inst/DF  (SLICE_R33C26D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 8
+Delay Ratio      : 73.3% (route), 26.7% (logic)
+Clock Skew       : -0.150 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.117 ns 
+Path Slack       : 1.214 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  0.000  1       
+clk                                                        NET DELAY             0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY             2.630                  4.098  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN             0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL               0.312                  4.410  23      
+u_be/be_byte_done                                          NET DELAY             1.317                  5.727  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL              0.217                  5.944  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY             0.237                  6.181  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL              0.217                  6.398  9       
+u_sda_mux/pf_is_read                                       NET DELAY             0.795                  7.193  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL              0.217                  7.410  3       
+u_ccc/val_dir_1                                            NET DELAY             0.395                  7.805  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL              0.210                  8.015  6       
+u_ccc/value_stb_1z                                         NET DELAY             0.425                  8.440  6       
+u_ccc/ccc_set_mrl/C->u_ccc/ccc_set_mrl/Z  SLICE_R32C29C    CTOF_DEL              0.217                  8.657  5       
+u_ccc/ccc_set_mrl_1z                                       NET DELAY             0.525                  9.182  5       
+u_rf/mrl_10s2_i_a2/A->u_rf/mrl_10s2_i_a2/Z
+                                          SLICE_R34C28C    CTOF_DEL              0.210                  9.392  16      
+u_rf/N_128                                                 NET DELAY             1.301                 10.693  16      
+u_rf/mrl_RNO[2]/A->u_rf/mrl_RNO[2]/Z      SLICE_R33C26D    CTOF_DEL              0.217                 10.910  1       
+u_rf/mrl_10[2]                                             NET DELAY             0.000                 10.910  1       
+u_rf/mrl[2].ff_inst/DF                                     ENDPOINT              0.000                 10.910  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+                                                           CONSTRAINT            0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  8.000  1       
+clk                                                        NET DELAY             0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.468                  9.468  315     
+u_fe/clk_c                                                 NET DELAY             2.480                 11.948  315     
+u_rf/mrl[2].ff_inst/CLK                                    CLOCK PIN             0.000                 11.948  1       
+                                                           Uncertainty        -(0.000)                 11.948  
+                                                           Common Path Skew      0.117                 12.065  
+                                                           Setup time        -(-0.059)                 12.124  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Required Time                                                                                          12.124  
+Arrival Time                                                                                        -(10.910)  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    1.214  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/max_ibi_payload[3].ff_inst/CE  (SLICE_R36C22D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 7
+Delay Ratio      : 75.5% (route), 24.5% (logic)
+Clock Skew       : -0.150 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.104 ns 
+Path Slack       : 1.228 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL              0.312                  4.410  23      
+u_be/be_byte_done                                          NET DELAY            1.317                  5.727  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL             0.217                  5.944  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY            0.237                  6.181  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL             0.217                  6.398  9       
+u_sda_mux/pf_is_read                                       NET DELAY            0.795                  7.193  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL             0.217                  7.410  3       
+u_ccc/val_dir_1                                            NET DELAY            0.395                  7.805  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL             0.217                  8.022  6       
+u_ccc/value_stb_1z                                         NET DELAY            0.385                  8.407  6       
+u_ccc/ccc_set_maxibi/C->u_ccc/ccc_set_maxibi/Z
+                                          SLICE_R32C33D    CTOF_DEL             0.210                  8.617  10      
+u_ccc/ccc_set_maxibi_1z                                    NET DELAY            0.874                  9.491  10      
+u_rf/un1_whole_reset_11_i_0/B->u_rf/un1_whole_reset_11_i_0/Z
+                                          SLICE_R36C23C    CTOF_DEL             0.210                  9.701  8       
+u_rf/N_44                                                  NET DELAY            0.938                 10.639  8       
+u_rf/max_ibi_payload[3].ff_inst/CE                         ENDPOINT             0.000                 10.639  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT           0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  8.000  1       
+clk                                                        NET DELAY            0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  9.468  315     
+u_fe/clk_c                                                 NET DELAY            2.480                 11.948  315     
+u_rf/max_ibi_payload[3].ff_inst/CLK                        CLOCK PIN            0.000                 11.948  1       
+                                                           Uncertainty       -(0.000)                 11.948  
+                                                           Common Path Skew     0.104                 12.052  
+                                                           Setup time        -(0.185)                 11.867  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                         11.867  
+Arrival Time                                                                                       -(10.639)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                   1.228  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/max_ibi_payload[0].ff_inst/CE  (SLICE_R35C34D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 7
+Delay Ratio      : 75.4% (route), 24.6% (logic)
+Clock Skew       : -0.150 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.117 ns 
+Path Slack       : 1.290 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL              0.312                  4.410  23      
+u_be/be_byte_done                                          NET DELAY            1.317                  5.727  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL             0.217                  5.944  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY            0.237                  6.181  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL             0.217                  6.398  9       
+u_sda_mux/pf_is_read                                       NET DELAY            0.795                  7.193  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL             0.217                  7.410  3       
+u_ccc/val_dir_1                                            NET DELAY            0.395                  7.805  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL             0.217                  8.022  6       
+u_ccc/value_stb_1z                                         NET DELAY            0.385                  8.407  6       
+u_ccc/ccc_set_maxibi/C->u_ccc/ccc_set_maxibi/Z
+                                          SLICE_R32C33D    CTOF_DEL             0.210                  8.617  10      
+u_ccc/ccc_set_maxibi_1z                                    NET DELAY            0.874                  9.491  10      
+u_rf/un1_whole_reset_11_i_0/B->u_rf/un1_whole_reset_11_i_0/Z
+                                          SLICE_R36C23C    CTOF_DEL             0.210                  9.701  8       
+u_rf/N_44                                                  NET DELAY            0.889                 10.590  8       
+u_rf/max_ibi_payload[0].ff_inst/CE                         ENDPOINT             0.000                 10.590  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT           0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  8.000  1       
+clk                                                        NET DELAY            0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  9.468  315     
+u_fe/clk_c                                                 NET DELAY            2.480                 11.948  315     
+u_rf/max_ibi_payload[0].ff_inst/CLK                        CLOCK PIN            0.000                 11.948  1       
+                                                           Uncertainty       -(0.000)                 11.948  
+                                                           Common Path Skew     0.117                 12.065  
+                                                           Setup time        -(0.185)                 11.880  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                         11.880  
+Arrival Time                                                                                       -(10.590)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                   1.290  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_ccc/code_q_reg[0].ff_inst/Q  (SLICE_R30C32D)
+Path End         : u_av/int_status_reg[3].ff_inst/DF  (SLICE_R39C29D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 11
+Delay Ratio      : 62.4% (route), 37.6% (logic)
+Clock Skew       : -0.150 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.117 ns 
+Path Slack       : 1.298 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  0.000  1       
+clk                                                        NET DELAY             0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY             2.630                  4.098  315     
+u_ccc/code_q_reg[0].ff_inst/CLK                            CLOCK PIN             0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+u_ccc/code_q_reg[0].ff_inst/CLK->u_ccc/code_q_reg[0].ff_inst/Q
+                                          SLICE_R30C32D    REG_DEL               0.312                  4.410  19      
+u_pfsm/code_q[0]                                           NET DELAY             0.981                  5.391  19      
+u_ccc/is_setmrl_0_cZ/B->u_ccc/is_setmrl_0_cZ/Z
+                                          SLICE_R30C33A    CTOF_DEL              0.210                  5.601  4       
+u_ccc/is_setmrl_0                                          NET DELAY             0.505                  6.106  4       
+u_ccc/ccc_supported_iv_5_RNO/A->u_ccc/ccc_supported_iv_5_RNO/Z
+                                          SLICE_R31C36C    CTOF_DEL              0.217                  6.323  1       
+u_ccc/supported_direct_5_m                                 NET DELAY             0.226                  6.549  1       
+u_ccc/ccc_supported_iv_5_cZ/B->u_ccc/ccc_supported_iv_5_cZ/Z
+                                          SLICE_R32C36A    CTOF_DEL              0.210                  6.759  2       
+u_ccc/ccc_supported_iv_5                                   NET DELAY             0.384                  7.143  2       
+u_ccc/ccc_ack_4_1_0_cZ/A->u_ccc/ccc_ack_4_1_0_cZ/Z
+                                          SLICE_R31C35A    CTOF_DEL              0.217                  7.360  1       
+u_ccc/ccc_ack_4_1_0                                        NET DELAY             0.400                  7.760  1       
+u_ccc/ccc_ack_4/B->u_ccc/ccc_ack_4/Z      SLICE_R32C34C    CTOF_DEL              0.217                  7.977  2       
+u_pfsm/ccc_ack_4                                           NET DELAY             0.342                  8.319  2       
+u_pfsm/next_state_0_sqmuxa_3_RNO_0.lut4_inst1/A->u_pfsm/next_state_0_sqmuxa_3_RNO_0.lut4_inst1/Z
+                                          SLICE_R34C33C    CTOOF_DEL             0.281                  8.600  1       
+u_pfsm/un1_da_priv_gate                                    NET DELAY             0.411                  9.011  1       
+u_pfsm/next_state_0_sqmuxa_3_cZ/C->u_pfsm/next_state_0_sqmuxa_3_cZ/Z
+                                          SLICE_R38C33A    CTOF_DEL              0.217                  9.228  6       
+u_pfsm/next_state_0_sqmuxa_3                               NET DELAY             0.385                  9.613  6       
+u_pfsm/next_state_0_sqmuxa_3_RNIUNVMK1/B->u_pfsm/next_state_0_sqmuxa_3_RNIUNVMK1/Z
+                                          SLICE_R40C32D    CTOF_DEL              0.217                  9.830  2       
+u_pfsm/state_3_0                                           NET DELAY             0.226                 10.056  2       
+u_av/int_status_2_1_cZ[3]/D->u_av/int_status_2_1_cZ[3]/Z
+                                          SLICE_R39C32A    CTOF_DEL              0.217                 10.273  1       
+u_av/int_status_2_1[3]                                     NET DELAY             0.336                 10.609  1       
+u_av/int_status_2_cZ[3]/C->u_av/int_status_2_cZ[3]/Z
+                                          SLICE_R39C29D    CTOF_DEL              0.217                 10.826  1       
+u_av/int_status_2[3]                                       NET DELAY             0.000                 10.826  1       
+u_av/int_status_reg[3].ff_inst/DF                          ENDPOINT              0.000                 10.826  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+                                                           CONSTRAINT            0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  8.000  1       
+clk                                                        NET DELAY             0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.468                  9.468  315     
+u_fe/clk_c                                                 NET DELAY             2.480                 11.948  315     
+u_av/int_status_reg[3].ff_inst/CLK                         CLOCK PIN             0.000                 11.948  1       
+                                                           Uncertainty        -(0.000)                 11.948  
+                                                           Common Path Skew      0.117                 12.065  
+                                                           Setup time        -(-0.059)                 12.124  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Required Time                                                                                          12.124  
+Arrival Time                                                                                        -(10.826)  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    1.298  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mwl[1].ff_inst/CE  (SLICE_R34C28D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 7
+Delay Ratio      : 75.3% (route), 24.7% (logic)
+Clock Skew       : -0.150 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.117 ns 
+Path Slack       : 1.302 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL              0.312                  4.410  23      
+u_be/be_byte_done                                          NET DELAY            1.317                  5.727  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL             0.217                  5.944  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY            0.237                  6.181  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL             0.217                  6.398  9       
+u_sda_mux/pf_is_read                                       NET DELAY            0.795                  7.193  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL             0.217                  7.410  3       
+u_ccc/val_dir_1                                            NET DELAY            0.395                  7.805  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL             0.210                  8.015  6       
+u_ccc/value_stb_1z                                         NET DELAY            0.425                  8.440  6       
+u_ccc/ccc_set_mwl/C->u_ccc/ccc_set_mwl/Z  SLICE_R33C29C    CTOF_DEL             0.210                  8.650  3       
+u_ccc/ccc_set_mwl_1z                                       NET DELAY            0.613                  9.263  3       
+u_rf/un1_app_wr_en_4_0_RNISP0N71/A->u_rf/un1_app_wr_en_4_0_RNISP0N71/Z
+                                          SLICE_R36C26C    CTOF_DEL             0.217                  9.480  16      
+u_rf/un1_mwl33_i                                           NET DELAY            1.085                 10.565  16      
+u_rf/mwl[1].ff_inst/CE                                     ENDPOINT             0.000                 10.565  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT           0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  8.000  1       
+clk                                                        NET DELAY            0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  9.468  315     
+u_fe/clk_c                                                 NET DELAY            2.480                 11.948  315     
+u_rf/mwl[1].ff_inst/CLK                                    CLOCK PIN            0.000                 11.948  1       
+                                                           Uncertainty       -(0.000)                 11.948  
+                                                           Common Path Skew     0.117                 12.065  
+                                                           Setup time        -(0.198)                 11.867  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                         11.867  
+Arrival Time                                                                                       -(10.565)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                   1.302  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mwl[7].ff_inst/CE  (SLICE_R36C27B)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 7
+Delay Ratio      : 75.2% (route), 24.8% (logic)
+Clock Skew       : -0.150 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.117 ns 
+Path Slack       : 1.308 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL              0.312                  4.410  23      
+u_be/be_byte_done                                          NET DELAY            1.317                  5.727  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL             0.217                  5.944  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY            0.237                  6.181  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL             0.217                  6.398  9       
+u_sda_mux/pf_is_read                                       NET DELAY            0.795                  7.193  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL             0.217                  7.410  3       
+u_ccc/val_dir_1                                            NET DELAY            0.395                  7.805  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL             0.210                  8.015  6       
+u_ccc/value_stb_1z                                         NET DELAY            0.425                  8.440  6       
+u_ccc/ccc_set_mwl/C->u_ccc/ccc_set_mwl/Z  SLICE_R33C29C    CTOF_DEL             0.210                  8.650  3       
+u_ccc/ccc_set_mwl_1z                                       NET DELAY            0.613                  9.263  3       
+u_rf/un1_app_wr_en_4_0_RNISP0N71/A->u_rf/un1_app_wr_en_4_0_RNISP0N71/Z
+                                          SLICE_R36C26C    CTOF_DEL             0.217                  9.480  16      
+u_rf/un1_mwl33_i                                           NET DELAY            1.079                 10.559  16      
+u_rf/mwl[7].ff_inst/CE                                     ENDPOINT             0.000                 10.559  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT           0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  8.000  1       
+clk                                                        NET DELAY            0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  9.468  315     
+u_fe/clk_c                                                 NET DELAY            2.480                 11.948  315     
+u_rf/mwl[7].ff_inst/CLK                                    CLOCK PIN            0.000                 11.948  1       
+                                                           Uncertainty       -(0.000)                 11.948  
+                                                           Common Path Skew     0.117                 12.065  
+                                                           Setup time        -(0.198)                 11.867  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                         11.867  
+Arrival Time                                                                                       -(10.559)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                   1.308  
+
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mrl[4].ff_inst/DF  (SLICE_R31C25D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 8
+Delay Ratio      : 72.8% (route), 27.2% (logic)
+Clock Skew       : -0.150 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.104 ns 
+Path Slack       : 1.325 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  0.000  1       
+clk                                                        NET DELAY             0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY             2.630                  4.098  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN             0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL               0.312                  4.410  23      
+u_be/be_byte_done                                          NET DELAY             1.317                  5.727  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL              0.217                  5.944  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY             0.237                  6.181  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL              0.217                  6.398  9       
+u_sda_mux/pf_is_read                                       NET DELAY             0.795                  7.193  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL              0.217                  7.410  3       
+u_ccc/val_dir_1                                            NET DELAY             0.395                  7.805  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL              0.210                  8.015  6       
+u_ccc/value_stb_1z                                         NET DELAY             0.425                  8.440  6       
+u_ccc/ccc_set_mrl/C->u_ccc/ccc_set_mrl/Z  SLICE_R32C29C    CTOF_DEL              0.217                  8.657  5       
+u_ccc/ccc_set_mrl_1z                                       NET DELAY             0.525                  9.182  5       
+u_rf/mrl_10s2_i_a2/A->u_rf/mrl_10s2_i_a2/Z
+                                          SLICE_R34C28C    CTOF_DEL              0.210                  9.392  16      
+u_rf/N_128                                                 NET DELAY             1.177                 10.569  16      
+u_rf/mrl_RNO[4]/A->u_rf/mrl_RNO[4]/Z      SLICE_R31C25D    CTOF_DEL              0.217                 10.786  1       
+u_rf/mrl_10[4]                                             NET DELAY             0.000                 10.786  1       
+u_rf/mrl[4].ff_inst/DF                                     ENDPOINT              0.000                 10.786  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+                                                           CONSTRAINT            0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  8.000  1       
+clk                                                        NET DELAY             0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.468                  9.468  315     
+u_fe/clk_c                                                 NET DELAY             2.480                 11.948  315     
+u_rf/mrl[4].ff_inst/CLK                                    CLOCK PIN             0.000                 11.948  1       
+                                                           Uncertainty        -(0.000)                 11.948  
+                                                           Common Path Skew      0.104                 12.052  
+                                                           Setup time        -(-0.059)                 12.111  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Required Time                                                                                          12.111  
+Arrival Time                                                                                        -(10.786)  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    1.325  
+
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mrl[0].ff_inst/DF  (SLICE_R34C27D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 8
+Delay Ratio      : 72.7% (route), 27.3% (logic)
+Clock Skew       : -0.150 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.117 ns 
+Path Slack       : 1.369 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  0.000  1       
+clk                                                        NET DELAY             0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY             2.630                  4.098  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN             0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL               0.312                  4.410  23      
+u_be/be_byte_done                                          NET DELAY             1.317                  5.727  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL              0.217                  5.944  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY             0.237                  6.181  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL              0.217                  6.398  9       
+u_sda_mux/pf_is_read                                       NET DELAY             0.795                  7.193  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL              0.217                  7.410  3       
+u_ccc/val_dir_1                                            NET DELAY             0.395                  7.805  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL              0.210                  8.015  6       
+u_ccc/value_stb_1z                                         NET DELAY             0.425                  8.440  6       
+u_ccc/ccc_set_mrl/C->u_ccc/ccc_set_mrl/Z  SLICE_R32C29C    CTOF_DEL              0.217                  8.657  5       
+u_ccc/ccc_set_mrl_1z                                       NET DELAY             0.525                  9.182  5       
+u_rf/mrl_10s2_i_a2/A->u_rf/mrl_10s2_i_a2/Z
+                                          SLICE_R34C28C    CTOF_DEL              0.210                  9.392  16      
+u_rf/N_128                                                 NET DELAY             1.146                 10.538  16      
+u_rf/mrl_RNO[0]/A->u_rf/mrl_RNO[0]/Z      SLICE_R34C27D    CTOF_DEL              0.217                 10.755  1       
+u_rf/mrl_10[0]                                             NET DELAY             0.000                 10.755  1       
+u_rf/mrl[0].ff_inst/DF                                     ENDPOINT              0.000                 10.755  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+                                                           CONSTRAINT            0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  8.000  1       
+clk                                                        NET DELAY             0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.468                  9.468  315     
+u_fe/clk_c                                                 NET DELAY             2.480                 11.948  315     
+u_rf/mrl[0].ff_inst/CLK                                    CLOCK PIN             0.000                 11.948  1       
+                                                           Uncertainty        -(0.000)                 11.948  
+                                                           Common Path Skew      0.117                 12.065  
+                                                           Setup time        -(-0.059)                 12.124  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Required Time                                                                                          12.124  
+Arrival Time                                                                                        -(10.755)  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    1.369  
+
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mwl[4].ff_inst/CE  (SLICE_R36C25D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 7
+Delay Ratio      : 74.9% (route), 25.1% (logic)
+Clock Skew       : -0.150 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.104 ns 
+Path Slack       : 1.382 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  1.468  315     
+u_fe/clk_c                                                 NET DELAY            2.630                  4.098  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN            0.000                  4.098  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL              0.312                  4.410  23      
+u_be/be_byte_done                                          NET DELAY            1.317                  5.727  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL             0.217                  5.944  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY            0.237                  6.181  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL             0.217                  6.398  9       
+u_sda_mux/pf_is_read                                       NET DELAY            0.795                  7.193  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL             0.217                  7.410  3       
+u_ccc/val_dir_1                                            NET DELAY            0.395                  7.805  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL             0.210                  8.015  6       
+u_ccc/value_stb_1z                                         NET DELAY            0.425                  8.440  6       
+u_ccc/ccc_set_mwl/C->u_ccc/ccc_set_mwl/Z  SLICE_R33C29C    CTOF_DEL             0.210                  8.650  3       
+u_ccc/ccc_set_mwl_1z                                       NET DELAY            0.613                  9.263  3       
+u_rf/un1_app_wr_en_4_0_RNISP0N71/A->u_rf/un1_app_wr_en_4_0_RNISP0N71/Z
+                                          SLICE_R36C26C    CTOF_DEL             0.217                  9.480  16      
+u_rf/un1_mwl33_i                                           NET DELAY            0.992                 10.472  16      
+u_rf/mwl[4].ff_inst/CE                                     ENDPOINT             0.000                 10.472  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT           0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  8.000  1       
+clk                                                        NET DELAY            0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.468                  9.468  315     
+u_fe/clk_c                                                 NET DELAY            2.480                 11.948  315     
+u_rf/mwl[4].ff_inst/CLK                                    CLOCK PIN            0.000                 11.948  1       
+                                                           Uncertainty       -(0.000)                 11.948  
+                                                           Common Path Skew     0.104                 12.052  
+                                                           Setup time        -(0.198)                 11.854  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                         11.854  
+Arrival Time                                                                                       -(10.472)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                   1.382  
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+
+##########################################################
+
+
+
+===============================================================
+3  Setup at Speed Grade 8_High-Performance_1.0V Corner at 0 Degrees
+===============================================================
+
+3.1  Clock Summary
+=======================
+
+3.1.1 Clock "clk"
+=======================
+create_clock -name {clk} -period 8 -waveform {0.000 4.000} [get_ports clk]
+
+Single Clock Domain
+-------------------------------------------------------------------------------------------------------
+               Clock clk                |                    |       Period       |     Frequency      
+-------------------------------------------------------------------------------------------------------
+ From clk                               |             Target |           8.000 ns |        125.000 MHz 
+                                        | Actual (all paths) |           6.866 ns |        145.645 MHz 
+clk_pad.bb_inst/B (MPW)                 |   (50% duty cycle) |           5.000 ns |        200.000 MHz 
+-------------------------------------------------------------------------------------------------------
+
+Clock Domain Crossing
+
+3.2  Endpoint slacks
+=======================
+-------------------------------------------------------
+          Listing 10 End Points          |    Slack    
+-------------------------------------------------------
+u_rf/mwl[8].ff_inst/CE                   |    1.134 ns 
+u_rf/mrl[2].ff_inst/DF                   |    1.255 ns 
+u_rf/max_ibi_payload[3].ff_inst/CE       |    1.267 ns 
+u_av/int_status_reg[3].ff_inst/DF        |    1.327 ns 
+u_rf/max_ibi_payload[0].ff_inst/CE       |    1.329 ns 
+u_rf/mwl[1].ff_inst/CE                   |    1.359 ns 
+u_rf/mwl[7].ff_inst/CE                   |    1.363 ns 
+u_rf/mrl[4].ff_inst/DF                   |    1.365 ns 
+u_rf/mrl[0].ff_inst/DF                   |    1.410 ns 
+u_rf/mwl[4].ff_inst/CE                   |    1.417 ns 
+-------------------------------------------------------
+                                         |             
+Setup # of endpoints with negative slack:|           0 
+                                         |             
+-------------------------------------------------------
+
+3.3  Detailed Report
+=======================
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Detail report of critical paths
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mwl[8].ff_inst/CE  (SLICE_R31C28D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 7
+Delay Ratio      : 76.2% (route), 23.8% (logic)
+Clock Skew       : -0.154 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.120 ns 
+Path Slack       : 1.134 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL              0.301                  4.342  23      
+u_be/be_byte_done                                          NET DELAY            1.316                  5.658  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL             0.213                  5.871  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY            0.235                  6.106  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL             0.213                  6.319  9       
+u_sda_mux/pf_is_read                                       NET DELAY            0.792                  7.111  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL             0.213                  7.324  3       
+u_ccc/val_dir_1                                            NET DELAY            0.398                  7.722  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL             0.213                  7.935  6       
+u_ccc/value_stb_1z                                         NET DELAY            0.423                  8.358  6       
+u_ccc/ccc_set_mwl/C->u_ccc/ccc_set_mwl/Z  SLICE_R33C29C    CTOF_DEL             0.213                  8.571  3       
+u_ccc/ccc_set_mwl_1z                                       NET DELAY            0.608                  9.179  3       
+u_rf/un1_app_wr_en_4_0_RNISP0N71/A->u_rf/un1_app_wr_en_4_0_RNISP0N71/Z
+                                          SLICE_R36C26C    CTOF_DEL             0.213                  9.392  16      
+u_rf/un1_mwl33_i                                           NET DELAY            1.294                 10.686  16      
+u_rf/mwl[8].ff_inst/CE                                     ENDPOINT             0.000                 10.686  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT           0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  8.000  1       
+clk                                                        NET DELAY            0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  9.340  315     
+u_fe/clk_c                                                 NET DELAY            2.547                 11.887  315     
+u_rf/mwl[8].ff_inst/CLK                                    CLOCK PIN            0.000                 11.887  1       
+                                                           Uncertainty       -(0.000)                 11.887  
+                                                           Common Path Skew     0.120                 12.007  
+                                                           Setup time        -(0.187)                 11.820  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                         11.820  
+Arrival Time                                                                                       -(10.686)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                   1.134  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mrl[2].ff_inst/DF  (SLICE_R33C26D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 8
+Delay Ratio      : 73.4% (route), 26.6% (logic)
+Clock Skew       : -0.154 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.120 ns 
+Path Slack       : 1.255 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  0.000  1       
+clk                                                        NET DELAY             0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY             2.701                  4.041  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN             0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL               0.301                  4.342  23      
+u_be/be_byte_done                                          NET DELAY             1.316                  5.658  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL              0.213                  5.871  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY             0.235                  6.106  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL              0.213                  6.319  9       
+u_sda_mux/pf_is_read                                       NET DELAY             0.792                  7.111  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL              0.213                  7.324  3       
+u_ccc/val_dir_1                                            NET DELAY             0.398                  7.722  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL              0.213                  7.935  6       
+u_ccc/value_stb_1z                                         NET DELAY             0.423                  8.358  6       
+u_ccc/ccc_set_mrl/C->u_ccc/ccc_set_mrl/Z  SLICE_R32C29C    CTOF_DEL              0.213                  8.571  5       
+u_ccc/ccc_set_mrl_1z                                       NET DELAY             0.515                  9.086  5       
+u_rf/mrl_10s2_i_a2/A->u_rf/mrl_10s2_i_a2/Z
+                                          SLICE_R34C28C    CTOF_DEL              0.213                  9.299  16      
+u_rf/N_128                                                 NET DELAY             1.292                 10.591  16      
+u_rf/mrl_RNO[2]/A->u_rf/mrl_RNO[2]/Z      SLICE_R33C26D    CTOF_DEL              0.220                 10.811  1       
+u_rf/mrl_10[2]                                             NET DELAY             0.000                 10.811  1       
+u_rf/mrl[2].ff_inst/DF                                     ENDPOINT              0.000                 10.811  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+                                                           CONSTRAINT            0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  8.000  1       
+clk                                                        NET DELAY             0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.340                  9.340  315     
+u_fe/clk_c                                                 NET DELAY             2.547                 11.887  315     
+u_rf/mrl[2].ff_inst/CLK                                    CLOCK PIN             0.000                 11.887  1       
+                                                           Uncertainty        -(0.000)                 11.887  
+                                                           Common Path Skew      0.120                 12.007  
+                                                           Setup time        -(-0.059)                 12.066  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Required Time                                                                                          12.066  
+Arrival Time                                                                                        -(10.811)  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    1.255  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/max_ibi_payload[3].ff_inst/CE  (SLICE_R36C22D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 7
+Delay Ratio      : 75.7% (route), 24.3% (logic)
+Clock Skew       : -0.154 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.106 ns 
+Path Slack       : 1.267 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL              0.301                  4.342  23      
+u_be/be_byte_done                                          NET DELAY            1.316                  5.658  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL             0.213                  5.871  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY            0.235                  6.106  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL             0.213                  6.319  9       
+u_sda_mux/pf_is_read                                       NET DELAY            0.792                  7.111  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL             0.213                  7.324  3       
+u_ccc/val_dir_1                                            NET DELAY            0.398                  7.722  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL             0.213                  7.935  6       
+u_ccc/value_stb_1z                                         NET DELAY            0.380                  8.315  6       
+u_ccc/ccc_set_maxibi/C->u_ccc/ccc_set_maxibi/Z
+                                          SLICE_R32C33D    CTOF_DEL             0.213                  8.528  10      
+u_ccc/ccc_set_maxibi_1z                                    NET DELAY            0.868                  9.396  10      
+u_rf/un1_whole_reset_11_i_0/B->u_rf/un1_whole_reset_11_i_0/Z
+                                          SLICE_R36C23C    CTOF_DEL             0.213                  9.609  8       
+u_rf/N_44                                                  NET DELAY            0.930                 10.539  8       
+u_rf/max_ibi_payload[3].ff_inst/CE                         ENDPOINT             0.000                 10.539  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT           0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  8.000  1       
+clk                                                        NET DELAY            0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  9.340  315     
+u_fe/clk_c                                                 NET DELAY            2.547                 11.887  315     
+u_rf/max_ibi_payload[3].ff_inst/CLK                        CLOCK PIN            0.000                 11.887  1       
+                                                           Uncertainty       -(0.000)                 11.887  
+                                                           Common Path Skew     0.106                 11.993  
+                                                           Setup time        -(0.187)                 11.806  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                         11.806  
+Arrival Time                                                                                       -(10.539)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                   1.267  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_ccc/code_q_reg[0].ff_inst/Q  (SLICE_R30C32D)
+Path End         : u_av/int_status_reg[3].ff_inst/DF  (SLICE_R39C29D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 11
+Delay Ratio      : 62.5% (route), 37.5% (logic)
+Clock Skew       : -0.154 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.120 ns 
+Path Slack       : 1.327 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  0.000  1       
+clk                                                        NET DELAY             0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY             2.701                  4.041  315     
+u_ccc/code_q_reg[0].ff_inst/CLK                            CLOCK PIN             0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+u_ccc/code_q_reg[0].ff_inst/CLK->u_ccc/code_q_reg[0].ff_inst/Q
+                                          SLICE_R30C32D    REG_DEL               0.301                  4.342  19      
+u_pfsm/code_q[0]                                           NET DELAY             0.986                  5.328  19      
+u_ccc/is_setmrl_0_cZ/B->u_ccc/is_setmrl_0_cZ/Z
+                                          SLICE_R30C33A    CTOF_DEL              0.213                  5.541  4       
+u_ccc/is_setmrl_0                                          NET DELAY             0.502                  6.043  4       
+u_ccc/ccc_supported_iv_5_RNO/A->u_ccc/ccc_supported_iv_5_RNO/Z
+                                          SLICE_R31C36C    CTOF_DEL              0.213                  6.256  1       
+u_ccc/supported_direct_5_m                                 NET DELAY             0.228                  6.484  1       
+u_ccc/ccc_supported_iv_5_cZ/B->u_ccc/ccc_supported_iv_5_cZ/Z
+                                          SLICE_R32C36A    CTOF_DEL              0.213                  6.697  2       
+u_ccc/ccc_supported_iv_5                                   NET DELAY             0.381                  7.078  2       
+u_ccc/ccc_ack_4_1_0_cZ/A->u_ccc/ccc_ack_4_1_0_cZ/Z
+                                          SLICE_R31C35A    CTOF_DEL              0.213                  7.291  1       
+u_ccc/ccc_ack_4_1_0                                        NET DELAY             0.391                  7.682  1       
+u_ccc/ccc_ack_4/B->u_ccc/ccc_ack_4/Z      SLICE_R32C34C    CTOF_DEL              0.213                  7.895  2       
+u_pfsm/ccc_ack_4                                           NET DELAY             0.344                  8.239  2       
+u_pfsm/next_state_0_sqmuxa_3_RNO_0.lut4_inst1/A->u_pfsm/next_state_0_sqmuxa_3_RNO_0.lut4_inst1/Z
+                                          SLICE_R34C33C    CTOOF_DEL             0.285                  8.524  1       
+u_pfsm/un1_da_priv_gate                                    NET DELAY             0.408                  8.932  1       
+u_pfsm/next_state_0_sqmuxa_3_cZ/C->u_pfsm/next_state_0_sqmuxa_3_cZ/Z
+                                          SLICE_R38C33A    CTOF_DEL              0.213                  9.145  6       
+u_pfsm/next_state_0_sqmuxa_3                               NET DELAY             0.380                  9.525  6       
+u_pfsm/next_state_0_sqmuxa_3_RNIUNVMK1/B->u_pfsm/next_state_0_sqmuxa_3_RNIUNVMK1/Z
+                                          SLICE_R40C32D    CTOF_DEL              0.213                  9.738  2       
+u_pfsm/state_3_0                                           NET DELAY             0.228                  9.966  2       
+u_av/int_status_2_1_cZ[3]/D->u_av/int_status_2_1_cZ[3]/Z
+                                          SLICE_R39C32A    CTOF_DEL              0.213                 10.179  1       
+u_av/int_status_2_1[3]                                     NET DELAY             0.340                 10.519  1       
+u_av/int_status_2_cZ[3]/C->u_av/int_status_2_cZ[3]/Z
+                                          SLICE_R39C29D    CTOF_DEL              0.220                 10.739  1       
+u_av/int_status_2[3]                                       NET DELAY             0.000                 10.739  1       
+u_av/int_status_reg[3].ff_inst/DF                          ENDPOINT              0.000                 10.739  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+                                                           CONSTRAINT            0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  8.000  1       
+clk                                                        NET DELAY             0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.340                  9.340  315     
+u_fe/clk_c                                                 NET DELAY             2.547                 11.887  315     
+u_av/int_status_reg[3].ff_inst/CLK                         CLOCK PIN             0.000                 11.887  1       
+                                                           Uncertainty        -(0.000)                 11.887  
+                                                           Common Path Skew      0.120                 12.007  
+                                                           Setup time        -(-0.059)                 12.066  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Required Time                                                                                          12.066  
+Arrival Time                                                                                        -(10.739)  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    1.327  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/max_ibi_payload[0].ff_inst/CE  (SLICE_R35C34D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 7
+Delay Ratio      : 75.5% (route), 24.5% (logic)
+Clock Skew       : -0.154 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.120 ns 
+Path Slack       : 1.329 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL              0.301                  4.342  23      
+u_be/be_byte_done                                          NET DELAY            1.316                  5.658  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL             0.213                  5.871  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY            0.235                  6.106  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL             0.213                  6.319  9       
+u_sda_mux/pf_is_read                                       NET DELAY            0.792                  7.111  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL             0.213                  7.324  3       
+u_ccc/val_dir_1                                            NET DELAY            0.398                  7.722  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL             0.213                  7.935  6       
+u_ccc/value_stb_1z                                         NET DELAY            0.380                  8.315  6       
+u_ccc/ccc_set_maxibi/C->u_ccc/ccc_set_maxibi/Z
+                                          SLICE_R32C33D    CTOF_DEL             0.213                  8.528  10      
+u_ccc/ccc_set_maxibi_1z                                    NET DELAY            0.868                  9.396  10      
+u_rf/un1_whole_reset_11_i_0/B->u_rf/un1_whole_reset_11_i_0/Z
+                                          SLICE_R36C23C    CTOF_DEL             0.213                  9.609  8       
+u_rf/N_44                                                  NET DELAY            0.882                 10.491  8       
+u_rf/max_ibi_payload[0].ff_inst/CE                         ENDPOINT             0.000                 10.491  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT           0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  8.000  1       
+clk                                                        NET DELAY            0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  9.340  315     
+u_fe/clk_c                                                 NET DELAY            2.547                 11.887  315     
+u_rf/max_ibi_payload[0].ff_inst/CLK                        CLOCK PIN            0.000                 11.887  1       
+                                                           Uncertainty       -(0.000)                 11.887  
+                                                           Common Path Skew     0.120                 12.007  
+                                                           Setup time        -(0.187)                 11.820  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                         11.820  
+Arrival Time                                                                                       -(10.491)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                   1.329  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mwl[1].ff_inst/CE  (SLICE_R34C28D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 7
+Delay Ratio      : 75.4% (route), 24.6% (logic)
+Clock Skew       : -0.154 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.120 ns 
+Path Slack       : 1.359 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL              0.301                  4.342  23      
+u_be/be_byte_done                                          NET DELAY            1.316                  5.658  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL             0.213                  5.871  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY            0.235                  6.106  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL             0.213                  6.319  9       
+u_sda_mux/pf_is_read                                       NET DELAY            0.792                  7.111  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL             0.213                  7.324  3       
+u_ccc/val_dir_1                                            NET DELAY            0.398                  7.722  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL             0.213                  7.935  6       
+u_ccc/value_stb_1z                                         NET DELAY            0.423                  8.358  6       
+u_ccc/ccc_set_mwl/C->u_ccc/ccc_set_mwl/Z  SLICE_R33C29C    CTOF_DEL             0.213                  8.571  3       
+u_ccc/ccc_set_mwl_1z                                       NET DELAY            0.608                  9.179  3       
+u_rf/un1_app_wr_en_4_0_RNISP0N71/A->u_rf/un1_app_wr_en_4_0_RNISP0N71/Z
+                                          SLICE_R36C26C    CTOF_DEL             0.213                  9.392  16      
+u_rf/un1_mwl33_i                                           NET DELAY            1.069                 10.461  16      
+u_rf/mwl[1].ff_inst/CE                                     ENDPOINT             0.000                 10.461  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT           0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  8.000  1       
+clk                                                        NET DELAY            0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  9.340  315     
+u_fe/clk_c                                                 NET DELAY            2.547                 11.887  315     
+u_rf/mwl[1].ff_inst/CLK                                    CLOCK PIN            0.000                 11.887  1       
+                                                           Uncertainty       -(0.000)                 11.887  
+                                                           Common Path Skew     0.120                 12.007  
+                                                           Setup time        -(0.187)                 11.820  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                         11.820  
+Arrival Time                                                                                       -(10.461)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                   1.359  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mwl[7].ff_inst/CE  (SLICE_R36C27B)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 7
+Delay Ratio      : 75.4% (route), 24.6% (logic)
+Clock Skew       : -0.154 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.120 ns 
+Path Slack       : 1.363 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL              0.301                  4.342  23      
+u_be/be_byte_done                                          NET DELAY            1.316                  5.658  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL             0.213                  5.871  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY            0.235                  6.106  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL             0.213                  6.319  9       
+u_sda_mux/pf_is_read                                       NET DELAY            0.792                  7.111  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL             0.213                  7.324  3       
+u_ccc/val_dir_1                                            NET DELAY            0.398                  7.722  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL             0.213                  7.935  6       
+u_ccc/value_stb_1z                                         NET DELAY            0.423                  8.358  6       
+u_ccc/ccc_set_mwl/C->u_ccc/ccc_set_mwl/Z  SLICE_R33C29C    CTOF_DEL             0.213                  8.571  3       
+u_ccc/ccc_set_mwl_1z                                       NET DELAY            0.608                  9.179  3       
+u_rf/un1_app_wr_en_4_0_RNISP0N71/A->u_rf/un1_app_wr_en_4_0_RNISP0N71/Z
+                                          SLICE_R36C26C    CTOF_DEL             0.213                  9.392  16      
+u_rf/un1_mwl33_i                                           NET DELAY            1.065                 10.457  16      
+u_rf/mwl[7].ff_inst/CE                                     ENDPOINT             0.000                 10.457  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT           0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  8.000  1       
+clk                                                        NET DELAY            0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  9.340  315     
+u_fe/clk_c                                                 NET DELAY            2.547                 11.887  315     
+u_rf/mwl[7].ff_inst/CLK                                    CLOCK PIN            0.000                 11.887  1       
+                                                           Uncertainty       -(0.000)                 11.887  
+                                                           Common Path Skew     0.120                 12.007  
+                                                           Setup time        -(0.187)                 11.820  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                         11.820  
+Arrival Time                                                                                       -(10.457)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                   1.363  
+
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mrl[4].ff_inst/DF  (SLICE_R31C25D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 8
+Delay Ratio      : 72.9% (route), 27.1% (logic)
+Clock Skew       : -0.154 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.106 ns 
+Path Slack       : 1.365 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  0.000  1       
+clk                                                        NET DELAY             0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY             2.701                  4.041  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN             0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL               0.301                  4.342  23      
+u_be/be_byte_done                                          NET DELAY             1.316                  5.658  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL              0.213                  5.871  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY             0.235                  6.106  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL              0.213                  6.319  9       
+u_sda_mux/pf_is_read                                       NET DELAY             0.792                  7.111  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL              0.213                  7.324  3       
+u_ccc/val_dir_1                                            NET DELAY             0.398                  7.722  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL              0.213                  7.935  6       
+u_ccc/value_stb_1z                                         NET DELAY             0.423                  8.358  6       
+u_ccc/ccc_set_mrl/C->u_ccc/ccc_set_mrl/Z  SLICE_R32C29C    CTOF_DEL              0.213                  8.571  5       
+u_ccc/ccc_set_mrl_1z                                       NET DELAY             0.515                  9.086  5       
+u_rf/mrl_10s2_i_a2/A->u_rf/mrl_10s2_i_a2/Z
+                                          SLICE_R34C28C    CTOF_DEL              0.213                  9.299  16      
+u_rf/N_128                                                 NET DELAY             1.168                 10.467  16      
+u_rf/mrl_RNO[4]/A->u_rf/mrl_RNO[4]/Z      SLICE_R31C25D    CTOF_DEL              0.220                 10.687  1       
+u_rf/mrl_10[4]                                             NET DELAY             0.000                 10.687  1       
+u_rf/mrl[4].ff_inst/DF                                     ENDPOINT              0.000                 10.687  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+                                                           CONSTRAINT            0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  8.000  1       
+clk                                                        NET DELAY             0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.340                  9.340  315     
+u_fe/clk_c                                                 NET DELAY             2.547                 11.887  315     
+u_rf/mrl[4].ff_inst/CLK                                    CLOCK PIN             0.000                 11.887  1       
+                                                           Uncertainty        -(0.000)                 11.887  
+                                                           Common Path Skew      0.106                 11.993  
+                                                           Setup time        -(-0.059)                 12.052  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Required Time                                                                                          12.052  
+Arrival Time                                                                                        -(10.687)  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    1.365  
+
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mrl[0].ff_inst/DF  (SLICE_R34C27D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 8
+Delay Ratio      : 72.8% (route), 27.2% (logic)
+Clock Skew       : -0.154 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.120 ns 
+Path Slack       : 1.410 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  0.000  1       
+clk                                                        NET DELAY             0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY             2.701                  4.041  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN             0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL               0.301                  4.342  23      
+u_be/be_byte_done                                          NET DELAY             1.316                  5.658  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL              0.213                  5.871  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY             0.235                  6.106  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL              0.213                  6.319  9       
+u_sda_mux/pf_is_read                                       NET DELAY             0.792                  7.111  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL              0.213                  7.324  3       
+u_ccc/val_dir_1                                            NET DELAY             0.398                  7.722  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL              0.213                  7.935  6       
+u_ccc/value_stb_1z                                         NET DELAY             0.423                  8.358  6       
+u_ccc/ccc_set_mrl/C->u_ccc/ccc_set_mrl/Z  SLICE_R32C29C    CTOF_DEL              0.213                  8.571  5       
+u_ccc/ccc_set_mrl_1z                                       NET DELAY             0.515                  9.086  5       
+u_rf/mrl_10s2_i_a2/A->u_rf/mrl_10s2_i_a2/Z
+                                          SLICE_R34C28C    CTOF_DEL              0.213                  9.299  16      
+u_rf/N_128                                                 NET DELAY             1.137                 10.436  16      
+u_rf/mrl_RNO[0]/A->u_rf/mrl_RNO[0]/Z      SLICE_R34C27D    CTOF_DEL              0.220                 10.656  1       
+u_rf/mrl_10[0]                                             NET DELAY             0.000                 10.656  1       
+u_rf/mrl[0].ff_inst/DF                                     ENDPOINT              0.000                 10.656  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr       Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+                                                           CONSTRAINT            0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY         0.000                  8.000  1       
+clk                                                        NET DELAY             0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL              1.340                  9.340  315     
+u_fe/clk_c                                                 NET DELAY             2.547                 11.887  315     
+u_rf/mrl[0].ff_inst/CLK                                    CLOCK PIN             0.000                 11.887  1       
+                                                           Uncertainty        -(0.000)                 11.887  
+                                                           Common Path Skew      0.120                 12.007  
+                                                           Setup time        -(-0.059)                 12.066  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Required Time                                                                                          12.066  
+Arrival Time                                                                                        -(10.656)  
+----------------------------------------  ---------------  ----------------  ---------  ---------------------  ------  
+Path Slack  (Passed)                                                                                    1.410  
+
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/byte_done.ff_inst/Q  (SLICE_R42C40D)
+Path End         : u_rf/mwl[4].ff_inst/CE  (SLICE_R36C25D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 7
+Delay Ratio      : 75.1% (route), 24.9% (logic)
+Clock Skew       : -0.154 ns 
+Setup Constraint : 8.000 ns 
+Common Path Skew : 0.106 ns 
+Path Slack       : 1.417 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  0.000  1       
+clk                                                        NET DELAY            0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  1.340  315     
+u_fe/clk_c                                                 NET DELAY            2.701                  4.041  315     
+u_be/byte_done.ff_inst/CLK                                 CLOCK PIN            0.000                  4.041  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+u_be/byte_done.ff_inst/CLK->u_be/byte_done.ff_inst/Q
+                                          SLICE_R42C40D    REG_DEL              0.301                  4.342  23      
+u_be/be_byte_done                                          NET DELAY            1.316                  5.658  23      
+u_pfsm/un1_enabled_1_0/A->u_pfsm/un1_enabled_1_0/Z
+                                          SLICE_R40C31A    CTOF_DEL             0.213                  5.871  6       
+u_sda_mux/un1_enabled_1_0                                  NET DELAY            0.235                  6.106  6       
+u_pfsm/is_read/C->u_pfsm/is_read/Z        SLICE_R40C32A    CTOF_DEL             0.213                  6.319  9       
+u_sda_mux/pf_is_read                                       NET DELAY            0.792                  7.111  9       
+u_ccc/val_dir_1_cZ/A->u_ccc/val_dir_1_cZ/Z
+                                          SLICE_R32C36C    CTOF_DEL             0.213                  7.324  3       
+u_ccc/val_dir_1                                            NET DELAY            0.398                  7.722  3       
+u_ccc/value_stb/C->u_ccc/value_stb/Z      SLICE_R31C35C    CTOF_DEL             0.213                  7.935  6       
+u_ccc/value_stb_1z                                         NET DELAY            0.423                  8.358  6       
+u_ccc/ccc_set_mwl/C->u_ccc/ccc_set_mwl/Z  SLICE_R33C29C    CTOF_DEL             0.213                  8.571  3       
+u_ccc/ccc_set_mwl_1z                                       NET DELAY            0.608                  9.179  3       
+u_rf/un1_app_wr_en_4_0_RNISP0N71/A->u_rf/un1_app_wr_en_4_0_RNISP0N71/Z
+                                          SLICE_R36C26C    CTOF_DEL             0.213                  9.392  16      
+u_rf/un1_mwl33_i                                           NET DELAY            0.997                 10.389  16      
+u_rf/mwl[4].ff_inst/CE                                     ENDPOINT             0.000                 10.389  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr      Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+                                                           CONSTRAINT           0.000                  8.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY        0.000                  8.000  1       
+clk                                                        NET DELAY            0.000                  8.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL             1.340                  9.340  315     
+u_fe/clk_c                                                 NET DELAY            2.547                 11.887  315     
+u_rf/mwl[4].ff_inst/CLK                                    CLOCK PIN            0.000                 11.887  1       
+                                                           Uncertainty       -(0.000)                 11.887  
+                                                           Common Path Skew     0.106                 11.993  
+                                                           Setup time        -(0.187)                 11.806  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Required Time                                                                                         11.806  
+Arrival Time                                                                                       -(10.389)  
+----------------------------------------  ---------------  ----------------  --------  ---------------------  ------  
+Path Slack  (Passed)                                                                                   1.417  
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+
+##########################################################
+
+
+
+===============================================================
+4  Hold at Speed Grade m Corner at 0 Degrees
+===============================================================
+
+4.1  Endpoint slacks
+=======================
+-------------------------------------------------------
+          Listing 10 End Points          |    Slack    
+-------------------------------------------------------
+u_rxfifo/mem_ram.ramw_inst/WAD2          |    0.084 ns 
+u_txfifo/mem_ram.ramw_inst/WAD1          |    0.120 ns 
+u_txfifo/mem_ram_1.ramw_inst/WAD1        |    0.120 ns 
+u_txfifo/mem_ram_0.ramw_inst/WAD0        |    0.122 ns 
+u_txfifo/mem_ram_0.ramw_inst/WAD2        |    0.127 ns 
+u_rxfifo/mem_ram.ramw_inst/WAD0          |    0.127 ns 
+u_txfifo/mem_ram_0.ramw_inst/WAD1        |    0.135 ns 
+u_be/rx_byte[7].ff_inst/DF               |    0.143 ns 
+u_be/rx_byte[2].ff_inst/DF               |    0.144 ns 
+u_be/rx_byte[6].ff_inst/DF               |    0.147 ns 
+-------------------------------------------------------
+                                         |             
+Hold # of endpoints with negative slack: |           0 
+                                         |             
+-------------------------------------------------------
+
+4.2  Detailed Report
+=======================
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Detail report of critical paths
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_rxfifo/wptr_reg[2].ff_inst/Q  (SLICE_R34C40B)
+Path End         : u_rxfifo/mem_ram.ramw_inst/WAD2  (SLICE_R32C40C)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 43.2% (route), 56.8% (logic)
+Clock Skew       : 0.054 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : -0.043 ns 
+Path Slack       : 0.084 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.184                  2.050  315     
+u_rxfifo/wptr_reg[2].ff_inst/CLK                           CLOCK PIN          0.000                  2.050  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+u_rxfifo/wptr_reg[2].ff_inst/CLK->u_rxfifo/wptr_reg[2].ff_inst/Q
+                                          SLICE_R34C40B    REG_DEL            0.142                  2.192  4       
+u_rxfifo/wptr[2]                                           NET DELAY          0.108                  2.300  4       
+u_rxfifo/mem_ram.ramw_inst/WAD2                            ENDPOINT           0.000                  2.300  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+                                                           CONSTRAINT         0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.238                  2.104  315     
+u_rxfifo/mem_ram.ramw_inst/WCK                             CLOCK PIN          0.000                  2.104  1       
+                                                           Uncertainty        0.000                  2.104  
+                                                           Common Path Skew  -0.043                  2.061  
+                                                           Hold time          0.155                  2.216  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Required Time                                                                                       -2.216  
+Arrival Time                                                                                         2.300  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Path Slack  (Passed)                                                                                 0.084  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_txfifo/wptr_reg[1].ff_inst/Q  (SLICE_R40C25D)
+Path End         : u_txfifo/mem_ram.ramw_inst/WAD1  (SLICE_R40C27C)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 52.6% (route), 47.4% (logic)
+Clock Skew       : 0.054 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : -0.037 ns 
+Path Slack       : 0.120 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.184                  2.050  315     
+u_txfifo/wptr_reg[1].ff_inst/CLK                           CLOCK PIN          0.000                  2.050  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+u_txfifo/wptr_reg[1].ff_inst/CLK->u_txfifo/wptr_reg[1].ff_inst/Q
+                                          SLICE_R40C25D    REG_DEL            0.147                  2.197  6       
+u_txfifo/wptr[1]                                           NET DELAY          0.163                  2.360  6       
+u_txfifo/mem_ram.ramw_inst/WAD1                            ENDPOINT           0.000                  2.360  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+                                                           CONSTRAINT         0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.238                  2.104  315     
+u_txfifo/mem_ram.ramw_inst/WCK                             CLOCK PIN          0.000                  2.104  1       
+                                                           Uncertainty        0.000                  2.104  
+                                                           Common Path Skew  -0.037                  2.067  
+                                                           Hold time          0.173                  2.240  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Required Time                                                                                       -2.240  
+Arrival Time                                                                                         2.360  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Path Slack  (Passed)                                                                                 0.120  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_txfifo/wptr_reg[1].ff_inst/Q  (SLICE_R40C25D)
+Path End         : u_txfifo/mem_ram_1.ramw_inst/WAD1  (SLICE_R40C26C)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 52.6% (route), 47.4% (logic)
+Clock Skew       : 0.054 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : -0.037 ns 
+Path Slack       : 0.120 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.184                  2.050  315     
+u_txfifo/wptr_reg[1].ff_inst/CLK                           CLOCK PIN          0.000                  2.050  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+u_txfifo/wptr_reg[1].ff_inst/CLK->u_txfifo/wptr_reg[1].ff_inst/Q
+                                          SLICE_R40C25D    REG_DEL            0.147                  2.197  6       
+u_txfifo/wptr[1]                                           NET DELAY          0.163                  2.360  6       
+u_txfifo/mem_ram_1.ramw_inst/WAD1                          ENDPOINT           0.000                  2.360  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+                                                           CONSTRAINT         0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.238                  2.104  315     
+u_txfifo/mem_ram_1.ramw_inst/WCK                           CLOCK PIN          0.000                  2.104  1       
+                                                           Uncertainty        0.000                  2.104  
+                                                           Common Path Skew  -0.037                  2.067  
+                                                           Hold time          0.173                  2.240  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Required Time                                                                                       -2.240  
+Arrival Time                                                                                         2.360  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Path Slack  (Passed)                                                                                 0.120  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_txfifo/wptr[0].ff_inst/Q  (SLICE_R39C24D)
+Path End         : u_txfifo/mem_ram_0.ramw_inst/WAD0  (SLICE_R39C27C)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 51.7% (route), 48.3% (logic)
+Clock Skew       : 0.054 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : -0.037 ns 
+Path Slack       : 0.122 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.184                  2.050  315     
+u_txfifo/wptr[0].ff_inst/CLK                               CLOCK PIN          0.000                  2.050  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+u_txfifo/wptr[0].ff_inst/CLK->u_txfifo/wptr[0].ff_inst/Q
+                                          SLICE_R39C24D    REG_DEL            0.142                  2.192  6       
+u_rf/wptr_0                                                NET DELAY          0.152                  2.344  6       
+u_txfifo/mem_ram_0.ramw_inst/WAD0                          ENDPOINT           0.000                  2.344  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+                                                           CONSTRAINT         0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.238                  2.104  315     
+u_txfifo/mem_ram_0.ramw_inst/WCK                           CLOCK PIN          0.000                  2.104  1       
+                                                           Uncertainty        0.000                  2.104  
+                                                           Common Path Skew  -0.037                  2.067  
+                                                           Hold time          0.155                  2.222  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Required Time                                                                                       -2.222  
+Arrival Time                                                                                         2.344  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Path Slack  (Passed)                                                                                 0.122  
+
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_txfifo/wptr_reg[2].ff_inst/Q  (SLICE_R39C24C)
+Path End         : u_txfifo/mem_ram_0.ramw_inst/WAD2  (SLICE_R39C27C)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 52.5% (route), 47.5% (logic)
+Clock Skew       : 0.054 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : -0.037 ns 
+Path Slack       : 0.127 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.184                  2.050  315     
+u_txfifo/wptr_reg[2].ff_inst/CLK                           CLOCK PIN          0.000                  2.050  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+u_txfifo/wptr_reg[2].ff_inst/CLK->u_txfifo/wptr_reg[2].ff_inst/Q
+                                          SLICE_R39C24C    REG_DEL            0.142                  2.192  5       
+u_txfifo/wptr[2]                                           NET DELAY          0.157                  2.349  5       
+u_txfifo/mem_ram_0.ramw_inst/WAD2                          ENDPOINT           0.000                  2.349  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+                                                           CONSTRAINT         0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.238                  2.104  315     
+u_txfifo/mem_ram_0.ramw_inst/WCK                           CLOCK PIN          0.000                  2.104  1       
+                                                           Uncertainty        0.000                  2.104  
+                                                           Common Path Skew  -0.037                  2.067  
+                                                           Hold time          0.155                  2.222  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Required Time                                                                                       -2.222  
+Arrival Time                                                                                         2.349  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Path Slack  (Passed)                                                                                 0.127  
+
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_rxfifo/wptr_reg[0].ff_inst/Q  (SLICE_R34C40D)
+Path End         : u_rxfifo/mem_ram.ramw_inst/WAD0  (SLICE_R32C40C)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 51.5% (route), 48.5% (logic)
+Clock Skew       : 0.054 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : -0.043 ns 
+Path Slack       : 0.127 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.184                  2.050  315     
+u_rxfifo/wptr_reg[0].ff_inst/CLK                           CLOCK PIN          0.000                  2.050  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+u_rxfifo/wptr_reg[0].ff_inst/CLK->u_rxfifo/wptr_reg[0].ff_inst/Q
+                                          SLICE_R34C40D    REG_DEL            0.142                  2.192  5       
+u_rxfifo/wptr[0]                                           NET DELAY          0.151                  2.343  5       
+u_rxfifo/mem_ram.ramw_inst/WAD0                            ENDPOINT           0.000                  2.343  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+                                                           CONSTRAINT         0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.238                  2.104  315     
+u_rxfifo/mem_ram.ramw_inst/WCK                             CLOCK PIN          0.000                  2.104  1       
+                                                           Uncertainty        0.000                  2.104  
+                                                           Common Path Skew  -0.043                  2.061  
+                                                           Hold time          0.155                  2.216  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Required Time                                                                                       -2.216  
+Arrival Time                                                                                         2.343  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Path Slack  (Passed)                                                                                 0.127  
+
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_txfifo/wptr_reg[1].ff_inst/Q  (SLICE_R40C25D)
+Path End         : u_txfifo/mem_ram_0.ramw_inst/WAD1  (SLICE_R39C27C)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 53.7% (route), 46.3% (logic)
+Clock Skew       : 0.054 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : -0.037 ns 
+Path Slack       : 0.135 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.184                  2.050  315     
+u_txfifo/wptr_reg[1].ff_inst/CLK                           CLOCK PIN          0.000                  2.050  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+u_txfifo/wptr_reg[1].ff_inst/CLK->u_txfifo/wptr_reg[1].ff_inst/Q
+                                          SLICE_R40C25D    REG_DEL            0.142                  2.192  6       
+u_txfifo/wptr[1]                                           NET DELAY          0.165                  2.357  6       
+u_txfifo/mem_ram_0.ramw_inst/WAD1                          ENDPOINT           0.000                  2.357  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+                                                           CONSTRAINT         0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.238                  2.104  315     
+u_txfifo/mem_ram_0.ramw_inst/WCK                           CLOCK PIN          0.000                  2.104  1       
+                                                           Uncertainty        0.000                  2.104  
+                                                           Common Path Skew  -0.037                  2.067  
+                                                           Hold time          0.155                  2.222  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Required Time                                                                                       -2.222  
+Arrival Time                                                                                         2.357  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Path Slack  (Passed)                                                                                 0.135  
+
+
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/shift_reg_reg[6].ff_inst/Q  (SLICE_R40C41C)
+Path End         : u_be/rx_byte[7].ff_inst/DF  (SLICE_R39C41B)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 39.3% (route), 60.7% (logic)
+Clock Skew       : 0.054 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : -0.043 ns 
+Path Slack       : 0.143 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.184                  2.050  315     
+u_be/shift_reg_reg[6].ff_inst/CLK                          CLOCK PIN          0.000                  2.050  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+u_be/shift_reg_reg[6].ff_inst/CLK->u_be/shift_reg_reg[6].ff_inst/Q
+                                          SLICE_R40C41C    REG_DEL            0.142                  2.192  1       
+u_be/shift_reg[6]                                          NET DELAY          0.092                  2.284  1       
+u_be/rx_byte[7].ff_inst/DF                                 ENDPOINT           0.000                  2.284  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+                                                           CONSTRAINT         0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.238                  2.104  315     
+u_be/rx_byte[7].ff_inst/CLK                                CLOCK PIN          0.000                  2.104  1       
+                                                           Uncertainty        0.000                  2.104  
+                                                           Common Path Skew  -0.043                  2.061  
+                                                           Hold time          0.080                  2.141  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Required Time                                                                                       -2.141  
+Arrival Time                                                                                         2.284  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Path Slack  (Passed)                                                                                 0.143  
+
+
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/shift_reg_reg[1].ff_inst/Q  (SLICE_R40C40B)
+Path End         : u_be/rx_byte[2].ff_inst/DF  (SLICE_R40C40D)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 37.2% (route), 62.8% (logic)
+Clock Skew       : 0.054 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : -0.052 ns 
+Path Slack       : 0.144 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.184                  2.050  315     
+u_be/shift_reg_reg[1].ff_inst/CLK                          CLOCK PIN          0.000                  2.050  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+u_be/shift_reg_reg[1].ff_inst/CLK->u_be/shift_reg_reg[1].ff_inst/Q
+                                          SLICE_R40C40B    REG_DEL            0.142                  2.192  2       
+u_be/shift_reg[1]                                          NET DELAY          0.084                  2.276  2       
+u_be/rx_byte[2].ff_inst/DF                                 ENDPOINT           0.000                  2.276  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+                                                           CONSTRAINT         0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.238                  2.104  315     
+u_be/rx_byte[2].ff_inst/CLK                                CLOCK PIN          0.000                  2.104  1       
+                                                           Uncertainty        0.000                  2.104  
+                                                           Common Path Skew  -0.052                  2.052  
+                                                           Hold time          0.080                  2.132  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Required Time                                                                                       -2.132  
+Arrival Time                                                                                         2.276  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Path Slack  (Passed)                                                                                 0.144  
+
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : u_be/shift_reg_reg[5].ff_inst/Q  (SLICE_R40C41D)
+Path End         : u_be/rx_byte[6].ff_inst/DF  (SLICE_R40C41B)
+Source Clock     : clk (R)
+Destination Clock: clk (R)
+Logic Level      : 1
+Delay Ratio      : 38.0% (route), 62.0% (logic)
+Clock Skew       : 0.054 ns 
+Hold Constraint  : 0.000 ns 
+Common Path Skew : -0.052 ns 
+Path Slack       : 0.147 ns  (Passed)
+
+
+Source Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.184                  2.050  315     
+u_be/shift_reg_reg[5].ff_inst/CLK                          CLOCK PIN          0.000                  2.050  1       
+
+
+Data Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+u_be/shift_reg_reg[5].ff_inst/CLK->u_be/shift_reg_reg[5].ff_inst/Q
+                                          SLICE_R40C41D    REG_DEL            0.142                  2.192  2       
+u_be/shift_reg[5]                                          NET DELAY          0.087                  2.279  2       
+u_be/rx_byte[6].ff_inst/DF                                 ENDPOINT           0.000                  2.279  1       
+
+
+Destination Clock Path
+Name                                      Cell/Site Name   Delay Name        Incr    Arrival/Required Time  Fanout  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+                                                           CONSTRAINT         0.000                  0.000  1       
+clk                                       i3c_target_top   CLOCK LATENCY      0.000                  0.000  1       
+clk                                                        NET DELAY          0.000                  0.000  1       
+clk_pad.bb_inst/B->clk_pad.bb_inst/O      SEIO33_CORE_C16  PADI_DEL           0.866                  0.866  315     
+u_fe/clk_c                                                 NET DELAY          1.238                  2.104  315     
+u_be/rx_byte[6].ff_inst/CLK                                CLOCK PIN          0.000                  2.104  1       
+                                                           Uncertainty        0.000                  2.104  
+                                                           Common Path Skew  -0.052                  2.052  
+                                                           Hold time          0.080                  2.132  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Required Time                                                                                       -2.132  
+Arrival Time                                                                                         2.279  
+----------------------------------------  ---------------  ----------------  ------  ---------------------  ------  
+Path Slack  (Passed)                                                                                 0.147  
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+                    End of Detailed Report for timing paths 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+
+##########################################################
+
+
+

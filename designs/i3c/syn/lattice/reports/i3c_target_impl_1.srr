@@ -1,0 +1,1564 @@
+#Build: Synplify Pro (R) X-2025.09LR-SP1, Build 154R, May 20 2026
+#install: D:\lscc\radiant\2026.1\synpbase
+#OS: Windows 10 or later
+#Hostname: TCOVERT
+
+# Fri Oct  9 16:49:25 2026
+
+#Implementation: impl_1
+
+
+Copyright (C) 1994-2025 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: X-2025.09LR-SP1
+Install: D:\lscc\radiant\2026.1\synpbase
+OS: Windows 10 or later
+Hostname: TCOVERT
+
+Implementation : impl_1
+Synopsys HDL Compiler, Version comp202509synp2, Build 154R, Built May 20 2026 06:20:37, @
+
+@N|Running in 64-bit mode
+###########################################################[
+
+Copyright (C) 1994-2025 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: X-2025.09LR-SP1
+Install: D:\lscc\radiant\2026.1\synpbase
+OS: Windows 10 or later
+Hostname: TCOVERT
+
+Implementation : impl_1
+Synopsys VHDL Compiler, Version comp202509synp2, Build 154R, Built May 20 2026 06:20:37, @
+
+@N|Running in 64-bit mode
+@N:Can't find top module!
+Top entity isn't set yet!
+@N: CD140 :	| Using the VHDL 1993 Standard for file 'D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.vhd'.
+VHDL syntax check successful!
+
+At c_vhdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 149MB peak: 149MB)
+
+
+Process completed successfully.
+# Fri Oct  9 16:49:26 2026
+
+###########################################################]
+###########################################################[
+
+Copyright (C) 1994-2025 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: X-2025.09LR-SP1
+Install: D:\lscc\radiant\2026.1\synpbase
+OS: Windows 10 or later
+Hostname: TCOVERT
+
+Implementation : impl_1
+Synopsys Verilog Compiler, Version comp202509synp2, Build 154R, Built May 20 2026 06:20:37, @
+
+@N|Running in 64-bit mode
+@I::"D:\lscc\radiant\2026.1\synpbase\lib\lucent\lfd2nx.v" (library work)
+@I::"D:\lscc\radiant\2026.1\synpbase\lib\lucent\pmi_def.v" (library work)
+@I::"D:\lscc\radiant\2026.1\synpbase\lib\vlog\hypermods.v" (library __hyper__lib__)
+@I::"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_addsub.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_addsub.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/adder_subtractor/rtl\lscc_add_sub.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/adder_subtractor/rtl\lscc_add_sub.v":313:13:313:25|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/adder_subtractor/rtl\lscc_add_sub.v":333:13:333:24|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_add.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_add.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/adder/rtl\lscc_adder.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_complex_mult.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_complex_mult.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/complex_mult/rtl\lscc_complex_mult.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_complex_mult.v":92:11:92:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_complex_mult.v":101:11:101:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_counter.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_counter.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/counter/rtl\lscc_cntr.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/counter/rtl\lscc_cntr.v":129:13:129:25|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/counter/rtl\lscc_cntr.v":143:13:143:24|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_dpram.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_dpram.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/distributed_dpram/rtl\lscc_distributed_dpram.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_spram.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_spram.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/distributed_spram/rtl\lscc_distributed_spram.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_rom.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_rom.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/distributed_rom/rtl\lscc_distributed_rom.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_shift_reg.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_shift_reg.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_shift_reg/rtl\lscc_shift_register.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_shift_reg.v":126:11:126:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_shift_reg.v":135:11:135:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_fifo.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_fifo.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v":3275:17:3275:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v":3282:17:3282:28|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v":3339:17:3339:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v":3346:17:3346:28|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v":3401:17:3401:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v":3408:17:3408:28|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_fifo_dc.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo_dc/rtl\lscc_fifo_dc.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo_dc/rtl\lscc_fifo_dc.v":5142:25:5142:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo_dc/rtl\lscc_fifo_dc.v":5146:25:5146:36|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo_dc/rtl\lscc_fifo_dc.v":5177:29:5177:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo_dc/rtl\lscc_fifo_dc.v":5181:29:5181:40|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_distributed_ram.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_distributed_ram.v":170:17:170:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_distributed_ram.v":178:17:178:28|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_distributed_ram.v":222:25:222:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_distributed_ram.v":226:25:226:36|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_ecc.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":639:25:639:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":646:25:646:36|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":788:29:788:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":792:29:792:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":893:29:893:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":898:29:898:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1027:29:1027:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1031:29:1031:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1232:29:1232:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1236:29:1236:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1328:29:1328:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1333:29:1333:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1467:29:1467:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1471:29:1471:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1665:29:1665:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1667:29:1667:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1693:29:1693:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1695:29:1695:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1766:29:1766:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1768:29:1768:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1794:29:1794:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1796:29:1796:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1844:29:1844:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1848:29:1848:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1895:29:1895:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1899:29:1899:40|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_gray_reg.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_gray_reg.v":145:17:145:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_gray_reg.v":149:17:149:28|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_gray_synchronizer.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_gray_synchronizer.v":150:17:150:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_gray_synchronizer.v":155:17:155:28|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_prim.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":229:25:229:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":233:25:233:36|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":247:29:247:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":249:29:249:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":300:29:300:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":304:29:304:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":339:29:339:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":343:29:343:40|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_output_logic.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_ring_counter.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_ring_counter.v":152:17:152:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_ring_counter.v":157:17:157:28|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_wr_ctrl_logic.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_wr_ctrl_logic.v":195:29:195:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_wr_ctrl_logic.v":197:29:197:40|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_prim_gen.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_prim_gen.v":330:25:330:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_prim_gen.v":335:25:335:36|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_rd_ctrl_logic.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_rd_ctrl_logic.v":185:25:185:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_rd_ctrl_logic.v":189:25:189:36|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_wr_ctrl_logic.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_wr_ctrl_logic.v":167:25:167:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_wr_ctrl_logic.v":171:25:171:36|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_mac.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_mac.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/mult_accumulate/rtl\lscc_mult_accumulate.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_mac.v":94:11:94:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_mac.v":109:11:109:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsubsum.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsubsum.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/mult_add_sub_sum/rtl\lscc_mult_add_sub_sum.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/mult_add_sub_sum/rtl\lscc_mult_add_sub_sum.v":210:13:210:25|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/mult_add_sub_sum/rtl\lscc_mult_add_sub_sum.v":227:13:227:24|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsubsum.v":84:11:84:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsubsum.v":93:11:93:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsub.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsub.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/mult_add_sub/rtl\lscc_mult_add_sub.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsub.v":91:11:91:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsub.v":100:11:100:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_mult.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_mult.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/multiplier/rtl\lscc_multiplier.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_mult.v":87:11:87:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_mult.v":96:11:96:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp/rtl\lscc_ram_dp.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp/rtl\lscc_ram_dp.v":1060:25:1060:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp/rtl\lscc_ram_dp.v":1064:25:1064:36|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp/rtl\lscc_ram_dp.v":1095:29:1095:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp/rtl\lscc_ram_dp.v":1099:29:1099:40|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_behavioral.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_lut_decode.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_functions.vh" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":1034:17:1034:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":1038:17:1038:28|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":3344:25:3344:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":3348:25:3348:36|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":3559:17:3559:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":3563:17:3563:28|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp_be.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp_be.v":194:11:194:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp_be.v":203:11:203:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp_true.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp_true.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1880:29:1880:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1885:29:1885:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1916:33:1916:45|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1920:33:1920:44|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1953:29:1953:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1958:29:1958:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1988:33:1988:45|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1992:33:1992:44|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2502:29:2502:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2507:29:2507:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2538:33:2538:45|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2542:33:2542:44|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2575:29:2575:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2580:29:2580:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2611:33:2611:45|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2615:33:2615:44|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3097:29:3097:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3102:29:3102:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3133:33:3133:45|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3137:33:3137:44|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3170:29:3170:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3175:29:3175:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3206:33:3206:45|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3210:33:3210:44|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp_true.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_impl.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_impl.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_behavioral.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_impl.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_lut_decode.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_impl.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_functions.vh" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_ecc_decoder.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dq.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dq.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dq/rtl\lscc_ram_dq.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dq/rtl\lscc_ram_dq.v":1485:25:1485:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dq/rtl\lscc_ram_dq.v":1491:25:1491:36|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dq.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\lscc_lfmxo4_ram_dq.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\lscc_lfmxo4_ram_dq.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\hsiao_ecc_encoder.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\lscc_lfmxo4_ram_dq.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\hsiao_ecc_decoder.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\lscc_lfmxo4_ram_dq.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\lscc_lfmxo4_ram_dq_lut_decode.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dq_be.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dq_be.v":92:11:92:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dq_be.v":100:11:100:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_rom.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_rom.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/rom/rtl\lscc_rom.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/rom/rtl\lscc_rom.v":970:25:970:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/rom/rtl\lscc_rom.v":976:25:976:36|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_sub.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_sub.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/subtractor/rtl\lscc_subtractor.v" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_pkg.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_sda_mux.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_bus_frontend.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_bit_engine.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_framer.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_hdr_exit_detector.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_daa.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ccc.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_error_recovery.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_regfile.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\lattice\i3c_io_lattice.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_target_top.sv" (library work)
+Verilog syntax check successful!
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 199MB peak: 200MB)
+
+
+Process completed successfully.
+# Fri Oct  9 16:49:26 2026
+
+###########################################################]
+###########################################################[
+@I::"D:\lscc\radiant\2026.1\synpbase\lib\lucent\lfd2nx.v" (library work)
+@I::"D:\lscc\radiant\2026.1\synpbase\lib\lucent\pmi_def.v" (library work)
+@I::"D:\lscc\radiant\2026.1\synpbase\lib\vlog\hypermods.v" (library __hyper__lib__)
+@I::"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_addsub.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_addsub.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/adder_subtractor/rtl\lscc_add_sub.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/adder_subtractor/rtl\lscc_add_sub.v":313:13:313:25|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/adder_subtractor/rtl\lscc_add_sub.v":333:13:333:24|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_add.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_add.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/adder/rtl\lscc_adder.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_complex_mult.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_complex_mult.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/complex_mult/rtl\lscc_complex_mult.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_complex_mult.v":92:11:92:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_complex_mult.v":101:11:101:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_counter.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_counter.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/counter/rtl\lscc_cntr.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/counter/rtl\lscc_cntr.v":129:13:129:25|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/counter/rtl\lscc_cntr.v":143:13:143:24|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_dpram.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_dpram.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/distributed_dpram/rtl\lscc_distributed_dpram.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_spram.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_spram.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/distributed_spram/rtl\lscc_distributed_spram.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_rom.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_rom.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/distributed_rom/rtl\lscc_distributed_rom.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_shift_reg.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_shift_reg.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_shift_reg/rtl\lscc_shift_register.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_shift_reg.v":126:11:126:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_distributed_shift_reg.v":135:11:135:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_fifo.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_fifo.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v":3275:17:3275:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v":3282:17:3282:28|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v":3339:17:3339:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v":3346:17:3346:28|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v":3401:17:3401:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo/rtl\lscc_fifo.v":3408:17:3408:28|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_fifo_dc.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo_dc/rtl\lscc_fifo_dc.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo_dc/rtl\lscc_fifo_dc.v":5142:25:5142:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo_dc/rtl\lscc_fifo_dc.v":5146:25:5146:36|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo_dc/rtl\lscc_fifo_dc.v":5177:29:5177:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/fifo_dc/rtl\lscc_fifo_dc.v":5181:29:5181:40|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_distributed_ram.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_distributed_ram.v":170:17:170:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_distributed_ram.v":178:17:178:28|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_distributed_ram.v":222:25:222:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_distributed_ram.v":226:25:226:36|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_ecc.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":639:25:639:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":646:25:646:36|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":788:29:788:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":792:29:792:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":893:29:893:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":898:29:898:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1027:29:1027:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1031:29:1031:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1232:29:1232:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1236:29:1236:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1328:29:1328:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1333:29:1333:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1467:29:1467:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1471:29:1471:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1665:29:1665:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1667:29:1667:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1693:29:1693:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1695:29:1695:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1766:29:1766:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1768:29:1768:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1794:29:1794:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1796:29:1796:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1844:29:1844:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1848:29:1848:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1895:29:1895:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_flag_and_cnts_logic.v":1899:29:1899:40|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_gray_reg.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_gray_reg.v":145:17:145:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_gray_reg.v":149:17:149:28|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_gray_synchronizer.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_gray_synchronizer.v":150:17:150:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_gray_synchronizer.v":155:17:155:28|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_prim.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":229:25:229:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":233:25:233:36|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":247:29:247:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":249:29:249:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":300:29:300:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":304:29:304:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":339:29:339:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_ctrl_logic.v":343:29:343:40|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_rd_output_logic.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_ring_counter.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_ring_counter.v":152:17:152:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_ring_counter.v":157:17:157:28|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_wr_ctrl_logic.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_wr_ctrl_logic.v":195:29:195:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden_wr_ctrl_logic.v":197:29:197:40|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_harden.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_prim_gen.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_prim_gen.v":330:25:330:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_prim_gen.v":335:25:335:36|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_rd_ctrl_logic.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_rd_ctrl_logic.v":185:25:185:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_rd_ctrl_logic.v":189:25:189:36|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_wr_ctrl_logic.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_wr_ctrl_logic.v":167:25:167:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/fifo_dc/rtl\lscc_lfmxo4_fifo_dc_wr_ctrl_logic.v":171:25:171:36|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_mac.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_mac.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/mult_accumulate/rtl\lscc_mult_accumulate.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_mac.v":94:11:94:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_mac.v":109:11:109:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsubsum.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsubsum.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/mult_add_sub_sum/rtl\lscc_mult_add_sub_sum.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/mult_add_sub_sum/rtl\lscc_mult_add_sub_sum.v":210:13:210:25|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/mult_add_sub_sum/rtl\lscc_mult_add_sub_sum.v":227:13:227:24|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsubsum.v":84:11:84:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsubsum.v":93:11:93:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsub.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsub.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/mult_add_sub/rtl\lscc_mult_add_sub.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsub.v":91:11:91:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_multaddsub.v":100:11:100:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_mult.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_mult.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/multiplier/rtl\lscc_multiplier.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_mult.v":87:11:87:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_mult.v":96:11:96:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp/rtl\lscc_ram_dp.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp/rtl\lscc_ram_dp.v":1060:25:1060:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp/rtl\lscc_ram_dp.v":1064:25:1064:36|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp/rtl\lscc_ram_dp.v":1095:29:1095:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp/rtl\lscc_ram_dp.v":1099:29:1099:40|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_behavioral.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_lut_decode.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_functions.vh" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":1034:17:1034:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":1038:17:1038:28|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":3344:25:3344:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":3348:25:3348:36|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":3559:17:3559:29|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp/rtl\lscc_lfmxo4_ram_dp_impl.v":3563:17:3563:28|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp_be.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp_be.v":194:11:194:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp_be.v":203:11:203:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp_true.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp_true.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1880:29:1880:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1885:29:1885:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1916:33:1916:45|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1920:33:1920:44|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1953:29:1953:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1958:29:1958:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1988:33:1988:45|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":1992:33:1992:44|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2502:29:2502:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2507:29:2507:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2538:33:2538:45|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2542:33:2542:44|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2575:29:2575:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2580:29:2580:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2611:33:2611:45|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":2615:33:2615:44|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3097:29:3097:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3102:29:3102:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3133:33:3133:45|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3137:33:3137:44|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3170:29:3170:41|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3175:29:3175:40|Read directive translate_on.
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3206:33:3206:45|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dp_true/rtl\lscc_ram_dp_true.v":3210:33:3210:44|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dp_true.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_impl.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_impl.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_behavioral.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_impl.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_lut_decode.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_impl.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_functions.vh" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dp_true/rtl\lscc_lfmxo4_ram_dp_true_ecc_decoder.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dq.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dq.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dq/rtl\lscc_ram_dq.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dq/rtl\lscc_ram_dq.v":1485:25:1485:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/ram_dq/rtl\lscc_ram_dq.v":1491:25:1491:36|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dq.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\lscc_lfmxo4_ram_dq.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\lscc_lfmxo4_ram_dq.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\hsiao_ecc_encoder.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\lscc_lfmxo4_ram_dq.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\hsiao_ecc_decoder.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\lscc_lfmxo4_ram_dq.v":"D:\lscc\radiant\2026.1\ip\pmi\../LFMXO4/ram_dq/rtl\lscc_lfmxo4_ram_dq_lut_decode.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dq_be.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dq_be.v":92:11:92:23|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\pmi_ram_dq_be.v":100:11:100:22|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_rom.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_rom.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/rom/rtl\lscc_rom.v" (library work)
+@N: CG334 :"D:\lscc\radiant\2026.1\ip\pmi\../common/rom/rtl\lscc_rom.v":970:25:970:37|Read directive translate_off.
+@N: CG333 :"D:\lscc\radiant\2026.1\ip\pmi\../common/rom/rtl\lscc_rom.v":976:25:976:36|Read directive translate_on.
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v":"D:\lscc\radiant\2026.1\ip\pmi\pmi_sub.v" (library work)
+@I:"D:\lscc\radiant\2026.1\ip\pmi\pmi_sub.v":"D:\lscc\radiant\2026.1\ip\pmi\../common/subtractor/rtl\lscc_subtractor.v" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_pkg.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_sda_mux.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_bus_frontend.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_bit_engine.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_framer.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_hdr_exit_detector.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_daa.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ccc.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_error_recovery.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_regfile.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\lattice\i3c_io_lattice.sv" (library work)
+@I::"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_target_top.sv" (library work)
+Verilog syntax check successful!
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_pkg.sv":11:8:11:14|Synthesizing module i3c_pkg in library work.
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ccc.sv":25:0:25:5|Synthesizing module work_D:\lscc\radiant\2026.1\ip\pmi\pmi_lfd2nx.v_unit in library work.
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_sda_mux.sv":14:7:14:17|Synthesizing module i3c_sda_mux in library work.
+
+	N=32'b00000000000000000000000000000110
+   Generated name = i3c_sda_mux_6s
+Running optimization stage 1 on i3c_sda_mux_6s .......
+Finished optimization stage 1 on i3c_sda_mux_6s (CPU Time 0h:00m:00s, Memory Used current: 201MB peak: 202MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\lattice\i3c_io_lattice.sv":43:7:43:20|Synthesizing module i3c_io_lattice in library work.
+Running optimization stage 1 on i3c_io_lattice .......
+Finished optimization stage 1 on i3c_io_lattice (CPU Time 0h:00m:00s, Memory Used current: 201MB peak: 202MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_bus_frontend.sv":22:7:22:22|Synthesizing module i3c_bus_frontend in library work.
+
+	SYNC_STAGES=32'b00000000000000000000000000000010
+	CNT_W=32'b00000000000000000000000000011000
+	OE_TAIL=32'b00000000000000000000000000000100
+	BUS_FREE_CYCLES=32'b00000000000000000000000000000010
+	BUS_AVAIL_CYCLES=32'b00000000000000000000000000000100
+	BUS_IDLE_CYCLES=32'b00000000000000000000000000001000
+	TAILW=32'b00000000000000000000000000000011
+   Generated name = i3c_bus_frontend_2s_24s_4s_2s_4s_8s_3s
+Running optimization stage 1 on i3c_bus_frontend_2s_24s_4s_2s_4s_8s_3s .......
+Finished optimization stage 1 on i3c_bus_frontend_2s_24s_4s_2s_4s_8s_3s (CPU Time 0h:00m:00s, Memory Used current: 202MB peak: 203MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_bit_engine.sv":35:7:35:20|Synthesizing module i3c_bit_engine in library work.
+Running optimization stage 1 on i3c_bit_engine .......
+@W: CL265 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_bit_engine.sv":63:2:63:10|Removing unused bit 7 of shift_reg[7:0]. Either assign all bits or reduce the width of the signal.
+Finished optimization stage 1 on i3c_bit_engine (CPU Time 0h:00m:00s, Memory Used current: 202MB peak: 203MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_framer.sv":32:7:32:16|Synthesizing module i3c_framer in library work.
+Running optimization stage 1 on i3c_framer .......
+Finished optimization stage 1 on i3c_framer (CPU Time 0h:00m:00s, Memory Used current: 202MB peak: 203MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv":31:7:31:22|Synthesizing module i3c_protocol_fsm in library work.
+Running optimization stage 1 on i3c_protocol_fsm .......
+@W: CL169 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv":186:2:186:10|Pruning unused register m7e_q. Make sure that there are no unused intermediate registers.
+@W: CL169 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv":186:2:186:10|Pruning unused register mda_q. Make sure that there are no unused intermediate registers.
+Finished optimization stage 1 on i3c_protocol_fsm (CPU Time 0h:00m:00s, Memory Used current: 203MB peak: 204MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_daa.sv":30:7:30:13|Synthesizing module i3c_daa in library work.
+
+	STATIC_ADDR_EN=1'b1
+	S_IDLE=3'b000
+	S_HDR=3'b001
+	S_ACK7E=3'b010
+	S_PLD=3'b011
+	S_RXDA=3'b100
+	S_ACKDA=3'b101
+	S_WAIT=3'b110
+   Generated name = i3c_daa_1_0_1_2_3_4_5_6
+Running optimization stage 1 on i3c_daa_1_0_1_2_3_4_5_6 .......
+Finished optimization stage 1 on i3c_daa_1_0_1_2_3_4_5_6 (CPU Time 0h:00m:00s, Memory Used current: 204MB peak: 205MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ccc.sv":27:7:27:13|Synthesizing module i3c_ccc in library work.
+
+	STATIC_ADDR_EN=1'b1
+	SK_NONE=2'b00
+	SK_HDR=2'b01
+	SK_DIR=2'b10
+	SK_OTHER=2'b11
+   Generated name = i3c_ccc_1_0_1_2_3
+@N: CG179 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ccc.sv":218:31:218:34|Removing redundant assignment.
+Running optimization stage 1 on i3c_ccc_1_0_1_2_3 .......
+Finished optimization stage 1 on i3c_ccc_1_0_1_2_3 (CPU Time 0h:00m:00s, Memory Used current: 204MB peak: 205MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":45:7:45:13|Synthesizing module i3c_ibi in library work.
+@W: CG1340 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":115:28:115:39|Index into variable hdr_word could be out of range ; a simulation mismatch is possible.
+@W: CG1340 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":117:29:117:40|Index into variable cur_byte could be out of range ; a simulation mismatch is possible.
+Running optimization stage 1 on i3c_ibi .......
+@W: CL169 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":154:2:154:10|Pruning unused register is_mdb. Make sure that there are no unused intermediate registers.
+@W: CL169 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":154:2:154:10|Pruning unused register mdb_en. Make sure that there are no unused intermediate registers.
+Finished optimization stage 1 on i3c_ibi (CPU Time 0h:00m:00s, Memory Used current: 206MB peak: 206MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_error_recovery.sv":32:7:32:24|Synthesizing module i3c_error_recovery in library work.
+Running optimization stage 1 on i3c_error_recovery .......
+Finished optimization stage 1 on i3c_error_recovery (CPU Time 0h:00m:00s, Memory Used current: 206MB peak: 206MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_hdr_exit_detector.sv":29:7:29:27|Synthesizing module i3c_hdr_exit_detector in library work.
+Running optimization stage 1 on i3c_hdr_exit_detector .......
+Finished optimization stage 1 on i3c_hdr_exit_detector (CPU Time 0h:00m:00s, Memory Used current: 206MB peak: 206MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_regfile.sv":28:7:28:17|Synthesizing module i3c_regfile in library work.
+
+	BCR=8'b00000111
+	DCR=8'b00000000
+	MFG_ID=15'b000000000000000
+	PID_TYPE=1'b0
+	PID_VAL=32'b00000000000000000000000000000000
+	MWL_DEFAULT=16'b0000000001000000
+	MRL_DEFAULT=16'b0000000001000000
+	MAXIBI_DEFAULT=8'b00000000
+	GETCAP3=8'b00000000
+	MWL_MAX=16'b0000000100000000
+	MRL_MAX=16'b0000000100000000
+	IDX_PID_LOW=5'b00101
+	IDX_PID_HIGH=5'b00110
+	IDX_IDENT=5'b00111
+	IDX_MWL=5'b01000
+	IDX_MRL=5'b01001
+	IDX_GSCFG=5'b01111
+	IDX_CAPS=5'b10000
+	IDX_RESET=5'b10001
+   Generated name = i3c_regfile_Z1_layer0
+@N: CG179 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_regfile.sv":212:53:212:64|Removing redundant assignment.
+Running optimization stage 1 on i3c_regfile_Z1_layer0 .......
+Finished optimization stage 1 on i3c_regfile_Z1_layer0 (CPU Time 0h:00m:00s, Memory Used current: 206MB peak: 206MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv":25:7:25:14|Synthesizing module i3c_fifo in library work.
+
+	DW=32'b00000000000000000000000000001011
+	DEPTH=32'b00000000000000000000000000001000
+	AW=32'b00000000000000000000000000000011
+	ASYNC=1'b0
+   Generated name = i3c_fifo_11s_8s_3s_0
+@N: CG179 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv":94:26:94:30|Removing redundant assignment.
+Running optimization stage 1 on i3c_fifo_11s_8s_3s_0 .......
+@N: CL134 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv":69:2:69:10|Found RAM mem, depth=8, width=11
+Finished optimization stage 1 on i3c_fifo_11s_8s_3s_0 (CPU Time 0h:00m:00s, Memory Used current: 206MB peak: 206MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv":25:7:25:14|Synthesizing module i3c_fifo in library work.
+
+	DW=32'b00000000000000000000000000001001
+	DEPTH=32'b00000000000000000000000000001000
+	AW=32'b00000000000000000000000000000011
+	ASYNC=1'b0
+   Generated name = i3c_fifo_9s_8s_3s_0
+Running optimization stage 1 on i3c_fifo_9s_8s_3s_0 .......
+@N: CL134 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv":69:2:69:10|Found RAM mem, depth=8, width=9
+Finished optimization stage 1 on i3c_fifo_9s_8s_3s_0 (CPU Time 0h:00m:00s, Memory Used current: 206MB peak: 206MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv":24:7:24:19|Synthesizing module i3c_avalon_mm in library work.
+
+	AW=32'b00000000000000000000000000000101
+	IDX_CTRL=5'b00000
+	IDX_STATUS=5'b00001
+	IDX_INT_EN=5'b00010
+	IDX_INT_ST=5'b00011
+	IDX_DYN_ADDR=5'b00100
+	IDX_PID_LOW=5'b00101
+	IDX_PID_HIGH=5'b00110
+	IDX_IDENT=5'b00111
+	IDX_MWL=5'b01000
+	IDX_MRL=5'b01001
+	IDX_IBI_CTRL=5'b01010
+	IDX_IBI_ST=5'b01011
+	IDX_RX_DATA=5'b01100
+	IDX_TX_DATA=5'b01101
+	IDX_FIFO_ST=5'b01110
+	IDX_GS_CFG=5'b01111
+	IDX_CAPS=5'b10000
+	IDX_RESET=5'b10001
+   Generated name = i3c_avalon_mm_Z2_layer0
+Running optimization stage 1 on i3c_avalon_mm_Z2_layer0 .......
+@W: CL169 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv":310:2:310:10|Pruning unused register outstanding[1:0]. Make sure that there are no unused intermediate registers.
+Finished optimization stage 1 on i3c_avalon_mm_Z2_layer0 (CPU Time 0h:00m:00s, Memory Used current: 206MB peak: 207MB)
+@N: CG364 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_target_top.sv":26:7:26:20|Synthesizing module i3c_target_top in library work.
+Running optimization stage 1 on i3c_target_top .......
+Finished optimization stage 1 on i3c_target_top (CPU Time 0h:00m:00s, Memory Used current: 206MB peak: 207MB)
+Running optimization stage 2 on i3c_target_top .......
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_target_top.sv":52:15:52:21|Input avl_clk is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_target_top.sv":53:15:53:23|Input avl_rst_n is unused.
+Finished optimization stage 2 on i3c_target_top (CPU Time 0h:00m:00s, Memory Used current: 206MB peak: 207MB)
+Running optimization stage 2 on i3c_avalon_mm_Z2_layer0 .......
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv":90:28:90:35|Input bus_idle is unused.
+Finished optimization stage 2 on i3c_avalon_mm_Z2_layer0 (CPU Time 0h:00m:00s, Memory Used current: 211MB peak: 211MB)
+Running optimization stage 2 on i3c_fifo_9s_8s_3s_0 .......
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv":41:26:41:31|Input rd_clk is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv":42:26:42:33|Input rd_rst_n is unused.
+Finished optimization stage 2 on i3c_fifo_9s_8s_3s_0 (CPU Time 0h:00m:00s, Memory Used current: 211MB peak: 211MB)
+Running optimization stage 2 on i3c_fifo_11s_8s_3s_0 .......
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv":41:26:41:31|Input rd_clk is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv":42:26:42:33|Input rd_rst_n is unused.
+Finished optimization stage 2 on i3c_fifo_11s_8s_3s_0 (CPU Time 0h:00m:00s, Memory Used current: 211MB peak: 211MB)
+Running optimization stage 2 on i3c_regfile_Z1_layer0 .......
+@W: CL246 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_regfile.sv":83:22:83:32|Input port bits 31 to 24 of app_wr_data[31:0] are unused. Assign logic for all port bits or change the input port size.
+@W: CL247 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_regfile.sv":84:22:84:30|Input port bit 3 of app_wr_be[3:0] is unused
+
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_regfile.sv":76:22:76:32|Input trp_trigger is unused.
+Finished optimization stage 2 on i3c_regfile_Z1_layer0 (CPU Time 0h:00m:00s, Memory Used current: 209MB peak: 212MB)
+Running optimization stage 2 on i3c_hdr_exit_detector .......
+Finished optimization stage 2 on i3c_hdr_exit_detector (CPU Time 0h:00m:00s, Memory Used current: 209MB peak: 212MB)
+Running optimization stage 2 on i3c_error_recovery .......
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_error_recovery.sv":36:21:36:29|Input start_stb is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_error_recovery.sv":39:21:39:30|Input scl_rising is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_error_recovery.sv":40:21:40:31|Input scl_falling is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_error_recovery.sv":45:21:45:28|Input match_7e is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_error_recovery.sv":46:21:46:28|Input match_da is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_error_recovery.sv":47:21:47:27|Input is_read is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_error_recovery.sv":56:21:56:33|Input ccc_supported is unused.
+Finished optimization stage 2 on i3c_error_recovery (CPU Time 0h:00m:00s, Memory Used current: 209MB peak: 212MB)
+Running optimization stage 2 on i3c_ibi .......
+@N: CL189 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":154:2:154:10|Register bit bit_idx[3] is always 0.
+@W: CL260 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":154:2:154:10|Pruning register bit 3 of bit_idx[3:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":154:2:154:10|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 7 reachable states with original encodings of:
+   000
+   001
+   010
+   011
+   100
+   101
+   110
+@W: CL246 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":61:22:61:24|Input port bits 7 to 3 of bcr[7:0] are unused. Assign logic for all port bits or change the input port size.
+@W: CL247 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":61:22:61:24|Input port bit 0 of bcr[7:0] is unused
+
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":67:22:67:31|Input mdb_is_prn is unused.
+Finished optimization stage 2 on i3c_ibi (CPU Time 0h:00m:00s, Memory Used current: 214MB peak: 218MB)
+Running optimization stage 2 on i3c_ccc_1_0_1_2_3 .......
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ccc.sv":37:22:37:31|Input scl_rising is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ccc.sv":38:22:38:32|Input scl_falling is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ccc.sv":42:22:42:28|Input bit_cnt is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ccc.sv":46:22:46:29|Input ack_slot is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_ccc.sv":50:22:50:33|Input is_broadcast is unused.
+Finished optimization stage 2 on i3c_ccc_1_0_1_2_3 (CPU Time 0h:00m:00s, Memory Used current: 213MB peak: 218MB)
+Running optimization stage 2 on i3c_daa_1_0_1_2_3_4_5_6 .......
+@N: CL189 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_daa.sv":169:2:169:10|Register bit payload_idx[6] is always 0.
+@W: CL260 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_daa.sv":169:2:169:10|Pruning register bit 6 of payload_idx[6:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_daa.sv":169:2:169:10|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 7 reachable states with original encodings of:
+   000
+   001
+   010
+   011
+   100
+   101
+   110
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_daa.sv":37:22:37:32|Input scl_falling is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_daa.sv":39:22:39:30|Input start_stb is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_daa.sv":42:22:42:28|Input bit_cnt is unused.
+Finished optimization stage 2 on i3c_daa_1_0_1_2_3_4_5_6 (CPU Time 0h:00m:00s, Memory Used current: 213MB peak: 218MB)
+Running optimization stage 2 on i3c_protocol_fsm .......
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv":38:22:38:31|Input scl_rising is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv":39:22:39:32|Input scl_falling is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv":40:22:40:34|Input bus_available is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv":44:22:44:28|Input bit_cnt is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv":47:22:47:30|Input tbit_slot is unused.
+Finished optimization stage 2 on i3c_protocol_fsm (CPU Time 0h:00m:00s, Memory Used current: 213MB peak: 218MB)
+Running optimization stage 2 on i3c_framer .......
+Finished optimization stage 2 on i3c_framer (CPU Time 0h:00m:00s, Memory Used current: 213MB peak: 218MB)
+Running optimization stage 2 on i3c_bit_engine .......
+Finished optimization stage 2 on i3c_bit_engine (CPU Time 0h:00m:00s, Memory Used current: 213MB peak: 218MB)
+Running optimization stage 2 on i3c_bus_frontend_2s_24s_4s_2s_4s_8s_3s .......
+Finished optimization stage 2 on i3c_bus_frontend_2s_24s_4s_2s_4s_8s_3s (CPU Time 0h:00m:00s, Memory Used current: 213MB peak: 218MB)
+Running optimization stage 2 on i3c_io_lattice .......
+Finished optimization stage 2 on i3c_io_lattice (CPU Time 0h:00m:00s, Memory Used current: 213MB peak: 218MB)
+Running optimization stage 2 on i3c_sda_mux_6s .......
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_sda_mux.sv":17:23:17:25|Input clk is unused.
+@N: CL159 :"D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\rtl\i3c_sda_mux.sv":18:23:18:27|Input rst_n is unused.
+Finished optimization stage 2 on i3c_sda_mux_6s (CPU Time 0h:00m:00s, Memory Used current: 213MB peak: 218MB)
+
+For a summary of runtime per design unit, please see file:
+==========================================================
+@L: D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\syn\lattice\build\impl_1\synwork\layer0.duruntime
+
+
+
+At c_ver Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 213MB peak: 218MB)
+
+
+Process completed successfully.
+# Fri Oct  9 16:49:30 2026
+
+###########################################################]
+###########################################################[
+
+Copyright (C) 1994-2025 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: X-2025.09LR-SP1
+Install: D:\lscc\radiant\2026.1\synpbase
+OS: Windows 10 or later
+Hostname: TCOVERT
+
+Implementation : impl_1
+Synopsys Synopsys Netlist Linker, Version comp202509synp2, Build 154R, Built May 20 2026 06:20:37, @
+
+@N|Running in 64-bit mode
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 155MB peak: 156MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri Oct  9 16:49:31 2026
+
+###########################################################]
+
+For a summary of runtime and memory usage for all design units, please see file:
+==========================================================
+@L: D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\syn\lattice\build\impl_1\synwork\i3c_target_impl_1_comp.rt.csv
+
+@END
+
+At c_hdl Exit (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 86MB peak: 90MB)
+
+Process took 0h:00m:05s realtime, 0h:00m:05s cputime
+
+Process completed successfully.
+# Fri Oct  9 16:49:31 2026
+
+###########################################################]
+###########################################################[
+
+Copyright (C) 1994-2025 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: X-2025.09LR-SP1
+Install: D:\lscc\radiant\2026.1\synpbase
+OS: Windows 10 or later
+Hostname: TCOVERT
+
+Implementation : impl_1
+Synopsys Synopsys Netlist Linker, Version comp202509synp2, Build 154R, Built May 20 2026 06:20:37, @
+
+@N|Running in 64-bit mode
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 156MB peak: 156MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri Oct  9 16:49:32 2026
+
+###########################################################]
+Premap Report
+
+# Fri Oct  9 16:49:32 2026
+
+
+Copyright (C) 1994-2025 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: X-2025.09LR-SP1
+Install: D:\lscc\radiant\2026.1\synpbase
+OS: Windows 10 or later
+Hostname: TCOVERT
+
+Implementation : impl_1
+Synopsys Lattice Technology Pre-mapping, Version map202509latsp1, Build 110R, Built Aug  2 2026 22:56:51, @
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 184MB peak: 184MB)
+
+
+Done reading skeleton netlist (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 189MB peak: 201MB)
+
+Reading constraint file: D:\lscc\radiant\2026.1\scripts\tcl\flow\radiant_synplify_vars.tcl
+Reading constraint file: D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\syn\lattice\build\impl_1\i3c_target_impl_1_cpe.ldc
+@L: D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\syn\lattice\build\impl_1\i3c_target_impl_1_scck.rpt 
+See clock summary report "D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\syn\lattice\build\impl_1\i3c_target_impl_1_scck.rpt"
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 195MB peak: 201MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 195MB peak: 201MB)
+
+Reading custom part data from path: D:\lscc\radiant\2026.1\synpbase\lib\lattice_custom\radiant_custom_partdata.txt
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 208MB peak: 208MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 209MB peak: 210MB)
+
+NConnInternalConnection caching is on
+
+Starting HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 261MB)
+
+
+Finished HSTDM IP insertion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 260MB peak: 261MB)
+
+
+Started DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 261MB peak: 261MB)
+
+
+Finished DisTri Cleanup (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 261MB peak: 262MB)
+
+@N: BN362 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv":186:2:186:10|Removing sequential instance bcast_q (in view: work.i3c_protocol_fsm(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
+@N: BN362 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv":69:2:69:10|Removing sequential instance overflow (in view: work.i3c_fifo_9s_8s_3s_0(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
+Encoding state machine state[6:0] (in view: work.i3c_daa_1_0_1_2_3_4_5_6(verilog))
+original code -> new code
+   000 -> 0000001
+   001 -> 0000010
+   010 -> 0000100
+   011 -> 0001000
+   100 -> 0010000
+   101 -> 0100000
+   110 -> 1000000
+@N: FX493 |Applying initial value "1" on instance state[0].
+@W: FX474 |User-specified initial value defined for some sequential elements which can prevent optimum synthesis results from being achieved. 
+@N: FX493 |Applying initial value "0" on instance state[1].
+@N: FX493 |Applying initial value "0" on instance state[2].
+@N: FX493 |Applying initial value "0" on instance state[3].
+@N: FX493 |Applying initial value "0" on instance state[4].
+@N: FX493 |Applying initial value "0" on instance state[5].
+@N: FX493 |Applying initial value "0" on instance state[6].
+Encoding state machine state[6:0] (in view: work.i3c_ibi(verilog))
+original code -> new code
+   000 -> 0000001
+   001 -> 0000010
+   010 -> 0000100
+   011 -> 0001000
+   100 -> 0010000
+   101 -> 0100000
+   110 -> 1000000
+@N: FX493 |Applying initial value "1" on instance state[0].
+@N: FX493 |Applying initial value "0" on instance state[1].
+@N: FX493 |Applying initial value "0" on instance state[2].
+@N: FX493 |Applying initial value "0" on instance state[3].
+@N: FX493 |Applying initial value "0" on instance state[4].
+@N: FX493 |Applying initial value "0" on instance state[5].
+@N: FX493 |Applying initial value "0" on instance state[6].
+
+Starting clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
+
+
+Finished clock optimization report phase (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
+
+@N: FX1184 |Applying syn_allowed_resources blockrams=84 on top level netlist i3c_target_top 
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 264MB peak: 264MB)
+
+@W: MT682 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":7:0:7:0|set_input_delay command has no effect on unconnected port. Remove input port avs_writedata[24] from set_input_delay command. 
+@W: MT682 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":7:0:7:0|set_input_delay command has no effect on unconnected port. Remove input port avs_writedata[25] from set_input_delay command. 
+@W: MT682 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":7:0:7:0|set_input_delay command has no effect on unconnected port. Remove input port avs_writedata[26] from set_input_delay command. 
+@W: MT682 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":7:0:7:0|set_input_delay command has no effect on unconnected port. Remove input port avs_writedata[27] from set_input_delay command. 
+@W: MT682 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":7:0:7:0|set_input_delay command has no effect on unconnected port. Remove input port avs_writedata[28] from set_input_delay command. 
+@W: MT682 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":7:0:7:0|set_input_delay command has no effect on unconnected port. Remove input port avs_writedata[29] from set_input_delay command. 
+@W: MT682 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":7:0:7:0|set_input_delay command has no effect on unconnected port. Remove input port avs_writedata[30] from set_input_delay command. 
+@W: MT682 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":7:0:7:0|set_input_delay command has no effect on unconnected port. Remove input port avs_writedata[31] from set_input_delay command. 
+@W: MT682 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":7:0:7:0|set_input_delay command has no effect on unconnected port. Remove input port avs_byteenable[3] from set_input_delay command. 
+
+
+Clock Summary
+******************
+
+          Start     Requested     Requested     Clock        Clock                Clock
+Level     Clock     Frequency     Period        Type         Group                Load 
+---------------------------------------------------------------------------------------
+0 -       clk       125.0 MHz     8.000         declared     default_clkgroup     366  
+=======================================================================================
+
+
+
+Clock Load Summary
+***********************
+
+          Clock     Source        Clock Pin         Non-clock Pin     Non-clock Pin
+Clock     Load      Pin           Seq Example       Seq Example       Comb Example 
+-----------------------------------------------------------------------------------
+clk       366       clk(port)     sda_oe_gate.C     -                 -            
+===================================================================================
+
+ICG Latch Removal Summary:
+Number of ICG latches removed: 0
+Number of ICG latches not removed:	0
+
+
+@S |Clock Optimization Summary
+
+
+
+#### START OF PREMAP CLOCK OPTIMIZATION REPORT #####[
+
+1 non-gated/non-generated clock tree(s) driving 350 clock pin(s) of sequential element(s)
+0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+0 instances converted, 0 sequential instances remain driven by gated/generated clocks
+
+=========================== Non-Gated/Non-Generated Clocks ============================
+Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance
+---------------------------------------------------------------------------------------
+@KP:ckid0_0       clk                 port                   350        sda_oe_gate    
+=======================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######
+
+
+Summary of user generated gated clocks:
+0 user generated gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+
+@N: FX1143 |Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
+Finished Pre Mapping Phase.
+
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 265MB peak: 265MB)
+
+
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 265MB peak: 265MB)
+
+
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 266MB peak: 266MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 181MB peak: 267MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Fri Oct  9 16:49:34 2026
+
+###########################################################]
+Map & Optimize Report
+
+# Fri Oct  9 16:49:34 2026
+
+
+Copyright (C) 1994-2025 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: X-2025.09LR-SP1
+Install: D:\lscc\radiant\2026.1\synpbase
+OS: Windows 10 or later
+Hostname: TCOVERT
+
+Implementation : impl_1
+Synopsys Lattice Technology Mapper, Version map202509latsp1, Build 110R, Built Aug  2 2026 22:56:51, @
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 184MB peak: 184MB)
+
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 186MB peak: 201MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 186MB peak: 201MB)
+
+Reading custom part data from path: D:\lscc\radiant\2026.1\synpbase\lib\lattice_custom\radiant_custom_partdata.txt
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 200MB peak: 201MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 202MB peak: 203MB)
+
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 258MB peak: 258MB)
+
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 263MB peak: 263MB)
+
+
+Starting area decomp  (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 263MB peak: 263MB)
+
+@N: MF179 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv":128:33:128:50|Found 7 by 7 bit equality operator ('==') un1_match_da (in view: work.i3c_protocol_fsm(verilog))
+@N: FX493 |Applying initial value "1" on instance state[0].
+@W: FX474 |User-specified initial value defined for some sequential elements which can prevent optimum synthesis results from being achieved. 
+@N: FX493 |Applying initial value "0" on instance state[1].
+@N: FX493 |Applying initial value "0" on instance state[2].
+@N: FX493 |Applying initial value "0" on instance state[3].
+@N: FX493 |Applying initial value "0" on instance state[4].
+@N: FX493 |Applying initial value "0" on instance state[5].
+@N: FX493 |Applying initial value "0" on instance state[6].
+@N: BN362 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_daa.sv":169:2:169:10|Removing sequential instance state[6] (in view: work.i3c_daa_1_0_1_2_3_4_5_6(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: FX493 |Applying initial value "1" on instance state[0].
+@N: FX493 |Applying initial value "0" on instance state[1].
+@N: FX493 |Applying initial value "0" on instance state[2].
+@N: FX493 |Applying initial value "0" on instance state[3].
+@N: FX493 |Applying initial value "0" on instance state[4].
+@N: FX493 |Applying initial value "0" on instance state[5].
+@N: FX493 |Applying initial value "0" on instance state[6].
+@W: BN132 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv":310:2:310:10|Removing instance u_av.rd_data_q[31] because it is equivalent to instance u_av.rd_data_q[30]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv":310:2:310:10|Removing instance u_av.rd_data_q[30] because it is equivalent to instance u_av.rd_data_q[29]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv":310:2:310:10|Removing instance u_av.rd_data_q[29] because it is equivalent to instance u_av.rd_data_q[28]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv":310:2:310:10|Removing instance u_av.rd_data_q[28] because it is equivalent to instance u_av.rd_data_q[27]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv":310:2:310:10|Removing instance u_av.rd_data_q[27] because it is equivalent to instance u_av.rd_data_q[26]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv":310:2:310:10|Removing instance u_av.rd_data_q[26] because it is equivalent to instance u_av.rd_data_q[25]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv":310:2:310:10|Removing instance u_av.rd_data_q[25] because it is equivalent to instance u_av.rd_data_q[24]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@N: BN362 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv":310:2:310:10|Removing sequential instance rd_data_q[24] (in view: work.i3c_avalon_mm_Z2_layer0(verilog)) because it does not drive other instances.
+
+Finished area decomp  (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 267MB peak: 267MB)
+
+
+Starting factoring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:02s; Memory used current: 268MB peak: 268MB)
+
+@N: BN362 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_protocol_fsm.sv":220:2:220:10|Removing sequential instance u_pfsm.post_rstart (in view: work.i3c_target_top(verilog)) because it does not drive other instances.
+
+Finished factoring (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 277MB peak: 277MB)
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+NConnInternalConnection caching is on
+@N: BN362 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":154:2:154:10|Removing sequential instance u_ibi.state[2] (in view: work.i3c_target_top(verilog)) because it does not drive other instances.
+@N: BN362 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":154:2:154:10|Removing sequential instance u_ibi.arblost_q (in view: work.i3c_target_top(verilog)) because it does not drive other instances.
+@N: BN362 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":154:2:154:10|Removing sequential instance u_ibi.deferred_q (in view: work.i3c_target_top(verilog)) because it does not drive other instances.
+enable_timing_through_bidir is set to 1
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 275MB peak: 282MB)
+
+@N: FA113 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_bit_engine.sv":83:21:83:35|Pipelining module un1_bit_cnt_1[3:0]. For more information, search for "pipelining" in Online Help.
+@N: MF169 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_bit_engine.sv":63:2:63:10|Pushed in register bit_cnt[3:0].
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 276MB peak: 282MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 277MB peak: 282MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 277MB peak: 282MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 277MB peak: 282MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 316MB peak: 316MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:04s		     0.13ns		 840 /       336
+   2		0h:00m:04s		     0.13ns		 827 /       336
+   3		0h:00m:04s		     0.13ns		 826 /       336
+Net buffering Report for view:work.i3c_target_top(verilog):
+Added 0 Buffers
+Added 0 Registers via replication
+Added 0 LUTs via replication
+
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:05s; Memory used current: 318MB peak: 319MB)
+
+@N: FX164 |The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.  
+@N: BN362 :|Removing sequential instance u_ibi.state[3] (in view: work.i3c_target_top(verilog)) because it does not drive other instances.
+@N: BN362 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":154:2:154:10|Removing sequential instance u_ibi.nacked_q (in view: work.i3c_target_top(verilog)) because it does not drive other instances.
+@N: BN362 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_ibi.sv":154:2:154:10|Removing sequential instance u_ibi.acked_q (in view: work.i3c_target_top(verilog)) because it does not drive other instances.
+@N: BN362 :|Removing sequential instance u_ibi.state[4] (in view: work.i3c_target_top(verilog)) because it does not drive other instances.
+@N: BN362 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_avalon_mm.sv":310:2:310:10|Removing sequential instance u_av.int_status[5] (in view: work.i3c_target_top(verilog)) because it does not drive other instances.
+@N: FO126 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv":69:2:69:10|Generating RAM u_txfifo.mem[8:0]
+@N: FO126 :"d:\amd ross test\wt\lattice-i3c\designs\i3c\rtl\i3c_fifo.sv":69:2:69:10|Generating RAM u_rxfifo.mem[8:0]
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 319MB peak: 319MB)
+
+@W: FX310 |Ignoring option "-dcc_insertion" since the technology does not support DCC. 
+
+Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 319MB peak: 320MB)
+
+
+Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 319MB peak: 320MB)
+
+
+Start Writing Netlists (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 261MB peak: 320MB)
+
+Writing Analyst data base D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\syn\lattice\build\impl_1\synwork\i3c_target_impl_1_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 320MB peak: 320MB)
+
+Writing Verilog Simulation files
+
+Writing scf file... (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 321MB peak: 321MB)
+
+@N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
+@N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
+@N: BW278 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":3:0:3:0|Clock clk source pin clk.clk
+@N: BW279 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":3:0:3:0|Clock clk drive pin clk.clk
+@N: BW281 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":3:0:3:0|Forward annotating clock clk on drive pins would remove that clock from 338 clock pins including SDA_pad.CLKIN
+@W: BW295 :"d:/amd ross test/wt/lattice-i3c/designs/i3c/syn/lattice/build/impl_1/i3c_target_impl_1_cpe.ldc":3:0:3:0|Forward annotation of clocks to input pins not allowed for this technology. Forward annotating clock clk on driving pins
+
+Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 321MB peak: 322MB)
+
+
+Finished Writing Netlists (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 321MB peak: 322MB)
+
+
+Start final timing analysis (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 317MB peak: 322MB)
+
+@N: MT615 |Found clock clk with period 8.00ns 
+
+
+##### START OF TIMING REPORT #####[
+# Timing report written on Fri Oct  9 16:49:41 2026
+#
+
+
+Top view:               i3c_target_top
+Requested Frequency:    125.0 MHz
+Wire load mode:         top
+Paths requested:        5
+Constraint File(s):    D:\lscc\radiant\2026.1\scripts\tcl\flow\radiant_synplify_vars.tcl
+                       D:\AMD Ross Test\wt\lattice-i3c\designs\i3c\syn\lattice\build\impl_1\i3c_target_impl_1_cpe.ldc
+                       
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+
+
+Performance Summary
+*******************
+
+
+Worst slack in design: 0.599
+
+                   Requested     Estimated     Requested     Estimated               Clock        Clock           
+Starting Clock     Frequency     Frequency     Period        Period        Slack     Type         Group           
+------------------------------------------------------------------------------------------------------------------
+clk                125.0 MHz     135.1 MHz     8.000         7.401         0.599     declared     default_clkgroup
+System             200.0 MHz     352.4 MHz     5.000         2.838         2.162     system       system_clkgroup 
+==================================================================================================================
+
+
+
+
+
+Clock Relationships
+*******************
+
+Clocks            |    rise  to  rise   |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+--------------------------------------------------------------------------------------------------------
+Starting  Ending  |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
+--------------------------------------------------------------------------------------------------------
+System    System  |  5.000       2.162  |  No paths    -      |  No paths    -      |  No paths    -    
+System    clk     |  8.000       5.697  |  No paths    -      |  No paths    -      |  No paths    -    
+clk       System  |  8.000       3.564  |  No paths    -      |  No paths    -      |  No paths    -    
+clk       clk     |  8.000       0.599  |  No paths    -      |  No paths    -      |  No paths    -    
+========================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+
+
+Input Ports: 
+
+Port                  Starting         User           Arrival     Required          
+Name                  Reference        Constraint     Time        Time         Slack
+                      Clock                                                         
+------------------------------------------------------------------------------------
+avs_address[0]        clk (rising)     1.000          1.000       1.634        0.634
+avs_address[1]        clk (rising)     1.000          1.000       2.162        1.162
+avs_address[2]        clk (rising)     1.000          1.000       1.624        0.624
+avs_address[3]        clk (rising)     1.000          1.000       1.599        0.599
+avs_address[4]        clk (rising)     1.000          1.000       1.619        0.619
+avs_byteenable[0]     clk (rising)     1.000          1.000       4.330        3.330
+avs_byteenable[1]     clk (rising)     1.000          1.000       4.438        3.438
+avs_byteenable[2]     clk (rising)     1.000          1.000       4.401        3.401
+avs_byteenable[3]     clk (rising)     1.000          NA          NA           NA   
+avs_read              clk (rising)     1.000          1.000       5.484        4.484
+avs_write             clk (rising)     1.000          1.000       1.619        0.619
+avs_writedata[0]      clk (rising)     1.000          1.000       5.011        4.011
+avs_writedata[1]      clk (rising)     1.000          1.000       5.131        4.131
+avs_writedata[2]      clk (rising)     1.000          1.000       5.131        4.131
+avs_writedata[3]      clk (rising)     1.000          1.000       5.131        4.131
+avs_writedata[4]      clk (rising)     1.000          1.000       5.131        4.131
+avs_writedata[5]      clk (rising)     1.000          1.000       5.131        4.131
+avs_writedata[6]      clk (rising)     1.000          1.000       5.011        4.011
+avs_writedata[7]      clk (rising)     1.000          1.000       4.430        3.430
+avs_writedata[8]      clk (rising)     1.000          1.000       5.141        4.141
+avs_writedata[9]      clk (rising)     1.000          1.000       5.146        4.146
+avs_writedata[10]     clk (rising)     1.000          1.000       5.191        4.191
+avs_writedata[11]     clk (rising)     1.000          1.000       5.191        4.191
+avs_writedata[12]     clk (rising)     1.000          1.000       5.191        4.191
+avs_writedata[13]     clk (rising)     1.000          1.000       5.231        4.231
+avs_writedata[14]     clk (rising)     1.000          1.000       5.231        4.231
+avs_writedata[15]     clk (rising)     1.000          1.000       5.191        4.191
+avs_writedata[16]     clk (rising)     1.000          1.000       5.754        4.754
+avs_writedata[17]     clk (rising)     1.000          1.000       5.754        4.754
+avs_writedata[18]     clk (rising)     1.000          1.000       5.754        4.754
+avs_writedata[19]     clk (rising)     1.000          1.000       5.754        4.754
+avs_writedata[20]     clk (rising)     1.000          1.000       5.754        4.754
+avs_writedata[21]     clk (rising)     1.000          1.000       5.754        4.754
+avs_writedata[22]     clk (rising)     1.000          1.000       5.754        4.754
+avs_writedata[23]     clk (rising)     1.000          1.000       5.754        4.754
+avs_writedata[24]     clk (rising)     1.000          NA          NA           NA   
+avs_writedata[25]     clk (rising)     1.000          NA          NA           NA   
+avs_writedata[26]     clk (rising)     1.000          NA          NA           NA   
+avs_writedata[27]     clk (rising)     1.000          NA          NA           NA   
+avs_writedata[28]     clk (rising)     1.000          NA          NA           NA   
+avs_writedata[29]     clk (rising)     1.000          NA          NA           NA   
+avs_writedata[30]     clk (rising)     1.000          NA          NA           NA   
+avs_writedata[31]     clk (rising)     1.000          NA          NA           NA   
+====================================================================================
+
+
+Output Ports: 
+
+Port                  Starting         User                  Arrival     Required          
+Name                  Reference        Constraint            Time        Time         Slack
+                      Clock                                                                
+-------------------------------------------------------------------------------------------
+avs_readdata[0]       clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[1]       clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[2]       clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[3]       clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[4]       clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[5]       clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[6]       clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[7]       clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[8]       clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[9]       clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[10]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[11]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[12]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[13]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[14]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[15]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[16]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[17]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[18]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[19]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[20]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[21]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[22]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[23]      clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_readdata[24]      System           1.000(clk rising)     NA          NA           NA   
+avs_readdata[25]      System           1.000(clk rising)     NA          NA           NA   
+avs_readdata[26]      System           1.000(clk rising)     NA          NA           NA   
+avs_readdata[27]      System           1.000(clk rising)     NA          NA           NA   
+avs_readdata[28]      System           1.000(clk rising)     NA          NA           NA   
+avs_readdata[29]      System           1.000(clk rising)     NA          NA           NA   
+avs_readdata[30]      System           1.000(clk rising)     NA          NA           NA   
+avs_readdata[31]      System           1.000(clk rising)     NA          NA           NA   
+avs_readdatavalid     clk (rising)     1.000(clk rising)     3.591       7.000        3.409
+avs_waitrequest       clk (rising)     1.000(clk rising)     6.401       7.000        0.599
+irq                   clk (rising)     1.000(clk rising)     4.890       7.000        2.110
+===========================================================================================
+
+
+
+====================================
+Detailed Report for Clock: clk
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                       Starting                                                         Arrival          
+Instance               Reference     Type        Pin                Net                 Time        Slack
+                       Clock                                                                             
+---------------------------------------------------------------------------------------------------------
+avs_address[4:0]       clk           Port        avs_address[3]     avs_address[3]      1.000       0.599
+avs_address[4:0]       clk           Port        avs_address[4]     avs_address[4]      1.000       0.619
+avs_write              clk           Port        avs_write          avs_write           1.000       0.619
+avs_address[4:0]       clk           Port        avs_address[2]     avs_address[2]      1.000       0.624
+avs_address[4:0]       clk           Port        avs_address[0]     avs_address[0]      1.000       0.634
+avs_address[4:0]       clk           Port        avs_address[1]     avs_address[1]      1.000       1.162
+u_txfifo.level[0]      clk           FD1P3IX     Q                  txf_wr_level[0]     0.908       1.995
+u_txfifo.level[2]      clk           FD1P3IX     Q                  txf_wr_level[2]     0.898       2.005
+u_av.int_status[6]     clk           FD1P3IX     Q                  int_status[6]       0.838       2.110
+u_av.int_status[7]     clk           FD1P3IX     Q                  int_status[7]       0.838       2.110
+=========================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                    Starting                                                          Required          
+Instance            Reference     Type        Pin                 Net                 Time         Slack
+                    Clock                                                                               
+--------------------------------------------------------------------------------------------------------
+avs_waitrequest     clk           Port        avs_waitrequest     avs_waitrequest     7.000        0.599
+irq                 clk           Port        irq                 irq                 7.000        2.110
+u_rf.mwl[0]         clk           FD1P3IX     SP                  un1_mwl33_i         7.817        2.415
+u_rf.mwl[1]         clk           FD1P3IX     SP                  un1_mwl33_i         7.817        2.415
+u_rf.mwl[2]         clk           FD1P3IX     SP                  un1_mwl33_i         7.817        2.415
+u_rf.mwl[3]         clk           FD1P3IX     SP                  un1_mwl33_i         7.817        2.415
+u_rf.mwl[4]         clk           FD1P3IX     SP                  un1_mwl33_i         7.817        2.415
+u_rf.mwl[5]         clk           FD1P3IX     SP                  un1_mwl33_i         7.817        2.415
+u_rf.mwl[6]         clk           FD1P3JX     SP                  un1_mwl33_i         7.817        2.415
+u_rf.mwl[7]         clk           FD1P3IX     SP                  un1_mwl33_i         7.817        2.415
+========================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      8.000
+    - User constraint on ending point:       1.000
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         7.000
+
+    - Propagation time:                      5.401
+    - User constraint on starting point:     1.000
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     0.599
+
+    Number of logic level(s):                4
+    Starting point:                          avs_address[4:0] / avs_address[3]
+    Ending point:                            avs_waitrequest / avs_waitrequest
+    The start point is clocked by            clk [rising] (rise=0.000 fall=4.000 period=8.000)
+    The end   point is clocked by            clk [rising] (rise=0.000 fall=4.000 period=8.000)
+
+Instance / Net                   Pin                 Pin               Arrival     No. of    
+Name                    Type     Name                Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------
+avs_address[4:0]        Port     avs_address[3]      In      0.000     1.000 r     -         
+avs_address[3]          Net      -                   -       -         -           1         
+avs_address_pad[3]      IB       I                   In      0.000     1.000 r     -         
+avs_address_pad[3]      IB       O                   Out     1.827     2.827 r     -         
+avs_address_c[3]        Net      -                   -       -         -           15        
+u_av.g0_7               LUT4     B                   In      0.000     2.827 r     -         
+u_av.g0_7               LUT4     Z                   Out     0.568     3.395 r     -         
+g0_7                    Net      -                   -       -         -           2         
+u_av.g0                 LUT4     C                   In      0.000     3.395 r     -         
+u_av.g0                 LUT4     Z                   Out     0.168     3.563 r     -         
+avs_waitrequest_c       Net      -                   -       -         -           1         
+avs_waitrequest_pad     OB       I                   In      0.000     3.563 r     -         
+avs_waitrequest_pad     OB       O                   Out     2.838     6.401 r     -         
+avs_waitrequest         Net      -                   -       -         -           1         
+avs_waitrequest         Port     avs_waitrequest     Out     0.000     6.401 r     -         
+=============================================================================================
+
+
+
+
+====================================
+Detailed Report for Clock: System
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                       Starting                                                Arrival          
+Instance                               Reference     Type         Pin     Net                  Time        Slack
+                                       Clock                                                                    
+----------------------------------------------------------------------------------------------------------------
+u_sda_mux.sda_o_3_RNIE4HK09            System        WIDEFN9      Z       sda_o                0.000       2.162
+u_ibi.ibi_o_2_7_RNO                    System        WIDEFN9      Z       N_218                0.000       3.786
+u_ibi.ibi_o_2_7_RNO_0                  System        WIDEFN9      Z       N_221                0.000       3.786
+u_pfsm.next_state_0_sqmuxa_3_RNO_0     System        WIDEFN9      Z       un1_da_priv_gate     0.000       5.697
+u_err.te_code_3_1_6_RNO                System        WIDEFN9      Z       te_code_3_ss0        0.000       7.446
+SDA_pad                                System        BFD1P3KX     QIN     u_fe.sda_sr[0]       0.000       7.789
+SDA_pad                                System        BFD1P3KX     QIN     u_fe.sda_sr[0]       0.000       7.789
+u_rf.mwl_RNO[0]                        System        WIDEFN9      Z       mwl_10[0]            0.000       7.789
+u_rf.mwl_RNO[1]                        System        WIDEFN9      Z       mwl_10[1]            0.000       7.789
+u_rf.mwl_RNO[2]                        System        WIDEFN9      Z       mwl_10[2]            0.000       7.789
+================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                Starting                                                     Required          
+Instance                        Reference     Type         Pin     Net                       Time         Slack
+                                Clock                                                                          
+---------------------------------------------------------------------------------------------------------------
+SDA_pad                         System        BFD1P3KX     DIN     SDA_in                    5.000        2.162
+SDA_pad                         System        BFD1P3KX     DIN     SDA_in                    5.000        2.162
+u_sda_mux.sda_o_3_RNIE4HK09     System        WIDEFN9      A0      N_188                     5.000        3.786
+u_av.int_status[3]              System        FD1P3IX      D       int_status_2[3]           7.789        5.697
+u_pfsm.state[0]                 System        FD1P3IX      D       state_3_iv_i[0]           7.789        5.742
+u_pfsm.state[2]                 System        FD1P3IX      D       state_3[2]                7.789        6.563
+u_pfsm.read_from_ccc_q          System        FD1P3IX      SP      next_state_0_sqmuxa_3     7.817        7.159
+u_pfsm.route_q[0]               System        FD1P3JX      SP      next_state_0_sqmuxa_3     7.817        7.159
+u_pfsm.route_q[1]               System        FD1P3JX      SP      next_state_0_sqmuxa_3     7.817        7.159
+u_pfsm.route_q[2]               System        FD1P3JX      SP      next_state_0_sqmuxa_3     7.817        7.159
+===============================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      5.000
+    - Setup time:                            0.000
+    + Clock delay at ending point:           0.000 (ideal)
+    + Estimated clock delay at ending point: 0.000
+    = Required time:                         5.000
+
+    - Propagation time:                      2.838
+    - Clock delay at starting point:         0.000 (ideal)
+    - Estimated clock delay at start point:  -0.000
+    = Slack (non-critical) :                 2.162
+
+    Number of logic level(s):                1
+    Starting point:                          u_sda_mux.sda_o_3_RNIE4HK09 / Z
+    Ending point:                            SDA_pad / DIN
+    The start point is clocked by            System [rising]
+    The end   point is clocked by            System [rising]
+
+Instance / Net                               Pin      Pin               Arrival     No. of    
+Name                            Type         Name     Dir     Delay     Time        Fan Out(s)
+----------------------------------------------------------------------------------------------
+u_sda_mux.sda_o_3_RNIE4HK09     WIDEFN9      Z        Out     0.000     0.000 r     -         
+sda_o                           Net          -        -       -         -           1         
+SDA_pad                         BB           I        In      0.000     0.000 r     -         
+SDA_pad                         BB           O        Out     2.838     2.838 r     -         
+SDA_in                          Net          -        -       -         -           1         
+SDA_pad                         BFD1P3KX     DIN      In      0.000     2.838 r     -         
+==============================================================================================
+
+
+
+##### END OF TIMING REPORT #####]
+
+Timing exceptions that could not be applied
+
+Finished final timing analysis (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 318MB peak: 322MB)
+
+
+Finished timing report (Real Time elapsed 0h:00m:06s; CPU Time elapsed 0h:00m:06s; Memory used current: 318MB peak: 322MB)
+
+---------------------------------------
+Resource Usage Report
+Part: lfd2nx_40-8
+
+Register bits: 330 of 32256 (1%)
+PIC Latch:       0
+I/O cells:       73
+
+
+Details:
+BB:             1
+BFD1P3KX:       1
+CCU2:           31
+DPR16X4:        6
+FD1P3IX:        309
+FD1P3JX:        21
+GSR:            1
+IB:             37
+INV:            2
+LUT4:           772
+OB:             35
+VHI:            15
+VLO:            15
+WIDEFN9:        21
+
+Resource Usage inside macros:
+Registers: 0
+LUTs: 0
+EBRs: 0
+LRAMs: 0
+DSPs: 0
+Distributed RAMs: 0
+Carry Chains: 0
+Blackboxes: 0
+
+Mapping Summary:
+Total number of registers: 330 + 0 = 330 of 32256 (1.02%)
+Total number of LUTs: 772 + 0 = 772 
+Total number of EBRs: 0 + 0 = 0 of 84 (0.00%)
+Total number of LRAMs: 0 + 0 = 0 of 2 (0.00%)
+Total number of DSPs: 0 + 0 = 0 of 56 (0.00%)
+Total number of Distributed RAMs: 6 + 0 = 6 
+Total number of Carry Chains: 31 + 0 = 31 
+Total number of BlackBoxes: 31 + 0 = 31 
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:07s; CPU Time elapsed 0h:00m:07s; Memory used current: 135MB peak: 322MB)
+
+Process took 0h:00m:07s realtime, 0h:00m:07s cputime
+# Fri Oct  9 16:49:41 2026
+
+###########################################################]
