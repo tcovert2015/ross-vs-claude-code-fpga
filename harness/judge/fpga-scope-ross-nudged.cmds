@@ -1,0 +1,5 @@
+# ross-nudged/fpga-scope: committed build.tcl per config (batch mode, never run standalone by the agent) + xsim Tcl runner
+vivado.bat -mode batch -nojournal -log judge_w32_d8.log -source fpga/xilinx/build.tcl -tclargs 32 8
+vivado.bat -mode batch -nojournal -log judge_w32_d12.log -source fpga/xilinx/build.tcl -tclargs 32 12
+vivado.bat -mode batch -nojournal -log judge_w32_d15.log -source fpga/xilinx/build.tcl -tclargs 32 15
+vivado.bat -mode batch -nojournal -log judge_xsim.log -source sim/run_xsim.tcl
