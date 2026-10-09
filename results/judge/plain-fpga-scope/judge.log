@@ -1,0 +1,41 @@
+2026-10-08 22:14:16 Preparing worktree (detached HEAD 7e1fc69)
+2026-10-08 22:14:17 HEAD is now at 7e1fc69 fpga-scope: fix mangled Vivado path in fpga/xilinx/README.md
+2026-10-08 22:14:17 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-plain-fpga-scope @ 7e1fc69
+2026-10-08 22:14:17 step 1 START: pwsh -NoProfile -File fpga/xilinx/run_all.ps1
+2026-10-08 22:16:06 step 1 END exit=1 after 109s (log: step1.log)
+2026-10-08 22:16:06 step 2 START: pwsh -NoProfile -File sim/run_xsim.ps1
+2026-10-08 22:16:31 step 2 END exit=0 after 25s (log: step2.log)
+2026-10-08 22:16:31 git status after re-run:
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d12/drc.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d12/lint.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d12/ram.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d12/route_status.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d12/timing_summary.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d12/utilization.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d12/utilization_hier.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d12/utilization_synth.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d12/vivado.log
+2026-10-08 22:16:31    D fpga/xilinx/reports/pw32_d15/drc.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d15/lint.rpt
+2026-10-08 22:16:31    D fpga/xilinx/reports/pw32_d15/ram.rpt
+2026-10-08 22:16:31    D fpga/xilinx/reports/pw32_d15/route_status.rpt
+2026-10-08 22:16:31    D fpga/xilinx/reports/pw32_d15/summary.txt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d15/timing_summary.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d15/utilization.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d15/utilization_hier.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d15/utilization_synth.rpt
+2026-10-08 22:16:31    D fpga/xilinx/reports/pw32_d15/vivado.log
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d8/drc.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d8/lint.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d8/ram.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d8/route_status.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d8/timing_summary.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d8/utilization.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d8/utilization_hier.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d8/utilization_synth.rpt
+2026-10-08 22:16:31    M fpga/xilinx/reports/pw32_d8/vivado.log
+2026-10-08 22:16:31    M sim/xsim_tb_axil_top.log
+2026-10-08 22:16:31    M sim/xsim_tb_csr.log
+2026-10-08 22:16:31    M sim/xsim_tb_csr_if.log
+2026-10-08 22:16:31    M sim/xsim_tb_smoke.log
+2026-10-08 22:16:31 JUDGE DONE
