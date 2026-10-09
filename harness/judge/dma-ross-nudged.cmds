@@ -1,0 +1,3 @@
+# ross-nudged/dma: committed flow and xsim runner in the batch form the agent never executed itself
+vivado.bat -mode batch -nojournal -log judge_build.log -source vivado/build.tcl
+vivado.bat -mode batch -nojournal -log judge_xsim.log -source scripts/run_xsim.tcl
