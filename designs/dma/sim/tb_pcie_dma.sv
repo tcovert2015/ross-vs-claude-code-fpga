@@ -478,7 +478,7 @@ module tb_pcie_dma;
     // deterministic RNG seed for the constrained-random tier (override with +SEED=<n>)
     if (!$value$plusargs("SEED=%d", rng_seed)) rng_seed = 32'd1;
     $display("=== tb seed = %0d ===", rng_seed);
-    void'($urandom(rng_seed));   // note: Icarus updates the seed arg in place
+    gi = $urandom(rng_seed);   // note: Icarus updates the seed arg in place
 
     // hold reset
     repeat (5) @(posedge clk);
