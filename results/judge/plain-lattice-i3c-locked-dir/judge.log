@@ -1,0 +1,9 @@
+2026-10-09 17:00:00 Preparing worktree (detached HEAD 747caf7)
+2026-10-09 17:00:00 fatal: 'D:/AMD Ross Test/ross-vs-claude-code-fpga/../wt/judge-plain-lattice-i3c' already exists
+2026-10-09 17:00:01 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-plain-lattice-i3c @ 
+2026-10-09 17:00:01 step 1 START: "D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" syn/lattice/build.tcl
+2026-10-09 17:00:01 step 1 END exit=1 after 0s (log: step1.log)
+2026-10-09 17:00:01 step 2 START: powershell -NoProfile -ExecutionPolicy Bypass -File sim/run_questa.ps1
+2026-10-09 17:00:01 step 2 END exit=-196608 after 0s (log: step2.log)
+2026-10-09 17:00:01 git status after re-run:
+2026-10-09 17:00:01 JUDGE DONE

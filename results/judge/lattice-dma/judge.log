@@ -1,0 +1,19 @@
+2026-10-09 16:59:08 Preparing worktree (detached HEAD 951b5bb)
+2026-10-09 16:59:08 HEAD is now at 951b5bb lattice: reports, Questa logs and results README
+2026-10-09 16:59:08 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-lattice-dma @ 951b5bb
+2026-10-09 16:59:08 step 1 START: "D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" lattice/build.tcl
+2026-10-09 17:00:58 step 1 END exit=0 after 110s (log: step1.log)
+2026-10-09 17:00:58 step 2 START: pwsh -NoProfile -File scripts/run_questa.ps1
+2026-10-09 17:01:08 step 2 END exit=0 after 10s (log: step2.log)
+2026-10-09 17:01:08 git status after re-run:
+2026-10-09 17:01:08    M lattice/reports/map.mrp
+2026-10-09 17:01:08    M lattice/reports/par.par
+2026-10-09 17:01:08    M lattice/reports/synthesis.srr
+2026-10-09 17:01:08    M lattice/reports/timing.twr
+2026-10-09 17:01:08    M sim/build/questa_axi4_seed1.log
+2026-10-09 17:01:08    M sim/build/questa_axi4_seed2.log
+2026-10-09 17:01:08    M sim/build/questa_axi4_seed3.log
+2026-10-09 17:01:08    M sim/build/questa_axi4_stalls_seed1.log
+2026-10-09 17:01:08    M sim/build/questa_axi4_stalls_seed2.log
+2026-10-09 17:01:08    M sim/build/questa_axi4_stalls_seed3.log
+2026-10-09 17:01:08 JUDGE DONE

@@ -1,0 +1,4 @@
+2026-10-09 16:51:33 Preparing worktree (detached HEAD 747caf7)
+2026-10-09 16:51:33 HEAD is now at 747caf7 i3c: Radiant flow for Certus-NX LFD2NX-40-8BG256C, reports and README
+2026-10-09 16:51:33 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-plain-lattice-i3c @ 747caf7
+2026-10-09 16:51:33 step 1 START: powershell -NoProfile -ExecutionPolicy Bypass -File syn/lattice/build.ps1
