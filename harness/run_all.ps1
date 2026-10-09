@@ -19,6 +19,7 @@ $log = Join-Path $results 'run_all.log'
 function Log($m) { $line = "{0:yyyy-MM-dd HH:mm:ss} {1}" -f (Get-Date), $m; $line | Tee-Object -FilePath $log -Append | Write-Host }
 
 $runArm = '"' + (Join-Path $repo 'harness\run_arm.ps1') + '"'   # quoted: repo path contains a space
+$Cells = @($Cells | ForEach-Object { $_ -split ',' } | Where-Object { $_ })   # -File passes one comma-joined string
 $queue = [System.Collections.Generic.Queue[string]]::new([string[]]$Cells)
 $running = @{}
 Log "queue: $($Cells -join ', ')  max-parallel=$MaxParallel"
