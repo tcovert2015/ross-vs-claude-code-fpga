@@ -69,3 +69,9 @@ which `sim/run.sh` uses. The RTL compiles cleanly under it (an explicit `state_e
 cast was added in `i3c_protocol_fsm` so the enum-from-ternary assignment is accepted by
 strict iverilog as well as yosys and Quartus). A captured run is in
 [`../reports/sim_run.log`](../reports/sim_run.log).
+
+## QuestaSim (Lattice Radiant) run
+`powershell -File sim/run_questa.ps1` compiles the same file list with the Lattice IO
+shim (`rtl/lattice/i3c_io_lattice.sv`, selected by `+define+I3C_IO_MODULE=i3c_io_lattice`)
+and runs `tb_i3c_target` in the QuestaSim bundled with Radiant. Log: `sim/questa.log`
+(29 passed, 0 failed). See [`../syn/lattice/README.md`](../syn/lattice/README.md).
