@@ -16,7 +16,7 @@
   .\harness\run_arm.ps1 -Arm plain -Design i3c -Model opus -BudgetUsd 30
 #>
 param(
-  [Parameter(Mandatory)][ValidateSet('ross','plain')] [string]$Arm,
+  [Parameter(Mandatory)][ValidateSet('ross','plain','ross-nudged')] [string]$Arm,
   [Parameter(Mandatory)][ValidateSet('i3c','fpga-scope','dma')] [string]$Design,
   [string]$Model = 'opus',
   [double]$BudgetUsd = 40,
@@ -38,6 +38,11 @@ if (-not (Test-Path $wt)) {
 $work = Join-Path $wt "designs\$Design"
 
 $prompt = Get-Content (Join-Path $repo "harness\prompts\$Design.md") -Raw
+if ($Arm -eq 'ross-nudged') {
+  # Third arm: identical prompt + an explicit requirement to use the Ross tooling, so the
+  # benchmark measures the tools in use rather than whether the agent discovers them.
+  $prompt += "`n`n" + (Get-Content (Join-Path $repo 'harness\prompts\_nudge.md') -Raw)
+}
 $issueNote = "`n`nThis is GitHub issue '$branch' in repo tcovert2015/ross-vs-claude-code-fpga. You are on branch $branch in a git worktree whose root is $wt. Your working directory is $work."
 
 $common = @(
@@ -51,11 +56,16 @@ $common = @(
   '--strict-mcp-config',
   '--setting-sources', 'project'    # ignore user-level plugins/hooks so the plain arm is really plain
 )
-if ($Arm -eq 'ross') {
+if ($Arm -eq 'ross' -or $Arm -eq 'ross-nudged') {
+  $sys = if ($Arm -eq 'ross') {
+    'The AMD Ross agent skills and the Vivado MCP server (vivado_* tools) and amd-doc-search MCP are available in this session. Use them for Vivado work where they apply.'
+  } else {
+    'This session is the AMD Ross arm of a tooling benchmark. All Vivado and xsim work MUST go through the Vivado MCP server (vivado_start once, then vivado_execute for every Tcl step; vivado_log_messages / vivado_status to inspect). Do not launch vivado.bat, xvlog.bat, xelab.bat or xsim.bat from Bash or PowerShell. Use the Ross skills (/ross-ai-assistant:vivado-rtl-lint, /ross-ai-assistant:vivado-timing-methodology-checks, /ross-ai-assistant:vivado-simulate-rtl, /ross-ai-assistant:vivado-rtl-elaboration-analysis) at the matching steps, and amd-doc-search when you need Vivado documentation.'
+  }
   $args_ = $common + @(
     '--mcp-config', (Join-Path $repo 'harness\mcp-ross.json'),
     '--plugin-dir', $RossPluginDir,
-    '--append-system-prompt', 'The AMD Ross agent skills and the Vivado MCP server (vivado_* tools) and amd-doc-search MCP are available in this session. Use them for Vivado work where they apply.'
+    '--append-system-prompt', $sys
   )
 } else {
   $args_ = $common + @('--mcp-config', (Join-Path $repo 'harness\mcp-none.json'), '--disable-slash-commands')
