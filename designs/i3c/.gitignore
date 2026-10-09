@@ -69,3 +69,6 @@ sim/xsim_work/
 !sim/xsim.log
 !syn/xilinx/reports/*.log
 dfx_runtime.txt
+!syn/xilinx/reports/trial_inferred_tristate/*.log
+syn/xilinx/reports/*.backup.log
+syn/xilinx/clockInfo.txt
