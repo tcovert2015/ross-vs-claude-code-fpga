@@ -1,0 +1,8 @@
+{
+  "arm": "lattice",
+  "design": "dma",
+  "model": "opus",
+  "branch": "lattice/dma",
+  "worktree": "D:\\AMD Ross Test\\ross-vs-claude-code-fpga\\..\\wt\\lattice-dma",
+  "started": "2026-10-09T16:39:47.7849919-05:00"
+}

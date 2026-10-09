@@ -1,0 +1,60 @@
+claude args: -p "# Task: port the PCIe scatter-gather DMA engine to Lattice Radiant (Certus-NX)
+" --model opus --output-format stream-json --verbose --permission-mode bypassPermissions --max-turns 400 --max-budget-usd 40 --no-chrome --strict-mcp-config --setting-sources project --mcp-config "D:\AMD Ross Test\ross-vs-claude-code-fpga\harness\mcp-lattice.json" --plugin-dir C:\Users\tcove\.claude\plugins\marketplaces\local-desktop-app-uploads\lattice-radiant-skills\lattice-radiant-skills --append-system-prompt "The Lattice Prompt skills (lattice-radiant-automation, lattice-radiant-webdocs) "
+[      4s] tool: Skill
+[      5s] tool: PowerShell
+[     11s] tool: PowerShell
+[     17s] tool: Read
+[     18s] tool: Read
+[     18s] tool: Read
+[     40s] tool: Write
+[     42s] tool: PowerShell
+[     67s] tool: PowerShell
+[     95s] tool: PowerShell
+[     96s] tool: ToolSearch
+[    103s] tool: PowerShell
+[    111s] tool: PowerShell
+[    116s] tool: PowerShell
+[    156s] tool: PowerShell
+[    160s] tool: PowerShell
+[    165s] tool: ScheduleWakeup
+[    166s] RESULT turns=19 cost=$1.1574976 subtype=success
+# Run summary
+
+- subtype: `success`
+- turns: 19
+- cost: $1.16
+- wall time: 2.7 min (API 2.1 min)
+- tokens: in=26 out=12803 cache_read=972108
+- tool calls: 17  (Vivado via MCP: 0, Vivado via shell: 0)
+
+| tool | calls |
+|---|---|
+| `PowerShell` | 10 |
+| `Read` | 3 |
+| `Skill` | 1 |
+| `Write` | 1 |
+| `ToolSearch` | 1 |
+| `ScheduleWakeup` | 1 |
+
+- commits on branch: 1
+- diff vs baseline: 13 files changed, 447 insertions(+)
+
+Files changed:
+
+- `designs/dma/scripts/run_questa.ps1`
+- `designs/dma/sim/build/questa_AXI4_RSTSYNC_compile.log`
+- `designs/dma/sim/build/questa_AXI4_RSTSYNC_seed1.log`
+- `designs/dma/sim/build/questa_AXI4_RSTSYNC_seed2.log`
+- `designs/dma/sim/build/questa_AXI4_RSTSYNC_seed3.log`
+- `designs/dma/sim/build/questa_AXI4_STALLS_compile.log`
+- `designs/dma/sim/build/questa_AXI4_STALLS_seed1.log`
+- `designs/dma/sim/build/questa_AXI4_STALLS_seed2.log`
+- `designs/dma/sim/build/questa_AXI4_STALLS_seed3.log`
+- `designs/dma/sim/build/questa_AXI4_compile.log`
+- `designs/dma/sim/build/questa_AXI4_seed1.log`
+- `designs/dma/sim/build/questa_AXI4_seed2.log`
+- `designs/dma/sim/build/questa_AXI4_seed3.log`
+
+## Agent's final message
+
+Radiant build is running in the background; I'll pick up when it finishes.
