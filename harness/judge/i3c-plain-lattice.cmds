@@ -1,0 +1,3 @@
+# plain-lattice/i3c: committed Radiant flow wrapper + Questa regression
+powershell -NoProfile -ExecutionPolicy Bypass -File syn/lattice/build.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File sim/run_questa.ps1
