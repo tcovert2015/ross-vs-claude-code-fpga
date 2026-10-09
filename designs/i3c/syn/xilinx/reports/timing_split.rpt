@@ -1,0 +1,7 @@
+Post-route worst slack by path class, clk = 8.000 ns (ns; n/a = no constrained path)
+path class                  setup       hold
+reg-to-reg                  0.786      0.070
+input-to-reg                1.721     -0.984
+reg-to-output               1.742      1.439
+input-to-output             2.834      1.811
+ALL (WNS / WHS)             0.786     -0.984
