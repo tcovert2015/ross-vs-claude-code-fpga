@@ -63,3 +63,12 @@ quartus/example/pcie_dma_example/
 Thumbs.db
 .vscode/
 .idea/
+
+# ── Vivado build outputs (reports in vivado/reports/ are committed) ──────────
+vivado/build/
+.Xil/
+*.dcp
+*.pb
+*.wdb
+xsim.dir/
+!vivado/reports/**/*.log

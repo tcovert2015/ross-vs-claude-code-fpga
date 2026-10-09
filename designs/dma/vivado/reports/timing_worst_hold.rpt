@@ -1,0 +1,253 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Oct  8 21:13:31 2026
+| Host         : tcovert running 64-bit major release  (build 9200)
+| Command      : report_timing -hold -max_paths 5 -nworst 1 -file ../reports/timing_worst_hold.rpt
+| Design       : pcie_dma_top
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.034ns  (arrival time - required time)
+  Source:                 u_core/u_mover/r_addr_reg[49]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            u_core/u_mover/r_addr_reg[50]/D
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.521ns  (logic 0.371ns (71.210%)  route 0.150ns (28.790%))
+  Logic Levels:           3  (CARRY4=2 LUT4=1)
+  Clock Path Skew:        0.353ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.927ns
+    Source Clock Delay      (SCD):    0.569ns
+    Clock Pessimism Removal (CPR):    0.005ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1168, unset)         0.569     0.569    u_core/u_mover/clk
+    SLICE_X8Y149         FDCE                                         r  u_core/u_mover/r_addr_reg[49]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y149         FDCE (Prop_fdce_C_Q)         0.164     0.733 r  u_core/u_mover/r_addr_reg[49]/Q
+                         net (fo=2, routed)           0.149     0.882    u_core/u_fetch/r_addr_reg[49]
+    SLICE_X8Y149         LUT4 (Prop_lut4_I3_O)        0.045     0.927 r  u_core/u_fetch/i___127_carry__10_i_1/O
+                         net (fo=1, routed)           0.000     0.927    u_core/u_mover/r_addr_reg[49]_0[3]
+    SLICE_X8Y149         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.109     1.036 r  u_core/u_mover/i_/i_/i___127_carry__10/CO[3]
+                         net (fo=1, routed)           0.001     1.037    u_core/u_mover/i_/i_/i___127_carry__10_n_0
+    SLICE_X8Y150         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.053     1.090 r  u_core/u_mover/i_/i_/i___127_carry__11/O[0]
+                         net (fo=1, routed)           0.000     1.090    u_core/u_mover/i_/i_/i___127_carry__11_n_7
+    SLICE_X8Y150         FDCE                                         r  u_core/u_mover/r_addr_reg[50]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1168, unset)         0.927     0.927    u_core/u_mover/clk
+    SLICE_X8Y150         FDCE                                         r  u_core/u_mover/r_addr_reg[50]/C
+                         clock pessimism             -0.005     0.922    
+    SLICE_X8Y150         FDCE (Hold_fdce_C_D)         0.134     1.056    u_core/u_mover/r_addr_reg[50]
+  -------------------------------------------------------------------
+                         required time                         -1.056    
+                         arrival time                           1.090    
+  -------------------------------------------------------------------
+                         slack                                  0.034    
+
+Slack (MET) :             0.034ns  (arrival time - required time)
+  Source:                 u_core/u_mover/w_addr_reg[49]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            u_core/u_mover/w_addr_reg[50]/D
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.521ns  (logic 0.371ns (71.210%)  route 0.150ns (28.790%))
+  Logic Levels:           3  (CARRY4=2 LUT4=1)
+  Clock Path Skew:        0.353ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.927ns
+    Source Clock Delay      (SCD):    0.569ns
+    Clock Pessimism Removal (CPR):    0.005ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1168, unset)         0.569     0.569    u_core/u_mover/clk
+    SLICE_X10Y149        FDCE                                         r  u_core/u_mover/w_addr_reg[49]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y149        FDCE (Prop_fdce_C_Q)         0.164     0.733 r  u_core/u_mover/w_addr_reg[49]/Q
+                         net (fo=2, routed)           0.149     0.882    u_core/u_fetch/w_addr_reg[49]
+    SLICE_X10Y149        LUT4 (Prop_lut4_I3_O)        0.045     0.927 r  u_core/u_fetch/i__carry__10_i_1/O
+                         net (fo=1, routed)           0.000     0.927    u_core/u_mover/w_addr_reg[49]_0[3]
+    SLICE_X10Y149        CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.109     1.036 r  u_core/u_mover/i_/i_/i__carry__10/CO[3]
+                         net (fo=1, routed)           0.001     1.037    u_core/u_mover/i_/i_/i__carry__10_n_0
+    SLICE_X10Y150        CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.053     1.090 r  u_core/u_mover/i_/i_/i__carry__11/O[0]
+                         net (fo=1, routed)           0.000     1.090    u_core/u_mover/i_/i_/i__carry__11_n_7
+    SLICE_X10Y150        FDCE                                         r  u_core/u_mover/w_addr_reg[50]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1168, unset)         0.927     0.927    u_core/u_mover/clk
+    SLICE_X10Y150        FDCE                                         r  u_core/u_mover/w_addr_reg[50]/C
+                         clock pessimism             -0.005     0.922    
+    SLICE_X10Y150        FDCE (Hold_fdce_C_D)         0.134     1.056    u_core/u_mover/w_addr_reg[50]
+  -------------------------------------------------------------------
+                         required time                         -1.056    
+                         arrival time                           1.090    
+  -------------------------------------------------------------------
+                         slack                                  0.034    
+
+Slack (MET) :             0.047ns  (arrival time - required time)
+  Source:                 u_core/u_mover/r_addr_reg[49]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            u_core/u_mover/r_addr_reg[52]/D
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.534ns  (logic 0.384ns (71.911%)  route 0.150ns (28.089%))
+  Logic Levels:           3  (CARRY4=2 LUT4=1)
+  Clock Path Skew:        0.353ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.927ns
+    Source Clock Delay      (SCD):    0.569ns
+    Clock Pessimism Removal (CPR):    0.005ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1168, unset)         0.569     0.569    u_core/u_mover/clk
+    SLICE_X8Y149         FDCE                                         r  u_core/u_mover/r_addr_reg[49]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y149         FDCE (Prop_fdce_C_Q)         0.164     0.733 r  u_core/u_mover/r_addr_reg[49]/Q
+                         net (fo=2, routed)           0.149     0.882    u_core/u_fetch/r_addr_reg[49]
+    SLICE_X8Y149         LUT4 (Prop_lut4_I3_O)        0.045     0.927 r  u_core/u_fetch/i___127_carry__10_i_1/O
+                         net (fo=1, routed)           0.000     0.927    u_core/u_mover/r_addr_reg[49]_0[3]
+    SLICE_X8Y149         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.109     1.036 r  u_core/u_mover/i_/i_/i___127_carry__10/CO[3]
+                         net (fo=1, routed)           0.001     1.037    u_core/u_mover/i_/i_/i___127_carry__10_n_0
+    SLICE_X8Y150         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.066     1.103 r  u_core/u_mover/i_/i_/i___127_carry__11/O[2]
+                         net (fo=1, routed)           0.000     1.103    u_core/u_mover/i_/i_/i___127_carry__11_n_5
+    SLICE_X8Y150         FDCE                                         r  u_core/u_mover/r_addr_reg[52]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1168, unset)         0.927     0.927    u_core/u_mover/clk
+    SLICE_X8Y150         FDCE                                         r  u_core/u_mover/r_addr_reg[52]/C
+                         clock pessimism             -0.005     0.922    
+    SLICE_X8Y150         FDCE (Hold_fdce_C_D)         0.134     1.056    u_core/u_mover/r_addr_reg[52]
+  -------------------------------------------------------------------
+                         required time                         -1.056    
+                         arrival time                           1.103    
+  -------------------------------------------------------------------
+                         slack                                  0.047    
+
+Slack (MET) :             0.047ns  (arrival time - required time)
+  Source:                 u_core/u_mover/w_addr_reg[49]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            u_core/u_mover/w_addr_reg[52]/D
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.534ns  (logic 0.384ns (71.911%)  route 0.150ns (28.089%))
+  Logic Levels:           3  (CARRY4=2 LUT4=1)
+  Clock Path Skew:        0.353ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.927ns
+    Source Clock Delay      (SCD):    0.569ns
+    Clock Pessimism Removal (CPR):    0.005ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1168, unset)         0.569     0.569    u_core/u_mover/clk
+    SLICE_X10Y149        FDCE                                         r  u_core/u_mover/w_addr_reg[49]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X10Y149        FDCE (Prop_fdce_C_Q)         0.164     0.733 r  u_core/u_mover/w_addr_reg[49]/Q
+                         net (fo=2, routed)           0.149     0.882    u_core/u_fetch/w_addr_reg[49]
+    SLICE_X10Y149        LUT4 (Prop_lut4_I3_O)        0.045     0.927 r  u_core/u_fetch/i__carry__10_i_1/O
+                         net (fo=1, routed)           0.000     0.927    u_core/u_mover/w_addr_reg[49]_0[3]
+    SLICE_X10Y149        CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.109     1.036 r  u_core/u_mover/i_/i_/i__carry__10/CO[3]
+                         net (fo=1, routed)           0.001     1.037    u_core/u_mover/i_/i_/i__carry__10_n_0
+    SLICE_X10Y150        CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.066     1.103 r  u_core/u_mover/i_/i_/i__carry__11/O[2]
+                         net (fo=1, routed)           0.000     1.103    u_core/u_mover/i_/i_/i__carry__11_n_5
+    SLICE_X10Y150        FDCE                                         r  u_core/u_mover/w_addr_reg[52]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1168, unset)         0.927     0.927    u_core/u_mover/clk
+    SLICE_X10Y150        FDCE                                         r  u_core/u_mover/w_addr_reg[52]/C
+                         clock pessimism             -0.005     0.922    
+    SLICE_X10Y150        FDCE (Hold_fdce_C_D)         0.134     1.056    u_core/u_mover/w_addr_reg[52]
+  -------------------------------------------------------------------
+                         required time                         -1.056    
+                         arrival time                           1.103    
+  -------------------------------------------------------------------
+                         slack                                  0.047    
+
+Slack (MET) :             0.051ns  (arrival time - required time)
+  Source:                 u_core/base_reg[22]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            u_core/u_fetch/addr_q_reg[28]/D
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.538ns  (logic 0.353ns (65.601%)  route 0.185ns (34.399%))
+  Logic Levels:           3  (CARRY4=3)
+  Clock Path Skew:        0.353ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.927ns
+    Source Clock Delay      (SCD):    0.569ns
+    Clock Pessimism Removal (CPR):    0.005ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1168, unset)         0.569     0.569    u_core/clk
+    SLICE_X13Y149        FDCE                                         r  u_core/base_reg[22]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X13Y149        FDCE (Prop_fdce_C_Q)         0.141     0.710 r  u_core/base_reg[22]/Q
+                         net (fo=2, routed)           0.184     0.894    u_core/u_fetch/Q[22]
+    SLICE_X12Y148        CARRY4 (Prop_carry4_DI[2]_CO[3])
+                                                      0.119     1.013 r  u_core/u_fetch/addr_q_reg[23]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     1.013    u_core/u_fetch/addr_q_reg[23]_i_1_n_0
+    SLICE_X12Y149        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.040     1.053 r  u_core/u_fetch/addr_q_reg[27]_i_1/CO[3]
+                         net (fo=1, routed)           0.001     1.054    u_core/u_fetch/addr_q_reg[27]_i_1_n_0
+    SLICE_X12Y150        CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.053     1.107 r  u_core/u_fetch/addr_q_reg[31]_i_1/O[0]
+                         net (fo=1, routed)           0.000     1.107    u_core/u_fetch/addr_q_reg[31]_i_1_n_7
+    SLICE_X12Y150        FDCE                                         r  u_core/u_fetch/addr_q_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1168, unset)         0.927     0.927    u_core/u_fetch/clk
+    SLICE_X12Y150        FDCE                                         r  u_core/u_fetch/addr_q_reg[28]/C
+                         clock pessimism             -0.005     0.922    
+    SLICE_X12Y150        FDCE (Hold_fdce_C_D)         0.134     1.056    u_core/u_fetch/addr_q_reg[28]
+  -------------------------------------------------------------------
+                         required time                         -1.056    
+                         arrival time                           1.107    
+  -------------------------------------------------------------------
+                         slack                                  0.051    
+
+
+
+

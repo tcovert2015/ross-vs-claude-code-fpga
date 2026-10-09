@@ -467,6 +467,7 @@ module tb_pcie_dma;
   logic [31:0] st, ver, scr, ec, gi;
   int i, hr0;
   int rng_seed;
+  int unsigned rng_discard;   // sink for the seeding $urandom call (see below)
 
   initial begin
 `ifdef DUMP
@@ -478,7 +479,9 @@ module tb_pcie_dma;
     // deterministic RNG seed for the constrained-random tier (override with +SEED=<n>)
     if (!$value$plusargs("SEED=%d", rng_seed)) rng_seed = 32'd1;
     $display("=== tb seed = %0d ===", rng_seed);
-    void'($urandom(rng_seed));   // note: Icarus updates the seed arg in place
+    // seed the RNG; result assigned (not void-cast) because Vivado xsim rejects
+    // void'($urandom(seed)) -- XSIM 43-3122. Same call, so Icarus stimulus is unchanged.
+    rng_discard = $urandom(rng_seed);   // note: Icarus updates the seed arg in place
 
     // hold reset
     repeat (5) @(posedge clk);
