@@ -1,0 +1,8 @@
+{
+  "arm": "plain-lattice",
+  "design": "i3c",
+  "model": "opus",
+  "branch": "plain-lattice/i3c",
+  "worktree": "D:\\AMD Ross Test\\ross-vs-claude-code-fpga\\..\\wt\\plain-lattice-i3c",
+  "started": "2026-10-09T16:39:47.7746687-05:00"
+}
