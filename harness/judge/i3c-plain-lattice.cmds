@@ -1,3 +1,4 @@
-# plain-lattice/i3c: committed Radiant flow wrapper + Questa regression
-powershell -NoProfile -ExecutionPolicy Bypass -File syn/lattice/build.ps1
+# plain-lattice/i3c: committed Radiant flow run directly (the agent's build.ps1 Tee-Object wrapper hangs under the
+# judge's nested cmd redirect: Synplify never launched after 8 min; build.tcl itself is what G1 checks) + Questa regression
+"D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" syn/lattice/build.tcl
 powershell -NoProfile -ExecutionPolicy Bypass -File sim/run_questa.ps1
