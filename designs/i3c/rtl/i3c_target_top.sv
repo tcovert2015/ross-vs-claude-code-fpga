@@ -268,7 +268,13 @@ module i3c_target_top #(
   assign io_sda_i = 1'b1;                    // unused under FORMAL
   assign io_scl_i = 1'b1;
 `else
-  i3c_io_altera u_io (
+  // Vendor IO shim selection. All shims share one port list and drive model;
+  // a build picks its own with +define+I3C_IO_SHIM=<module> (e.g. i3c_io_lattice).
+  // Default is the original Altera shim, so existing flows are unchanged.
+`ifndef I3C_IO_SHIM
+  `define I3C_IO_SHIM i3c_io_altera
+`endif
+  `I3C_IO_SHIM u_io (
     .sda_oe (sda_oe),
     .sda_o  (sda_o),
     .sda_i  (io_sda_i),
