@@ -1,0 +1,3 @@
+# ross/fpga-scope: G1 three configs via the committed wrapper; G5 committed xsim regression
+pwsh -NoProfile -File fpga/xilinx/run_all.ps1
+pwsh -NoProfile -File sim/run_xsim.ps1
