@@ -1,0 +1,27 @@
+config                 = w32_d15 (PROBE_W=32 DEPTH_LOG2=15 RLE_EN=1)
+part                   = xc7a100tcsg324-1
+vivado                 = 2025.2
+slice_luts             = 1345
+lut_as_logic           = 1345
+lut_as_memory          = 0
+slice_registers        = 1256
+ramb36                 = 33
+ramb18                 = 1
+block_ram_tile         = 33.5
+bram_cells_total       = 34
+dist_ram_cells_total   = 0
+capture_buf_ramb36     = 33
+capture_buf_ramb18     = 0
+capture_buf_dist_ram   = 0
+capture_buf_bits       = 1081344 (2^15 x 33)
+wns_ns                 = 0.358
+tns_ns                 = 0.000
+tns_failing_endpoints  = 0
+whs_ns                 = 0.070
+ths_ns                 = 0.000
+lint_critical_warning  = 0
+lint_warning           = 6
+lint_info              = 0
+lint_rules             = ASSIGN-1=1 ASSIGN-6=5
+drc_checks_found       = 1
+drc_rules              = CFGBVS-1(Warning)=1
