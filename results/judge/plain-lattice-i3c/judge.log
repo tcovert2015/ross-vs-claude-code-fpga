@@ -1,0 +1,16 @@
+2026-10-09 17:00:44 Preparing worktree (detached HEAD 747caf7)
+2026-10-09 17:00:44 HEAD is now at 747caf7 i3c: Radiant flow for Certus-NX LFD2NX-40-8BG256C, reports and README
+2026-10-09 17:00:44 judge worktree D:\AMD Ross Test\ross-vs-claude-code-fpga\..\wt\judge-plain-lattice-i3c @ 747caf7
+2026-10-09 17:00:44 step 1 START: "D:\lscc\radiant\2026.1\bin\nt64\radiantc.exe" syn/lattice/build.tcl
+2026-10-09 17:01:44 step 1 END exit=0 after 60s (log: step1.log)
+2026-10-09 17:01:44 step 2 START: powershell -NoProfile -ExecutionPolicy Bypass -File sim/run_questa.ps1
+2026-10-09 17:01:47 step 2 END exit=1 after 3s (log: step2.log)
+2026-10-09 17:01:47 git status after re-run:
+2026-10-09 17:01:47    M sim/questa.log
+2026-10-09 17:01:47    M syn/lattice/reports/map.mrp
+2026-10-09 17:01:47    M syn/lattice/reports/pad.pad
+2026-10-09 17:01:47    M syn/lattice/reports/par.par
+2026-10-09 17:01:47    M syn/lattice/reports/synthesis.srr
+2026-10-09 17:01:47    M syn/lattice/reports/timing.twr
+2026-10-09 17:01:47    M syn/lattice/reports/timing_core.twr
+2026-10-09 17:01:47 JUDGE DONE
