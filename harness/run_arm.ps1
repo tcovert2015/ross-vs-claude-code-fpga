@@ -22,7 +22,9 @@ param(
   [double]$BudgetUsd = 40,
   [int]$MaxTurns = 400,
   [string]$RossPluginDir = 'D:\AMD Ross Test\ross-ai-assistant',
-  [string]$Baseline = 'main'
+  [string]$LatticeSkillsDir = (Join-Path $env:USERPROFILE '.claude\plugins\marketplaces\local-desktop-app-uploads\lattice-radiant-skills\lattice-radiant-skills'),
+  [string]$Baseline = 'main',
+  [switch]$DryRun                       # print the resolved claude arguments and exit
 )
 $ErrorActionPreference = 'Stop'
 $repo = (Resolve-Path "$PSScriptRoot\..").Path
@@ -82,6 +84,8 @@ if ($Arm -eq 'ross' -or $Arm -eq 'ross-nudged') {
   $args_ = $common + @('--mcp-config', (Join-Path $repo 'harness\mcp-none.json'), '--disable-slash-commands')
 }
 
+Write-Host ("claude args: " + (($args_ | ForEach-Object { if ($_ -match '\s') { '"' + $_.Substring(0, [Math]::Min(80, $_.Length)) + '"' } else { $_ } }) -join ' '))
+if ($DryRun) { exit 0 }
 $stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
 $transcript = Join-Path $out "transcript-$stamp.jsonl"
 $meta = [ordered]@{ arm=$Arm; design=$Design; model=$Model; branch=$branch; worktree=$wt; started=(Get-Date).ToString('o') }
