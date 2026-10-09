@@ -58,6 +58,22 @@ from `main`, runs Claude headlessly with `--permission-mode bypassPermissions` a
 a `$40` budget cap, and writes the transcript and a summary to `results/`.
 The agent commits on its branch; results are compared via PRs against `main`.
 
-## Status
+## Status — complete (2026-10-08)
 
-See the GitHub issues: one per (arm, design) cell, plus a comparison issue.
+All six cells ran, were judged from committed artifacts, and were re-run from clean checkouts.
+**Plain Claude Code 43/45, Ross 38/45; all 21 hard gates passed by both arms.** The Ross arm never
+called the Vivado MCP server or `amd-doc-search` in any cell. Full comparison and caveats:
+[`results/judge/comparison.md`](results/judge/comparison.md) (also on issue #7).
+
+| Cell | Verdict | PR | Soft score | Cost | Wall |
+|---|---|---|---|---|---|
+| plain/i3c | #2 | #8 | 15/15 | $1.93 | 14 min |
+| ross/i3c | #1 | #9 | 13/15 | $2.08 | 15 min |
+| ross/dma | #5 | #10 | 14/15 | $2.15 | 17 min |
+| plain/dma | #6 | #11 | 14/15 | $3.14 | 46 min |
+| plain/fpga-scope | #4 | #12 | 14/15 | $5.86 | 52 min |
+| ross/fpga-scope | #3 | #13 | 11/15 | $5.09 | 60 min |
+
+Per-cell verdicts: `results/judge/verdict-<arm>-<design>.md`. Clean-checkout re-runs:
+`harness/judge_rerun.ps1 -Arm <arm> -Design <design> -CmdFile harness/judge/<design>[-<arm>].cmds`
+(logs in `results/judge/<arm>-<design>/`). Queue runner for the cells: `harness/run_all.ps1`.
