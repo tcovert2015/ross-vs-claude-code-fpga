@@ -42,6 +42,7 @@ module tb_csr_leg
   localparam int unsigned TS_W = 48;
   localparam int unsigned DEPTH = 1 << DEPTH_LOG2;
   localparam int unsigned LANES = (PROBE_W + 31) / 32;
+  localparam logic [7:0] ADDR_STATUS = 8'(CSR_STATUS);  // pre-cast: see the STATUS poll loops
 
   logic clk = 1'b0;
   always #5 clk <= ~clk;
@@ -52,6 +53,10 @@ module tb_csr_leg
   logic [31:0] csr_wdata = '0;
   logic csr_write = 1'b0, csr_read = 1'b0;
   logic [31:0] csr_rdata;
+  // declared ahead of the u_csr/u_core port connections that use them: IEEE 1800 requires
+  // declaration before use (xsim rejects the implicit forward reference Verilator tolerates)
+  logic [7:0] win_rd_addr;
+  logic [DEPTH_LOG2:0] win_rd_data;
 
   logic arm, disarm, force_trig;
   logic [DEPTH_LOG2-1:0] pretrig;
@@ -150,9 +155,6 @@ module tb_csr_leg
       .ts          (ts),
       .ts_at_trig  (ts_at_trig)
   );
-
-  logic [7:0] win_rd_addr;
-  logic [DEPTH_LOG2:0] win_rd_data;
 
   // ---- golden vectors ----------------------------------------------------------------------
   logic [PROBE_W-1:0] stim[N_STIM];
@@ -338,7 +340,11 @@ module tb_csr_leg
     csr_wr(8'(CSR_WINDOWS), 32'd1);
     csr_wr(8'(CSR_CMP_SEL), 32'h0);  // point the lane window at MASK/comparator 0 (in IDLE)
     csr_wr(8'(CSR_CTRL), 32'h1);  // arm
-    do csr_rd(8'(CSR_STATUS), v); while (v[2:0] != 3'(SCOPE_ST_ARMED));
+    // xsim 2025.2 portability: a constant size cast (8'(CSR_STATUS), 3'(SCOPE_ST_ARMED))
+    // evaluated inside a do-while goes wrong after the first pass (the condition cast reads
+    // false, the argument cast reads X), so the poll loops use the pre-cast ADDR_STATUS
+    // localparam and compare against the enum member directly. Same meaning everywhere.
+    do csr_rd(ADDR_STATUS, v); while (v[2:0] != SCOPE_ST_ARMED);
 
     // locked config writes: ignored + sticky cfg_err
     csr_wr(8'(CSR_PRETRIG), 32'd99);
@@ -356,7 +362,7 @@ module tb_csr_leg
 
     // stream samples; the stream block injects the CTRL.force_trig write at K-1
     stream_en = 1'b1;
-    do csr_rd(8'(CSR_STATUS), v); while (v[2:0] != 3'(SCOPE_ST_DONE));
+    do csr_rd(ADDR_STATUS, v); while (v[2:0] != SCOPE_ST_DONE);
 
     // status + trigger metadata
     csr_rd(8'(CSR_STATUS), v);
