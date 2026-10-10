@@ -41,22 +41,18 @@ numerically identical, slack to the picosecond. Why, from the transcripts:
 - *The shell path is good enough.* `vivado -mode batch -source build.tcl` is a pattern the model knows cold, and
   it produced passing results. There was no failure forcing a search for a better tool.
 
-**2. When told to use it, the Ross kit is worth having.** The nudged arm scored 41 against the discovery arm's 38,
-finished i3c and fpga-scope in a third to a half of the wall time, produced UG905/UG901/UG903 citations from
-`amd-doc-search` that no plain cell could, and recovered from a genuine Vivado crash (access violation inside
-`phys_opt_design`, recorded by the MCP proxy) with a single `vivado_start` call where the discovery arm had
-resorted to machine-wide `taskkill`. It cost 26 % more than plain and still did not beat plain on quality.
+**2. Told to use it, the Ross arm improved on its own discovery result but did not beat plain.** The nudged arm scored 41 against the discovery arm's 38 and against plain's 43; it cost 26 % more than plain ($13.81 vs $10.93) and took the same total wall time (115 vs 113 min: much faster on i3c and fpga-scope, much slower on dma). What the kit added was qualitative and did not move the score: UG905/UG901/UG903 citations from `amd-doc-search` that no plain cell produced, one Vivado session reused end to end instead of a launch per step, and a one-call recovery from a genuine Vivado crash (access violation inside `phys_opt_design`, recorded by the MCP proxy) where the discovery arm had resorted to machine-wide `taskkill`. With one run per cell, the 41-vs-43 gap is within noise; the 38-vs-43 gap and the zero tool use are not.
 
-**3. The plain agent is a strong baseline on both vendors**, and the Lattice kit's value when forced is untested.
-A `lattice-nudged` arm is the obvious next cell.
+**3. Having nothing was never worse than having a kit.** Plain scored highest on both vendors (43 on Vivado, 42 on Radiant) at the lowest or near-lowest cost. The Lattice kit's value when forced is untested; a `lattice-nudged` arm is the obvious next cell.
 
 A cross-vendor result worth keeping: the DMA engine fails 125 MHz on Artix-7 -1 in every Vivado cell
 (best −0.456 ns with retiming) and closes it on Certus-NX -8 with +1.097 ns, same RTL.
 
-Full write-ups with per-cell evidence: [`results/judge/comparison.md`](results/judge/comparison.md) (round 1) and
+Per-cell score matrix and aggregates: [`docs/RESULTS.md`](docs/RESULTS.md). Full procedure, environment, incidents and
+threats to validity: [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md). Narrative write-ups with per-cell evidence: [`results/judge/comparison.md`](results/judge/comparison.md) (round 1) and
 [`results/judge/comparison-round2.md`](results/judge/comparison-round2.md); both are posted on issue #7.
 
-## Methodology
+## Methodology (summary; the full version is [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md))
 
 ### Designs and tasks
 
