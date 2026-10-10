@@ -1,4 +1,6 @@
-# Do vendor AI kits help an agent port FPGA designs?
+# FPGA vendor AI tooling benchmark
+
+Do vendor AI kits help an agent port FPGA designs?
 
 A controlled benchmark of **AMD Ross** (the Vivado MCP server, `amd-doc-search`, and the Ross skills plugin)
 and **Lattice Prompt** (the Radiant MCP server and the Lattice skills plugin) against **plain Claude Code**,

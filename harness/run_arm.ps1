@@ -57,7 +57,7 @@ if ($Arm -eq 'ross-nudged') {
   # benchmark measures the tools in use rather than whether the agent discovers them.
   $prompt += "`n`n" + (Get-Content (Join-Path $repo 'harness\prompts\_nudge.md') -Raw)
 }
-$issueNote = "`n`nThis is GitHub issue '$branch' in repo tcovert2015/ross-vs-claude-code-fpga. You are on branch $branch in a git worktree whose root is $wt. Your working directory is $work."
+$issueNote = "`n`nThis is GitHub issue '$branch' in repo fpga-professional-association/fpga-vendor-ai-tooling-benchmark. You are on branch $branch in a git worktree whose root is $wt. Your working directory is $work."
 
 $common = @(
   '-p', ($prompt + $issueNote),
