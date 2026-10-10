@@ -86,7 +86,15 @@ record with `total_cost_usd`, `num_turns`, `duration_ms`), `meta-*.json` (arm, d
 
 Metric definitions:
 
-- **Cost**: `total_cost_usd` from the result record (API cost of the agent only; the judge's cost is not included).
+- **Cost**: `total_cost_usd` from the `result` record that `claude -p --output-format stream-json` emits at the end of a
+  session. Claude Code computes it itself from the token counts it also records (`modelUsage[<model>]`: uncached input,
+  cache-creation input, cache-read input, output including thinking tokens) priced at the model's public API list price
+  (`costBasis: "list"`, `provider: "firstParty"`). The sessions authenticated through a subscription, not an API key
+  (`apiKeySource: "none"` in every init record), so these dollars were not invoiced; they are what the same tokens would
+  have cost on the API. The figure covers the agent only: not the judge's sessions, not the vendor tools' compute.
+  Example, plain/i3c: 56 uncached input + 93,105 cache-creation + 2,009,344 cache-read + 39,333 output tokens (13,338 of
+  them thinking) → $1.93. Cache reads dominate the token count because every turn re-reads the growing context; output
+  tokens dominate the cost. Anyone can recompute a cell's cost from its token counts and the published price list.
 - **Turns**: `num_turns` from the result record.
 - **Wall time**: the cell process's lifetime, from `claude` start to exit, including every tool's execution time.
 - **Tool-call histogram**: count of `tool_use` blocks by tool name.
