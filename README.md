@@ -3,12 +3,12 @@
 Do vendor AI kits help an agent port FPGA designs?
 
 A controlled benchmark of **AMD Ross** (the Vivado MCP server, `amd-doc-search`, and the Ross skills plugin)
-and **Lattice Prompt** (the Radiant MCP server and the Lattice skills plugin) against **plain Claude Code**,
+and **Lattice Prompt** (the Radiant MCP server and the Lattice skills plugin) against **plain Claude Code**, all running **Claude Opus 5.5** (`claude-opus-5-5`) and judged by **Claude Fable 5.1**,
 on real porting work: taking three open SystemVerilog designs from the
 [FPGA Professional Association](https://github.com/fpga-professional-association) to AMD Vivado 2025.2 (Artix-7)
 and Lattice Radiant 2026.1 (Certus-NX).
 
-Same prompts, same model, same budget, same starting commit. Only the tooling differs.
+Same prompts, same model (Claude Opus 5.5), same budget, same starting commit. Only the tooling differs.
 Every result below was reproduced from a clean checkout by the judge before it was scored.
 
 **Models.** Every agent cell ran on `claude-opus-5-5` (Claude Opus 5.5) via Claude Code 2.1.283; no subagents and no
@@ -18,13 +18,15 @@ No other model was involved at any stage.
 
 ## Results in one table
 
-| Leg | Arm | What the agent had | Score | Cost | Wall time | Vendor tools used |
-|---|---|---|---|---|---|---|
-| Vivado | **plain** | nothing | **43 / 45** | $10.93 | 112 min | — |
-| Vivado | ross-nudged | Ross kit + an instruction to use it | 41 / 45 | $13.81 | 114 min | 77 MCP calls, 8 doc-searches, 9 skill calls |
-| Vivado | ross | Ross kit, left to discover it | 38 / 45 | $9.32 | 91 min | 0 MCP calls, 1 skill call |
-| Radiant | **plain-lattice** | nothing | **42 / 45** | $9.01 | 55 min | — |
-| Radiant | lattice | Lattice kit, left to discover it | 41 / 45 | $9.34 | 41 min | 0 MCP calls, 3 skill calls |
+Agent model in every row: `claude-opus-5-5`. Judge: `claude-fable-5-1`.
+
+| Leg | Arm | Model | What the agent had | Score | Cost | Wall time | Vendor tools used |
+|---|---|---|---|---|---|---|---|
+| Vivado | **plain** | Opus 5.5 | nothing | **43 / 45** | $10.93 | 112 min | — |
+| Vivado | ross-nudged | Opus 5.5 | Ross kit + an instruction to use it | 41 / 45 | $13.81 | 114 min | 77 MCP calls, 8 doc-searches, 9 skill calls |
+| Vivado | ross | Opus 5.5 | Ross kit, left to discover it | 38 / 45 | $9.32 | 91 min | 0 MCP calls, 1 skill call |
+| Radiant | **plain-lattice** | Opus 5.5 | nothing | **42 / 45** | $9.01 | 55 min | — |
+| Radiant | lattice | Opus 5.5 | Lattice kit, left to discover it | 41 / 45 | $9.34 | 41 min | 0 MCP calls, 3 skill calls |
 
 Score = sum of five 0–3 soft criteria across three designs (max 45). Every cell passed all seven hard gates.
 
