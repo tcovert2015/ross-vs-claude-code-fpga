@@ -2,6 +2,7 @@
 
 All numbers below come from the per-cell verdicts (`results/judge/verdict-*.md`) and run summaries
 (`results/<arm>/<design>/summary-*.md`). Every cell passed all seven hard gates after a clean-checkout re-run.
+Agent model in every cell: `claude-opus-5-5` (sole billed model); judge: `claude-fable-5-1`.
 
 ## Per-cell scores
 

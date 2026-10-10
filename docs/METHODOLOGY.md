@@ -59,6 +59,13 @@ flag but none of them called the tool.
 The issue note appended to every task names the GitHub issue, the branch, the worktree root and the working
 directory. Nothing else differs between arms.
 
+## 3a. Models
+
+**Models.** Every agent cell ran on `claude-opus-5-5` (Claude Opus 5.5) via Claude Code 2.1.283; no subagents and no
+second model appear in any cell's billing record (`modelUsage` lists exactly one model in all 15 transcripts). The prompts,
+the harness, and all judging were done by `claude-fable-5-1` (Claude Fable 5.1) in an interactive Claude Code session.
+No other model was involved at any stage.
+
 ## 4. Isolation and environment
 
 - One machine: AMD Ryzen 7 8700F (8 cores / 16 threads), 32 GB, Windows 11 Home. Vivado 2025.2 build 6299465;

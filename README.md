@@ -11,6 +11,11 @@ and Lattice Radiant 2026.1 (Certus-NX).
 Same prompts, same model, same budget, same starting commit. Only the tooling differs.
 Every result below was reproduced from a clean checkout by the judge before it was scored.
 
+**Models.** Every agent cell ran on `claude-opus-5-5` (Claude Opus 5.5) via Claude Code 2.1.283; no subagents and no
+second model appear in any cell's billing record (`modelUsage` lists exactly one model in all 15 transcripts). The prompts,
+the harness, and all judging were done by `claude-fable-5-1` (Claude Fable 5.1) in an interactive Claude Code session.
+No other model was involved at any stage.
+
 ## Results in one table
 
 | Leg | Arm | What the agent had | Score | Cost | Wall time | Vendor tools used |
@@ -76,9 +81,9 @@ committed report.
 | `plain-lattice` | same as plain | none | none | Radiant task only |
 | `lattice` | same | Lattice skills plugin | `lattice-radiant-mcp` 1.11.0 | Radiant task + one system-prompt line |
 
-Every cell: Claude Opus, `--permission-mode bypassPermissions`, $40 cap, 400-turn cap, `ScheduleWakeup`
+Every cell: `claude-opus-5-5`, `--permission-mode bypassPermissions`, $40 cap, 400-turn cap, `ScheduleWakeup`
 disallowed (a headless session ends when the turn ends), its own git worktree on branch `<arm>/<design>` from the
-same baseline commit. Fable 5.1 wrote the prompts, ran the harness, and judged.
+same baseline commit. `claude-fable-5-1` wrote the prompts, ran the harness, and judged.
 
 ### Judging
 
