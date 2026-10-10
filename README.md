@@ -1,87 +1,175 @@
-# AMD Ross vs plain Claude Code — FPGA porting benchmark
+# Do vendor AI kits help an agent port FPGA designs?
 
-An A/B test of **AMD Ross™ Agentic AI Assistant** (the Vivado MCP server +
-`amd-doc-search` MCP + the Ross agent-skills plugin) against **plain Claude Code**
-on realistic FPGA work: porting three open SystemVerilog designs from the
-[FPGA Professional Association](https://github.com/fpga-professional-association)
-(all Intel/Quartus-flow today) to **AMD Vivado 2025.2 / Artix-7**.
+A controlled benchmark of **AMD Ross** (the Vivado MCP server, `amd-doc-search`, and the Ross skills plugin)
+and **Lattice Prompt** (the Radiant MCP server and the Lattice skills plugin) against **plain Claude Code**,
+on real porting work: taking three open SystemVerilog designs from the
+[FPGA Professional Association](https://github.com/fpga-professional-association) to AMD Vivado 2025.2 (Artix-7)
+and Lattice Radiant 2026.1 (Certus-NX).
 
 Same prompts, same model, same budget, same starting commit. Only the tooling differs.
+Every result below was reproduced from a clean checkout by the judge before it was scored.
 
-| | `ross` arm | `plain` arm |
-|---|---|---|
-| Client | Claude Code 2.1.283, headless (`claude -p`) | same |
-| Model | Opus (implementation) | same |
-| MCP servers | `vivado-mcp` 2026.9.1 (local, stdio bridge), `amd-doc-search` 0.11.6 (remote HTTP) | none (`--strict-mcp-config`) |
-| Skills | `amd-ross-agentic-ai-assistant` plugin 2026.9.1 via `--plugin-dir` | none (`--disable-slash-commands`) |
-| Vivado access | via MCP tools (`vivado_start`, `vivado_execute`, …) | shells out to `vivado.bat` itself |
-| Planning / issues / judging | Fable 5.1 | — |
+## Results in one table
 
-## Designs
+| Leg | Arm | What the agent had | Score | Cost | Wall time | Vendor tools used |
+|---|---|---|---|---|---|---|
+| Vivado | **plain** | nothing | **43 / 45** | $10.93 | 112 min | — |
+| Vivado | ross-nudged | Ross kit + an instruction to use it | 41 / 45 | $13.81 | 114 min | 77 MCP calls, 8 doc-searches, 9 skill calls |
+| Vivado | ross | Ross kit, left to discover it | 38 / 45 | $9.32 | 91 min | 0 MCP calls, 1 skill call |
+| Radiant | **plain-lattice** | nothing | **42 / 45** | $9.01 | 55 min | — |
+| Radiant | lattice | Lattice kit, left to discover it | 41 / 45 | $9.34 | 41 min | 0 MCP calls, 3 skill calls |
 
-| Design | Upstream | Pinned | What the port involves |
+Score = sum of five 0–3 soft criteria across three designs (max 45). Every cell passed all seven hard gates.
+
+## The three findings
+
+**1. Neither kit got itself used.** Given the plugin, a connected MCP server and a system-prompt line pointing at
+them, the agent used the Ross tools in 0 of 3 cells and the Lattice tools in 0 of 3. In every one of those six
+cells it shelled out to `vivado.bat` / `radiantc.exe` exactly as the plain arm did, and the Lattice pairs came out
+numerically identical, slack to the picosecond. Why, from the transcripts:
+
+- *The MCP tool schemas are deferred.* Claude Code lists the MCP tool **names** in the session but withholds their
+  parameter schemas until the model calls `ToolSearch` for them. The three nudged cells all begin with
+  `ToolSearch select:mcp__vivado-mcp__vivado_start,…`; the six discovery cells never call `ToolSearch` at all.
+  A tool the model cannot see the signature of competes badly with `Bash`, whose signature it knows.
+- *The skills do not route to the MCP.* The Ross `vivado-rtl-lint` skill does not mention the MCP or
+  `vivado_execute` anywhere. The Lattice automation skill does say "call `ToolSearch` with `+lattice-radiant-mcp`
+  at the start of every session", and the agent invoked that skill in all three cells and still did not do it,
+  because the skill text arrives after the agent already has a working shell-based plan.
+- *The shell path is good enough.* `vivado -mode batch -source build.tcl` is a pattern the model knows cold, and
+  it produced passing results. There was no failure forcing a search for a better tool.
+
+**2. When told to use it, the Ross kit is worth having.** The nudged arm scored 41 against the discovery arm's 38,
+finished i3c and fpga-scope in a third to a half of the wall time, produced UG905/UG901/UG903 citations from
+`amd-doc-search` that no plain cell could, and recovered from a genuine Vivado crash (access violation inside
+`phys_opt_design`, recorded by the MCP proxy) with a single `vivado_start` call where the discovery arm had
+resorted to machine-wide `taskkill`. It cost 26 % more than plain and still did not beat plain on quality.
+
+**3. The plain agent is a strong baseline on both vendors**, and the Lattice kit's value when forced is untested.
+A `lattice-nudged` arm is the obvious next cell.
+
+A cross-vendor result worth keeping: the DMA engine fails 125 MHz on Artix-7 -1 in every Vivado cell
+(best −0.456 ns with retiming) and closes it on Certus-NX -8 with +1.097 ns, same RTL.
+
+Full write-ups with per-cell evidence: [`results/judge/comparison.md`](results/judge/comparison.md) (round 1) and
+[`results/judge/comparison-round2.md`](results/judge/comparison-round2.md); both are posted on issue #7.
+
+## Methodology
+
+### Designs and tasks
+
+| Design | Upstream | Pinned | The port |
 |---|---|---|---|
-| `designs/i3c` | [i3c](https://github.com/fpga-professional-association/i3c) | `4cbdc90` | Replace Altera tri-state IO shim with a Xilinx one; OOC synth/impl at 125 MHz; run the 29-check Icarus TB in xsim |
-| `designs/fpga-scope` | [fpga-scope](https://github.com/fpga-professional-association/fpga-scope) | `614ad20` | AXI4-Lite wrapper top; 3-config utilization sweep at 100 MHz; run Verilator TBs in xsim |
-| `designs/dma` | [dma](https://github.com/fpga-professional-association/dma) | `f8851d2` | `SYS_IF="AXI4"` build at 125 MHz; AXI4 ± back-pressure TB sweep in xsim |
+| `designs/i3c` | [i3c](https://github.com/fpga-professional-association/i3c) | `4cbdc90` | vendor IO shim; synth/impl at 125 MHz; run the 29-check testbench in the vendor simulator |
+| `designs/fpga-scope` | [fpga-scope](https://github.com/fpga-professional-association/fpga-scope) | `614ad20` | AXI4-Lite wrapper top; three-config utilization sweep at 100 MHz; port the CSR testbenches |
+| `designs/dma` | [dma](https://github.com/fpga-professional-association/dma) | `f8851d2` | `SYS_IF="AXI4"` build at 125 MHz; AXI4 ± back-pressure regression, 3 seeds |
 
-The task text is in `harness/prompts/<design>.md` and is identical for both arms.
-Hard gates and soft scores are in `harness/judge.md`.
+Task text: `harness/prompts/<design>.md` (Vivado) and `harness/prompts/lattice/<design>.md` (Radiant). Each asks
+for a scripted flow, committed reports, a scripted regression, and a README in which every number traces to a
+committed report.
+
+### Arms
+
+| Arm | Client | Plugin | MCP servers | Prompt |
+|---|---|---|---|---|
+| `plain` | Claude Code, headless, `--disable-slash-commands` | none | none | task only |
+| `ross` | same | Ross plugin (67 skills) via `--plugin-dir` | `vivado-mcp` 2026.9.1, `amd-doc-search` | task + one system-prompt line saying the tools exist |
+| `ross-nudged` | same | same | same | task + [`_nudge.md`](harness/prompts/_nudge.md): one `vivado_start`, every step via `vivado_execute`, the matching skills, doc-search; shell launches of Vivado forbidden |
+| `plain-lattice` | same as plain | none | none | Radiant task only |
+| `lattice` | same | Lattice skills plugin | `lattice-radiant-mcp` 1.11.0 | Radiant task + one system-prompt line |
+
+Every cell: Claude Opus, `--permission-mode bypassPermissions`, $40 cap, 400-turn cap, `ScheduleWakeup`
+disallowed (a headless session ends when the turn ends), its own git worktree on branch `<arm>/<design>` from the
+same baseline commit. Fable 5.1 wrote the prompts, ran the harness, and judged.
+
+### Judging
+
+The rubric is [`harness/judge.md`](harness/judge.md). Seven hard gates (flow re-runs from a clean checkout, lint
+reported truthfully, reports committed, timing met *or honestly and specifically explained*, regression passes,
+no silent core-RTL change, README numbers match the reports) and five soft criteria scored 0–3 (quality of the
+vendor-specific pieces, lint triage, README usefulness, efficiency, recovery from errors).
+
+The judge never trusts the agent's summary. For every cell it checks out the branch into a fresh worktree, runs the
+committed flow and regression scripts (`harness/judge_rerun.ps1` with `harness/judge/<design>[-<arm>].cmds`),
+and diffs the regenerated reports against the committed ones. Three cells needed a second judge pass for
+environmental reasons (another cell killing Vivado machine-wide, a node-locked Questa seat held by a concurrent
+re-run, a runner that false-fails under PowerShell 5.1); each is documented in its verdict. Verdicts are posted
+as comments on the per-cell issues and kept in `results/judge/verdict-<arm>-<design>.md`.
+
+### What is recorded per cell
+
+`results/<arm>/<design>/`: the full `stream-json` transcript, a summary (cost, turns, wall time, tool-call
+histogram, MCP vs shell Vivado launches, commits, diff size), and the run metadata. `results/judge/<arm>-<design>/`:
+the clean re-run logs.
+
+## Caveats
+
+- **n = 1 per cell.** Several pairs differ by one point. Treat ordering between adjacent arms as suggestive.
+- **Shared machine.** Up to four Vivado/Radiant jobs plus judge re-runs ran concurrently; wall times include
+  contention. One agent's machine-wide process kills are the only cross-cell interference found.
+- **Path with a space.** The worktrees live under `D:\AMD Ross Test\…`, which breaks `synth_design -lint -file`
+  and several `read_*` commands in Vivado 2025.2. Every Vivado cell hit it and recovered; both arms paid the tax.
+- **Judge and planner are the same model family as the agents.** Scores are backed by the evidence tables in
+  each verdict so they can be re-derived.
+- **The soft rubric saturates.** Six of eighteen cells scored 14 or 15 out of 15. Round 3 (below) raises the ceiling.
+
+## Round 3: harder tasks, a rubric with headroom
+
+The round-1/2 tasks were ports that a competent engineer finishes in an afternoon, and the 0–3 scale cannot
+separate "good" from "expert". Round 3 adds tasks where the vendor tooling should matter and a 0–5 rubric whose
+top anchors require things no cell has done yet (in-context validation of out-of-context assumptions, formal or
+cross-simulator equivalence after an RTL change, correct and verifiable documentation citations, a bitstream for a
+real board). See [`harness/judge-v2.md`](harness/judge-v2.md) and `harness/prompts/round3/`.
+
+| Task | Base design | What it demands beyond a port |
+|---|---|---|
+| `dma-close` | dma | close 125 MHz on Artix-7 -1 with a vendor-neutral RTL change, prove equivalence (all three bus configs in two simulators, formal re-run where available) |
+| `i3c-async` | i3c | build `AVL_ASYNC=1` with a real second clock: CDC constraints, `report_cdc` clean, dual-clock regression |
+| `scope-board` | fpga-scope | in-context design for Arty A7-100T: block design with AXI interconnect and JTAG-to-AXI master, pinout, bitstream, in-context port timing |
+| `docs-grounded` | any | ten device/tool questions with verifiable answers and required citations to the exact user-guide section |
+
+## Reproducing
+
+Prerequisites: Vivado 2025.2 at `C:\AMDDesignTools\2025.2`, Radiant 2026.1 at `D:\lscc\radiant\2026.1`, the Vivado
+MCP server at `~/tools/vivado-mcp-server.exe`, the Ross plugin cloned at `D:\AMD Ross Test\ross-ai-assistant`,
+the Lattice Prompt plugins installed at user scope, Claude Code 2.1.283.
+
+```powershell
+# one cell
+.\harness\run_arm.ps1 -Arm plain -Design i3c
+# print the exact claude invocation without running it
+.\harness\run_arm.ps1 -Arm lattice -Design dma -DryRun
+# several cells, detached, bounded parallelism
+pwsh -File harness\run_all.ps1 -Cells ross-nudged:i3c,ross-nudged:dma -MaxParallel 2
+# judge a finished cell from a clean checkout
+pwsh -File harness\judge_rerun.ps1 -Arm ross-nudged -Design i3c -CmdFile harness\judge\i3c-ross-nudged.cmds
+```
+
+Cells run detached (`Start-Process`) because a tool call that outlives its 10-minute window would kill them.
+Paths are quoted everywhere because the repo path contains a space.
 
 ## Layout
 
 ```
-designs/<design>/      pinned upstream snapshot (baseline for both arms)
+designs/<design>/           pinned upstream snapshot (baseline for every arm)
 harness/
-  prompts/<design>.md  the task (GitHub issue body)
-  run_arm.ps1          run one cell: (arm, design) in its own worktree + branch <arm>/<design>
-  summarize.py         cost / turns / tool-call histogram / git stats from the transcript
-  mcp-ross.json        MCP config for the ross arm; mcp-none.json for plain
-  judge.md             rubric
-results/<arm>/<design>/   transcript-*.jsonl, summary-*.md, meta-*.json
+  prompts/<design>.md       Vivado tasks        prompts/lattice/<design>.md   Radiant tasks
+  prompts/_nudge.md         the ross-nudged addendum
+  prompts/round3/           harder tasks        judge-v2.md                   0–5 rubric for round 3
+  run_arm.ps1               one cell            run_all.ps1                   detached queue runner
+  judge.md                  rubric              judge_rerun.ps1 + judge/      clean-checkout re-runs
+  mcp-ross.json  mcp-lattice.json  mcp-none.json
+results/
+  <arm>/<design>/           transcript, summary, metadata
+  judge/                    verdicts, comparisons, re-run logs
 ```
 
-## Running a cell
+## Index
 
-Prerequisites: Vivado 2025.2 at `C:\AMDDesignTools\2025.2`, the Vivado MCP server
-at `~/tools/vivado-mcp-server.exe`, a clone of
-[Xilinx/ross-ai-assistant](https://github.com/Xilinx/ross-ai-assistant) at
-`D:\AMD Ross Test\ross-ai-assistant`.
+- Comparison and verdict: issue #7
+- Vivado leg: issues #1–#6 (`ross` odd, `plain` even), PRs #8–#13
+- Nudged Ross arm: issues #14–#16, PRs #17, #18, #31
+- Lattice leg: issues #19–#24, PRs #25–#30
 
-```powershell
-.\harness\run_arm.ps1 -Arm ross  -Design i3c
-.\harness\run_arm.ps1 -Arm plain -Design i3c
-```
-
-Each run creates `..\wt\<arm>-<design>` as a worktree on branch `<arm>/<design>`
-from `main`, runs Claude headlessly with `--permission-mode bypassPermissions` and
-a `$40` budget cap, and writes the transcript and a summary to `results/`.
-The agent commits on its branch; results are compared via PRs against `main`.
-
-## Status — round 2 complete (2026-10-09)
-
-Round 2 added a **nudged Ross arm** (explicitly told to use the MCP and skills: 41/45, $13.81; MCP used 77 times,
-quality up, cost up) and a **Lattice leg** (Lattice Prompt skills + MCP vs plain, Radiant 2026.1 / Certus-NX:
-41/45 vs 42/45, kit never used, numbers identical). Write-up: [`results/judge/comparison-round2.md`](results/judge/comparison-round2.md)
-(issue #7). Cells: issues #14–#16 (ross-nudged), #19–#24 (lattice, plain-lattice); PRs #17, #18, #31, #25–#30.
-Arms `ross-nudged`, `lattice`, `plain-lattice` in `harness/run_arm.ps1`; Lattice prompts in `harness/prompts/lattice/`.
-
-## Round 1 — complete (2026-10-08)
-
-All six cells ran, were judged from committed artifacts, and were re-run from clean checkouts.
-**Plain Claude Code 43/45, Ross 38/45; all 21 hard gates passed by both arms.** The Ross arm never
-called the Vivado MCP server or `amd-doc-search` in any cell. Full comparison and caveats:
-[`results/judge/comparison.md`](results/judge/comparison.md) (also on issue #7).
-
-| Cell | Verdict | PR | Soft score | Cost | Wall |
-|---|---|---|---|---|---|
-| plain/i3c | #2 | #8 | 15/15 | $1.93 | 14 min |
-| ross/i3c | #1 | #9 | 13/15 | $2.08 | 15 min |
-| ross/dma | #5 | #10 | 14/15 | $2.15 | 17 min |
-| plain/dma | #6 | #11 | 14/15 | $3.14 | 46 min |
-| plain/fpga-scope | #4 | #12 | 14/15 | $5.86 | 52 min |
-| ross/fpga-scope | #3 | #13 | 11/15 | $5.09 | 60 min |
-
-Per-cell verdicts: `results/judge/verdict-<arm>-<design>.md`. Clean-checkout re-runs:
-`harness/judge_rerun.ps1 -Arm <arm> -Design <design> -CmdFile harness/judge/<design>[-<arm>].cmds`
-(logs in `results/judge/<arm>-<design>/`). Queue runner for the cells: `harness/run_all.ps1`.
+Designs are © their upstream authors under their own licenses (see each `designs/<design>/LICENSE`).
+The harness and results are provided as-is for reproduction and discussion.

@@ -17,7 +17,8 @@
 #>
 param(
   [Parameter(Mandatory)][ValidateSet('ross','plain','ross-nudged','lattice','plain-lattice')] [string]$Arm,
-  [Parameter(Mandatory)][ValidateSet('i3c','fpga-scope','dma')] [string]$Design,
+  [Parameter(Mandatory)][ValidateSet('i3c','fpga-scope','dma','dma-close','i3c-async','scope-board','docs-grounded')] [string]$Design,
+  [string]$Round = '',                  # '' = round-1/2 prompts; 'round3' = harness\prompts\round3\<Design>.md
   [string]$Model = 'opus',
   [double]$BudgetUsd = 40,
   [int]$MaxTurns = 400,
@@ -37,9 +38,19 @@ New-Item -ItemType Directory -Force $out | Out-Null
 if (-not (Test-Path $wt)) {
   git -C $repo worktree add -B $branch $wt $Baseline | Out-Null
 }
-$work = Join-Path $wt "designs\$Design"
+# Round-3 tasks are built on one of the three base designs (docs-grounded has no RTL: worktree root).
+$baseDesign = switch ($Design) {
+  'dma-close'     { 'dma' }
+  'i3c-async'     { 'i3c' }
+  'scope-board'   { 'fpga-scope' }
+  'docs-grounded' { '' }
+  default         { $Design }
+}
+$work = if ($baseDesign) { Join-Path $wt "designs\$baseDesign" } else { $wt }
 
-$promptFile = if ($Arm -like '*lattice*') { "harness\prompts\lattice\$Design.md" } else { "harness\prompts\$Design.md" }
+$promptFile = if ($Round) { "harness\prompts\$Round\$Design.md" }
+              elseif ($Arm -like '*lattice*') { "harness\prompts\lattice\$Design.md" }
+              else { "harness\prompts\$Design.md" }
 $prompt = Get-Content (Join-Path $repo $promptFile) -Raw
 if ($Arm -eq 'ross-nudged') {
   # Third arm: identical prompt + an explicit requirement to use the Ross tooling, so the
